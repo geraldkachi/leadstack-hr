@@ -1,33 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Suspense, useRef, } from 'react'
+import { QueryClient, QueryClientProvider } from "react-query";
+import { Navigate, Route, Routes } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+import './App.css'
+import { Layout } from './components';
+import Context from './components/context';
+import { CreateAccount, Customers, Dashboard, Home, Status } from './pages';
+import { ProtectedRoutes, UnProtectedRoutes } from './routers';
+
+const App: React.FC = () => {
+  // const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
+
+  const ref = useRef<QueryClient>();
+  const queryClient = new QueryClient();
+  //   {
+  //   defaultOptions: {
+  //     queries: {
+  //       refetchOnWindowFocus: false,
+  //       refetchOnMount: false,
+  //       refetchOnReconnect: false,
+  //       retry: false,
+  //       staleTime: twentyFourHoursInMs,
+  //     },
+  //   },
+  // }
+  ref.current = queryClient;
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <QueryClientProvider client={ref.current}>
+        {/* <ToastContainer /> */}
+        <Context>
+          <Suspense fallback={"Loading"}>
+            <Routes>
+              <Route element={<UnProtectedRoutes />}>
+                <Route path="/" element={<CreateAccount />} />
+                <Route path="/home" element={<Home />} />
+                  {/* <Route path="/reset" element={<ResetPassword />} /> */}
+              </Route>
+
+              {/* Protected Roues */}
+              <Route element={<ProtectedRoutes />}>
+                <Route element={<Layout />}>
+                  <Route path="/dashboard" element={<Dashboard />} />
+                  <Route path="/customers" element={<Customers />} />
+                  <Route path="/status" element={<Status />} />
+                  <Route path="/personal-banking" element={<Home />} />
+                </Route>
+              </Route>
+              {/* 404 page */}
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </Suspense>
+        </Context>
+      </QueryClientProvider>
     </>
   )
 }
