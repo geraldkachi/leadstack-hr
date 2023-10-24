@@ -4,9 +4,12 @@ import Sidebar from "../sidebar/Sidebar";
 import BottomNav from "../bottomnav/BottomNav";
 // import { AdminIcon } from "../../assets";
 import Topnav from "./Topnav";
+import { useState } from "react";
 
 
 const Layout = () => {
+  const [open, setOpen] = useState<boolean>(true);
+
   // const lastName = localStorage.getItem("lastName");
   // const firstName = localStorage.getItem("firstName");
 
@@ -14,8 +17,8 @@ const Layout = () => {
     <div>
       {/* {open ? <ChangePasswordModal {...{ open }} {...{ close }} /> : null} */}
       <section className={` `}>
-        <Sidebar />
-        <div className={`layout__content  ${"open" ? "sm:pl-60" : "sm:pl-20"} `}>
+        <Sidebar {...{ open }} {...{ setOpen }} />
+        <div className={`layout__content  ${open ? "sm:pl-60" : "sm:pl-20"} `}>
           <div className={`layout__content-main bg-[#F1F5F9]  `}>
             <Topnav />
             <div className="px-3">

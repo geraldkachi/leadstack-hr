@@ -72,22 +72,22 @@ const latestOrders = {
 const Dashboard = () => {
   return (
     <div className="h-full pt-3">
-      <div className="text- mb-[18px]">Loan Report Summary</div>
+      <div className="text- mb-[18px]">Dashboard</div>
       <div className="flex lg:flex-row flex-col gap-4 sm:gap-x-[23px] mb-10">
+        {/* <Cards />
         <Cards />
-        <Cards />
-        <Cards />
+        <Cards /> */}
       </div>
 
       {/* <Graph / */}
 
       <div className="card__body">
-        <Table
+        {/* <Table
           headData={latestOrders.header}
           renderHead={(item: any, index: number) => renderOrderHead(item, index)}
           bodyData={latestOrders.body}
           renderBody={(item: any, index: number) => renderOrderBody(item, index)}
-        />
+        /> */}
       </div>
     </div>
   )

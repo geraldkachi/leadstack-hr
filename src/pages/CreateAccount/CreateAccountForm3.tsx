@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../components";
 
-const CreateAccountForm = ({setCurrentStep}: any) => {
+const CreateAccountForm3 = ({setCurrentStep}: any) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const otpRef = useRef<HTMLInputElement>(null);
@@ -64,17 +64,19 @@ const CreateAccountForm = ({setCurrentStep}: any) => {
         />
 
         <div className="flex items-center justify-between">
-          <img
+          {/* <img
             src="/linkedinsvg.svg"
             alt="linkedinnsvg"
             className="cursor-pointer"
-          />
+          /> */}
+          <div></div>
 
           <Button
             type="button"
             className="!bg-[#1D8EE6] !text-white"
             onClick={() => {
-                setCurrentStep(2)
+                // setCurrentStep(4)
+                navigate("/dashboard")
             }
         }
             title="Next"
@@ -87,4 +89,4 @@ const CreateAccountForm = ({setCurrentStep}: any) => {
   );
 };
 
-export default CreateAccountForm;
+export default CreateAccountForm3;

@@ -13,7 +13,7 @@ const Navbar = () => {
     <div  className='bg-[#001027]'>
     <div className='px-5 py-5 flex flex-wrap items-center justify-between mx-auto max-w-[1350px]'>
       <div className=' md:flex items-center justify-between '>
-        <Link to="/"><h1 className='text-3xl font-normal text-white'>LATC</h1></Link>
+        <Link to="/"><h1 className='text-3xl font-normal text-white'></h1></Link>
 
         {/* <div className=' items-center hidelogin lg:flex'>
                       <Link to="/" onClick={() =>
