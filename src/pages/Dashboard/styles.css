@@ -1,7 +1,7 @@
 .topnav__search {
     position: relative;
     /* height: 30px; */
-    background-color: white;
+    background-color: #DEDFEC;
     display: flex;
     align-items: center;
     box-shadow: var(--box-shadow);
@@ -17,8 +17,8 @@
     padding: 10px 60px 10px 45px;
     color: #64748B;
     font-size: 1rem;
-    background-color: #F1F5F9;
-    border-radius: 40px;
+    background-color: #DEDFEC;
+    border-radius: 4;
 }
 
 .topnav__search > input:focus {

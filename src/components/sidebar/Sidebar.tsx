@@ -88,14 +88,14 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
         className={` ${open ? "sm:w-60" : "w-max"} flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
       >
         <div className="px-2 py-10">
-          <div className="flex items-center justify-between">
+          <div className={`${open ?  "justify-between" : 'justify-center'} flex items-center`}>
             <img src="/logo.svg" alt="" className={`${!open && 'hidden'}`} />
 
             <img src="/arrowbreak.svg" onClick={() => setOpen(!open)} alt="arrow" className="cursor-pointer" />
           </div>
         </div>
 
-        <div className={` px-2 pt-6 ${open && " mx-auto"}`}>
+        <div className={` px-2 pt-6 ${open && " px-2"}`}>
           <div
             className={`${
               open && "flex items-center justify-center"
@@ -103,7 +103,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           >
             {/* <MenuIcon onClick={() => setOpen(!open)} className={`ml-4 cursor-pointer duration-500 ${open && "rotate-[360deg]"}`} />
                         <HomeLogoIcon className={`${!open && "scale-0 hidden"}`} /> */}
-            {/* <p className="text-[#BFBFBF] mx-3">MAIN MENU</p> */}
+            {/* <p className="text-[#BFBFBF] mx-2 hidden lg:block text-xs md:text-lg">MAIN MENU</p> */}
           </div>
           {routeList.map((item, index) => {
             const activeItem = location.pathname.includes(item.route);
@@ -121,7 +121,8 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
                   className={`${
                     activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                   }
-                  flex items-center rounded-xl px- py-3 cursor-pointer mb-3 text-sm px-6 space-x-4 w-mx
+                  ${!open && 'px-2 text-center'}
+                  flex items-center rounded-xl px-6 py-3 cursor-pointer mb-3 text-sm
                   !text-[#535768] w-full`}
                 >
                   <div key={index}> {iconArr[index]}</div>
