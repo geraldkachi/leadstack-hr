@@ -121,8 +121,8 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
                   className={`${
                     activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                   }
-                  flex items-center rounded-xl px- py-3 cursor-pointer mb-3 text-sm px-6 space-x-4 w-max
-                  !text-[#535768]`}
+                  flex items-center rounded-xl px- py-3 cursor-pointer mb-3 text-sm px-6 space-x-4 w-mx
+                  !text-[#535768] w-full`}
                 >
                   <div key={index}> {iconArr[index]}</div>
 
