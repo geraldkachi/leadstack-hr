@@ -1,22 +1,27 @@
 import "./sidebar.css";
 // import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { AdminIcon, CustomersIcon, DashboardIcon, LoanCalculatorIcon, PersonalBankingIcon, ReportsIcon, StatusIcon } from "../../assets";
-import Accordion from "../Accordion/Accordion";
-import { Dispatch, SetStateAction } from "react";
+// import Accordion from "../Accordion/Accordion";
+import { Dispatch, SetStateAction, useCallback } from "react";
+import { useWindowDimensions } from "../../hooks";
+import {DashboardIcon,  EmployeesIcon } from "../../assets";
 interface SidebarProps {
   open: boolean;
-  setOpen?: Dispatch<SetStateAction<boolean>>;
+  setOpen: Dispatch<SetStateAction<boolean>>;
 }
 const Sidebar = ({ open, setOpen }: SidebarProps) => {
-  // const [open, setOpen] = useState<boolean>(false);
-  // const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation()
+  const { width } = useWindowDimensions()
+  const navigate = useNavigate();
 
-  // const logout = () => {
-  //   localStorage.clear();
-  //   navigate("/");
-  // };
+ const logout = useCallback(() => {
+      navigate("/");
+      // Cookies.remove('Authenticated')
+      // Cookies.remove('secret')
+      localStorage.clear()
+ }, [])
+
 
   // const routeList = [
   //   { route: "/dashboard", title: "Dashboard" },
@@ -80,17 +85,17 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
   return (
     <section className={`sidebar hidden sm:block bg-white`}>
       <div
-        className={` sm:w-60 w-max flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
+        className={` ${open ? "sm:w-60" : "w-max"} flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
       >
-        <div className="px-3 py-10">
+        <div className="px-2 py-10">
           <div className="flex items-center justify-between">
-            <img src="/logo.svg" alt="" />
+            <img src="/logo.svg" alt="" className={`${!open && 'hidden'}`} />
 
-            <img src="/arrowbreak.svg" alt="arrow" className="cursor-pointer" />
+            <img src="/arrowbreak.svg" onClick={() => setOpen(!open)} alt="arrow" className="cursor-pointer" />
           </div>
         </div>
 
-        <div className={`pt-6 ${open && " mx-aut"}`}>
+        <div className={` px-2 pt-6 ${open && " mx-auto"}`}>
           <div
             className={`${
               open && "flex items-center justify-center"
@@ -98,36 +103,37 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           >
             {/* <MenuIcon onClick={() => setOpen(!open)} className={`ml-4 cursor-pointer duration-500 ${open && "rotate-[360deg]"}`} />
                         <HomeLogoIcon className={`${!open && "scale-0 hidden"}`} /> */}
-              <p className="text-[#BFBFBF]">MAIN MENU</p>
+            {/* <p className="text-[#BFBFBF] mx-3">MAIN MENU</p> */}
           </div>
           {routeList.map((item, index) => {
             const activeItem = location.pathname.includes(item.route);
             const iconArr = [
-              "lol",
-              // <HomeIcon key={1} index={activeItem} />,
-              // <LoanIcon key={2} index={activeItem} />,
+              <DashboardIcon key={1} index={activeItem} />,
+              <EmployeesIcon key={2} index={activeItem} />,
               // <TransactionsIcon key={3} index={activeItem} />,
               // <ArvopayIcon key={4} index={activeItem} />,
               // <AccountIcon key={5} index={activeItem} />,
             ];
             return (
-              <Link
-                to={item.route}
-                key={index}
-                className={`${
-                  activeItem && "bg-[#1D8EE6] rounded-xl !text-white"
-                } flex items-center rounded-xl px-6 py-[14px] cursor-pointer mb-3 text-sm space-x-4 px-auto w-max mxx-auto !text-[#535768]`}
-              >
-                <div key={index}> {iconArr[index]}</div>
-
-                <span
-                  className={`${!open && "hidden"} ${
-                    "width" < 1200 ? "" : ""
-                  } origin-left duration-200`}
+                <Link
+                  to={item.route}
+                  key={index}
+                  className={`${
+                    activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+                  }
+                  flex items-center rounded-xl px- py-3 cursor-pointer mb-3 text-sm px-6 space-x-4 w-max
+                  !text-[#535768]`}
                 >
-                  {item.title}
-                </span>
-              </Link>
+                  <div key={index}> {iconArr[index]}</div>
+
+                  <span
+                    className={`${!open && "hidden"} ${
+                      width < 1200 ? "" : ""
+                    } origin-left duration-200`}
+                  >
+                    {item.title}
+                  </span>
+                </Link>
             );
           })}
         </div>
