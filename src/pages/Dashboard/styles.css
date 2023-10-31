@@ -11,13 +11,13 @@
 
 .topnav__search > input {
     outline: none;
-    border: none;
+    border: 1px solid #DEDFEC;
     height: 100%;
     width: 100%;
     padding: 10px 60px 10px 45px;
     color: #64748B;
     font-size: 1rem;
-    background-color: #DEDFEC;
+    background-color: #ffffff;
     border-radius: 4;
 }
 

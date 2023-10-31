@@ -1,10 +1,9 @@
 import "./layout.css";
+import { useState } from "react";
+import Topnav from "./Topnav";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../sidebar/Sidebar";
 import BottomNav from "../bottomnav/BottomNav";
-// import { AdminIcon } from "../../assets";
-import Topnav from "./Topnav";
-import { useState } from "react";
 
 
 const Layout = () => {
@@ -19,7 +18,7 @@ const Layout = () => {
       <section className={` `}>
         <Sidebar {...{ open }} {...{ setOpen }} />
         <div className={`layout__content  ${open ? "sm:pl-60" : "sm:pl-20"} `}>
-          <div className={`layout__content-main bg-[#F1F5F9]  `}>
+          <div className={`layout__content-main`}>
             <Topnav />
             <div className="px-3">
               <Outlet />
