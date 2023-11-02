@@ -1,5 +1,5 @@
 import './styles.css'
-import { Table } from "../../components"
+import { Button, Table } from "../../components"
 import Cards from './Cards'
 import { ReactNode } from 'react'
 // import Graph from './Graph'
@@ -77,37 +77,51 @@ const Dashboard = () => {
           <div className="text-lg md:text-2xl">Dashboard</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
         </div>
-        <div className='flex items-center gap-2 p-3 bg-[#EEF5FC] rounded-lg'>
+        <div className='flex items-center gap-2 p-3 bg-[#EEF5FC] rounded-lg md:mr-20 whitespace-nowrap'>
           <img src="/plusdash.svg" alt="" />
-          <p>Add Employee</p>
+          <p className='text-sm md:text-base text-[#ABBED1]'>Add Employee</p>
         </div>
       </div>
 
-      <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md">
+      <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] md:mr-56">
         <img src="/caution.svg" alt="caution" />
         <div>
           <div className='text-[#3F4254] font-bold text-base'>We need your attention!</div>
-          <div className='text-[#7E8299] text-sm md:text-base'>To start adding employees & doing the cool stuffs, please Complete Onboarding</div>
+          <div className='text-[#7E8299] text-sm md:text-base'>To start adding employees & doing the cool stuffs, please <span className='text-[#00A3FF]'>Complete Onboarding</span> </div>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
+      <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#EAFCFB] rounded-md border-dashed border border-[#1EAA79] md:mr-56">
+        <img src="/cautionsuccess.svg" alt="caution" />
+        <div>
+          <div className='text-[#3F4254] font-bold text-base'>Account Verification Successful</div>
+          <div className='text-[#7E8299] text-sm md:text-base'>your account verification was successful, you can start with the following; <span className='text-[#00A3FF]'>Add Employees</span> </div>
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 ">
         <Cards />
         <Cards />
         <Cards />
         <Cards />
+      </div>
+
+      <div className="my-3 flex flex-col items-center justify-center pb-10">
+        <img src="/no-record.svg" alt="no-record" />
+
+        <Button className='flex items-center  rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" />
       </div>
 
       {/* <Graph / */}
 
-      <div className="card__body mb-20">
+      {/* <div className="card__body mb-20">
         <Table
           headData={latestOrders.header}
           renderHead={(item: any, index: number) => renderOrderHead(item, index)}
           bodyData={latestOrders.body}
           renderBody={(item: any, index: number) => renderOrderBody(item, index)}
         />
-      </div>
+      </div> */}
     </div>
   )
 }

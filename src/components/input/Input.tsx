@@ -207,10 +207,10 @@ export default function Input(
 	};
 
 	return (
-		<div className={`bg-  mb-4 ${className}`}>
+		<div className={`bg-  mb-3 ${className}`}>
 			{label && (
 				<label
-					className="my-1 text-[#0D1227] leading-[19.6px] flex items-center text-left text-sm font-semibold"
+					className="my-[2px] text-[#0D1227] leading-[19.6px] flex items-center text-left text-sm font-semibold"
 					htmlFor={id}
 				>
 					{label}
@@ -241,7 +241,7 @@ export default function Input(
 					// {...innerRef}
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
-		className="w-full border border-[#E2E4E8] p-[10px] rounded-[4px] focus:outline-[#3699FF] placeholder:text-base"
+		className="w-full border border-[#E2E4E8] p-[8px] rounded-[4px] focus:outline-[#3699FF] placeholder:text-base"
 				/>
 				{TrailingIcon && (
 					<span className="mx-2">

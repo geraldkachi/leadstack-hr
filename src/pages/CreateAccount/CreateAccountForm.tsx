@@ -72,7 +72,7 @@ const CreateAccountForm = ({setCurrentStep}: any) => {
 
           <Button
             type="button"
-            className="!bg-[#1D8EE6] !text-white"
+            className="!bg-[#1D8EE6] !text-white !px-8"
             onClick={() => {
                 setCurrentStep(2)
             }

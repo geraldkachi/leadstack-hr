@@ -40,13 +40,13 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
   const faqArr = [
     {
       header: "Government?",
-      content: `for our clients.`,
+      content: `content for clients.`,
       route: "/Finance",
       title: "Finance",
     },
     {
       header: "What offer?",
-      content: `accessible and affordable.`,
+      content: `content for clients..`,
       route: "/Self Service",
       title: "Self Service",
     },
@@ -88,7 +88,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           >
             {/* <MenuIcon onClick={() => setOpen(!open)} className={`ml-4 cursor-pointer duration-500 ${open && "rotate-[360deg]"}`} />
                         <HomeLogoIcon className={`${!open && "scale-0 hidden"}`} /> */}
-            <p className="text-[#BFBFBF] mx-2 hidden lg:block text-xs md:text-lg">MAIN MENU</p>
+            {/* <p className="hidden sm:block text-[#BFBFBF] mx-2 lg:block text-xs md:text-lg">MAIN MENU</p> */}
           </div>
           {routeList.map((item, index) => {
             const activeItem = location.pathname.includes(item.route);
@@ -153,7 +153,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
             )
           })}
 
-          <p className="text-[#BFBFBF] mx-2 hidden lg:block text-xs md:text-lg">ACCOUNT</p>
+          {/* <p className="hidden sm:block text-[#BFBFBF] mx-2 hidden lg:block text-xs md:text-lg">ACCOUNT</p> */}
           <div className="flex items-center justify-center !text-[#535768] my-4 cursor-pointer" onClick={logout}>
               <img src="/signnout.svg" alt="singout" />
               <div className={`${!open && "hidden"} text-sm`}> Logout</div>

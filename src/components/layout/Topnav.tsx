@@ -4,7 +4,14 @@ const Topnav = () => {
     return (
         <>
             <div className="flex items-center justify-between border-b border-[rgba(0, 0, 0, 0.20)] bg-white z-50 px-2 gap-x-3">
-                <div></div>
+                <div className="flex items-center justify-center gap-3">
+                    <div className="cursor-pointer">
+                        <img src="/arrow-right.svg" alt="" />
+                    </div>
+                    <div className="cursor-pointer">
+                        <img src="/arrow-left.svg" alt="" />
+                    </div>
+                </div>
 
                 <div className="topnav__search">
                     <img src="search.svg" alt="" />
