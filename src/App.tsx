@@ -5,7 +5,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import './App.css'
 import { Layout } from './components';
 import Context from './components/context';
-import { CreateAccount, Employees, Dashboard, Home, MyTeam, Login } from './pages';
+import { CreateAccount, Employees, Dashboard, Home, MyTeam, Login, ForgotPassword, Otp, PasswordReset } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 
 const App: React.FC = () => {
@@ -37,7 +37,9 @@ const App: React.FC = () => {
                 <Route path="/" element={<CreateAccount />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/home" element={<Home />} />
-                  {/* <Route path="/reset" element={<ResetPassword />} /> */}
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                  <Route path="/otp" element={<Otp />} />
+                  <Route path="/reset" element={<PasswordReset />} />
               </Route>
 
               {/* Protected Roues */}
