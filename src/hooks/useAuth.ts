@@ -14,5 +14,5 @@ type State = {
 const useAuth = create<State>(() => ({
     token,
 }));
-
+                        
 export default useAuth;
