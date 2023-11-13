@@ -12,7 +12,7 @@ type State = {
 }
 // const useAuth = create<State>((set, get) => ({
 const useAuth = create<State>(() => ({
-    token,
+    token,   
 }));
                         
 export default useAuth;

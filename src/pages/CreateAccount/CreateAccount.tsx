@@ -11,8 +11,8 @@ const CreateAccount = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
 
   return (
-    <div className="grid md:grid-cols-5 h-screen">
-      <div className="col-span-2 hidden md:block p-10 place-content-center">
+    <div className="grid md:grid-cols-2 h-screen">
+      <div className="col-span- hidden md:block p-10 place-content-center">
         {/* <Stepper {...{ currentStep, setCurrentStep }} /> */}
         <div className="relative col-span-2 place-content-center p-0 bg-[url(/signupimg.svg)] bg-contain bg-no-repeat w-full text-white h-full">
           <img src="/reg-logo.svg" className="top-[20%] left-[10%] pt-10 pl-8" alt="" />
@@ -41,9 +41,9 @@ const CreateAccount = () => {
         </div>
       </div>
 
-      <div className="col-span-3 flex-col flex-1 p-3 flex md:justify-between relative">
+      <div className="col-span- flex-col flex-1 p-3 flex md:justify-between relative">
         <div className="text-black flex items-center justify-end">bars</div>
-        <div>
+        <div className="md:mx-28">
           {currentStep === 1 && <CreateAccountForm {...{ setCurrentStep }} />}
           {currentStep === 2 && <CreateAccountForm2 {...{ setCurrentStep }} />}
           {currentStep === 3 && <CreateAccountForm3 {...{ setCurrentStep }} />}
