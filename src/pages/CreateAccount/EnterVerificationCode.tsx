@@ -129,6 +129,7 @@ const EnterVerificationCode = ({ setCurrentStep }: any) => {
                 maskClosable={false}
                 closable={false}
                 afterClose={() => setModalOpen(false)}
+                width={400}
             >
                 {/* <Modal show={stateNewTask} closeModal={setModalOpen}> */}
 
@@ -159,3 +160,4 @@ const EnterVerificationCode = ({ setCurrentStep }: any) => {
 }
 
 export default EnterVerificationCode
+// https://www.youtube.com/watch?v=kzp3hXDFB64
