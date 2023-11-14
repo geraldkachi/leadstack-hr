@@ -10,7 +10,7 @@ interface Props {
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
 
-  const tabsRef = useRef([]);
+  const tabsRef = useRef<any[]>([]);
 
   useEffect(() => {
     function setTabPosition() {

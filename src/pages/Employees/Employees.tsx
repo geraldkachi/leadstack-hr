@@ -6,6 +6,8 @@ import { useState } from "react";
 import { Button, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import type { TableRowSelection } from 'antd/es/table/interface';
+import AllEmployees from "./AllEmployees";
+import PendingApproval from "./PendingApproval";
 interface DataType {
   key: React.Key;
   name: string;
@@ -257,7 +259,7 @@ const Employees = () => {
             label: 'All Employees',
             content: (
               <>
-              Employees
+              <AllEmployees />
               </>
             )
           },
@@ -265,7 +267,7 @@ const Employees = () => {
             label: 'Pending Approval',
             content: (
               <>
-              Pending Approval
+              <PendingApproval />
               </>
             )
           }
