@@ -28,7 +28,7 @@ const EnterVerificationCode = ({ setCurrentStep }: any) => {
         setAccountVerifying(true)
         setAccountVerified(false)
         // navigate("/login")
-        setModalOpen(true)
+        setModalOpen(true) 
 
         const timeOutPromise = new Promise(resolve => {
             setTimeout(resolve, 2000);

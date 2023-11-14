@@ -1,78 +1,16 @@
 import './styles.css'
 import { Button, Table } from "../../components"
 import Cards from './Cards'
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 import { Modal } from 'antd'
-// import Graph from './Graph'
-
-const renderOrderHead = (item: ReactNode, index: number) => (
-  <th className="hidden" key={index}>{item}</th>
-)
-
-const renderOrderBody = (item: { id: string, user: string, price: string, date: string }, index: number) => (
-  <tr key={index}>
-    <td>{item.id}</td>
-    <td>{item.user}</td>
-    <td>{item.price}</td>
-    <td>{item.date}</td>
-    <td>
-      {/* <Badge type={orderStatus[item.status]} content={item.status}/> */}
-    </td>
-  </tr>
-)
-
-
-const latestOrders = {
-  header: [
-    "order id",
-    "user",
-    "total price",
-    "date",
-    "status"
-  ],
-  body: [
-    {
-      id: "#OD1711",
-      user: "john doe",
-      date: "17 Jun 2021",
-      price: "$900",
-      status: "shipping"
-    },
-    {
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid"
-    },
-    {
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "pending"
-    },
-    {
-      id: "#OD1712",
-      user: "frank iva",
-      date: "1 Jun 2021",
-      price: "$400",
-      status: "paid"
-    },
-    {
-      id: "#OD1713",
-      user: "anthony baker",
-      date: "27 Jun 2021",
-      price: "$200",
-      status: "refund"
-    }
-  ]
-}
-
 
 const Dashboard = () => {
   const [modalOpen, setModalOpen] = useState(false)
-
+  const pathList = [
+    { route: "/", title: "Customize Experience" },
+    { route: "/", title: "Registration Info" },
+    { route: "/", title: "Company Domain" },
+  ];
   return (
     <div className="h-full pt-3">
       <div className="flex items-center justify-between">
@@ -117,9 +55,6 @@ const Dashboard = () => {
         <Button className='flex items-center  rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" />
       </div>
 
-
-
-
       <Modal
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
@@ -130,21 +65,45 @@ const Dashboard = () => {
         afterClose={() => setModalOpen(false)}
         width={1127}
       >
+        <div className='grid grid-cols-5 items-center justify-  p-8 w-full'>
+          <div className='col-span-1 border items-start'>
+            <div>
+              <div className="text-base md:text-lg] whitespace-nowrap">Complete Onboarding</div>
+              <div className="text-[#98A1B0] text-[13px] ">Verify your account and setup the space</div>
+            </div>
 
-        <div className='grid grid-cols-1 items-center justify- text-center p-8 w-full'>
-          <div className='flex items-center justify-center'>
+            {pathList.map((item, index) => {
+            const activeItem = location.pathname.includes(item.route);
+            const iconArr = [
+              ''
+              // <DashboardIcon key={1} index={activeItem} />,
+              // <EmployeesIcon key={2} index={activeItem} />,
+              // <MyTeamIcon key={3} index={activeItem} />,
+            ];
+            return (
+              <div
+                
+                className={`${activeItem && " !text-[#0D1227]"
+                  }
+                  ${!open && 'text-center flex items-center justify-center'}
+                  flex items-center gap-2  px-6 py-3 cursor-pointer mb-1 text-sm
+                  !text-[#535768] w-full`}
+              >
+                <div key={index}> {iconArr[index]}</div>
 
-            <img src="/success-check.svg" alt="" />
+                <span
+                  className={`${!open && "hidden"} ${"width" < "1200" ? "" : ""
+                    } origin-left ease-in-out duration-500 whitespace-nowrap`}
+                >
+                  {item.title}
+                </span>
+              </div>
+            );
+          })}
+
           </div>
 
-          <div>
-            <p className='text-xl text-[#0D1227] mt-3'>Welcome on board</p>
-
-            <p className='text-base text-[#535768] mt-1'>Kindly proceed to your dashboard</p>
-          </div>
-
-
-          <div className="flex flex-row items-center justify-between mt-10 gap-28">
+          <div className="col-span-4">
             <div></div>
             {/* <Button className='!px-8' title='Proceed' onClick={() => navigate('/login')} /> */}
           </div>
