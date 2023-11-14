@@ -36,7 +36,7 @@ interface Props {
               <button
                 key={idx}
                 ref={(el) => (tabsRef.current[idx] = el)}
-                className={`${activeTabIndex === idx && ""} pt-2 pb-3 px-4 text-[#1D8EE6] text-sm leading-[19.6px]`}
+                className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-4 text-sm leading-[19.6px]`}
                 onClick={() => setActiveTabIndex(idx)}
               >
                 {tab.label}

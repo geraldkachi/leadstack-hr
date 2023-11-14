@@ -1,7 +1,8 @@
 import './styles.css'
 import { Button, Table } from "../../components"
 import Cards from './Cards'
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
+import { Modal } from 'antd'
 // import Graph from './Graph'
 
 const renderOrderHead = (item: ReactNode, index: number) => (
@@ -70,6 +71,8 @@ const latestOrders = {
 
 
 const Dashboard = () => {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <div className="h-full pt-3">
       <div className="flex items-center justify-between">
@@ -77,10 +80,12 @@ const Dashboard = () => {
           <div className="text-lg md:text-2xl">Dashboard</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
         </div>
-        <div className='flex items-center gap-2 p-3 bg-[#EEF5FC] rounded-lg md:mr-20 whitespace-nowrap'>
+        {/* <div className='flex items-center gap-2 p-3 bg-[#EEF5FC] rounded-lg md:mr-20 whitespace-nowrap'>
           <img src="/plusdash.svg" alt="" />
           <p className='text-sm md:text-base text-[#ABBED1]'>Add Employee</p>
-        </div>
+
+        </div> */}
+        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" onClick={() => setModalOpen(true)} />
       </div>
 
       <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] md:mr-56">
@@ -112,16 +117,40 @@ const Dashboard = () => {
         <Button className='flex items-center  rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" />
       </div>
 
-      {/* <Graph / */}
 
-      {/* <div className="card__body mb-20">
-        <Table
-          headData={latestOrders.header}
-          renderHead={(item: any, index: number) => renderOrderHead(item, index)}
-          bodyData={latestOrders.body}
-          renderBody={(item: any, index: number) => renderOrderBody(item, index)}
-        />
-      </div> */}
+
+
+      <Modal
+        open={modalOpen}
+        onCancel={() => setModalOpen(false)}
+        footer={null}
+        centered
+        maskClosable={false}
+        closable
+        afterClose={() => setModalOpen(false)}
+        width={1127}
+      >
+
+        <div className='grid grid-cols-1 items-center justify- text-center p-8 w-full'>
+          <div className='flex items-center justify-center'>
+
+            <img src="/success-check.svg" alt="" />
+          </div>
+
+          <div>
+            <p className='text-xl text-[#0D1227] mt-3'>Welcome on board</p>
+
+            <p className='text-base text-[#535768] mt-1'>Kindly proceed to your dashboard</p>
+          </div>
+
+
+          <div className="flex flex-row items-center justify-between mt-10 gap-28">
+            <div></div>
+            {/* <Button className='!px-8' title='Proceed' onClick={() => navigate('/login')} /> */}
+          </div>
+        </div>
+      </Modal>
+
     </div>
   )
 }
