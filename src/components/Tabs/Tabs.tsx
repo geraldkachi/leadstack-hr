@@ -30,13 +30,13 @@ interface Props {
   return (
     <div>
       <div className="relative">
-        <div className="flex space-x-3 border-b">
+        <div className="flex space-x- border-b">
           {data.map((tab, idx) => {
             return (
               <button
                 key={idx}
                 ref={(el) => (tabsRef.current[idx] = el)}
-                className={`${activeTabIndex === idx && ""} pt-2 pb-3`}
+                className={`${activeTabIndex === idx && ""} pt-2 pb-3 px-4 text-[#1D8EE6] text-sm leading-[19.6px]`}
                 onClick={() => setActiveTabIndex(idx)}
               >
                 {tab.label}
@@ -45,7 +45,7 @@ interface Props {
           })}
         </div>
         <span
-          className="absolute bottom-0 block h-1 bg-teal-500 transition-all duration-300"
+          className="absolute bottom-0 block h-1 bg-[#1D8EE6] transition-all duration-300"
           style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
         />
       </div>
