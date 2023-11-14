@@ -58,19 +58,19 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
     { route: "/my-team", title: "My Team" },
     { route: "/hiring", title: "Recruitment & Hiring" },
     { route: "/time-management", title: "Time Management" },
-    { route: "/Leave Management", title: "Leave Management" },
-    { route: "/Training", title: "Training" },
-    { route: "/Documents", title: "Documents" },
-    { route: "/Performance", title: "Performance" },
-    { route: "/Reports & Analytics", title: "Reports & Analytics" },
-    { route: "/Finance", title: "Finance" },
-    { route: "/Self Service", title: "Self Service" },
+    { route: "/leave-management", title: "Leave Management" },
+    { route: "/training", title: "Training" },
+    { route: "/documents", title: "Documents" },
+    { route: "/performance", title: "Performance" },
+    { route: "/reports-analytics", title: "Reports & Analytics" },
+    { route: "/finance", title: "Finance" },
+    { route: "/self-service", title: "Self Service" },
   ];
 
   return (
     <section className={`sidebar hidden sm:block bg-white overflow-y-scroll`}>
       <div
-        className={` ${open ? "sm:w-60 ease-in-out duration-500" : "w- ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
+        className={` ${open ? "sm:w-60 ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
       >
         <div className="px-2 py-5">
           <div className={`${open ? "justify-between" : 'justify-center'} flex items-center`}>
@@ -119,7 +119,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
 
                 <span
                   className={`${!open && "hidden"} ${width < 1200 ? "" : ""
-                    } origin-left ease-in-out duration-500`}
+                    } origin-left ease-in-out duration-500 whitespace-nowrap`}
                 >
                   {item.title}
                 </span>
@@ -160,9 +160,9 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           })} */}
 
 
-          <div className="w-full px-2">
+          {/* <div className="w-ful"> */}
             <p className={`${!open ? "hidden" : "sm:block text-[#BFBFBF] mx-2 lg:block text-xs  text-start md:text-lg"}`}>ACCOUNT</p>
-            <div className={`${"bg-[#] rounded-xl !text-[#535768] mb-6"}
+            <div className={`${"bg-[#] rounded-xl !text-[#535768] mb-6 px-2"}
                   ${!open && 'px-2 text-center flex items-center justify-center'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-sm
                   !text-[rgb(83,87,104)] w-full`}
@@ -171,7 +171,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
 
               <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
             </div>
-          </div>
+          {/* </div> */}
         </div>
 
 
