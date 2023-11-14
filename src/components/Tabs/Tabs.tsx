@@ -1,19 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-
-const tabsData = [
-  {
-    label: 'This Text',
-    content:
-      'Ut irure mollit nulla eiusmod excepteur laboris elit sit anim magna tempor excepteur labore nulla.',
-  },
-  {
-    label: 'That Text',
-    content:
-      'Fugiat dolor et quis in incididunt aute. Ullamco voluptate consectetur dolor officia sunt est dolor sint.',
-  },
-];
-
-export function Tabs() {
+interface Props {
+    data: {
+        label: string
+        content: JSX.Element
+    }[]
+}
+ const Tabs = ({data}: Props) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
@@ -33,16 +25,18 @@ export function Tabs() {
     return () => window.removeEventListener('resize', setTabPosition);
   }, [activeTabIndex]);
 
+  const Render = () => data[activeTabIndex].content
+
   return (
     <div>
       <div className="relative">
         <div className="flex space-x-3 border-b">
-          {tabsData.map((tab, idx) => {
+          {data.map((tab, idx) => {
             return (
               <button
                 key={idx}
                 ref={(el) => (tabsRef.current[idx] = el)}
-                className="pt-2 pb-3"
+                className={`${activeTabIndex === idx && ""} pt-2 pb-3`}
                 onClick={() => setActiveTabIndex(idx)}
               >
                 {tab.label}
@@ -56,8 +50,9 @@ export function Tabs() {
         />
       </div>
       <div className="py-4">
-        <p>{tabsData[activeTabIndex].content}</p>
+        <Render />
       </div>
     </div>
   );
 }
+export default Tabs

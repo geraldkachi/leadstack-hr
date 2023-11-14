@@ -5,7 +5,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import './App.css'
 import { Layout } from './components';
 import Context from './components/context';
-import { CreateAccount, Employees, Dashboard, Home, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService } from './pages';
+import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 
 const App: React.FC = () => {
@@ -36,7 +36,6 @@ const App: React.FC = () => {
               <Route element={<UnProtectedRoutes />}>
                 <Route path="/" element={<CreateAccount />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/home" element={<Home />} />
                   <Route path="/forgot-password" element={<ForgotPassword />} />
                   <Route path="/otp" element={<Otp />} />
                   <Route path="/reset" element={<PasswordReset />} />
@@ -58,7 +57,6 @@ const App: React.FC = () => {
                   <Route path="/finance" element={<Finance />} />
                   <Route path="/self-service" element={<SelfService />} />
 
-                  <Route path="/personal-banking" element={<Home />} />
                 </Route>
               </Route>
               {/* 404 page */}

@@ -1,4 +1,3 @@
-export { default as Home } from "./home/Home"
 export { default as MyTeam } from "./MyTeam/MyTeam"
 export { default as Employees } from "./Employees/Employees"
 export { default as Dashboard } from "./Dashboard/Dashboard"

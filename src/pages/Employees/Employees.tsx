@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import { AlignType } from "rc-table/lib/interface";
 import { useNavigate } from "react-router-dom";
-import { Button as GButton } from "../../components"
+import { Button as GButton, Tabs } from "../../components"
 import { useState } from "react";
 import { Button, Table } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
@@ -13,34 +13,34 @@ interface DataType {
   address: string;
 }
 
-export const  navItems = [
+export const navItems = [
   {
-      name: 'Contact Info',
-      step: 0,
+    name: 'Contact Info',
+    step: 0,
   },
   {
-      name: 'Emergency Contact',
-      step: 1,
+    name: 'Emergency Contact',
+    step: 1,
   },
   {
-      name: 'Next of Kin',
-      step: 2,
+    name: 'Next of Kin',
+    step: 2,
   },
   {
-      name: 'Education',
-      step: 3,
+    name: 'Education',
+    step: 3,
   },
   {
-      name: 'Job History',
-      step: 4,
+    name: 'Job History',
+    step: 4,
   },
   {
-      name: 'Certifications',
-      step: 5,
+    name: 'Certifications',
+    step: 5,
   },
   {
-      name: 'Work',
-      step: 6,
+    name: 'Work',
+    step: 6,
   },
 ]
 interface DataType {
@@ -65,7 +65,7 @@ const Employees = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
 
-   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
+  const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     console.log('selectedRowKeys changed: ', newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
@@ -140,8 +140,8 @@ const Employees = () => {
           onClick={() => navigate(`/history/${val?.id}`)}
           className="cursor-pointer capitalize whitespace-nowrap"
         >{`${val?.createdAt
-            ? format(new Date(val?.createdAt), "dd MMMM yyyy, hh:mm a")
-            : "--/--/----"
+          ? format(new Date(val?.createdAt), "dd MMMM yyyy, hh:mm a")
+          : "--/--/----"
           }`}</span>
       ),
       width: "10%",
@@ -211,18 +211,18 @@ const Employees = () => {
   ];
 
   // rowSelection object indicates the need for row selection
-// const rowSelection = {
-//   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
-//     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-//   },
-//   getCheckboxProps: (record: DataType) => ({
-//     disabled: record.name === 'Disabled User', // Column configuration not to be checked
-//     name: record.name,
-//   }),
-// };
+  // const rowSelection = {
+  //   onChange: (selectedRowKeys: React.Key[], selectedRows: DataType[]) => {
+  //     console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+  //   },
+  //   getCheckboxProps: (record: DataType) => ({
+  //     disabled: record.name === 'Disabled User', // Column configuration not to be checked
+  //     name: record.name,
+  //   }),
+  // };
 
   const handleGoToStep = (step: any) => {
-      setActiveProfile(step)
+    setActiveProfile(step)
   }
 
   return (
@@ -236,25 +236,45 @@ const Employees = () => {
         <GButton className='flex items-center  rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" />
       </div>
 
-      <div className='nav'>
-                    <ul className='nav__list'>
-                        {navItems.map((item) => {
-                            return (
-                                <li
-                                    key={item.name}
-                                    className={activeProfile === item.step ? 'nav__active' : 'nav__item'}
-                                    onClick={() => handleGoToStep(item.step)}
-                                >
-                                    {item.name}
-                                </li>
-                            )
-                        })}
-                    </ul>
-      </div>
+      {/* <div className='nav'>
+        <ul className='nav__list'>
+          {navItems.map((item) => {
+            return (
+              <li
+                key={item.name}
+                className={activeProfile === item.step ? 'nav__active' : 'nav__item'}
+                onClick={() => handleGoToStep(item.step)}
+              >
+                {item.name}
+              </li>
+            )
+          })}
+        </ul>
+      </div> */}
+      <Tabs
+        data={[
+          {
+            label: 'All Employees',
+            content: (
+              <>
+              Employees
+              </>
+            )
+          },
+          {
+            label: 'Pending Approval',
+            content: (
+              <>
+              Pending Approval
+              </>
+            )
+          }
+        ]}
+      />
 
 
       <div className="mt-10 mb-20 overflow-x-auto">
-     
+
 
         <Table
           size="small"
@@ -271,7 +291,7 @@ const Employees = () => {
           //   current: page,
           //   total: data?.data?.count,
           // }}
-          {...{rowSelection}}
+          {...{ rowSelection }}
           style={{ marginTop: "20px" }}
         />
       </div>

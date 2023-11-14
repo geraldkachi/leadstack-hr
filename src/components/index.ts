@@ -7,5 +7,6 @@ export { default as Topnav } from "./layout/Topnav";
 export { default as Table } from "./tabe/Table";
 export { default as Accordion } from "./Accordion/Accordion";
 export { default as Input } from "./input/Input";
+export { default as Tabs } from "./Tabs/Tabs";
 // export { default as NewTask } from "./otherComponents/NewTask";
 // export { default as NewStaff } from "./otherComponents/NewStaff";
