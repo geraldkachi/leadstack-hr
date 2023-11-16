@@ -1,6 +1,6 @@
 import AllEmployees from "./AllEmployees";
 import PendingApproval from "./PendingApproval";
-import { Button as GButton, Tabs } from "../../components"
+import { Button as Button, Tabs } from "../../components"
 
 const Employees = () => {
 
@@ -12,7 +12,7 @@ const Employees = () => {
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
         </div>
 
-        <GButton className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" />
+        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" />
       </div>
 
       <Tabs

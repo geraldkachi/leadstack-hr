@@ -1,14 +1,17 @@
 // import { AdminIcon } from '../../assets'
 
+import { useNavigate } from "react-router-dom"
+
 const Topnav = () => {
+    const navigate = useNavigate()
     return (
         <>
             <div className="flex items-center justify-between border-b border-[rgba(0, 0, 0, 0.20)] bg-white z-50 px-2 gap-x-3">
                 <div className="flex items-center justify-center gap-3">
-                    <div className="cursor-pointer">
+                    <div className="cursor-pointer" onClick={() => navigate(-1)}>
                         <img src="/arrow-right.svg" alt="" />
                     </div>
-                    <div className="cursor-pointer">
+                    <div className="cursor-pointer" onClick={() => navigate(+1)}>
                         <img src="/arrow-left.svg" alt="" />
                     </div>
                 </div>
