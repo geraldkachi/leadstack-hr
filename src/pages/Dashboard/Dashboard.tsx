@@ -92,8 +92,7 @@ const Dashboard = () => {
                 <div key={index}> {iconArr[index]}</div>
 
                 <span
-                  className={`${!open && "hidden"} ${"width" < "1200" ? "" : ""
-                    } origin-left ease-in-out duration-500 whitespace-nowrap`}
+                  className={`origin-left ease-in-out duration-500 whitespace-nowrap`}
                 >
                   {item.title}
                 </span>

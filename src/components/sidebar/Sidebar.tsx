@@ -87,7 +87,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           >
             {/* <MenuIcon onClick={() => setOpen(!open)} className={`ml-4 cursor-pointer duration-500 ${open && "rotate-[360deg]"}`} />
                         <HomeLogoIcon className={`${!open && "scale-0 hidden"}`} /> */}
-            <p className={`${!open ? "hidden" : "sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>MAIN MENU</p>
+            <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>MAIN MENU</p>
           </div>
           {routeList.map((item, index) => {
             const activeItem = location.pathname.includes(item.route);
@@ -129,7 +129,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-black">
-          {/* {faqArr.map((item, index) => {
+          {faqArr.map((item, index) => {
             const activeItem = location.pathname.includes(item?.route);
 
             const iconArr = [
@@ -157,10 +157,8 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
                 </Accordion>
               </>
             )
-          })} */}
+          })}
 
-
-          {/* <div className="w-ful"> */}
             <p className={`${!open ? "hidden" : "sm:block text-[#BFBFBF] mx-2 lg:block text-xs  text-start md:text-lg"}`}>ACCOUNT</p>
             <div className={`${"bg-[#] rounded-xl !text-[#535768] mb-6 px-2"}
                   ${!open && 'px-2 text-center flex items-center justify-center'}
@@ -171,9 +169,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
 
               <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
             </div>
-          {/* </div> */}
         </div>
-
 
       </div>
     </section>
