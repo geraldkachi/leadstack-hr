@@ -28,27 +28,13 @@ const Hiring = () => {
             label: 'Active',
             content: (
               <>
-                <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow ">
-                  <div>
-                    <img src="/cardi.svg" alt="" />
-                  </div>
-
-                  <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                  <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Read more
-                    <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                  </a>
-                </div>
-
-
-                <a href="#" className="flex flex-col items-center p-2 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-sm ">
-                  <img className="object-cover w-full" src="/cardi.svg" alt="" />
-                  <div className="flex flex-col justify-between p-4 leading-normal">
+                <a href="#" className="flex flex-col gap-2 items p-2 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-md">
+                  <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/cardi.svg" alt="" />
+                  <div className="flex flex-col  p-4 leading-normal">
                     <h5 className="mb-2 text-base font-bold tracking-tight text-gray-900">Full Stack Developer...</h5>
-                    <div className="flex items-center justify-between">
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">20 Applicants</p>
+                    <div className="flex items-center justify-between whitespace-nowrap">
+                      <p className="mb-3 font-normal text-gray-700 text-sm">20 Applicants</p>
+                      <p className="mb-3 font-normal text-gray-700 text-sm">Expiry Date: Oct 31, 2023</p>
                     </div>
                   </div>
                 </a>
