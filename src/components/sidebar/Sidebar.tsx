@@ -103,7 +103,6 @@ const Sidebar = ({ open }: SidebarProps) => {
             className={`${open && "flex items-center w-full ease-in-out duration-500"
               } inline-flex items-center pb-3 ease-in-out duration-500`}
           >
-
             <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>MAIN MENU</p>
           </div>
           {routeList.map((item, index) => {

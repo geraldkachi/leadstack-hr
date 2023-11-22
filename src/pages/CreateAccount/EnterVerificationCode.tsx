@@ -32,7 +32,6 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
         // navigate("/login")
         setModalOpen(true) 
 
-
         const timeOutPromise = new Promise(resolve => {
             setTimeout(resolve, 2000);
         })
