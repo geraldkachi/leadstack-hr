@@ -28,9 +28,10 @@ const Dashboard = () => {
           <div className="text-lg md:text-2xl">Dashboard</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
         </div>
-       
-        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" onClick={() => setState(true)} />
-        <EmployeePop state={statePop} setState={setStatePop} />
+        <div onClick={() => null}>
+          <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" onClick={() => setStatePop(true)} />
+          <EmployeePop state={statePop} setState={setStatePop} />
+        </div>
       </div>
 
 
@@ -88,13 +89,13 @@ const Dashboard = () => {
             {pathList.map((item, index) => {
               const activeItem = state === (item.route);
               const iconArr = [
-                <IconOne key={1} index={activeItem}  />,
-                <IconTwo key={2} index={activeItem}  />,
-                <IconThree key={3} index={activeItem}  />
+                <IconOne key={1} index={activeItem} />,
+                <IconTwo key={2} index={activeItem} />,
+                <IconThree key={3} index={activeItem} />
               ];
               return (
                 <div
-                  className={`${activeItem ? " !text-[#0D1227]" :"text-[#535768]" }
+                  className={`${activeItem ? " !text-[#0D1227]" : "text-[#535768]"}
                   ${!open && 'text-center flex items-center justify-center'}
                   flex items-center gap-2  px-6 py-3 cursor-pointer mb-1 text-sm
                    w-full`}
