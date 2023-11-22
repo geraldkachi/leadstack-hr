@@ -68,7 +68,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
   ];
 
   return (
-    <section className={`sidebar hidden sm:block bg-white overflow-y-scroll`}>
+    <section className={`sidebar hidden sm:block bg-white overflow-y-scroll no-scrollbar`}>
       <div
         className={` ${open ? "sm:w-60 ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
       >
@@ -80,7 +80,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           </div>
         </div>
 
-        <div className={`flex flex-col justify-center items-center px-2 pt-2 ${open ? "ease-in-out duration-500" : "ease-in-out duration-500"}`}>
+        <div className={`flex flex-col justify-center items-center px-0 md:px-4 pt-2 ${open ? "ease-in-out duration-500" : "ease-in-out duration-500"}`}>
           <div
             className={`${open && "flex items-center w-full ease-in-out duration-500"
               } inline-flex items-center pb-3 ease-in-out duration-500`}
@@ -153,7 +153,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
                     key={index}
 
                     className={`${activeItem && "bg-[#] rounded-[4px]"} ${activeItem ? "text-[#716C81]" : "text-[#716C81]"
-                      } flex items-center cursor-pointer text-base gap-4`}
+                      } flex items-center cursor-pointer text-base gap-4 px-4 `}
                   // className="flex items-center gap-4 js"
                   >
                     <span>{iconArr[index]}</span>

@@ -1,8 +1,13 @@
 import AllEmployees from "./AllEmployees";
 import PendingApproval from "./PendingApproval";
-import { Button as Button, Tabs } from "../../components"
+import { Button as Button, EmployeePop, Tabs } from "../../components"
+import { ClickOutside } from "../../hooks/useClickOutside";
+import { useState } from "react";
+import { useWindowDimensions } from "../../hooks";
 
 const Employees = () => {
+  const [state, setState] = useState(false);
+  const { width } = useWindowDimensions()
 
   return (
     <div className="h-full pt-3 md:mr-20">
@@ -12,7 +17,11 @@ const Employees = () => {
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
         </div>
 
-        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" />
+        <div onClick={() => setState(true)}>
+
+          <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" onClick={() => setState(true)} />
+          <EmployeePop {...{state, setState}} />
+        </div>
       </div>
 
       <Tabs
@@ -21,7 +30,7 @@ const Employees = () => {
             label: 'All Employees',
             content: (
               <>
-              <AllEmployees />
+                <AllEmployees />
               </>
             )
           },
@@ -29,7 +38,7 @@ const Employees = () => {
             label: 'Pending Approval',
             content: (
               <>
-              <PendingApproval />
+                <PendingApproval />
               </>
             )
           }

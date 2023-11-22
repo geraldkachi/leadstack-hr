@@ -31,7 +31,7 @@ function Accordion({
 
     return (
         <div
-            className={`relative bg-transparent max-w-4xl w-full mx-auto mb-4  ${openAccordion ? activeClass : ""
+            className={`relative bg-transparent max-w-4xl w-full mx-auto mb-4 rounded-xl  ${openAccordion ? activeClass : ""
                 } ${otherClasses || ""}`}
         >
             {showHeader && (

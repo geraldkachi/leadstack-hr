@@ -1,15 +1,25 @@
-import { Suspense, useRef, } from 'react'
-import { QueryClient, QueryClientProvider } from "react-query";
+import { Suspense, useEffect, useRef, useState, } from 'react'
 import { Navigate, Route, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import './App.css'
-import { Layout } from './components';
 import Context from './components/context';
-import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService } from './pages';
+import { Layout, Loading } from './components';
+import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 
 const App: React.FC = () => {
   // const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate an API call
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.background === 'white';
+    }, 3000);
+  }, []);
 
   const ref = useRef<QueryClient>();
   const queryClient = new QueryClient();
@@ -26,19 +36,23 @@ const App: React.FC = () => {
   // }
   ref.current = queryClient;
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <>
       <QueryClientProvider client={ref.current}>
         {/* <ToastContainer /> */}
         <Context>
-          <Suspense fallback={"Loading"}>
+          <Suspense fallback={<>{isLoading && <Loading />}</>}>
             <Routes>
               <Route element={<UnProtectedRoutes />}>
                 <Route path="/" element={<CreateAccount />} />
                 <Route path="/login" element={<Login />} />
-                  <Route path="/forgot-password" element={<ForgotPassword />} />
-                  <Route path="/otp" element={<Otp />} />
-                  <Route path="/reset" element={<PasswordReset />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/otp" element={<Otp />} />
+                <Route path="/reset" element={<PasswordReset />} />
               </Route>
 
               {/* Protected Roues */}
@@ -46,6 +60,7 @@ const App: React.FC = () => {
                 <Route element={<Layout />}>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/employees" element={<Employees />} />
+                  <Route path="/employees/add-employees" element={<AddEmployees />} />
                   <Route path="/my-team" element={<MyTeam />} />
                   <Route path="/hiring" element={<Hiring />} />
                   <Route path="/time-management" element={<TimeManagement />} />

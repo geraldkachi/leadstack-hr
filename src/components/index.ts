@@ -8,5 +8,8 @@ export { default as Table } from "./tabe/Table";
 export { default as Accordion } from "./Accordion/Accordion";
 export { default as Input } from "./input/Input";
 export { default as Tabs } from "./Tabs/Tabs";
+export { default as Loading } from "./Loading/Loading";
+export { default as EmployeePop } from "./otherComponents/EmployeePop";
+export { default as Breadcrumbs } from "./Breadcrumbs/Breadcrumbs";
 // export { default as NewTask } from "./otherComponents/NewTask";
 // export { default as NewStaff } from "./otherComponents/NewStaff";

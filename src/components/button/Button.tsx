@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
 
 const Spinner = () =>
     <div className=" flex items-center justify-center px-10 py-[2px]">
@@ -15,6 +15,7 @@ type Props = DetailedHTMLProps<
     variant?: 'primary' | 'secondary' | 'outline' | 'link' | 'secondary-outline';
     prefixIcon?: React.ReactNode;
     suffixIcon?: React.ReactNode;
+    children?: ReactNode
 };
 
 const variants = {
@@ -35,6 +36,7 @@ const sizes = {
 
 
 const Button = ({
+    children,
     loading,
     disabled,
     title,
@@ -52,7 +54,7 @@ const Button = ({
             disabled={disabled || loading}
             className={`bg-[#3699FF] text-base py-2 md:py-2 px-2 md:px-4 rounded-[4px] disabled:bg-grey border disabled:text-gray-50 whitespace-nowrap ${variants[variant]} ${sizes[size]} ${className} ${loading && 'py-3 md:py-4 px-8 md:px-12 bg-[#EEF5FC] text-[#ABBED1]'}`}>
             {prefixIcon && (<> {prefixIcon}&nbsp;&nbsp;&nbsp;</>)}
-            {loading ? <Spinner /> : <>{title}</>}
+            {loading ? <Spinner /> : <>{title || children}</>}
             {suffixIcon && (<> &nbsp;&nbsp;&nbsp;{suffixIcon}</>)}
         </button>
     )

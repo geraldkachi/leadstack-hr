@@ -163,7 +163,7 @@ const AllEmployees = () => {
         },
     ];
     return (
-        <div className="mt- mb-20 overflow-x-auto">
+        <div className="mt-5 mb-20 overflow-x-auto">
 
             <Table
                 size="small"
@@ -181,7 +181,7 @@ const AllEmployees = () => {
                 //   total: data?.data?.count,
                 // }}
                 {...{ rowSelection }}
-                style={{ marginTop: "20px" }}
+                // style={{ marginTop: "20px" }}
             />
         </div>
     )
