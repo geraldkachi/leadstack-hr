@@ -81,7 +81,7 @@ const AddEmployees = () => {
 
 
             </div>
-            <div className="mt-10 bg-white p-2 rounded-lg">
+            <div className="mt-10 bg-white p-2 rounded-lg pb-36">
 
                 <Tabs data={data} {...{ activeTab }} />
             </div>

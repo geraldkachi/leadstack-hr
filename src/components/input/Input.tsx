@@ -157,17 +157,17 @@
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
 type Props = {
-    label?: string;
-    tooltip?: string;
-    helptext?: string;
-    inputClassName?: string;
-    LeadingIcon?: () => JSX.Element;
-    TrailingIcon?: () => JSX.Element;
-    innerRef?: any;
-    inputType?: 'default' | 'success' | 'warning' | 'error';
-    inputClass?: string;
-    labelClass?: string;
-    labelicon?: boolean;
+	label?: string;
+	tooltip?: string;
+	helptext?: string;
+	inputClassName?: string;
+	LeadingIcon?: () => JSX.Element;
+	TrailingIcon?: () => JSX.Element;
+	innerRef?: any;
+	inputType?: 'default' | 'success' | 'warning' | 'error';
+	inputClass?: string;
+	labelClass?: string;
+	labelicon?: boolean;
 };
 
 export default function Input(
@@ -226,11 +226,10 @@ export default function Input(
 				</label>
 			)}
 			<div
-                className={`bg-white flex items-center w-full rounded-[4px] overflow-hidden border border-[#E2E4E8]focus-within:border-bluetiful disabled:bg-grey read-only:bg-grey ${inputClassName}
+				className={`bg-white flex items-center w-full rounded-[4px] overflow-hidden border border-[#E2E4E8]focus-within:border-bluetiful disabled:bg-grey read-only:bg-grey ${inputClassName}
                 border-${col()}
-                ${
-					(disabled || readOnly) && 'bg-grey border-none'
-				}`}
+                ${(disabled || readOnly) && 'bg-grey border-none'
+					}`}
 			>
 				{LeadingIcon && (
 					<span className="mx-2">
@@ -241,7 +240,7 @@ export default function Input(
 					// {...innerRef}
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
-		className="w-full border border-[#E2E4E8] p-[8px] rounded-[4px] focus:outline-[#3699FF] placeholder:text-base"
+					className="w-full border border-[#E2E4E8] p-[8px] rounded-[4px] focus:outline-[#3699FF] placeholder:text-base"
 				/>
 				{TrailingIcon && (
 					<span className="mx-2">

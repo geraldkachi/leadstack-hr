@@ -19,7 +19,7 @@ const EmployeePop = ({ state, setState }: Props) => {
     <>
       <ClickOutside onclickoutside={() => setState(false)} className={` text-black`} >
         {state && <>
-          <div className="flex flex-col items-start justify-start list-none top-36 opacity-100 absolute r-2 right-5 md:right-[12px] bg-white dark:bg-gradient-to-t transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-[210px] z-20">
+          <div className="flex flex-col items-start justify-start list-none top-36 opacity-100 absolute r-2 right-5 md:right-[32px] bg-white dark:bg-gradient-to-t transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-[210px] z-20">
             <span className="cursor-pointer flex items-center gap-2 p-2 text-xs w-full" onClick={() => setModalOpen(true)}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 6.66602C16.3807 6.66602 17.5 5.54673 17.5 4.16602C17.5 2.7853 16.3807 1.66602 15 1.66602C13.6193 1.66602 12.5 2.7853 12.5 4.16602C12.5 5.54673 13.6193 6.66602 15 6.66602Z" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

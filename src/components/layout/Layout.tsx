@@ -17,10 +17,10 @@ const Layout = () => {
       {/* {open ? <ChangePasswordModal {...{ open }} {...{ close }} /> : null} */}
       <section className={` `}>
         <Sidebar {...{ open }} {...{ setOpen }} />
-        <div className={`layout__content  ${open ? "sm:pl-60" : "sm:pl-20"} `}>
+        <div className={`layout__content  ${open ? "sm:pl-60" : "sm:pl-10"} `}>
           <div className={`layout__content-main pl-0 sm:pl-10`}>
             <Topnav />
-            <div className="px-3">
+            <div className="px-3 md:px-8">
               <Outlet />
             </div>
 
