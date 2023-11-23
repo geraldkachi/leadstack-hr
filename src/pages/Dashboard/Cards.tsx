@@ -1,7 +1,7 @@
 const Cards = () => {
     return (
         <>
-            <div className="text-[#7A8699] bg-white rounded-[15px] border border-[rgb(241,242,245)] p-4 md:p-8 mt-4 mb-5">
+            <div className="text-[#7A8699] bg-white rounded-[15px] border border-[rgb(241,242,245)] p-4 md:p-6 mt-4 mb-5">
                 <div className="">
                     <div className="flex items-center justify-between mb-5">
                         <p className='text-xl text-[#4A5567] leading-[25.227px] font-bold'>No of Employee</p>

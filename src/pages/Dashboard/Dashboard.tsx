@@ -22,7 +22,7 @@ const Dashboard = () => {
     { route: 2, title: "Company Domain", onclick: () => setState(2) },
   ];
   return (
-    <div className="h-full pt-3 md:mr-20">
+    <div className="h-full pt-3">
       <div className="flex items-center justify-between">
         <div>
           <div className="text-lg md:text-2xl">Dashboard</div>

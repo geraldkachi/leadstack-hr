@@ -19,8 +19,8 @@ const EmployeePop = ({ state, setState }: Props) => {
     <>
       <ClickOutside onclickoutside={() => setState(false)} className={` text-black`} >
         {state && <>
-          <div className="flex flex-col items-start justify-start list-none top-36 opacity-100 absolute r-2 right-5 md:right-[91px] bg-white dark:bg-gradient-to-t transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-[210px] z-20">
-            <span className="cursor-pointer flex items-center gap-2 p-2 text-xs" onClick={() => setModalOpen(true)}>
+          <div className="flex flex-col items-start justify-start list-none top-36 opacity-100 absolute r-2 right-5 md:right-[12px] bg-white dark:bg-gradient-to-t transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-[210px] z-20">
+            <span className="cursor-pointer flex items-center gap-2 p-2 text-xs w-full" onClick={() => setModalOpen(true)}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15 6.66602C16.3807 6.66602 17.5 5.54673 17.5 4.16602C17.5 2.7853 16.3807 1.66602 15 1.66602C13.6193 1.66602 12.5 2.7853 12.5 4.16602C12.5 5.54673 13.6193 6.66602 15 6.66602Z" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M5 12.5C6.38071 12.5 7.5 11.3807 7.5 10C7.5 8.61929 6.38071 7.5 5 7.5C3.61929 7.5 2.5 8.61929 2.5 10C2.5 11.3807 3.61929 12.5 5 12.5Z" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -31,7 +31,7 @@ const EmployeePop = ({ state, setState }: Props) => {
               <span>Share Link</span>
             </span>
 
-            <span className="cursor-pointer flex items-center gap-2 p-2 text-xs">
+            <span className="cursor-pointer flex items-center gap-2 p-2 text-xs w-full">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.16675 1.66602H7.50008C3.33341 1.66602 1.66675 3.33268 1.66675 7.49935V12.4993C1.66675 16.666 3.33341 18.3327 7.50008 18.3327H12.5001C16.6667 18.3327 18.3334 16.666 18.3334 12.4993V10.8327" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M13.3666 2.51639L6.7999 9.08306C6.5499 9.33306 6.2999 9.82472 6.2499 10.1831L5.89157 12.6914C5.75823 13.5997 6.3999 14.2331 7.30823 14.1081L9.81657 13.7497C10.1666 13.6997 10.6582 13.4497 10.9166 13.1997L17.4832 6.63306C18.6166 5.49972 19.1499 4.18306 17.4832 2.51639C15.8166 0.849722 14.4999 1.38306 13.3666 2.51639Z" stroke="#61646B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -40,7 +40,7 @@ const EmployeePop = ({ state, setState }: Props) => {
               <Link to="/employees/add-employees">Create Manually</Link>
             </span>
 
-            <span className="cursor-pointer flex items-center gap-2 p-2 text-xs" onClick={() => setModalUpload(true)}>
+            <span className="cursor-pointer flex items-center gap-2 p-2 text-xs w-full" onClick={() => setModalUpload(true)}>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9.99992 6.66602V1.66602L8.33325 3.33268" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                 <path d="M10 1.66602L11.6667 3.33268" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

@@ -18,7 +18,7 @@ const Layout = () => {
       <section className={` `}>
         <Sidebar {...{ open }} {...{ setOpen }} />
         <div className={`layout__content  ${open ? "sm:pl-60" : "sm:pl-20"} `}>
-          <div className={`layout__content-main pl-0 sm:pl-2`}>
+          <div className={`layout__content-main pl-0 sm:pl-10`}>
             <Topnav />
             <div className="px-3">
               <Outlet />

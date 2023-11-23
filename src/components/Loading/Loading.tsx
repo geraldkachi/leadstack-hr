@@ -7,7 +7,7 @@ const Loading = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setPercentage((prevPercentage) => Math.min(prevPercentage + 1, 100));
-        }, 28); // Adjust the interval to control the speed of the countdown
+        }, 22); // Adjust the interval to control the speed of the countdown
 
         // Clear the interval when the component unmounts
         return () => clearInterval(intervalId);
@@ -19,9 +19,7 @@ const Loading = () => {
             <div className="divLoader flex items-center justify-center flex-col relative">
                 <div className='text-center'>
 
-                    <svg className="svgLoader bg-pink-" viewBox="0 0 1024 1024" width="10em" height="10em">
-                        <path fill="lightblue" d="PATH FOR THE LOADER ICON" />
-                    </svg> 
+                    <img src="loadersvg.svg" className='translate-x-full animate-spin  rotate-180' alt="" />
                     <span className="mt-5 text-[#535768]">Leadstack initializing...</span>
                 </div>
 

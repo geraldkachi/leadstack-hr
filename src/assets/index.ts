@@ -2,6 +2,7 @@ export { default as DashboardIcon } from "./Dashboard/DashboardIcon";
 export { default as EmployeesIcon } from "./Employees/EmployeesIcon";
 export { default as MyTeamIcon } from "./MyTeam/MyTeamIcon";
 export { default as HiringIcon } from "./Hiring/HiringIcon";
+export { default as HiriingArrow } from "./Hiring/HiriingArrow";
 export { default as TimeManagementIcon } from "./TimeManagement/TimeManagementIcon";
 export { default as LeaveManagementIcon } from "./LeaveManagement/LeaveManagementIcon";
 export { default as TrainingIcon } from "./Training/TrainingIcon";

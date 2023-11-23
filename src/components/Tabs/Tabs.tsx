@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
+import { useAuth } from '../../hooks';
 interface Props {
-    data: {
-        label: string
-        content: JSX.Element
-    }[]
+  data: {
+    label: string
+    content: JSX.Element
+  }[],
+  activeTab?: number
 }
- const Tabs = ({data}: Props) => {
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
+const Tabs = ({ data, activeTab = 0 }: Props) => {
+  const [activeTabIndex, setActiveTabIndex] = useState(activeTab);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
 
@@ -25,6 +27,13 @@ interface Props {
     return () => window.removeEventListener('resize', setTabPosition);
   }, [activeTabIndex]);
 
+  useEffect(() => {
+    setActiveTabIndex(activeTab)
+  }, [activeTab])
+
+  console.log(activeTab, 'activeTab')
+  console.log(activeTabIndex, 'activeTabIndex')
+
   const Render = () => data[activeTabIndex].content
 
   return (
@@ -37,7 +46,10 @@ interface Props {
                 key={idx}
                 ref={(el) => (tabsRef.current[idx] = el)}
                 className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-4 text-sm leading-[19.6px]`}
-                onClick={() => setActiveTabIndex(idx)}
+                onClick={() => {
+                  setActiveTabIndex(idx)
+                  useAuth.setState({ activeTab: idx })
+                }}
               >
                 {tab.label}
               </button>

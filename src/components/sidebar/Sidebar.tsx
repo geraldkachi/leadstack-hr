@@ -3,15 +3,16 @@ import "./sidebar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { AdminIcon, CustomersIcon, DashboardIcon, LoanCalculatorIcon, PersonalBankingIcon, ReportsIcon, StatusIcon } from "../../assets";
 // import Accordion from "../Accordion/Accordion";
-import { Dispatch, SetStateAction, useCallback } from "react";
+import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { useWindowDimensions } from "../../hooks";
-import { DashboardIcon, DocumentsIcon, EmployeesIcon, FinanceIcon, HiringIcon, LeaveManagementIcon, MyTeamIcon, PerformanceIcon, ReportsAnalyticsIcon, SelfServiceIcon, TimeManagementIcon, TrainingIcon } from "../../assets";
-import { Accordion } from "..";
+import { DashboardIcon, DocumentsIcon, EmployeesIcon, FinanceIcon, HiriingArrow, HiringIcon, LeaveManagementIcon, MyTeamIcon, PerformanceIcon, ReportsAnalyticsIcon, SelfServiceIcon, TimeManagementIcon, TrainingIcon } from "../../assets";
+import { Accordion, HiringPop } from "..";
 interface SidebarProps {
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 const Sidebar = ({ open, setOpen }: SidebarProps) => {
+  const [state, setState] = useState(false);
   const location = useLocation()
   const { width } = useWindowDimensions()
   const navigate = useNavigate();
@@ -56,7 +57,17 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
     { route: "/dashboard", title: "Dashboard" },
     { route: "/employees", title: "Employees" },
     { route: "/my-team", title: "My Team" },
-    { route: "/hiring", title: "Recruitment & Hiring" },
+    // { route: "/hiring", title: "Recruitment & Hiring" },
+    // { route: "/time-management", title: "Time Management" },
+    // { route: "/leave-management", title: "Leave Management" },
+    // { route: "/training", title: "Training" },
+    // { route: "/documents", title: "Documents" },
+    // { route: "/performance", title: "Performance" },
+    // { route: "/reports-analytics", title: "Reports & Analytics" },
+    // { route: "/finance", title: "Finance" },
+    // { route: "/self-service", title: "Self Service" },
+  ];
+  const routeList2 = [
     { route: "/time-management", title: "Time Management" },
     { route: "/leave-management", title: "Leave Management" },
     { route: "/training", title: "Training" },
@@ -65,12 +76,14 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
     { route: "/reports-analytics", title: "Reports & Analytics" },
     { route: "/finance", title: "Finance" },
     { route: "/self-service", title: "Self Service" },
-  ];
+  ]
+  const activeItem2 = location.pathname.includes("/hiring");
+
 
   return (
     <section className={`sidebar hidden sm:block bg-white overflow-y-scroll no-scrollbar`}>
       <div
-        className={` ${open ? "sm:w-60 ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
+        className={` ${open ? "sm:w-[280px] ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
       >
         <div className="px-2 py-5">
           <div className={`${open ? "justify-between" : 'justify-center'} flex items-center`}>
@@ -85,8 +98,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
             className={`${open && "flex items-center w-full ease-in-out duration-500"
               } inline-flex items-center pb-3 ease-in-out duration-500`}
           >
-            {/* <MenuIcon onClick={() => setOpen(!open)} className={`ml-4 cursor-pointer duration-500 ${open && "rotate-[360deg]"}`} />
-                        <HomeLogoIcon className={`${!open && "scale-0 hidden"}`} /> */}
+
             <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>MAIN MENU</p>
           </div>
           {routeList.map((item, index) => {
@@ -112,7 +124,67 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
                 className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                   }
                   ${!open && 'text-center flex items-center justify-center'}
-                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-sm
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  !text-[#535768] w-full`}
+              >
+                <div key={index}> {iconArr[index]}</div>
+
+                <span
+                  className={`${!open && "hidden"} ${width < 1200 ? "" : ""
+                    } origin-left ease-in-out duration-500 whitespace-nowrap`}
+                >
+                  {item.title}
+                </span>
+              </Link>
+            );
+          })}
+          {/* hiring */}
+          <>
+            <span
+              // to={''}
+              className={`${activeItem2 && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+                }
+                  ${!open ? 'text-center flex items-center justify-center' : "justify-between"}
+                  flex items-center  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  !text-[#535768] w-full relative`}
+              onClick={() => setState(prev => !prev)}
+            >
+              <div className="flex items-center gap-2">
+                <HiringIcon key={4} index={activeItem2} />
+
+                <span
+                  className={`${!open && "hidden"} ${width < 1200 ? "" : ""
+                    } origin-left ease-in-out duration-500 whitespace-nowrap`}>Recruitment & Hiring</span>
+              </div>
+
+              <HiriingArrow key={4} index={activeItem2} className={` ${!open && 'hidden'}`} />
+              <span className={`${!open && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span>
+            </span>
+          </>
+          {routeList2.map((item, index) => {
+            const activeItem = location.pathname.includes(item.route);
+            const iconArr = [
+              // <DashboardIcon key={1} index={activeItem} />,
+              // <EmployeesIcon key={2} index={activeItem} />,
+              // <MyTeamIcon key={3} index={activeItem} />,
+              // <HiringIcon key={4} index={activeItem} />,
+              <TimeManagementIcon key={5} index={activeItem} />,
+              <LeaveManagementIcon key={6} index={activeItem} />,
+              <TrainingIcon key={7} index={activeItem} />,
+              <DocumentsIcon key={8} index={activeItem} />,
+              <PerformanceIcon key={9} index={activeItem} />,
+              <ReportsAnalyticsIcon key={10} index={activeItem} />,
+              <FinanceIcon key={11} index={activeItem} />,
+              <SelfServiceIcon key={12} index={activeItem} />,
+            ];
+            return (
+              <Link
+                to={item.route}
+                key={index}
+                className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+                  }
+                  ${!open && 'text-center flex items-center justify-center'}
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768] w-full`}
               >
                 <div key={index}> {iconArr[index]}</div>
@@ -129,11 +201,11 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
         </div>
 
         <div className="flex flex-col items-center justify-center text-black">
-        <div
+          <div
             className={`${open && "flex items-center w-full ease-in-out duration-500"
               } inline-flex items-center pb-3 ease-in-out duration-500`}
           >
-      
+
             <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>SUPPORT</p>
           </div>
           {faqArr.map((item, index) => {
@@ -166,16 +238,16 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
             )
           })}
 
-            <p className={`${!open ? "hidden" : "sm:block text-[#BFBFBF] mx-2 lg:block text-xs  text-start md:text-lg"}`}>ACCOUNT</p>
-            <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6 px-2"}
+          <p className={`${!open ? "hidden" : "sm:block text-[#BFBFBF] mx-2 lg:block text-xs  text-start md:text-lg"}`}>ACCOUNT</p>
+          <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6 px-2"}
                   ${!open && 'px-2 text-center flex items-center justify-center'}
-                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-sm
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[rgb(83,87,104)] w-full`}
-              onClick={logout}>
-              <div><img src="/signnout.svg" alt="singout" /></div>
+            onClick={logout}>
+            <div><img src="/signnout.svg" alt="singout" /></div>
 
-              <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
-            </div>
+            <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
+          </div>
         </div>
 
       </div>

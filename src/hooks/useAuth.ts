@@ -9,10 +9,12 @@ type State = {
     phoneNumber?: string
     setPhoneNumber?: (phoneNumber: string) => void
     isAuthenticated?: boolean
+    activeTab?: number
 }
 // const useAuth = create<State>((set, get) => ({
 const useAuth = create<State>(() => ({
     token,   
+    activeTab: 0
 }));
                         
 export default useAuth;
