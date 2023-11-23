@@ -2,7 +2,7 @@ import { Button, Tabs } from "../../components"
 
 const Hiring = () => {
   return (
-    <div className="h-full pt-3 md:mr-20">
+    <div className="h-full pt-3">
       <div className="flex items-center justify-between">
         <div>
           <div className="text-lg md:text-2xl">Recruitment</div>
@@ -11,7 +11,6 @@ const Hiring = () => {
 
         <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" />
       </div>
-
 
       <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] md:mr-56">
         <img src="/cautionsign.svg" alt="caution" />

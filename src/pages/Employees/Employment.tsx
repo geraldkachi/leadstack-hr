@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Button, Input } from "../../components"
+import { useAuth } from "../../hooks";
 
 const Employment = () => {
   const formInput = useRef<HTMLInputElement>(null);
@@ -8,10 +9,10 @@ const Employment = () => {
     <div>
       <div className="text-[#2A2D7C]">Employment Details <span className="text-[#E01507]">*</span></div>
       <form>
-        <div className="grid sm:grid-cols-2 gap-x-8">
+        <div className="grid lg:grid-cols-2 gap-x-8">
           <div>
 
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -41,7 +42,7 @@ const Employment = () => {
               name="password"
               placeholder="hr@tch.com"
             />
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -57,7 +58,7 @@ const Employment = () => {
                 placeholder="hr@tch.com"
               />
             </div>
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -83,7 +84,7 @@ const Employment = () => {
               name="password"
               placeholder="hr@tch.com"
             />
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Email"
                 ref={formInput}
@@ -113,7 +114,7 @@ const Employment = () => {
               name="password"
               placeholder="hr@tch.com"
             />
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Email"
                 ref={formInput}
@@ -140,6 +141,7 @@ const Employment = () => {
                 type="button"
                 className="!bg-[#1D8EE6] !text-white !px-8 "
                 title="Save & Continue"
+                onClick={() => useAuth.setState({ activeTab: 2 })}
               />
             </div>
           </div>

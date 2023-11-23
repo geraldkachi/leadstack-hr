@@ -14,10 +14,10 @@ const Emergency = () => {
     <div>
       <div className="text-[#2A2D7C]">Education Details <span className="text-[E01507]"></span></div>
       <form>
-        <div className="grid sm:grid-cols-2 gap-x-8">
+        <div className="grid lg:grid-cols-2 gap-x-8">
           <div>
 
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -47,7 +47,7 @@ const Emergency = () => {
               name="password"
               placeholder="hr@tch.com"
             />
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -64,7 +64,7 @@ const Emergency = () => {
               />
             </div>
 
-            <div className="flex items-center justify-end mt-6 gap-x-1">
+            <div className="flex items-center justify-end mt-6 gap-x-1 my-4">
               <span className="text-sm text-[#7C8091]">University of Lagos, Akoka</span>
               <Button
                 type="button"

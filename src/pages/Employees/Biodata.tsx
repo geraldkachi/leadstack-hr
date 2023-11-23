@@ -2,7 +2,11 @@ import { Modal } from 'antd'
 import { useRef, useState } from "react";
 import { Button, Input } from "../../components";
 import { useAuth } from '../../hooks';
+import { Select } from 'antd';
 
+const handleChange = (value: string) => {
+  console.log(`selected ${value}`);
+};
 const Biodata = () => {
   const formInput = useRef<HTMLInputElement>(null);
   const [modalSuccess, setModalSuccess] = useState(false)
@@ -13,10 +17,10 @@ const Biodata = () => {
       <div className="text-[#2A2D7C]">Biodata <span className="text-[#E01507]">*</span></div>
 
       <form>
-        <div className="grid sm:grid-cols-2 gap-x-8">
+        <div className="grid lg:grid-cols-2 gap-x-8">
           <div>
 
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -44,6 +48,49 @@ const Biodata = () => {
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
+              />
+              <Select
+              size='large'
+                defaultValue="lucy"
+                style={{ width: 200 }}
+                onChange={handleChange}
+                options={[
+                  {
+                    label: 'Manager',
+                    options: [
+                      { label: 'Jack', value: 'jack' },
+                      { label: 'Lucy', value: 'lucy' },
+                    ],
+                  },
+                  {
+                    label: 'Engineer',
+                    options: [{ label: 'yiminghe', value: 'Yiminghe' }],
+                  },
+                  {
+                    label: 'China',
+                    value: 'china',
+                    emoji: '🇨🇳',
+                    desc: 'China (中国)',
+                  },
+                  {
+                    label: 'USA',
+                    value: 'usa',
+                    emoji: '🇺🇸',
+                    desc: 'USA (美国)',
+                  },
+                  {
+                    label: 'Japan',
+                    value: 'japan',
+                    emoji: '🇯🇵',
+                    desc: 'Japan (日本)',
+                  },
+                  {
+                    label: 'Korea',
+                    value: 'korea',
+                    emoji: '🇰🇷',
+                    desc: 'Korea (韩国)',
+                  },
+                ]}
               />
             </div>
             <Input
@@ -62,7 +109,7 @@ const Biodata = () => {
             />
           </div>
           <div>
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -85,7 +132,7 @@ const Biodata = () => {
               name="password"
               placeholder="hr@tch.com"
             />
-            <div className="grid sm:grid-cols-2 gap-x-2">
+            <div className="grid grid-cols-2 gap-x-2">
               <Input
                 label="Email"
                 ref={formInput}
@@ -105,12 +152,8 @@ const Biodata = () => {
               <Button
                 type="button"
                 className="!bg-[#1D8EE6] !text-white !px-8 "
-                onClick={() => {
-                  useAuth.setState({ activeTab: 1 })
-                  setActiveTab(1)
-                  // setModalSuccess(true)
-                }
-                }
+                // onClick={() => useAuth.setState({ activeTab: 1 })}
+                onClick={() => setModalSuccess(true)}
                 title="Save & Continue"
               />
             </div>
@@ -184,7 +227,7 @@ const Biodata = () => {
             }} />
             <Button className='!px-8 text-sm' title='Continue Onboarding' onClick={() => {
               setModalSuccess(false)
-            
+              useAuth.setState({ activeTab: 1 })
             }} />
           </div>
         </div>

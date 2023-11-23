@@ -71,7 +71,7 @@ const AddEmployees = () => {
     }, [])
 
     return (
-        <div className="h-full pt-3 md:mr-20">
+        <div className="h-full pt-3">
             <Breadcrumbs {...{ bread }} />
             <div className="flex items-center justify-between">
                 <div>
