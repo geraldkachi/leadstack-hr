@@ -14,90 +14,90 @@ const Employment = () => {
 
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="Role"
+                label="Date"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="date"
+                name="date"
+                placeholder="Development"
               />
               <Input
-                label="Email"
+                label="Unit"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="text"
+                name="text"
+                placeholder="Technical"
               />
             </div>
             <Input
-              label="Email"
+              label="Official EmailOfficial Email"
               ref={formInput}
               type="email"
-              name="password"
-              placeholder="hr@tch.com"
+              name="email"
+              placeholder="jane.d@leadstack.ng"
             />
             <Input
-              label="Email"
+              label="Employee No"
               ref={formInput}
-              type="email"
-              name="password"
-              placeholder="hr@tch.com"
+              type="number"
+              name="Employee No"
+              placeholder="EMP-2987"
             />
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="Role"
+                label="Grade"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="text"
+                name="grade"
+                placeholder="LEVEL 1"
               />
               <Input
-                label="Email"
+                label="Date of Employment"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="date"
+                name="date of employment"
+                placeholder="Choose date"
               />
             </div>
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="Role"
+                label="Salary"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="text"
+                name="Salary"
+                placeholder="NGN 450,000"
               />
               <Input
-                label="Email"
+                label="Pay Schedule"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="text"
+                name="monthly"
+                placeholder="Monthly"
               />
             </div>
           </div>
           {/* half */}
           <div>
             <Input
-              label="Email"
+              label="Bank Name"
               ref={formInput}
-              type="email"
-              name="password"
-              placeholder="hr@tch.com"
+              type="text"
+              name="name"
+              placeholder="Lord Name"
             />
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="Email"
+                label="Bank Branch"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="text"
+                name="name"
+                placeholder="Iida"
               />
               <Input
-                label="Email"
+                label="Bank Code"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="number"
+                name="code"
+                placeholder="1234"
               />
             </div>
             <Input

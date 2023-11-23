@@ -22,34 +22,34 @@ const Biodata = () => {
 
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="Role"
+                label="First Name"
                 ref={formInput}
-                type="email"
+                type="text"
                 name="password"
                 placeholder="hr@tch.com"
               />
               <Input
-                label="Email"
+                label="Last Name"
                 ref={formInput}
-                type="email"
+                type="text"
                 name="password"
                 placeholder="hr@tch.com"
               />
               <Input
-                label="Role"
+                label="Date of Birth (Optional)"
                 ref={formInput}
-                type="email"
+                type="date"
                 name="password"
                 placeholder="hr@tch.com"
               />
               <Input
-                label="Email"
+                label="Gender"
                 ref={formInput}
-                type="email"
+                type="text"
                 name="password"
                 placeholder="hr@tch.com"
               />
-              <Select
+              {/* <Select
               size='large'
                 defaultValue="lucy"
                 style={{ width: 200 }}
@@ -91,19 +91,19 @@ const Biodata = () => {
                     desc: 'Korea (韩国)',
                   },
                 ]}
-              />
+              /> */}
             </div>
             <Input
-              label="Email"
+              label="Phone Number"
               ref={formInput}
-              type="email"
+              type="number"
               name="password"
               placeholder="hr@tch.com"
             />
             <Input
-              label="Email"
+              label="Uplaod Passport Photograph"
               ref={formInput}
-              type="email"
+              type="text"
               name="password"
               placeholder="hr@tch.com"
             />
@@ -113,12 +113,12 @@ const Biodata = () => {
               <Input
                 label="Role"
                 ref={formInput}
-                type="email"
+                type="text"
                 name="password"
                 placeholder="hr@tch.com"
               />
               <Input
-                label="Email"
+                label="Email Address"
                 ref={formInput}
                 type="email"
                 name="password"
@@ -126,26 +126,26 @@ const Biodata = () => {
               />
             </div>
             <Input
-              label="Email"
+              label="Country"
               ref={formInput}
-              type="email"
-              name="password"
+              type="text"
+              name="country"
               placeholder="hr@tch.com"
             />
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="Email"
+                label="State"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="text"
+                name="state"
+                placeholder="Lagos state"
               />
               <Input
-                label="Email"
+                label="LGA"
                 ref={formInput}
-                type="email"
-                name="password"
-                placeholder="hr@tch.com"
+                type="text"
+                name="lga"
+                placeholder="LGA"
               />
             </div>
             <div className="flex items-center justify-end mt-6">

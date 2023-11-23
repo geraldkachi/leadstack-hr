@@ -226,7 +226,7 @@ export default function Input(
 				</label>
 			)}
 			<div
-				className={`bg-white flex items-center w-full rounded-[4px] overflow-hidden border-[0.5px] border-[#DEDFEC] focus-within:border-bluetiful disabled:bg-grey read-only:bg-grey ${inputClassName}
+				className={`bg-white flex items-center w-full rounded-[4px] overflow-hidden border-[0.8px] border-[#DEDFEC] focus-within:border-bluetiful disabled:bg-grey read-only:bg-grey ${inputClassName}
                 border-${col()}
                 ${(disabled || readOnly) && 'bg-grey border-none'
 					}`}
