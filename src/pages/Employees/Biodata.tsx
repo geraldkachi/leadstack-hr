@@ -1,11 +1,9 @@
 import { Modal } from 'antd'
 import { useRef, useState } from "react";
 import { Button, Input } from "../../components";
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks';
 
-const Biodata = ({ activeTab, setActiveTab }: any) => {
-  // const navigate = useNavigate()
+const Biodata = () => {
   const formInput = useRef<HTMLInputElement>(null);
   const [modalSuccess, setModalSuccess] = useState(false)
   const [modalSuccessEmp, setModalSuccessEmp] = useState(false)
