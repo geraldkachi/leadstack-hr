@@ -20,7 +20,7 @@ const Layout = () => {
         <div className={`layout__content  ${open ? "sm:pl-60" : "sm:pl-10"} `}>
           <div className={`layout__content-main pl-0 sm:pl-10`}>
             <Topnav />
-            <div className="px-3 md:px-8">
+            <div className="">
               <Outlet />
             </div>
 

@@ -23,7 +23,7 @@ const Dashboard = () => {
   ];
   return (
     <div className="h-full pt-3">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between bg-white">
         <div>
           <div className="text-lg md:text-2xl">Dashboard</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
@@ -79,7 +79,7 @@ const Dashboard = () => {
         afterClose={() => setModalOpen(false)}
         width={1127}
       >
-        <div className='grid grid-cols-5 items-start justify-  p-8 h-[650px] overflow-y-scroll no-scrollbar'>
+        <div className='grid md:grid-cols-5 items-start justify-  p-8 h-[650px] overflow-y-scroll no-scrollbar'>
           <div className='col-span-1 items-start hidden sm:block '>
             <div>
               <div className="text-base md:text-lg] whitespace-nowrap">Complete Onboarding</div>
@@ -114,7 +114,7 @@ const Dashboard = () => {
 
           </div>
 
-          <div className="col-span-4 w-full sm:px-3 border-l border-grey-200 overflow-y-scroll no-scrollbar justify-center">
+          <div className="col-span-4 w-full sm:px-3 border-l border-grey-200 overflow-y-scroll no-scrollbar">
             {/* State 1 */}
             {state === 0 &&
               <SectionOne {... { setState }} />

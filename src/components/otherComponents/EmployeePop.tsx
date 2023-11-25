@@ -19,35 +19,19 @@ const EmployeePop = ({ state, setState }: Props) => {
     <>
       <ClickOutside onclickoutside={() => setState(false)} className={` text-black`} >
         {state && <>
-          <div className="flex flex-col items-start justify-start list-none top-36 opacity-100 absolute r-2 right-5 md:right-[32px] bg-white dark:bg-gradient-to-t transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-[210px] z-20">
+          <div className="flex flex-col items-start justify-start list-none top-36 opacity-100 absolute r-2 right-5 md:right-[32px] bg-white  dark:bg-gradient-to-t transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-lg rounded-md w-[150px] md:w-[210px] z-20">
             <span className="cursor-pointer flex items-center gap-2 p-2 text-xs w-full" onClick={() => setModalOpen(true)}>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 6.66602C16.3807 6.66602 17.5 5.54673 17.5 4.16602C17.5 2.7853 16.3807 1.66602 15 1.66602C13.6193 1.66602 12.5 2.7853 12.5 4.16602C12.5 5.54673 13.6193 6.66602 15 6.66602Z" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5 12.5C6.38071 12.5 7.5 11.3807 7.5 10C7.5 8.61929 6.38071 7.5 5 7.5C3.61929 7.5 2.5 8.61929 2.5 10C2.5 11.3807 3.61929 12.5 5 12.5Z" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M15 18.334C16.3807 18.334 17.5 17.2147 17.5 15.834C17.5 14.4533 16.3807 13.334 15 13.334C13.6193 13.334 12.5 14.4533 12.5 15.834C12.5 17.2147 13.6193 18.334 15 18.334Z" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M7.15845 11.2578L12.8501 14.5745" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12.8418 5.42578L7.15845 8.74245" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+              <img src="/share-pop.svg" alt="" />
               <span>Share Link</span>
             </span>
 
             <span className="cursor-pointer flex items-center gap-2 p-2 text-xs w-full">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.16675 1.66602H7.50008C3.33341 1.66602 1.66675 3.33268 1.66675 7.49935V12.4993C1.66675 16.666 3.33341 18.3327 7.50008 18.3327H12.5001C16.6667 18.3327 18.3334 16.666 18.3334 12.4993V10.8327" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M13.3666 2.51639L6.7999 9.08306C6.5499 9.33306 6.2999 9.82472 6.2499 10.1831L5.89157 12.6914C5.75823 13.5997 6.3999 14.2331 7.30823 14.1081L9.81657 13.7497C10.1666 13.6997 10.6582 13.4497 10.9166 13.1997L17.4832 6.63306C18.6166 5.49972 19.1499 4.18306 17.4832 2.51639C15.8166 0.849722 14.4999 1.38306 13.3666 2.51639Z" stroke="#61646B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M12.425 3.45898C12.9834 5.45065 14.5417 7.00898 16.5417 7.57565" stroke="#61646B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+              <img src="/create-manual.svg" alt="" />
               <Link to="/employees/add-employees">Create Manually</Link>
             </span>
 
             <span className="cursor-pointer flex items-center gap-2 p-2 text-xs w-full" onClick={() => setModalUpload(true)}>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.99992 6.66602V1.66602L8.33325 3.33268" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M10 1.66602L11.6667 3.33268" stroke="#61646B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M5.83333 10C2.5 10 2.5 11.4917 2.5 13.3333V14.1667C2.5 16.4667 2.5 18.3333 6.66667 18.3333H13.3333C16.6667 18.3333 17.5 16.4667 17.5 14.1667V13.3333C17.5 11.4917 17.5 10 14.1667 10C13.3333 10 13.1 10.175 12.6667 10.5L11.8167 11.4C10.8333 12.45 9.16667 12.45 8.175 11.4L7.33333 10.5C6.9 10.175 6.66667 10 5.83333 10Z" stroke="#61646B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M4.16675 9.99987V8.3332C4.16675 6.6582 4.16675 5.27487 6.66675 5.0332" stroke="#61646B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M15.8333 9.99987V8.3332C15.8333 6.6582 15.8333 5.27487 13.3333 5.0332" stroke="#61646B" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
+              <img src="/upload-excel.svg" alt="" />
               <span>Upload Excel</span>
             </span>
           </div>
@@ -240,20 +224,20 @@ const EmployeePop = ({ state, setState }: Props) => {
 
             <>
               <div className="flex items-center">
-                  <Button className='!px-8 !text-[#1D8EE6] !bg-white' title='Upload New List' onClick={() => {
-                    setModalUpload(true)
-                    setModalSuccess(false)
-                  }} />
+                <Button className='!px-8 !text-[#1D8EE6] !bg-white' title='Upload New List' onClick={() => {
+                  setModalUpload(true)
+                  setModalSuccess(false)
+                }} />
 
-                  <Button className='!px-8' title='Continue' onClick={
-                    () => {
-                      setModalOpen(false)
-                      setModalSuccess(false)
-                    }
-                  } />
-                </div>
+                <Button className='!px-8' title='Continue' onClick={
+                  () => {
+                    setModalOpen(false)
+                    setModalSuccess(false)
+                  }
+                } />
+              </div>
             </>
-          
+
 
           </div>
         </div>

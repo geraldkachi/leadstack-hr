@@ -11,10 +11,10 @@ const Emergency = () => {
   const [modalSuccessEmp, setModalSuccessEmp] = useState(false)
 
   return (
-    <div>
-      <div className="text-[#2A2D7C]">Education Details <span className="text-[E01507]"></span></div>
+    <div className="bg-white p-4 md:p-8 rounded-lg">
+      <div className="text-[#2A2D7C] mb-5">Education Details <span className="text-[E01507]"></span></div>
       <form>
-        <div className="grid lg:grid-cols-2 gap-x-8">
+        <div className="grid lg:grid-cols-2 gap-x-8 mb-36">
           <div>
 
             <div className="grid grid-cols-2 gap-x-2">

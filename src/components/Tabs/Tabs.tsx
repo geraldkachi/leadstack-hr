@@ -39,7 +39,7 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
   return (
     <div>
       <div className="relative">
-        <div className="flex space-x- border-b">
+        <div className="flex space-x- border-b px-4 md:px-8">
           {data.map((tab, idx) => {
             return (
               <button
@@ -61,7 +61,7 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
           style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
         />
       </div>
-      <div className="py-4">
+      <div className="py-4 bg-[#F5F6FA] px-4 md:p-8">
         <Render />
       </div>
     </div>

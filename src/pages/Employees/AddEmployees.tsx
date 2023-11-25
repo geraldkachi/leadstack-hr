@@ -72,16 +72,17 @@ const AddEmployees = () => {
 
     return (
         <div className="h-full pt-3">
-            <Breadcrumbs {...{ bread }} />
-            <div className="flex items-center justify-between">
-                <div>
-                    <div className="text-lg md:text-2xl">Add Employees</div>
-                    <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
+            <div className="px-4 md:px-8">
+                <Breadcrumbs {...{ bread }} />
+                <div className="flex items-center justify-between">
+                    <div>
+                        <div className="text-lg md:text-2xl">Add Employees</div>
+                        <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
+                    </div>
                 </div>
-
-
             </div>
-            <div className="mt-10 bg-white p-2 rounded-lg pb-36">
+
+            <div className="mt-10  pb-36">
 
                 <Tabs data={data} {...{ activeTab }} />
             </div>

@@ -10,8 +10,8 @@ const Employees = () => {
   const { width } = useWindowDimensions()
 
   return (
-    <div className="h-full pt-3">
-      <div className="flex items-center justify-between">
+    <div className="h-full pt-3 ">
+      <div className="flex items-center justify-between px-3 md:px-8">
         <div>
           <div className="text-lg md:text-2xl">Employees (20)</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
@@ -20,30 +20,33 @@ const Employees = () => {
         <div onClick={() => setState(true)}>
 
           <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" onClick={() => setState(true)} />
-          <EmployeePop {...{state, setState}} />
+          <EmployeePop {...{ state, setState }} />
         </div>
       </div>
 
-      <Tabs
-        data={[
-          {
-            label: 'All Employees',
-            content: (
-              <>
-                <AllEmployees />
-              </>
-            )
-          },
-          {
-            label: 'Pending Approval',
-            content: (
-              <>
-                <PendingApproval />
-              </>
-            )
-          }
-        ]}
-      />
+      <div className="">
+
+        <Tabs
+          data={[
+            {
+              label: 'All Employees',
+              content: (
+                <div className="-mt-4">
+                  <AllEmployees />
+                </div>
+              )
+            },
+            {
+              label: 'Pending Approval',
+              content: (
+                <div className="-mt-4">
+                  <PendingApproval />
+                </div>
+              )
+            }
+          ]}
+        />
+      </div>
     </div>
   )
 }

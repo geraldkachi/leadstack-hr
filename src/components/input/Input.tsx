@@ -226,7 +226,7 @@ export default function Input(
 				</label>
 			)}
 			<div
-				className={`bg-white flex items-center w-full rounded-[4px] overflow-hidden border-[0.8px] border-[#DEDFEC] focus-within:border-bluetiful disabled:bg-grey read-only:bg-grey ${inputClassName}
+				className={`bg-white flex items-center w-full rounded-[4px] overflow-hidden border border-[#DEDFEC] focus-within:border-bluetiful disabled:bg-grey read-only:bg-grey ${inputClassName}
                 border-${col()}
                 ${(disabled || readOnly) && 'bg-grey border-none'
 					}`}
@@ -240,7 +240,7 @@ export default function Input(
 					// {...innerRef}
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
-					className="w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base"
+					className="w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6"
 				/>
 				{TrailingIcon && (
 					<span className="mx-2">

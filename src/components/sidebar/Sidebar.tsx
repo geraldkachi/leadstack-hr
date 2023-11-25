@@ -210,7 +210,6 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           </div>
           {faqArr.map((item, index) => {
             const activeItem = location.pathname.includes(item?.route);
-
             const iconArr = [
               // <DashboardIcon key={1} index={activeItem} />,
               // <DashboardIcon key={2} index={activeItem} />,
