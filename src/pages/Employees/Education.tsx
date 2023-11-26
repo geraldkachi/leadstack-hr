@@ -89,7 +89,7 @@ const Education = () => {
                 type="button"
                 className="!bg-white !text-[#535768] !px-8 "
                 title="Skip"
-                onClick={() => useAuth.setState({ activeTab: 2 })}
+                onClick={() => useAuth.setState({ activeTab: 1 })}
               />
               <Button
                 type="button"

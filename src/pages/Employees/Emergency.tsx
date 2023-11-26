@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Button, Input } from "../../components"
 import { Modal } from "antd";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks";
 
 const Emergency = () => {
   const navigate = useNavigate()
@@ -162,6 +163,7 @@ const Emergency = () => {
                 type="button"
                 className="!bg-white !text-[#535768] !px-8 "
                 title="Skip"
+                onClick={() => useAuth.setState({ activeTab: 2 })}
               />
               <Button
                 type="button"

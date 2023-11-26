@@ -1,7 +1,11 @@
-import './styles.css'
+import "react-color-palette/css";
+// import './styles.css'
 import Cards from './Cards'
 import { Modal } from 'antd'
 import { useState } from 'react'
+import { Alpha, ColorPicker, Hue, Saturation, useColor } from "react-color-palette";
+
+
 
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
@@ -12,9 +16,12 @@ import IconTwo from './IconTwo'
 import IconThree from './IconThree'
 
 const Dashboard = () => {
+  const [color, setColor] = useColor("hex");
+
   const [statePop, setStatePop] = useState(false);
   const [modalOpen, setModalOpen] = useState(false)
   const [modalSuccess, setModalSuccess] = useState(false)
+  const [modalColor, setModalColor] = useState(false)
   const [state, setState] = useState(0)
   const pathList = [
     { route: 0, title: "Customize Experience", onclick: () => setState(0) },
@@ -117,7 +124,7 @@ const Dashboard = () => {
           <div className="col-span-4 w-full sm:px-3 border-l border-grey-200 overflow-y-scroll no-scrollbar">
             {/* State 1 */}
             {state === 0 &&
-              <SectionOne {... { setState }} />
+              <SectionOne {... { setState, setModalColor }} />
             }
 
             {/* <Button className='!px-8' title='Proceed' onClick={() => navigate('/login')} /> */}
@@ -160,6 +167,53 @@ const Dashboard = () => {
           <div className="flex flex-row items-center justify-between mt-10 gap-28">
             <div></div>
             <Button className='!px-8' title='Proceed' onClick={() => setModalSuccess(false)} />
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        open={modalColor}
+        onCancel={() => setModalColor(false)}
+        footer={null}
+        centered
+        maskClosable={false}
+        closable
+        afterClose={() => setModalColor(false)}
+        width={500}
+      >
+        <div className='grid grid-cols-1 items-center justify- text-center p-8 w-full'>
+          <div className='flex items-center justify-center'>
+
+            {/* <img src="/success-check.svg" alt="" /> */}
+          </div>
+
+          <div className='w-[590px] rounded-lg'>
+            <ColorPicker
+              // width={290}
+              height={290}
+              color={color}
+              onChange={setColor}
+              // hideHSV
+              // darkfalsfalse
+              hideInput={["rgb", "hsv", "hex"]}
+              hideAlpha={false}
+            />
+
+            {/* <Saturation height={300} color={color} onChange={setColor} />
+            <span className="absollute rotate- w-full">
+              <Hue color={color} onChange={setColor} />
+              <Alpha color={color} onChange={setColor} />
+            </span> */}
+          </div>
+
+
+          <div className="flex flex-row items-center justify-between mt-10 gap-28">
+            <div></div>
+            <div className='flex flex-row items-center gap-x-2'>
+              <Button className='!border !border-[#DEDFEC] bg-white !text-[#535768]' title='Cancel' onClick={() => setModalColor(false)} />
+              <Button className='px-8' title='Save Changes' onClick={() => setModalColor(false)} />
+            </div>
+            <div></div>
           </div>
         </div>
       </Modal>

@@ -136,7 +136,7 @@ const Employment = () => {
                 type="button"
                 className="!bg-white !text-[#535768] !px-8 "
                 title="Skip"
-                onClick={() => useAuth.setState({ activeTab: 1 })}
+                onClick={() => useAuth.setState({ activeTab: 0 })}
               />
               <Button
                 type="button"

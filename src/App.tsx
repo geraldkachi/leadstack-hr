@@ -1,6 +1,8 @@
+// import "react-color-palette/lib/css/styles.css";
 import { Suspense, useEffect, useRef, useState, } from 'react'
 import { Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+
 
 import './App.css'
 import Context from './components/context';

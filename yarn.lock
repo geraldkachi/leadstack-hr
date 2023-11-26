@@ -2272,6 +2272,11 @@ rc-virtual-list@^3.11.1, rc-virtual-list@^3.5.1, rc-virtual-list@^3.5.2:
     rc-resize-observer "^1.0.0"
     rc-util "^5.36.0"
 
+react-color-palette@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/react-color-palette/-/react-color-palette-7.1.0.tgz#dff94e86b90626777df82f5c78e60d376347db2e"
+  integrity sha512-F5jMWOWh7FMkgm7aJfwNr5+TatvGKvQatuaDtw8trSU4yKk0bzcxOC7HFYVRs/9qEJ8kvatjWaUUrcQATYSXhw==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
