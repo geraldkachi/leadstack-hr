@@ -1,19 +1,31 @@
 import { Checkbox } from 'antd';
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 
 import DarkCard from "./DarkCard"
 import WhiteCard from "./WhiteCard"
 import { Button } from "../../components"
+import { useAuth } from '../../hooks';
 
 interface Props {
   setState: Dispatch<SetStateAction<number>>
   setModalColor: Dispatch<SetStateAction<boolean>>
 }
 const SectionOne = ({ setState, setModalColor }: Props) => {
-  return (
-    <>
-      <div className="text-[27px] font-bold text-[#091E42] border-b border-gray-200 pb-3">Customize Experience</div>
+  const activeFont = useAuth(state => state.activeFont)
+  // const [selectedFont, setSelectedFont] = useState(initialFont);
 
+  // Get the saved font from localStorage or set a default
+  const initialFont = localStorage.getItem('selectedFont') || activeFont;
+
+  useEffect(() => {
+    // Save the selected font to localStorage whenever it changes
+    localStorage.setItem('selectedFont', (activeFont));
+  }, [activeFont]);
+
+  return (
+    <div className={`${activeFont}`}>
+      <div className="text-[27px] font-bold text-[#091E42] border-b border-gray-200 pb-3 font-">Customize Experience</div>
+      {activeFont}
       <div className="flex flex-col items-center justify-start py-2 w-max cursor-pointer">
         <span className="py-2 text-base leading-6 font-medium">Upload Logo</span>
         <div className="border border-dashed border-[#DEDFEC] font-medium text-[46.29px] text-center p-4 rounded-md">TH</div>
@@ -52,19 +64,16 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
                     Choose your accent color
                   </p>
                 </div>
-                <div className="inline-flex items-center text-base font-semibold text-gray-900">
-                  {/* <svg width="184" height="24" viewBox="0 0 184 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="12" r="11.5" stroke="#7C8091" />
-                    <path d="M7.875 12H16.125" stroke="#7C8091" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 7.875V16.125" stroke="#7C8091" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle cx="44" cy="12" r="11.5" stroke="#1E63EC" />
-                    <circle cx="44" cy="12" r="9" fill="#1E63EC" />
-                    <circle cx="76" cy="12" r="12" fill="#16AF54" />
-                    <circle cx="108" cy="12" r="12" fill="#D20000" />
-                    <circle cx="140" cy="12" r="12" fill="#D36500" />
-                    <circle cx="172" cy="12" r="12" fill="#8431D9" />
-                  </svg> */}
+                <div className="inline-flex items-center text-base font-semibold gap-x-2">
+                  <div className='cursor-pointer' onClick={() => setModalColor(true)}>
+                    <img src="/add-color.svg" alt="" />
+                  </div>
 
+                  <div className="h-[18px] w-[18px] bg-[#1E63EC] border-[#1E63EC] rounded-full border  cursor-pointer"></div>
+                  <div className="h-[18px] w-[18px] bg-[#16AF54] border-[#16AF54] rounded-full border  cursor-pointer"></div>
+                  <div className="h-[18px] w-[18px] bg-[#D20000] border-[#D20000] rounded-full border  cursor-pointer"></div>
+                  <div className="h-[18px] w-[18px] bg-[#D36500] border-[#D36500] rounded-full border  cursor-pointer"></div>
+                  <div className="h-[18px] w-[18px] bg-[#8431D9] border-[#8431D9] rounded-full border  cursor-pointer"></div>
                 </div>
               </div>
             </li>
@@ -82,11 +91,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
                 </div>
                 <div className="inline-flex items-center text-base font-semibold gap-x-2">
                   <div className='cursor-pointer' onClick={() => setModalColor(true)}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="12" cy="12" r="11.5" stroke="#7C8091" />
-                      <path d="M7.875 12H16.125" stroke="#7C8091" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
-                      <path d="M12 7.875V16.125" stroke="#7C8091" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <img src="/add-color.svg" alt="" />
                   </div>
 
                   <div className="h-[18px] w-[18px] bg-[#1E63EC] border-[#1E63EC] rounded-full border  cursor-pointer"></div>
@@ -110,20 +115,13 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
                     Choose your font style
                   </p>
                 </div>
-                <div className="inline-flex items-center text-base font-semibold gap-x-2">
-                  <div className='cursor-pointer' onClick={() => setModalColor(true)}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="12" cy="12" r="11.5" stroke="#7C8091" />
-                      <path d="M7.875 12H16.125" stroke="#7C8091" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
-                      <path d="M12 7.875V16.125" stroke="#7C8091" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </div>
+                <div className="inline-flex items-center text-xl gap-x-2 font-medium leading-[22px] text-[#B3B3B3]">
+                  <div className='cursor-pointer' onClick={() => setModalColor(true)}></div>
 
-                  <div className="h-[18px] w-[18px] bg-[#1E63EC] border-[#1E63EC] rounded-full border  cursor-pointer"></div>
-                  <div className="h-[18px] w-[18px] bg-[#16AF54] border-[#16AF54] rounded-full border  cursor-pointer"></div>
-                  <div className="h-[18px] w-[18px] bg-[#D20000] border-[#D20000] rounded-full border  cursor-pointer"></div>
-                  <div className="h-[18px] w-[18px] bg-[#D36500] border-[#D36500] rounded-full border  cursor-pointer"></div>
-                  <div className="h-[18px] w-[18px] bg-[#8431D9] border-[#8431D9] rounded-full border  cursor-pointer"></div>
+                  <div className={`${activeFont === 'font-noto' && 'text-[#1D8EE6]'} cursor-pointer `} onClick={() => useAuth.setState({ activeFont: 'font-noto' })}>Ag</div>
+                  <div className={`${activeFont === 'font-poppins' && 'text-[#1D8EE6]'} cursor-pointer `} onClick={() => useAuth.setState({ activeFont: 'font-poppins' })}>Ag</div>
+                  <div className={`${activeFont === 'font-serif' && 'text-[#1D8EE6]'} cursor-pointer `} onClick={() => useAuth.setState({ activeFont: 'font-serif' })}>Ag</div>
+
                 </div>
               </div>
             </li>
@@ -133,7 +131,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
           <Button className='!px-10' title="Submit" onClick={() => setState(1)} />
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

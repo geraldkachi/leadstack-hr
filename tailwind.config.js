@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      noto: ["Noto Sans", "sans-serif"],
+      poppins: ['Poppins', 'sans-serif'],
+
+    },
   },
   plugins: [],
 }

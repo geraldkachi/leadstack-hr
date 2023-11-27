@@ -10,11 +10,13 @@ type State = {
     setPhoneNumber?: (phoneNumber: string) => void
     isAuthenticated?: boolean
     activeTab?: number
+    activeFont: string
 }
 // const useAuth = create<State>((set, get) => ({
 const useAuth = create<State>(() => ({
     token,   
-    activeTab: 0
+    activeTab: 0,
+    activeFont: 'font-noto'
 }));
                         
 export default useAuth;

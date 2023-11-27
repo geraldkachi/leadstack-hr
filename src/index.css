@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 body {
+  /* font-family: "Noto Sans", sans-serif; */
   font-family: "Noto Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: white;
 }
 @layer utilities {
@@ -24,5 +26,25 @@ body {
 .ant-table-thead .ant-table-cell {
   background-color: #d9d9d9 !important;
   color: #535768 !important;
-  font-size: .8rem !important;
+  font-size: 0.8rem !important;
+}
+div.rcp-interactive > .rcp-hue {
+  border-radius: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  /* transform: rotate(90deg) !important; */
+}
+.rcp-saturation {
+  border-radius: 8px !important;
+  height: 0 !100% !important;
+  overflow: hidden !important;
+  top: 0 !important;
+  bottom: 0 !important;
+}
+
+.rcp-hue {
+  /* transform: rotate(90deg) !important; */
+  top: 0 !important;
+  left: 0 !important;
+  margin-top: 10px !important;
 }

@@ -2,22 +2,28 @@ import "react-color-palette/css";
 // import './styles.css'
 import Cards from './Cards'
 import { Modal } from 'antd'
-import { useState } from 'react'
-import { Alpha, ColorPicker, Hue, Saturation, useColor } from "react-color-palette";
+import { useMemo, useRef, useState } from 'react'
+import { Alpha, ColorPicker, Hue, IColor, Saturation, useColor } from "react-color-palette";
 
 
 
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
 import SectionThree from './SectionThree'
-import { Button, EmployeePop } from "../../components"
+import { Button, EmployeePop, Input } from "../../components"
 import IconOne from './IconOne'
 import IconTwo from './IconTwo'
 import IconThree from './IconThree'
+import { openNotification } from "../../utils";
 
 const Dashboard = () => {
-  const [color, setColor] = useColor("hex");
+  const [color, setColor] = useColor("");
+  const formInput = useRef<HTMLInputElement>(null);
 
+
+  const [colorHex, setColorHex] = useState({
+    hex: '#f44336', //default
+  });
   const [statePop, setStatePop] = useState(false);
   const [modalOpen, setModalOpen] = useState(false)
   const [modalSuccess, setModalSuccess] = useState(false)
@@ -28,6 +34,13 @@ const Dashboard = () => {
     { route: 1, title: "Registration Info", onclick: () => setState(1) },
     { route: 2, title: "Company Domain", onclick: () => setState(2) },
   ];
+  console.log(colorHex, "colorHex")
+
+  const changeColor = useMemo(() =>
+    // colorChoice){
+    setColorHex({
+      hex: colorHex.hex
+    }), [])
   return (
     <div className="h-full pt-3">
       <div className="flex items-center justify-between bg-white">
@@ -187,31 +200,56 @@ const Dashboard = () => {
             {/* <img src="/success-check.svg" alt="" /> */}
           </div>
 
-          <div className='w-[590px] rounded-lg'>
-            <ColorPicker
+          <div className='w-[290px] flex flex-col rounded-lg relative '>
+            {/* <ColorPicker
               // width={290}
               height={290}
               color={color}
               onChange={setColor}
-              // hideHSV
-              // darkfalsfalse
               hideInput={["rgb", "hsv", "hex"]}
               hideAlpha={false}
-            />
+            /> */}
+            <div className='w-[290px] flex flex-col rounded-lg relative'>
+              <div className='w-[290px] fle items-center'>
+                <span className="rotate-180">
+                  <Saturation height={300} color={color} onChange={setColor} />
+                </span>
+                <span className="w-4 rotate-0 bottom-96">
+                  <Hue color={color} onChange={setColor} />
+                </span>
+              </div>
+            </div>
 
-            {/* <Saturation height={300} color={color} onChange={setColor} />
-            <span className="absollute rotate- w-full">
-              <Hue color={color} onChange={setColor} />
-              <Alpha color={color} onChange={setColor} />
-            </span> */}
+            <form className="mt-10">
+              <Input
+                label="Hex Number"
+                ref={formInput}
+                value={color.hex}
+                // onChange={(e: React.ChangeEvent<HTMLInputElement>) => setColorHex(e.target.value)}
+                onChange={changeColor}
+                type="text"
+                name="color"
+                placeholder="e.g #FFFFFF"
+              />
+              {/* {console.log(colorHex)} */}
+            </form>
           </div>
 
 
-          <div className="flex flex-row items-center justify-between mt-10 gap-28">
+
+          <div className="flex items-center justify-between mt-10 gap-28">
             <div></div>
             <div className='flex flex-row items-center gap-x-2'>
               <Button className='!border !border-[#DEDFEC] bg-white !text-[#535768]' title='Cancel' onClick={() => setModalColor(false)} />
-              <Button className='px-8' title='Save Changes' onClick={() => setModalColor(false)} />
+              <Button className='px-8' title='Save Changes' onClick={() => {
+                openNotification({
+                  type: "success",
+                  title: "Changed Successfully",
+                  message: ``,
+                  placement: "topRight"
+                });
+                setModalColor(false)
+              }} />
             </div>
             <div></div>
           </div>
