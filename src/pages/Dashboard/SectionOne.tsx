@@ -42,12 +42,8 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <div className="text-[#98A1B0] text-sm font-normal">Customize your UI theme </div>
       </div>
       <div className='flex items-center gap-x-3'>
-        <div>
           <WhiteCard />
-        </div>
-        <div>
           <DarkCard />
-        </div>
       </div>
 
       <div className="w-full p-1 bg-white sm:p-4">
@@ -93,6 +89,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
                   <div className='cursor-pointer' onClick={() => setModalColor(true)}>
                     <img src="/add-color.svg" alt="" />
                   </div>
+                  <div className='cursor-pointer' onClick={() => setModalColor(true)}>
+                    <img src="/text-color.svg" alt="" />
+                  </div>
 
                   <div className="h-[18px] w-[18px] bg-[#1E63EC] border-[#1E63EC] rounded-full border  cursor-pointer"></div>
                   <div className="h-[18px] w-[18px] bg-[#16AF54] border-[#16AF54] rounded-full border  cursor-pointer"></div>
@@ -124,6 +123,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
 
                 </div>
               </div>
+            </li>
+            <li className="pt-3 pb-0 sm:pt-3 ">
+              <span className="invisible p-2"></span>
             </li>
           </ul>
         </div>

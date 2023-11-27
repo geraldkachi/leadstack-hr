@@ -9,8 +9,10 @@ import Context from './components/context';
 import { Layout, Loading } from './components';
 import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
+import { useAuth } from './hooks';
 
 const App: React.FC = () => {
+  const activeFont = useAuth(state => state.activeFont)
   // const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
 
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +45,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <>
+    <div className={`${activeFont}`}>
       <QueryClientProvider client={ref.current}>
         {/* <ToastContainer /> */}
         <Context>
@@ -85,7 +87,7 @@ const App: React.FC = () => {
           </Suspense>
         </Context>
       </QueryClientProvider>
-    </>
+    </div>
   )
 }
 

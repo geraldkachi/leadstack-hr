@@ -1,8 +1,8 @@
 import { Table } from "antd"
 import { useState } from "react";
 import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
-import type { ColumnsType } from 'antd/es/table';
+// import { useNavigate } from "react-router-dom";
+// import type { ColumnsType } from 'antd/es/table';
 import { AlignType } from "rc-table/lib/interface";
 import type { TableRowSelection } from 'antd/es/table/interface';
 import { Input } from "../../components";
@@ -14,7 +14,7 @@ interface DataType {
 }
 
 const AllEmployees = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     // const [selectionType, setSelectionType] = useState<'checkbox' | 'radio'>('checkbox');
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
@@ -71,7 +71,8 @@ const AllEmployees = () => {
         });
     }
 
-    const dataSource: ColumnsType<DataType> = [
+    // const dataSource: ColumnsType<DataType> = [
+    const dataSource: DataType[] = [
         {
             key: '1',
             name: 'Mike',
@@ -107,9 +108,10 @@ const AllEmployees = () => {
         {
             title: "Name",
             // dataIndex: 'startTime',
-            render: (val: any) => (
+            render: (val: {createdAt: string}) => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    // onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
                 >{`${val?.createdAt
                     ? format(new Date(val?.createdAt), "dd MMMM yyyy, hh:mm a")
@@ -124,13 +126,18 @@ const AllEmployees = () => {
             dataIndex: "creator",
             width: "10%",
             align: "center" as AlignType,
-            render: () => "Samuel Ikoojo"
+            render: () => (
+                <span
+                    onClick={() => null}
+                    className="cursor-pointer capitalize whitespace-nowrap"
+                >{`Samuel Ikoojo`}</span>
+            ),
         },
         {
             title: "Job Role",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
                 >{`Frontend`}</span>
             ),
@@ -139,9 +146,9 @@ const AllEmployees = () => {
         },
         {
             title: "Department",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
                 >{`Engineering`}</span>
             ),
@@ -150,9 +157,9 @@ const AllEmployees = () => {
         },
         {
             title: "Hire Date",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
                 >{`${''} 24 2023 18:16:46`}</span>
             ),
@@ -161,9 +168,9 @@ const AllEmployees = () => {
         },
         {
             title: "Status",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
                 >{`Active`}</span>
             ),
@@ -172,9 +179,9 @@ const AllEmployees = () => {
         },
         {
             title: "Action",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
                 >{``}</span>
             ),

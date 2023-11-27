@@ -3,14 +3,14 @@ import "react-color-palette/css";
 import Cards from './Cards'
 import { Modal } from 'antd'
 import { useMemo, useRef, useState } from 'react'
-import { Alpha, ColorPicker, Hue, IColor, Saturation, useColor } from "react-color-palette";
+import { Hue, Saturation, useColor } from "react-color-palette";
 
 
 
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
 import SectionThree from './SectionThree'
-import { Button, EmployeePop, Input } from "../../components"
+import { Button, EmployeePop, Input, Toast } from "../../components"
 import IconOne from './IconOne'
 import IconTwo from './IconTwo'
 import IconThree from './IconThree'
@@ -22,7 +22,7 @@ const Dashboard = () => {
 
 
   const [colorHex, setColorHex] = useState({
-    hex: '#f44336', //default
+    hex: '', //default
   });
   const [statePop, setStatePop] = useState(false);
   const [modalOpen, setModalOpen] = useState(false)
@@ -36,13 +36,29 @@ const Dashboard = () => {
   ];
   console.log(colorHex, "colorHex")
 
-  const changeColor = useMemo(() =>
-    // colorChoice){
-    setColorHex({
-      hex: colorHex.hex
-    }), [])
+  const changeColor = (e) =>
+    setColorHex((prev) => ({ ...prev, hex: e }))
+    
+
+    // toast?
+    const [showToast, setShowToast] = useState(false);
+
+    const showToastMessage = () => {
+      setShowToast(true);
+  
+      // Close the toast after 6 seconds
+      setTimeout(() => {
+        setShowToast(false);
+      }, 6000);
+    };
   return (
     <div className="h-full pt-3">
+       <Toast
+        message="Changed Successfully!"
+        show={showToast}
+        onClose={() => setShowToast(false)}
+      />
+      <div className="px-4 md:px-8">
       <div className="flex items-center justify-between bg-white">
         <div>
           <div className="text-lg md:text-2xl">Dashboard</div>
@@ -87,6 +103,7 @@ const Dashboard = () => {
         <img src="/no-record.svg" alt="no-record" />
 
         <Button className='flex items-center !text-[15.85px] rounded-lg !text-white my-5' prefixIcon={<img src="/pluswhite.svg" alt="" />} onClick={() => setModalOpen(true)} title="Complete Onboarding" />
+      </div>
       </div>
 
       <Modal
@@ -226,7 +243,7 @@ const Dashboard = () => {
                 ref={formInput}
                 value={color.hex}
                 // onChange={(e: React.ChangeEvent<HTMLInputElement>) => setColorHex(e.target.value)}
-                onChange={changeColor}
+                onChange={(e) =>  changeColor(e.target.value)}
                 type="text"
                 name="color"
                 placeholder="e.g #FFFFFF"
@@ -249,6 +266,7 @@ const Dashboard = () => {
                   placement: "topRight"
                 });
                 setModalColor(false)
+                showToastMessage()
               }} />
             </div>
             <div></div>

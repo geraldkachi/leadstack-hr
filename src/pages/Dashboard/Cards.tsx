@@ -3,12 +3,12 @@ const Cards = () => {
         <>
             <div className="text-[#7A8699] bg-white hover:bg-[#FAFBFB] rounded-[15px] border border-[rgb(241,242,245)] p-4 md:p-6 mt-4 mb-5 cursor-pointer">
                 <div className="">
-                    <div className="flex items-center justify-between mb-5">
+                    <div className="flex items-center justify-between mb-3">
                         <p className='text-xl text-[#4A5567] leading-[25.227px] font-bold'>No of Employee</p>
                         <img src="/cardcaution.svg" alt="cardcaution" />
                     </div>
 
-                    <div className="flex items-center justify-between mb-5">
+                    <div className="flex items-center justify-between mb-3">
                         <p className='text-xl text-[#1D2939] leading-[25.227px] font-bold'>0</p>
                     </div>
 
