@@ -34,60 +34,101 @@ const Employment = () => {
                                 name="last name"
                                 placeholder="HR Solution"
                             />
-                        </div>
-                        <Input
-                            label="Official Email Address"
-                            ref={formInput}
-                            type="email"
-                            name="password"
-                            placeholder="LordGerald@tch.com"
-                        />
-                        <Input
-                            label="Phone Number"
-                            ref={formInput}
-                            type="number"
-                            name="password"
-                            placeholder="hr@tch.com"
-                        />
-                        <div className="grid grid-cols-2 gap-x-2">
                             <Input
-                                label="Gender"
+                                label="HR Solution"
                                 ref={formInput}
                                 type="text"
-                                name="gender"
+                                name="first name"
+                                placeholder="EMP-2987"
+                            />
+                            <Input
+                                label="Date of Employment *"
+                                ref={formInput}
+                                type="date"
+                                name="last name"
+                                placeholder="Choose a date"
+                            />
+                        </div>
+                        {/* Payment Information */}
+                        <div className="mt-2">
+                            <div className="text-[#7C8091] mb-5 text-lg font-medium">Payment Information <span className="text-[#E01507]"></span></div>
+                            <div className="grid grid-cols-2 gap-x-2">
+                                <Input
+                                    label="Pay Schedule"
+                                    ref={formInput}
+                                    type="text"
+                                    name="last name"
+                                    placeholder="Monthly"
+                                />
+                                <Input
+                                    label="Salary"
+                                    ref={formInput}
+                                    type="number"
+                                    name="number"
+                                    placeholder="NGN 450,000"
+                                />
+                            </div>
+                            <Input
+                                label="Salary Account Number *"
+                                ref={formInput}
+                                type="text"
+                                name="first name"
                                 placeholder="hr@tch.com"
                             />
                             <Input
-                                label="Date of Birth (Optional)"
+                                label="Bank Name *"
                                 ref={formInput}
                                 type="date"
-                                name="password"
-                                placeholder="Choose date"
+                                name="last name"
+                                placeholder="NUBAN Bank"
                             />
+                            <div className="grid grid-cols-2 gap-x-2">
+                                <Input
+                                    label="Bank Branch "
+                                    ref={formInput}
+                                    type="text"
+                                    name="last name"
+                                    placeholder="Bank Branch"
+                                />
+                                <Input
+                                    label="Bank Code"
+                                    ref={formInput}
+                                    type="number"
+                                    name="number"
+                                    placeholder="NGN 450,000"
+                                />
+                            </div>
+
                         </div>
-                        <Input
-                            label="Country"
-                            ref={formInput}
-                            type="text"
-                            name="country"
-                            placeholder="Nigeria"
-                        />
-                        <div className="grid grid-cols-2 gap-x-2">
+
+                        {/* Other Information */}
+                        <div className="mt-2">
+                            <div className="text-[#7C8091] mb-5 text-lg font-medium">Other Information <span className="text-[#E01507]"></span></div>
                             <Input
-                                label="Gender"
+                                label="HMO No"
                                 ref={formInput}
-                                type="text"
-                                name="gender"
-                                placeholder="hr@tch.com"
+                                type="number"
+                                name="number"
+                                placeholder="987654321"
                             />
-                            <Input
-                                label="Date of Birth (Optional)"
-                                ref={formInput}
-                                type="date"
-                                name="password"
-                                placeholder="Choose date"
-                            />
+                            <div className="grid grid-cols-2 gap-x-2">
+                                <Input
+                                    label="Pension No *"
+                                    ref={formInput}
+                                    type="text"
+                                    name="first name"
+                                    placeholder="1287654321"
+                                />
+                                <Input
+                                    label="PFA *"
+                                    ref={formInput}
+                                    type="date"
+                                    name="last name"
+                                    placeholder="Leadway Assurance"
+                                />
+                            </div>
                         </div>
+
                         <div className="flex items-center justify-end mt-5">
                             <Button className='!px-8' title='Edit' prefixIcon={<EditProfileIcon />} onClick={() => null} />
                         </div>
