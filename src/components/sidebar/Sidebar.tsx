@@ -181,7 +181,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
               <Link
                 to={item.route}
                 key={index}
-                className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+                className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff] pb-4 border-b border-red-600"
                   }
                   ${!open && 'text-center flex items-center justify-center'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 

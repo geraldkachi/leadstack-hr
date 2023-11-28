@@ -30,7 +30,7 @@ const BreadcrumbItems = ({bread}: any) => {
         const disabled = isLast(index)
         const { name, url } = item
         return (
-          <li key={index} className="text-sm border border-[#F5F7FA] py-2">
+          <li key={index} className="text-sm py-2">
             <Link to={disabled ? '#' : `/${url}`} className={`${disabled ? 'text-gray-600' : ' text-[#7C8091] hover:text-[#535768]'}`}>{name}</Link>
             <li className='inline'><span className={`${disabled && 'hidden invisible'}text-gray-500 mx-2`}>{">"}</span></li>
           </li>

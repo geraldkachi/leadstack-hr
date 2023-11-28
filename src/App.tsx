@@ -1,13 +1,12 @@
+import './App.css'
 // import "react-color-palette/lib/css/styles.css";
 import { Suspense, useEffect, useRef, useState, } from 'react'
 import { Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-
-import './App.css'
 import Context from './components/context';
 import { Layout, Loading } from './components';
-import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal } from './pages';
+import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal, Profile } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 import { useAuth } from './hooks';
 
@@ -47,7 +46,6 @@ const App: React.FC = () => {
   return (
     <div className={`${activeFont}`}>
       <QueryClientProvider client={ref.current}>
-        {/* <ToastContainer /> */}
         <Context>
           <Suspense fallback={<>{isLoading && <Loading />}</>}>
             <Routes>
@@ -78,6 +76,7 @@ const App: React.FC = () => {
                   <Route path="/reports-analytics" element={<ReportsAnalytics />} />
                   <Route path="/finance" element={<Finance />} />
                   <Route path="/self-service" element={<SelfService />} />
+                  <Route path="/profile" element={<Profile />} />
 
                 </Route>
               </Route>

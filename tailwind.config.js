@@ -7,9 +7,16 @@ export default {
   theme: {
     extend: {},
     fontFamily: {
+      colors: {
+        // gray: colors.coolGray,
+        // blue: colors.lightBlue,
+        // red: colors.rose,
+        // pink: colors.fuchsia,
+        primary: '#3490dc',
+        secondary: '#ffed4a',
+      },
       noto: ["Noto Sans", "sans-serif"],
       poppins: ['Poppins', 'sans-serif'],
-
     },
   },
   plugins: [],
