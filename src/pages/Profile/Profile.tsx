@@ -73,7 +73,7 @@ const Profile = () => {
                             </div>
 
 
-                            {<div className="flex items-center gap-4 mt-2 flex-wrap">
+                            {<div className="flex items-center gap-4 mt-2 flex-wrap font-roboto">
                                 {box.map((item, i) => (
                                     <div className="border border-dashed border-[#E4E6EF] p-2 md:p-3 rounded" key={i}>
                                         <div className="text-lg md:text-xl font-black">{item.title}</div>

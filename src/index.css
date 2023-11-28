@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  /* font-family: "Noto Sans", sans-serif; */
   font-family: "Noto Sans", sans-serif;
   font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: white;
 }
 @layer utilities {
@@ -24,7 +24,7 @@ body {
 }
 
 .ant-table-thead .ant-table-cell {
-  background-color: #F5F6FA !important;
+  background-color: #f5f6fa !important;
   color: #535768 !important;
   font-size: 0.8rem !important;
   padding: 0.5rem !important;
