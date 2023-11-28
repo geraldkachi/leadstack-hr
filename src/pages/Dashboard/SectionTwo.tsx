@@ -6,6 +6,19 @@ interface Props {
 }
 const SectionTwo = ({ setState }: Props) => {
     const [register, setRegister] = useState(false)
+    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        // Access the selected file from the event
+        const file = event.target.files?.[0];
+
+        // Do something with the selected file (e.g., store it in state)
+        //@ts-ignore
+        setSelectedFile(file);
+
+        // You can also perform additional actions, such as uploading the file to a server
+        // Example: uploadFileToServer(file);
+    };
     return (
         <div>
             <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setState(0)} />
@@ -46,10 +59,12 @@ const SectionTwo = ({ setState }: Props) => {
                                         <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Drag your file here,</span> <span className="text-[]">or browse</span></p>
                                         <p className="text-xs text-[#BAC3D2]">supports: JPEG, PNG, PDF not more than 3MB</p>
                                     </div>
-                                    <input id="dropzone-file" type="file" className="hidden" />
+                                    <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
                                 </label>
                             </div>
                         </div>
+                        {/* Display the selected file name */}
+                        {selectedFile && <p className='flex items-center gap-3 mt-3'>Selected File: {selectedFile.name}  <img src="/register-check.svg" alt="" /> </p>}
                     </>
                 )}
             </div>

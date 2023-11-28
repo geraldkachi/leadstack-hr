@@ -11,6 +11,19 @@ const Biodata = () => {
   const formInput = useRef<HTMLInputElement>(null);
   const [modalSuccess, setModalSuccess] = useState(false)
   const [modalSuccessEmp, setModalSuccessEmp] = useState(false)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Access the selected file from the event
+    const file = event.target.files?.[0];
+
+    // Do something with the selected file (e.g., store it in state)
+    //@ts-ignore
+    setSelectedFile(file);
+
+    // You can also perform additional actions, such as uploading the file to a server
+    // Example: uploadFileToServer(file);
+  };
 
   return (
     <div className="bg-white p-4 md:p-8 rounded-lg">
@@ -49,49 +62,7 @@ const Biodata = () => {
                 name="password"
                 placeholder="hr@tch.com"
               />
-              {/* <Select
-              size='large'
-                defaultValue="lucy"
-                style={{ width: 200 }}
-                onChange={handleChange}
-                options={[
-                  {
-                    label: 'Manager',
-                    options: [
-                      { label: 'Jack', value: 'jack' },
-                      { label: 'Lucy', value: 'lucy' },
-                    ],
-                  },
-                  {
-                    label: 'Engineer',
-                    options: [{ label: 'yiminghe', value: 'Yiminghe' }],
-                  },
-                  {
-                    label: 'China',
-                    value: 'china',
-                    emoji: '🇨🇳',
-                    desc: 'China (中国)',
-                  },
-                  {
-                    label: 'USA',
-                    value: 'usa',
-                    emoji: '🇺🇸',
-                    desc: 'USA (美国)',
-                  },
-                  {
-                    label: 'Japan',
-                    value: 'japan',
-                    emoji: '🇯🇵',
-                    desc: 'Japan (日本)',
-                  },
-                  {
-                    label: 'Korea',
-                    value: 'korea',
-                    emoji: '🇰🇷',
-                    desc: 'Korea (韩国)',
-                  },
-                ]}
-              /> */}
+
             </div>
             <Input
               label="Phone Number"
@@ -100,13 +71,26 @@ const Biodata = () => {
               name="password"
               placeholder="hr@tch.com"
             />
-            <Input
+            {/* <Input
               label="Uplaod Passport Photograph"
               ref={formInput}
-              type="text"
+              type="file"
               name="password"
               placeholder="hr@tch.com"
-            />
+              onChange={handleFileChange}
+            /> */}
+            <>
+              <label className="my-1 text-[#0D1227] leading-[19.6px] flex items-center text-left text-sm font-semibold"
+                htmlFor={''}
+              >Uplaod Passport Photograph</label>
+              <label className="flex items-center text-[#B2B7C2] border-[#DEDEC] border w-full p-2 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 cursor-pointer">
+                <img src="/chose-file.svg" alt="" />choose file
+                <input type="file" className="hidden" onChange={handleFileChange} />
+              </label>
+            </>
+
+            {/* Display the selected file name */}
+            {selectedFile && <p className='flex items-center gap-3 mt-3'>Selected File: {selectedFile.name}  <img src="/register-check.svg" alt="" /> </p>}
           </div>
           <div>
             <div className="grid grid-cols-2 gap-x-2">

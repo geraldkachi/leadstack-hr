@@ -52,7 +52,8 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
                   useAuth.setState({ activeTab: idx })
                 }}
               >
-                {tab.label}   {data[0] && <div className='text-center w-5 h-5 ms-3 bg-red-600 text-white rounded-full text-[10px]'> 4</div>}
+                {tab.label}  
+                 {/* {data[0] && <div className='text-center w-5 h-5 ms-3 bg-red-600 text-white rounded-full text-[10px]'> 4</div>} */}
               </button>
             );
           })}

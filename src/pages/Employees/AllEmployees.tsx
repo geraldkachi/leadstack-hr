@@ -243,26 +243,26 @@ const AllEmployees = () => {
                 type="search"
                 placeholder="Search Employee by name, role, ID or any related keywords" />
 
-
-            <Table
-                size="large"
-                {...{ locale }}
-                // rowSelection={{
-                //   type: selectionType,
-                //   ...rowSelection,
-                // }}
-                // loading={isLoading || isFetching}
-                columns={columns}
-                {...{ dataSource }}
-                // dataSource={data?.data?.standup}
-                pagination={{
-                    position: ["bottomRight"],
-                    //   current: page,
-                    //   total: data?.data?.count,
-                }}
-                {...{ rowSelection }}
-            // style={{ marginTop: "20px" }}
-            />
+            <div className="border border-[#DEDFEC] rounded-md">
+                <Table
+                    size="large"
+                    {...{ locale }}
+                    // rowSelection={{
+                    //   type: selectionType,
+                    //   ...rowSelection,
+                    // }}
+                    // loading={isLoading || isFetching}
+                    columns={columns}
+                    {...{ dataSource }}
+                    // dataSource={data?.data?.standup}
+                    pagination={{
+                        position: ["bottomRight"],
+                        //   current: page,
+                        //   total: data?.data?.count,
+                    }}
+                    {...{ rowSelection }}
+                />
+            </div>
 
 
 

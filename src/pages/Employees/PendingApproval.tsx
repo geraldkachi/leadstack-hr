@@ -243,25 +243,26 @@ const PendingApproval = () => {
                 type="search"
                 placeholder="Search Employee by name, role, ID or any related keywords" />
 
-
-            <Table
-                size="large"
-                {...{ locale }}
-                // rowSelection={{
-                //   type: selectionType,
-                //   ...rowSelection,
-                // }}
-                // loading={isLoading || isFetching}
-                columns={columns}
-                {...{ dataSource }}
-                // dataSource={data?.data?.standup}
-                pagination={{
-                    position: ["bottomRight"],
-                    //   current: page,
-                    //   total: data?.data?.count,
-                }}
-                {...{ rowSelection }}
-            />
+            <div className="border border-[#DEDFEC] rounded-md">
+                <Table
+                    size="large"
+                    {...{ locale }}
+                    // rowSelection={{
+                    //   type: selectionType,
+                    //   ...rowSelection,
+                    // }}
+                    // loading={isLoading || isFetching}
+                    columns={columns}
+                    {...{ dataSource }}
+                    // dataSource={data?.data?.standup}
+                    pagination={{
+                        position: ["bottomRight"],
+                        //   current: page,
+                        //   total: data?.data?.count,
+                    }}
+                    {...{ rowSelection }}
+                />
+            </div>
 
 
             <Modal
@@ -275,7 +276,7 @@ const PendingApproval = () => {
                 width={694}
             >
                 <div className='grid md:grid-cols-1p-4 md:p-8 h-[650px] overflow-y-scroll no-scrollbar'>
-                    <EmployeesDetails {...{ setModalDetails, setAcceptRequest, setDeclineRequest }}  />
+                    <EmployeesDetails {...{ setModalDetails, setAcceptRequest, setDeclineRequest }} />
                 </div>
             </Modal>
 
