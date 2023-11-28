@@ -13,3 +13,8 @@ export { default as PerformanceIcon } from "./Performance/PerformanceIcon";
 export { default as ReportsAnalyticsIcon } from "./Reports&Analytics/ReportsAnalyticsIcon";
 export { default as FinanceIcon } from "./Finance/FinanceIcon";
 export { default as SelfServiceIcon } from "./SelfService/SelfServiceIcon";
+export { default as HumanResourceIcon } from "./Profile/HumanResourceIcon";
+export { default as EmailProfileIcon } from "./Profile/EmailProfileIcon";
+export { default as PhoneProfileIcon } from "./Profile/PhoneProfileIcon";
+export { default as LocationnProfileIcon } from "./Profile/LocationnProfileIcon";
+export { default as EditProfileIcon } from "./Profile/EditProfileIcon";

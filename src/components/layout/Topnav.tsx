@@ -28,7 +28,7 @@ const Topnav = () => {
                     placeholder="Search employees, teams..." />
 
                 <div className="flex gap-2 items-center py-2">
-                    <p className="text-black text-[16px] mr-4 flex items-start gap-2">
+                    <p className="text-black text-[16px] mr-4 md:flex items-start gap-2 hidden">
                         <img src="/calenda.svg" alt="calenda" />
                         <span className="whitespace-nowrap">August 8th 2022 . 09:00 AM</span>
                     </p>

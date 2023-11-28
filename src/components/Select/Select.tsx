@@ -29,8 +29,8 @@ const Select = ({
     className
 }: PropTypes) => {
     return (
-        <div className={`space-y-2 flex flex-col ${disabled && "opacity-60"}`}>
-            <label className="text-sm font-medium uppercase mb-[0.625rem] text-[#0F3057]">
+        <div className={`flex flex-col ${disabled && "opacity-60"}`}>
+            <label className="my-1 text-[#0D1227] leading-[19.6px] flex items-center text-left text-sm font-semibold">
                 {label}
             </label>
             <div
@@ -48,10 +48,10 @@ const Select = ({
                     //   id={id}  
                     disabled={disabled}
                     onChange={(e:  React.ChangeEvent<HTMLSelectElement>) => onChange(e.target.value) || onChange}
-                    className={`${className}  focus:outline-none w-full md:auto bg-white`}
+                    className={`${className}  border border-[#DEDFE]  w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-[#7C8091] placeholder:text-base placeholder:font-normal placeholder:leading-6 bg-white`}
                     required={required}
                 >
-                    <option value="" disabled>
+                    <option value="" className="text-[#7C8091]" disabled>
                         {placeholder || "Select"}
                     </option>
                     {options.map(
@@ -61,7 +61,7 @@ const Select = ({
                         ) => (
                             <option
                                 // key={`${id}-option_${optionIndex}`}
-                                className="p-4"
+                                className="p-4 bg-red-600"
                                 key={`-option_${optionIndex}`}
                                 value={typeof option === "string" ? option : option.value}
                             >

@@ -13,3 +13,4 @@ export { default as EmployeePop } from "./otherComponents/EmployeePop";
 export { default as HiringPop } from "./otherComponents/HiringPop";
 export { default as Breadcrumbs } from "./Breadcrumbs/Breadcrumbs";
 export { default as Toast } from "./Toast/Toast";
+export { default as Select } from "./Select/Select";

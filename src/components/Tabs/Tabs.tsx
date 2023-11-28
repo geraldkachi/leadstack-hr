@@ -40,13 +40,13 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
   return (
     <div>
       <div className="relative">
-        <div className="flex space-x- border-b px-4 md:px-8">
+        <div className="flex space-x- border-b px-4 md:px-8 overflow-x-scroll">
           {data.map((tab, idx) => {
             return (
               <button
                 key={idx}
                 ref={(el) => (tabsRef.current[idx] = el)}
-                className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-4 text-sm leading-[19.6px] flex items-center`}
+                className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-4 text-sm leading-[19.6px] flex items-center whitespace-nowrap`}
                 onClick={() => {
                   setActiveTabIndex(idx)
                   useAuth.setState({ activeTab: idx })

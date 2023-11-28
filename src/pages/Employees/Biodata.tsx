@@ -2,11 +2,11 @@ import { Modal } from 'antd'
 import { useRef, useState } from "react";
 import { Button, Input } from "../../components";
 import { useAuth } from '../../hooks';
-import { Select } from 'antd';
+// import { Select } from 'antd';
 
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
+// const handleChange = (value: string) => {
+//   console.log(`selected ${value}`);
+// };
 const Biodata = () => {
   const formInput = useRef<HTMLInputElement>(null);
   const [modalSuccess, setModalSuccess] = useState(false)
