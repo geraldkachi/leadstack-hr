@@ -1,5 +1,7 @@
 export { default as DashboardIcon } from "./Dashboard/DashboardIcon";
 export { default as EmployeesIcon } from "./Employees/EmployeesIcon";
+export { default as ActionCheck } from "./Employees/ActionCheck";
+export { default as ActionDecline } from "./Employees/ActionDecline";
 export { default as MyTeamIcon } from "./MyTeam/MyTeamIcon";
 export { default as HiringIcon } from "./Hiring/HiringIcon";
 export { default as HiriingArrow } from "./Hiring/HiriingArrow";

@@ -8,6 +8,7 @@ import type { TableRowSelection } from 'antd/es/table/interface';
 import { Button, Input } from "../../components";
 import type { MenuProps } from 'antd';
 import EmployeesDetails from "./EmployeesDetails";
+import { ActionCheck, ActionDecline } from "../../assets";
 
 interface DataType {
     key: React.Key;
@@ -239,7 +240,17 @@ const AllEmployees = () => {
                     <path d="M13.5034 13.2383L11.2118 10.9979L11.1581 10.9162C11.0582 10.8168 10.9217 10.7608 10.7791 10.7608C10.6366 10.7608 10.5 10.8168 10.4002 10.9162C8.45266 12.7029 5.45177 12.8 3.38768 11.1431C1.32358 9.48627 0.836787 6.58956 2.25013 4.3741C3.66348 2.15863 6.53839 1.31188 8.96824 2.39541C11.3981 3.47894 12.6289 6.15651 11.8444 8.65238C11.7879 8.83269 11.834 9.02877 11.9655 9.16676C12.097 9.30475 12.2937 9.36369 12.4817 9.32138C12.6697 9.27906 12.8203 9.14192 12.8768 8.96161C13.8146 5.99975 12.3982 2.81235 9.54375 1.46136C6.68934 0.110359 3.25357 1.0012 1.45904 3.5576C-0.335479 6.11399 0.0497939 9.56875 2.36563 11.687C4.68146 13.8052 8.23286 13.9512 10.7224 12.0306L12.7514 14.0143C12.961 14.2183 13.2998 14.2183 13.5093 14.0143C13.7187 13.8075 13.7187 13.4744 13.5093 13.2675L13.5034 13.2383Z" fill="#667085" />
                 </svg>
             </>}
-                TrailingIcon={() => <><img className="cursor-pointer" src="/filtersearch.svg" alt="" /></>}
+                TrailingIcon={() => <>
+                    {/* <div className="flex items-center gap-x-3 mr-20">
+                        <Button prefixIcon={<ActionCheck index="#ffffff" />} className='!px-8 bg-[#1EAA79]' title='Approve' onClick={() => {
+                            setAcceptRequest(true)
+                        }} />
+                        <Button prefixIcon={<ActionDecline index="#ffffff" />} className='!px-8 !bg-[#E01507] ' title='Decline' onClick={() => {
+                            setDeclineRequest(true)
+                        }} />
+                    </div> */}
+                    <img className="cursor-pointer" src="/filtersearch.svg" alt="" />
+                </>}
                 type="search"
                 placeholder="Search Employee by name, role, ID or any related keywords" />
 
@@ -341,7 +352,7 @@ const AllEmployees = () => {
 
                     <div className="flex flex-row items-center justify-end mt-10">
                         <Button className='!px-8 !bg-white !text-[#0D1227]' title='Cancel' onClick={() => {
-                            setDeclineRequest(true)
+                            // setDeclineRequest(true)
                             setAcceptRequest(false)
                         }} />
                         <Button className='!px-8 ' title='Yes' onClick={() => {

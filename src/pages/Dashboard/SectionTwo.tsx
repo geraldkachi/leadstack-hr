@@ -27,14 +27,14 @@ const SectionTwo = ({ setState }: Props) => {
 
             <div className='flex items-center gap-x-4 py-6 relative'>
                 <div className="relative">
-                    {!register && (<img src="/register-check.svg" className="absolute top-2 px-2 ps-2" alt="" />)}
+                    {!register && (<img src="/register-check.svg" className="absolute top-2 right-0 px-2 ps-2" alt="" />)}
                     <div className={`${!register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(false)}>
                         <img src="/unregistered.svg" alt="unregistered" />
                         <div className="mt-4">{" "}&nbsp; Registered &nbsp;</div>
                     </div>
                 </div>
                 <div className="relative">
-                    {register && (<img src="/register-check.svg" className="absolute top-2 px-2 ps-2" alt="" />)}
+                    {register && (<img src="/register-check.svg" className="absolute top-2 right-0 px-2 ps-2" alt="" />)}
                     <div className={`${register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(true)}>
                         <img src="/unregistered.svg" alt="unregistered" />
                         <div className="mt-4">UnRegistered</div>
