@@ -2,8 +2,10 @@ import { Dispatch, SetStateAction, useRef } from "react";
 import { Button, Input } from "../../components"
 interface Props {
     setModalDetails: Dispatch<SetStateAction<boolean>>
+    setAcceptRequest: Dispatch<SetStateAction<boolean>>
+    setDeclineRequest: Dispatch<SetStateAction<boolean>>
 }
-const EmployeesDetails = ({setModalDetails}: Props) => {
+const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest }: Props) => {
     const formInput = useRef<HTMLInputElement>(null);
 
     return (
@@ -97,22 +99,29 @@ const EmployeesDetails = ({setModalDetails}: Props) => {
                     </div>
                     <div className="flex items-center justify-between mt-6">
                         <img src="/detail-facial.svg" alt="" />
-                    <div className="flex items-center justify-end gap-x-4 mt-6">
-                        <Button
-                            type="button"
-                            className="!bg-white !border !border-[#E01507] !text-[#E01507] !px-8 flex item-center"
-                            title="Decline"
-                            // onClick={() => useAuth.setState({ activeTab: 0 })}
-                            suffixIcon={<> <img src="/action-decline.svg" alt="" /></>}
+                        <div className="flex items-center justify-end gap-x-4 mt-6">
+                            <Button
+                                type="button"
+                                className="!bg-white !border !border-[#E01507] !text-[#E01507] !px-8 flex item-center"
+                                title="Decline"
+                                // onClick={() => useAuth.setState({ activeTab: 0 })}
+                                onClick={() => {
+                                    setModalDetails(false)
+                                    setDeclineRequest(true)
+                                }}
+                                suffixIcon={<> <img src="/action-decline.svg" alt="" /></>}
                             />
-                        <Button
-                            type="button"
-                            className="!bg-[#1D8EE6] !text-white !px-8 flex items-center"
-                            title="Approve"
-                            suffixIcon={<> <img src="/decline-check.svg" alt="" /></>}
-                            onClick={() => setModalDetails(false)}
+                            <Button
+                                type="button"
+                                className="!bg-[#1D8EE6] !text-white !px-8 flex items-center"
+                                title="Approve"
+                                suffixIcon={<> <img src="/decline-check.svg" alt="" /></>}
+                                onClick={() => {
+                                    setModalDetails(false)
+                                    setAcceptRequest(true)
+                                }}
                             />
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
