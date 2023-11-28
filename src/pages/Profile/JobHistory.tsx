@@ -43,7 +43,7 @@ const JobHistory = () => {
                                     name="email"
                                     placeholder="EMP-2987"
                                 />
-                        
+
                                 <div className="grid grid-cols-2 gap-x-2">
                                     <Input
                                         label="Grade"
@@ -78,101 +78,78 @@ const JobHistory = () => {
 
                         </div>
                         <div className="flex items-center justify-end mt-6 gap-x-1 my-4">
-                            <Button className='!px-8' title='Edit' prefixIcon={<EditProfileIcon />} onClick={() => null} />
+                            {/* <Button className='!px-8' title='Edit' prefixIcon={<EditProfileIcon />} onClick={() => null} /> */}
                         </div>
                     </form>
                 </div>
                 {/* half */}
-                {/* <div className="bg-white p-4 md:p-8 rounded-lg h-max">
-    <div className="border border-[#DEDFEC] p-4 rounded-2xl">
-        <div className="text-[#7C8091]">Education History <span className="text-[E01507]"></span></div>
-        <div className="rounded-lg my-5">
-            <div className="hover:bg-[#1D8EE60D] hover:border-[#1D8EE6]  bg-white border border-d rounded-lg p-3 flex items-start justify-between gap-4">
-                <div className="flex items-center gap-x-2">
-                    <div className="flex items-center gap-x-2">
+                <div className="bg-white p-4 md:p-8 rounded-lg h-max">
+                    <div className="border border-[#DEDFEC] p-4 rounded-2xl">
+                        <div className="text-[#7C8091]">Job History <span className="text-[E01507]"></span></div>
+                        <div className="rounded-lg my-5">
+                            <div className="hover:bg-[#1D8EE60D] hover:border-[#1D8EE6]  bg-white border border-d rounded-lg p-3 flex items-start justify-between gap-4">
+                                <div className="flex items-center gap-x-2">
+                                    <div className="flex items-center gap-x-2">
+                                    </div>
+                                    <div>
+                                        <div className="text-[13px] text-[#272848]">Federal Govt. College, Ogun <span className="text-[#94A0B4] text-[10px]">2003 - 2009</span> </div>
+                                        <div className="text-[#94A0B4] text-[10px] ">University  • <span>BSc.</span></div>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center gap-x-2">
+                                    <img src="/edithistory.svg" alt="" />
+
+                                    <img src="/uploaddelete.svg" className="cursor-pointer" alt=""
+                                    // onClick={() => setModalDelPop(true)}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="rounded-lg my-5">
+                            <div className="hover:bg-[#1D8EE60D] hover:border-[#1D8EE6]  bg-white border border-d rounded-lg p-3 flex items-start justify-between gap-4">
+                                <div className="flex items-center gap-x-2">
+                                    <div className="flex items-center gap-x-2">
+                                    </div>
+                                    <div>
+                                        <div className="text-[13px] text-[#272848]">University of Lagos, Akoka <span className="text-[#94A0B4] text-[10px]">2003 - 20012</span> </div>
+                                        <div className="text-[#94A0B4] text-[10px] ">University  • <span>BSc.</span></div>
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center gap-x-2">
+                                    <img src="/edithistory.svg" alt="" />
+
+                                    <img src="/uploaddelete.svg" className="cursor-pointer" alt=""
+                                    // onClick={() => setModalDelPop(true)}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div className="flex items-center justify-end mt-6">
+                            <Button
+                                type="button"
+                                className="!bg-white !text-[#535768] !px-8 "
+                                title="Skip"
+                                // onClick={() => useAuth.setState({ activeTab: 1 })}
+                            />
+                            <Button
+                                type="button"
+                                className="!bg-[#1D8EE6] !text-white !px-8 "
+                                title="Save & Continue"
+                                // onClick={() => useAuth.setState({ activeTab: 3 })}
+                            />
+                        </div>
                     </div>
-                    <div>
-                        <div className="text-[13px] text-[#272848]">Federal Govt. College, Ogun <span className="text-[#94A0B4] text-[10px]">2003 - 2009</span> </div>
-                        <div className="text-[#94A0B4] text-[10px] ">University  • <span>BSc.</span></div>
-                    </div>
-                </div>
 
-                <div className="flex items-center gap-x-2">
-                    <img src="/edithistory.svg" alt="" />
+                    <div className="flex items-center justify-end mt-6">
 
-                    <img src="/uploaddelete.svg" className="cursor-pointer" alt=""
-                    // onClick={() => setModalDelPop(true)}
-                    />
-                </div>
-            </div>
-        </div>
-
-        <div className="rounded-lg my-5">
-            <div className="hover:bg-[#1D8EE60D] hover:border-[#1D8EE6]  bg-white border border-d rounded-lg p-3 flex items-start justify-between gap-4">
-                <div className="flex items-center gap-x-2">
-                    <div className="flex items-center gap-x-2">
-                    </div>
-                    <div>
-                        <div className="text-[13px] text-[#272848]">University of Lagos, Akoka <span className="text-[#94A0B4] text-[10px]">2003 - 20012</span> </div>
-                        <div className="text-[#94A0B4] text-[10px] ">University  • <span>BSc.</span></div>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-x-2">
-                    <img src="/edithistory.svg" alt="" />
-
-                    <img src="/uploaddelete.svg" className="cursor-pointer" alt=""
-                    // onClick={() => setModalDelPop(true)}
-                    />
-                </div>
-            </div>
-        </div>
-
-        <div className="rounded-lg my-5">
-            <div className="hover:bg-[#1D8EE60D] hover:border-[#1D8EE6]  bg-white border border-d rounded-lg p-3 flex items-start justify-between gap-4">
-                <div className="flex items-center gap-x-2">
-                    <div className="flex items-center gap-x-2">
-                    </div>
-                    <div>
-                        <div className="text-[13px] text-[#272848]">IDEO.U <span className="text-[#94A0B4] text-[10px]">2011 - 20015</span> </div>
-                        <div className="text-[#94A0B4] text-[10px] ">University  • <span>BSc.</span></div>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-x-2">
-                    <img src="/edithistory.svg" alt="" />
-
-                    <img src="/uploaddelete.svg" className="cursor-pointer" alt="" onClick={() => (null)} />
-                </div>
-            </div>
-        </div>
-
-        <div className="rounded-lg my-5">
-            <div className="hover:bg-[#1D8EE60D] hover:border-[#1D8EE6]  bg-white border border-d rounded-lg p-3 flex items-start justify-between gap-4">
-                <div className="flex items-center gap-x-2">
-                    <div className="flex items-center gap-x-2">
-                    </div>
-                    <div>
-                        <div className="text-[13px] text-[#272848]">Federal Govt. College, Imo <span className="text-[#94A0B4] text-[10px]">2018 - 2023</span> </div>
-                        <div className="text-[#94A0B4] text-[10px] ">University  • <span>BSc.</span></div>
                     </div>
                 </div>
-
-                <div className="flex items-center gap-x-2">
-                    <img src="/edithistory.svg" alt="" />
-
-                    <img src="/uploaddelete.svg" className="cursor-pointer" alt="" onClick={() => (null)} />
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-    <div className="flex items-center justify-end mt-6">
-
-    </div>
-</div> */}
 
             </div>
 

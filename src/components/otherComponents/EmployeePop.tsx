@@ -1,4 +1,4 @@
-import { Modal } from "antd";
+import { Checkbox, Modal } from "antd";
 import { ClickOutside } from "../../hooks/useClickOutside"
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -14,6 +14,19 @@ const EmployeePop = ({ state, setState }: Props) => {
   const [modalUpload, setModalUpload] = useState(false)
   const [modalSuccess, setModalSuccess] = useState(false)
   const [modalSuccessUpload, setModalSuccessUpload] = useState(false)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        // Access the selected file from the event
+        const file = event.target.files?.[0];
+
+        // Do something with the selected file (e.g., store it in state)
+        //@ts-ignore
+        setSelectedFile(file);
+
+        // You can also perform additional actions, such as uploading the file to a server
+        // Example: uploadFileToServer(file);
+    };
 
   return (
     <>
@@ -69,10 +82,7 @@ const EmployeePop = ({ state, setState }: Props) => {
             <div className="text-[#535768] text-[13px] ">Choose who can have access to the company’s HR CRM</div>
 
             <div className="flex items-center gap-3  mt-4">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="0.5" y="0.5" width="19" height="19" rx="1.5" fill="#1D8EE6" stroke="#1D8EE6" />
-                <path d="M13.8254 6.23489C14.0638 5.95436 14.4845 5.92024 14.7651 6.1587C15.0456 6.39716 15.0797 6.81789 14.8413 7.09843L9.17461 13.7651C8.93241 14.05 8.50325 14.08 8.22374 13.8316L5.22374 11.1649C4.94856 10.9203 4.92377 10.4989 5.16838 10.2237C5.41299 9.94856 5.83437 9.92377 6.10956 10.1684L8.60013 12.3822L13.8254 6.23489Z" fill="white" />
-              </svg>
+              <Checkbox defaultChecked />
 
               <div className="text-[#535768] text-[13px]"> Strictly with the company’s domain</div>
             </div>
@@ -122,16 +132,17 @@ const EmployeePop = ({ state, setState }: Props) => {
           </div>
 
           <div className="p-2 bg-white my-2">
-            <div className="flex flex-col justify-center items-center border-[2px] border-dashed rounded-md p-4 my-4">
+            <label className="cursor-pointer flex flex-col justify-center items-center border-[2px] border-dashed rounded-md p-4 my-4">
               <div>
                 <img className="" src="/uploaddocs.svg" alt="" />
               </div>
 
-              <div className="text-center">
-                <div className="text-sm md:text-[21px]">Drag your file here, or  <span className="text-[#1D8EE6]">browse</span></div>
-              </div>
-            </div>
-
+             
+                <div className="text-sm md:text-[21px] text-center">Drag your file here, or  <span className="text-[#1D8EE6]">browse</span></div>
+                <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
+            </label>
+               {/* Display the selected file name */}
+               {selectedFile && <p className='flex items-center gap-3 my-3'>Selected File: {selectedFile.name}  <img src="/register-check.svg" alt="" /> </p>}
 
             <div className="rounded-lg">
               <div className="bg-[#E9FCFB] rounded-lg p-3 flex items-start justify-between gap-4">
