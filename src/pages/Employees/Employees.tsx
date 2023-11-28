@@ -1,13 +1,13 @@
 import AllEmployees from "./AllEmployees";
 import PendingApproval from "./PendingApproval";
 import { Button as Button, EmployeePop, Tabs } from "../../components"
-import { ClickOutside } from "../../hooks/useClickOutside";
+// import { ClickOutside } from "../../hooks/useClickOutside";
 import { useState } from "react";
-import { useWindowDimensions } from "../../hooks";
+// import { useWindowDimensions } from "../../hooks";
 
 const Employees = () => {
   const [state, setState] = useState(false);
-  const { width } = useWindowDimensions()
+  // const { width } = useWindowDimensions()
 
   return (
     <div className="h-full pt-3 ">

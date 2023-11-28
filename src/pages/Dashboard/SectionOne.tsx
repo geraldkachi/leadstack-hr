@@ -25,11 +25,12 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
   return (
     <div className={`${activeFont}`}>
       <div className="text-[27px] font-bold text-[#091E42] border-b border-gray-200 pb-3 font-">Customize Experience</div>
-      {activeFont}
-      <div className="flex flex-col items-center justify-start py-2 w-max cursor-pointer">
+      {/* {activeFont} */}
+      <label className="flex flex-col items-center justify-start py-2 w-max cursor-pointer">
         <span className="py-2 text-base leading-6 font-medium">Upload Logo</span>
         <div className="border border-dashed border-[#DEDFEC] font-medium text-[46.29px] text-center p-4 rounded-md">TH</div>
-      </div>
+        <input type="file" className="hidden" />
+      </label>
 
       <div className="flex items-center gap-2 py-2">
         <Checkbox defaultChecked />

@@ -2,7 +2,7 @@ import "react-color-palette/css";
 // import './styles.css'
 import Cards from './Cards'
 import { Modal } from 'antd'
-import { useMemo, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { Hue, Saturation, useColor } from "react-color-palette";
 
 
@@ -36,7 +36,7 @@ const Dashboard = () => {
   ];
   console.log(colorHex, "colorHex")
 
-  const changeColor = (e) =>
+  const changeColor = (e: string) =>
     setColorHex((prev) => ({ ...prev, hex: e }))
     
 

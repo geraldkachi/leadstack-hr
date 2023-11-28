@@ -12,6 +12,7 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const tabsRef = useRef<any[]>([]);
 
   useEffect(() => {
@@ -31,8 +32,8 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
     setActiveTabIndex(activeTab)
   }, [activeTab])
 
-  console.log(activeTab, 'activeTab')
-  console.log(activeTabIndex, 'activeTabIndex')
+  // console.log(activeTab, 'activeTab')
+  // console.log(activeTabIndex, 'activeTabIndex')
 
   const Render = () => data[activeTabIndex].content
 
@@ -45,13 +46,13 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
               <button
                 key={idx}
                 ref={(el) => (tabsRef.current[idx] = el)}
-                className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-4 text-sm leading-[19.6px]`}
+                className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-4 text-sm leading-[19.6px] flex items-center`}
                 onClick={() => {
                   setActiveTabIndex(idx)
                   useAuth.setState({ activeTab: idx })
                 }}
               >
-                {tab.label}
+                {tab.label}   {data[0] && <div className='text-center w-5 h-5 ms-3 bg-red-600 text-white rounded-full text-[10px]'> 4</div>}
               </button>
             );
           })}

@@ -12,20 +12,25 @@ const SectionTwo = ({ setState }: Props) => {
 
             <div className="text-[27px] text-[#091E42] border-b border-gray-200 pb-3">Registration Info.</div>
 
-            <div className='flex items-center gap-x-4 py-6'>
-                <div className={`${!register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(prev => !prev)}>
-                    <img src="/unregistered.svg" alt="unregistered" />
-                    <div className="mt-4">Unregistered</div>
+            <div className='flex items-center gap-x-4 py-6 relative'>
+                <div className="relative">
+                    {!register && (<img src="/register-check.svg" className="absolute top-2 px-2 ps-2" alt="" />)}
+                    <div className={`${!register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(false)}>
+                        <img src="/unregistered.svg" alt="unregistered" />
+                        <div className="mt-4">{" "}&nbsp; Registered &nbsp;</div>
+                    </div>
                 </div>
-                <div className={`${register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(prev => !prev)}>
-                    <img src="/unregistered.svg" alt="unregistered" />
-
-                    <div className="mt-4">UnRegistered</div>
+                <div className="relative">
+                    {register && (<img src="/register-check.svg" className="absolute top-2 px-2 ps-2" alt="" />)}
+                    <div className={`${register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(true)}>
+                        <img src="/unregistered.svg" alt="unregistered" />
+                        <div className="mt-4">UnRegistered</div>
+                    </div>
                 </div>
             </div>
 
             <div className={`${register ? 'ease-in-out' : 'ease-in-out'}`}>
-                {register && (
+                {!register && (
                     <>
                         <div className="max-w-md">
                             <Input label='RC Number' placeholder='1234567RC' />
@@ -50,7 +55,7 @@ const SectionTwo = ({ setState }: Props) => {
             </div>
 
             <div className="flex items-center justify-center gap-2 max-w-md my-4">
-                <Button className='!px-10 !bg-white !text-black' title="Skip" onClick={() => null} />
+                <Button className='!px-10 !bg-white !text-black' title="Skip" onClick={() => setState(0)} />
                 <Button className='!px-10' title="Submit" onClick={() => setState(2)} />
             </div>
         </div>

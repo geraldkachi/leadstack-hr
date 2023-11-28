@@ -20,13 +20,12 @@ const SectionThree = ({ setState, setModalSuccess, setModalOpen }: Props) => {
 
           <div className="flex items-center justify-center gap-2 max-w-md my-10">
 
-            <Button className='!px-10 !bg-white !text-black' title="Skip" onClick={() => null} />
+            <Button className='!px-10 !bg-white !text-black' title="Skip" onClick={() => setState(1)} />
             <Button className='!px-10' title="Complete" onClick={() => {
               setModalSuccess(true)
               setModalOpen(false)
               setState(0)
             }} />
-
           </div>
         </div>
       </div>

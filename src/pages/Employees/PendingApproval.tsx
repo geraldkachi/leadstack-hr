@@ -1,11 +1,14 @@
-import { Table } from "antd"
+import { Dropdown, Modal, Space, Table, Tag } from "antd"
 import { useState } from "react";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
-import type { ColumnsType } from 'antd/es/table';
+// import type { ColumnsType } from 'antd/es/table';
 import { AlignType } from "rc-table/lib/interface";
 import type { TableRowSelection } from 'antd/es/table/interface';
-import { Input } from "../../components";
+import { Button, Input } from "../../components";
+import type { MenuProps } from 'antd';
+import EmployeesDetails from "./EmployeesDetails";
+
 interface DataType {
     key: React.Key;
     name: string;
@@ -15,13 +18,30 @@ interface DataType {
 
 const PendingApproval = () => {
     const navigate = useNavigate();
-    // const [selectionType, setSelectionType] = useState<'checkbox' | 'radio'>('checkbox');
+    const [modalDetails, setModalDetails] = useState<boolean>(false);
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
 
     const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
         console.log('selectedRowKeys changed: ', newSelectedRowKeys);
         setSelectedRowKeys(newSelectedRowKeys);
     };
+
+
+    // dropdown list
+    const items: MenuProps['items'] = [
+        {
+            key: '1',
+            label: (<span onClick={() => setModalDetails(true)} className="flex items-center gap-x-3"> <img src="/action-eye.svg" alt="" /> View Details</span>),
+        },
+        {
+            key: '2',
+            label: (<span className="flex items-center gap-x-3"> <img src="/action-check.svg" alt="" /> Approve</span>),
+        },
+        {
+            key: '3',
+            label: (<span className="flex items-center gap-x-3"> <img src="/action-decline.svg" alt="" /> Decline</span>),
+        },
+    ];
     const rowSelection: TableRowSelection<DataType> = {
         selectedRowKeys,
         onChange: onSelectChange,
@@ -70,11 +90,29 @@ const PendingApproval = () => {
         });
     }
 
-    const dataSource: ColumnsType<DataType> = [
+    const dataSource: DataType[] = [
         {
             key: '1',
             name: 'Mike',
             age: 32,
+            address: '10 Downing Street',
+        },
+        {
+            key: '2',
+            name: 'John',
+            age: 42,
+            address: '10 Downing Street',
+        },
+        {
+            key: '2',
+            name: 'John',
+            age: 42,
+            address: '10 Downing Street',
+        },
+        {
+            key: '2',
+            name: 'John',
+            age: 42,
             address: '10 Downing Street',
         },
         {
@@ -88,13 +126,14 @@ const PendingApproval = () => {
         {
             title: "Name",
             // dataIndex: 'startTime',
-            render: (val: any) => (
+            render: (val: { createdAt: string }) => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    // onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
                 >{`${val?.createdAt
                     ? format(new Date(val?.createdAt), "dd MMMM yyyy, hh:mm a")
-                    : "--/--/----"
+                    : "Gerald Kachi"
                     }`}</span>
             ),
             width: "10%",
@@ -105,63 +144,88 @@ const PendingApproval = () => {
             dataIndex: "creator",
             width: "10%",
             align: "center" as AlignType,
+            render: () => (
+                <span
+                    onClick={() => null}
+                    className="cursor-pointer capitalize whitespace-nowrap"
+                >{`Samuel Ikoojo`}</span>
+            ),
         },
         {
             title: "Job Role",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
-                >{`Backends`}</span>
+                >{`Frontend`}</span>
             ),
             width: "20%",
             align: "center" as AlignType,
         },
         {
             title: "Department",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
-                >{`--/--/----`}</span>
+                >{`Engineering`}</span>
             ),
             width: "20%",
             align: "center" as AlignType,
         },
         {
             title: "Hire Date",
-            render: (val: any) => (
+            render: () => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
-                >{`--/--/----`}</span>
+                >{`${''} 24 2023 18:16:46`}</span>
             ),
             width: "20%",
             align: "center" as AlignType,
         },
         {
             title: "Status",
-            render: (val: any) => (
+            render: (val: string) => (
                 <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
+                    onClick={() => null}
                     className="cursor-pointer capitalize whitespace-nowrap"
-                >{`--/--/----`}</span>
+                >
+                    <Tag color={val ? "green" : "red"}>{val ? "Approved" : "Declined"}</Tag>
+                </span>
             ),
             width: "20%",
             align: "center" as AlignType,
         },
         {
             title: "Action",
-            render: (val: any) => (
-                <span
-                    onClick={() => navigate(`/history/${val?.id}`)}
-                    className="cursor-pointer capitalize whitespace-nowrap"
-                >{`--/--/----`}</span>
+            render: () => (
+                <span onClick={() => null} className="cursor-pointer capitalize whitespace-nowrap">
+                    <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">
+                        <a onClick={(e) => e.preventDefault()}>
+                            <Space>
+                                <img src="/action-table.svg" alt="" />
+                            </Space>
+                        </a>
+                    </Dropdown>
+                </span>
             ),
             width: "20%",
             align: "center" as AlignType,
         },
     ];
+
+    const locale = {
+        emptyText: (
+            <span>
+                <div className="my-3 flex flex-col items-center justify-center pb-10">
+                    <img src="/no-record.svg" alt="no-record" />
+
+                    <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Add Employee" onClick={() => null} />
+                </div>
+            </span>
+        )
+    };
     return (
         <div className="mb-20 overflow-x-auto">
             <Input LeadingIcon={() => <>
@@ -176,6 +240,7 @@ const PendingApproval = () => {
 
             <Table
                 size="large"
+                {...{ locale }}
                 // rowSelection={{
                 //   type: selectionType,
                 //   ...rowSelection,
@@ -184,13 +249,28 @@ const PendingApproval = () => {
                 columns={columns}
                 {...{ dataSource }}
                 // dataSource={data?.data?.standup}
-                // pagination={{
-                //   position: ["bottomRight"],
-                //   current: page,
-                //   total: data?.data?.count,
-                // }}
+                pagination={{
+                    position: ["bottomRight"],
+                    //   current: page,
+                    //   total: data?.data?.count,
+                }}
                 {...{ rowSelection }}
             />
+
+            <Modal
+                open={modalDetails}
+                onCancel={() => setModalDetails(false)}
+                footer={null}
+                centered
+                maskClosable={false}
+                closable
+                afterClose={() => setModalDetails(false)}
+                width={694}
+            >
+                <div className='grid md:grid-cols-1p-4 md:p-8 h-[650px] overflow-y-scroll no-scrollbar'>
+                    <EmployeesDetails {...{ setModalDetails }} />
+                </div>
+            </Modal>
         </div>
     )
 }
