@@ -40,7 +40,7 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
   return (
     <div>
       <div className="relative">
-        <div className="flex space-x- border-b px-4 md:px-8 overflow-x-scroll">
+        <div className="flex space-x- border-b px-4 md:px-8">
           {data.map((tab, idx) => {
             return (
               <button

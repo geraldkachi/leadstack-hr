@@ -29,7 +29,7 @@ const Employees = () => {
         <Tabs
           data={[
             {
-              label: 'All Employees',
+              label: `All Employee`,
               content: (
                 <div className="-mt-4">
                   <AllEmployees />

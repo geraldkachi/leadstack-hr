@@ -211,7 +211,7 @@ const PendingApproval = () => {
                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">
                         <a onClick={(e) => e.preventDefault()}>
                             <Space>
-                                <img src="/action-table.svg" alt="" />
+                                <img src="/action-table.svg" className="p-1" alt="" />
                             </Space>
                         </a>
                     </Dropdown>
@@ -255,7 +255,7 @@ const PendingApproval = () => {
                 type="search"
                 placeholder="Search Employee by name, role, ID or any related keywords" />
 
-            <div className="border border-[#DEDFEC] rounded-md">
+            <div className="border border-[#DEDFEC] rounded-md overflow-x-scroll">
                 <Table
                     size="large"
                     {...{ locale }}

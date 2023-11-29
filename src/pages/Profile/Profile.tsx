@@ -1,5 +1,5 @@
 import { EmailProfileIcon, HumanResourceIcon, LocationnProfileIcon, PhoneProfileIcon } from "../../assets"
-import { Breadcrumbs, Button, Tabs } from "../../components"
+import { Breadcrumbs, Button } from "../../components"
 import Certifications from "./Certifications"
 import ContactInfo from "./ContactInfo"
 import Education from "./Education"
@@ -7,6 +7,9 @@ import EmergencyContact from "./EmergencyContact"
 import Employment from "./Employment"
 import JobHistory from "./JobHistory"
 import NextofKin from "./NextofKin"
+
+import { Tabs } from 'antd';
+import type { TabsProps } from 'antd';
 interface BreadcrumsbProps {
     url?: string
     name?: string
@@ -35,6 +38,59 @@ const box = [
         subtitle: 'Commendations'
     },
 ]
+
+
+const items: TabsProps['items'] = [
+    {
+        key: '1',
+        label: 'Contact Info',
+        children: <ContactInfo />,
+    },
+    {
+        key: '2',
+        label: 'Employment',
+        children: <Employment />,
+    },
+    {
+        key: '3',
+        label: 'Education',
+        children: <Education />,
+    },
+    {
+        key: '4',
+        label: 'Emergency Contact',
+        children: <Education />,
+    },
+    {
+        key: '5',
+        label: 'Emergency Contact',
+        children: <EmergencyContact />,
+    },
+    {
+        key: '6',
+        label: 'Emergency Contact',
+        children: <EmergencyContact />,
+    },
+    {
+        key: '6',
+        label: 'Next of Kin',
+        children: <NextofKin />
+    },
+    {
+        key: '7',
+        label: 'Job History',
+        children: <JobHistory />
+    },
+    {
+        key: '8',
+        label: 'Certifications',
+        children: <Certifications />
+    },
+];
+
+const onChange = (key: string) => {
+    console.log(key);
+};
 
 const Profile = () => {
     return (
@@ -99,8 +155,8 @@ const Profile = () => {
 
 
                 <div className="no-scrollbar">
-
-                    <Tabs
+                    <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+                    {/* <Tabs
                         data={[
                             {
                                 label: 'Contact Info',
@@ -145,7 +201,7 @@ const Profile = () => {
                                 )
                             }
                         ]}
-                    />
+                    /> */}
                 </div>
             </div>
         </div>
