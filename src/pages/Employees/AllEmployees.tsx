@@ -8,7 +8,7 @@ import type { TableRowSelection } from 'antd/es/table/interface';
 import { Button, Input } from "../../components";
 import type { MenuProps } from 'antd';
 import EmployeesDetails from "./EmployeesDetails";
-import { ActionCheck, ActionDecline } from "../../assets";
+// import { ActionCheck, ActionDecline } from "../../assets";
 
 interface DataType {
     key: React.Key;

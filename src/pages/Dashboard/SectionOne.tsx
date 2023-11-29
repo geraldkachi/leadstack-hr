@@ -1,5 +1,5 @@
 import { Checkbox } from 'antd';
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect } from "react"
 
 import DarkCard from "./DarkCard"
 import WhiteCard from "./WhiteCard"
@@ -16,6 +16,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
 
   // Get the saved font from localStorage or set a default
   const initialFont = localStorage.getItem('selectedFont') || activeFont;
+  console.log(initialFont)
 
   useEffect(() => {
     // Save the selected font to localStorage whenever it changes

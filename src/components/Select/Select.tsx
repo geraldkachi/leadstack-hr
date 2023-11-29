@@ -13,7 +13,7 @@ interface PropTypes {
     options?: string[] | { name: string; value: string }[];
     disabled?: boolean;
     canNotEdit?: boolean;
-    selectedOption?: string;
+    // selectedOption?: string;
     className?: string
 }
 const Select = ({
@@ -25,7 +25,7 @@ const Select = ({
     options = [],
     disabled = false,
     canNotEdit = false,
-    selectedOption,
+    // selectedOption,
     className
 }: PropTypes) => {
     return (
@@ -47,6 +47,7 @@ const Select = ({
                     defaultValue={value}
                     //   id={id}  
                     disabled={disabled}
+                    // @ts-ignore
                     onChange={(e:  React.ChangeEvent<HTMLSelectElement>) => onChange(e.target.value) || onChange}
                     className={`${className}  border border-[#DEDFE]  w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-[#7C8091] placeholder:text-base placeholder:font-normal placeholder:leading-6 bg-white`}
                     required={required}

@@ -23,14 +23,14 @@ const Topnav = () => {
                     </div>
                     <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3699FF] focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Search employees, teams..." required />
                 </div> */}
-                <Input inputClassName="w-64 pr-24 w-full" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt=""  />}
+                <Input inputClassName="w-64 pr-24 w-full font-noto" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt=""  />}
                     type="search"
                     placeholder="Search employees, teams..." />
 
                 <div className="flex gap-2 items-center py-2">
                     <p className="text-black text-[16px] mr-4 md:flex items-start gap-2 hidden">
                         <img src="/calenda.svg" alt="calenda" />
-                        <span className="whitespace-nowrap">August 8th 2022 . 09:00 AM</span>
+                        <span className="whitespace-nowrap font-noto">August 8th 2022 . 09:00 AM</span>
                     </p>
                     <div className="w-12 h-12 cursor-pointer">
                         <img src="/notemsg.svg" alt="notemsg" />

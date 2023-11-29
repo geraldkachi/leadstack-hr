@@ -13,15 +13,15 @@ export const EndDateContext = createContext<{
 
 const Context = ({ children }: { children: ReactNode }) => {
   const [date, setDate] = useState<string>("");
-  const [theme, setTheme] = useState<string>('light'); // or 'dark' or any other theme
+  // const [theme, setTheme] = useState<string>('light'); // or 'dark' or any other theme
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
-  };
+  // const toggleTheme = () => {
+  //   setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  // };
 
   return (
     // <EndDateContext.Provider value={{ date, setEndDate: setDate,  theme, toggleTheme }}>
-    <EndDateContext.Provider value={{ date, setEndDate: setDate,  theme, toggleTheme }}>
+    <EndDateContext.Provider value={{ date, setEndDate: setDate }}>
       {children}
     </EndDateContext.Provider>
   );

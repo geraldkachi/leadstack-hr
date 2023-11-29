@@ -6,6 +6,8 @@ const PasswordResetForm = () => {
     const [modalOpen, setModalOpen] = useState(false)
     const formInput = useRef<HTMLInputElement>(null);
 
+    console.log(modalOpen)
+
     return (
         <div className="w-full max-w-xl mx-auto px-3">
             <div className="text-center mb-[28px]"> </div>

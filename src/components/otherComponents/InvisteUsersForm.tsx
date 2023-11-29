@@ -1,11 +1,10 @@
-import { useState } from "react";
-import { Button, Input } from "..";
+import { FormEvent, KeyboardEventHandler, useState } from "react";
 import "./styles.css"
 
 const InvisteUsersForm = () => {
     const [tags, setTags] = useState<string[]>([]);
-    const addTag = (e: any) => {
-
+    const addTag = (e: FormEvent<KeyboardEventHandler<HTMLInputElement>>) => {
+        //@ts-ignoret
         if (e.key === "Enter") {
             if ((e.target as HTMLInputElement).value.length > 0) {
                 e.preventDefault();
@@ -39,6 +38,7 @@ const InvisteUsersForm = () => {
 
                 {/* <Input required className="input" type="email" placeholder="Type or paste email addresses and press `Enter`..." onKeyDown={addTag} /> */}
                 <div className="w-full">
+                    {/* @ts-ignore */}
                     <input type="email" placeholder="Type or paste email addresses and press `Enter`..." onKeyDown={addTag} />
                 </div>
             </div>

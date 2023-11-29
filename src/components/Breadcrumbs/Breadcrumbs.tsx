@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import { BreadcrumbsProps, BreadcrumsbItemsProps } from '../../pages/Userdetails/UserDetails'
-// interface BreadcrumsbProps {
-//   url?: string
-//   name?: string
-// }
-// interface BreadcrumsbItemsProps {
-//   breadcrumbsItems: Array<BreadcrumsbProps>
-// }
+// import { BreadcrumbsProps, BreadcrumsbItemsProps } from '../../pages/Userdetails/UserDetails'
+interface BreadcrumsbProps {
+  url?: string
+  name?: string
+}
+interface BreadcrumsbItemsProps {
+  bread: Array<BreadcrumsbProps>
+}
 // const bread: BreadcrumsbProps[] = [
 //   {
 //     name: 'Dashboard',
@@ -22,11 +22,11 @@ import { BreadcrumbsProps, BreadcrumsbItemsProps } from '../../pages/Userdetails
 //   }
 // ]
 
-const BreadcrumbItems = ({bread}: any) => {
+const BreadcrumbItems = ({bread}: BreadcrumsbItemsProps) => {
   const isLast = (index: number) => index === bread.length - 1
   return (
     <>
-      {bread.map((item: BreadcrumbsProps, index: number) => {
+      {bread.map((item: BreadcrumsbProps, index: number) => {
         const disabled = isLast(index)
         const { name, url } = item
         return (

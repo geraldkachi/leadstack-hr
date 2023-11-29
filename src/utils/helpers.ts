@@ -5,7 +5,7 @@ interface notiProps {
     title: string; message: string; placement: "topRight"; type: NotificationType
  }
 
-export const setToken = (data) => localStorage.setItem("veva:token", data);
+export const setToken = (data: string) => localStorage.setItem("veva:token", data);
 
 export const removeToken = () => localStorage.removeItem("veva:token");
 
@@ -14,27 +14,27 @@ export const getToken = () => {
   return token;
 };
 
-export const capitalize = (text) => {
-  return text.name.charAt(0).toUpperCase() + text.name.slice(1);
-};
+// export const capitalize = (text: {name: string[]}) => {
+//   return text.name.charAt(0).toUpperCase() + text.name.slice(1);
+// };
 
-export const emailValidator = (email) => {
-  const re =
-    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
-};
+// export const emailValidator = (email) => {
+//   const re =
+//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//   return re.test(String(email).toLowerCase());
+// };
 
-export const formatAmount = (amount, n, x) => {
-  const re = "\\d(?=(\\d{" + (x || 3) + "})+" + (n > 0 ? "\\." : "$") + ")";
-  return amount.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, "g"), "$&,");
-};
+// export const formatAmount = (amount, n, x) => {
+//   const re = "\\d(?=(\\d{" + (x || 3) + "})+" + (n > 0 ? "\\." : "$") + ")";
+//   return amount.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, "g"), "$&,");
+// };
 
-export const numberValidator = (number) => {
+export const numberValidator = (number: number) => {
   const re = /[+-]?([0-9]*[.])?[0-9]+/;
   return re.test(String(number));
 };
 
-export const getSubString = (stringContent, start, end) => {
+export const getSubString = (stringContent: string, start:string, end: string) => {
   const p = stringContent.indexOf(start) + start.length;
   return stringContent.substring(p, stringContent.indexOf(end, p));
 };
@@ -50,18 +50,18 @@ export const openNotification = ({ title, message, type, placement = "topRight" 
     duration: 2.0,
   });
 
-export const setLocationHistory = (location) =>
+export const setLocationHistory = (location: string) =>
   sessionStorage.setItem("veva:redirect:location", JSON.stringify(location));
 
-export const getLocationHistory = () => {
-  return JSON.parse(sessionStorage.getItem("veva:redirect:location"));
-};
+// export const getLocationHistory = () => {
+//   return JSON.parse(sessionStorage.getItem("veva:redirect:location"));
+// };
 
-export const setOrderFor = (user) => {
+export const setOrderFor = (user: string) => {
   sessionStorage.setItem("veva:order:user", JSON.stringify(user));
 };
 
-export const getOrderFor = () => {
-  return JSON.parse(sessionStorage.getItem("veva:order:user"));
-};
+// export const getOrderFor = () => {
+//   return JSON.parse(sessionStorage.getItem("veva:order:user"));
+// };
 

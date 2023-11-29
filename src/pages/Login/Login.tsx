@@ -1,9 +1,9 @@
-import { useState } from "react";
+// import { useState } from "react";
 import LoginForm from "./LoginForm";
-import LoginForm2 from "./LoginForm2";
+// import LoginForm2 from "./LoginForm2";
 
 const Login = () => {
-    const [currentStep, setCurrentStep] = useState<number>(1);
+    // const [currentStep, setCurrentStep] = useState<number>(1);
 
     return (
         <div className="grid md:grid-cols-2 h-screen bg-[#F2F5F9]">
@@ -18,9 +18,9 @@ const Login = () => {
                     <div className=" bottom-36 p-5 pr-16 text-2xl">
 
                     </div>
-                    {currentStep === 1 &&
+                    {/* {currentStep === 1 && */}
                         <img src="/login-img1.svg" alt="" />
-                    }
+                    {/* } */}
                 </div>
 
             </div>
@@ -28,7 +28,8 @@ const Login = () => {
             <div className="flex-col flex-1 flex mx-auto md:m-20 md:justify-between relative">
                 <div></div>
                 <div className="mb-32 p-8 rounded-[19.095px] bg-white ">
-                    {currentStep === 1 && <LoginForm {...{ setCurrentStep }} />}
+                    {/* {currentStep === 1 && <LoginForm  />} */}
+                    { <LoginForm  />}
                 </div>
                <div></div>
             </div>

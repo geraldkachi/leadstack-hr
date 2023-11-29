@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { Button, Input } from "../../components"
-import { EditProfileIcon } from "../../assets";
 
 const JobHistory = () => {
     const formInput = useRef<HTMLInputElement>(null);

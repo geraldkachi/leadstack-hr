@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { Dispatch, FormEvent, SetStateAction, useEffect, useState } from 'react';
 import OtpInput from 'react-otp-input';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components';
 import { Modal } from 'antd';
-
-const EnterVerificationCode = ({ setCurrentStep }: any) => {
+interface Props {
+    setCurrentStep: Dispatch<SetStateAction<number>>
+  }
+const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     const [modalOpen, setModalOpen] = useState(false)
     const navigate = useNavigate()
     const [otp, setOtp] = useState('');
@@ -22,13 +24,14 @@ const EnterVerificationCode = ({ setCurrentStep }: any) => {
         marginRight: "20px",
     };
 
-    const handleSubmit = (event: any) => {
+    const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
         console.log(otp);
         setAccountVerifying(true)
         setAccountVerified(false)
         // navigate("/login")
         setModalOpen(true) 
+
 
         const timeOutPromise = new Promise(resolve => {
             setTimeout(resolve, 2000);
@@ -39,12 +42,12 @@ const EnterVerificationCode = ({ setCurrentStep }: any) => {
     };
 
 
-    const toggleVerifyingModal = () => {
-        setAccountVerifying(!isAccountVerifying)
-    }
-    const toggleVerifiedModal = () => {
-        setAccountVerified(!isAccountVerified)
-    }
+    // const toggleVerifyingModal = () => {
+    //     setAccountVerifying(!isAccountVerifying)
+    // }
+    // const toggleVerifiedModal = () => {
+    //     setAccountVerified(!isAccountVerified)
+    // }
 
     useEffect(() => {
         if (accountStatus === 'yes') {
@@ -60,9 +63,12 @@ const EnterVerificationCode = ({ setCurrentStep }: any) => {
         // navigate('/forgot/password');
         setCurrentStep(5)
     }
-    const handleNavigateForward = () => {
-        navigate('/personal/information');
-    }
+    // const handleNavigateForward = () => {
+    //     navigate('/personal/information');
+    // }
+
+    console.log(isAccountVerified)
+    console.log(isAccountVerifying)
     return (
         <div className="w-full max-w-xl mx-auto py-3 flex flex-col justify-between">
             {/* <img src="" alt="" /> */}

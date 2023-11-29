@@ -1,8 +1,11 @@
 import { useRef } from "react";
 import { Button, Input } from "../../components"
 import { useNavigate } from "react-router-dom";
+// interface Props {
+//     setCurrentStep?: Dispatch<SetStateAction<number>>
+//   }
 
-const LoginForm = ({ setCurrentStep }: any) => {
+const LoginForm = () => {
     const formInput = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
 

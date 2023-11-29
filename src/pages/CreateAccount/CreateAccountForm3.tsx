@@ -1,11 +1,13 @@
-import { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Dispatch, SetStateAction, useRef } from "react";
+// import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../components";
-
-const CreateAccountForm3 = ({ setCurrentStep }: any) => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState<string>("");
-  const otpRef = useRef<HTMLInputElement>(null);
+interface Props {
+  setCurrentStep: Dispatch<SetStateAction<number>>
+}
+const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
+  // const navigate = useNavigate();
+  // const [email, setEmail] = useState<string>("");
+  // const otpRef = useRef<HTMLInputElement>(null);
   const formInput = useRef<HTMLInputElement>(null);
 
   return (
