@@ -29,9 +29,11 @@ const JobPortal = () => {
                         <div className="text-lg md:text-2xl">Recruitment</div>
                         <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
                     </div>
+<div>
 
                     <Button className='flex items-center rounded-lg !text-white my-5 pr-8' prefixIcon={<img src="/plusdash.svg" alt="" />} suffixIcon={""} title="Post New Job" onClick={() => setState(true)} />
                     <EmployeePop {...{ state, setState }} />
+</div>
                 </div>
 
 

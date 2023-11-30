@@ -7,9 +7,8 @@ import { useAuth } from "../../hooks";
 
 const DrawerCom = () => {
     const [openDraw, setOpenDraw] = useState(false);
-    const [placement, setPlacement] = useState<DrawerProps['placement']>('left');
+    const [placement] = useState<DrawerProps['placement']>('left');
     const open = useAuth(state => state.open)
-
 
     const showDrawer = () => {
         setOpenDraw(true);
@@ -17,10 +16,7 @@ const DrawerCom = () => {
 
     const onClose = () => {
         setOpenDraw(false);
-    };
-
-
-
+    }
     return (
         <>
             <Space>
@@ -37,7 +33,7 @@ const DrawerCom = () => {
                 key={placement}
                 width={`${open ? 230 : 80}`}
             >
-            <Sidebar {...{ open }} />
+                <Sidebar {...{ open }} />
             </Drawer>
         </>
     )
