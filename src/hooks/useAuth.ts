@@ -12,11 +12,13 @@ type State = {
     activeTab?: number
     activeFont: string
     open: boolean
+    openDraw: boolean
 }
 // const useAuth = create<State>((set, get) => ({
 const useAuth = create<State>(() => ({
     token, 
     open: true,  
+    openDraw: false,
     activeTab: 0,
     activeFont: 'font-noto'
 }));

@@ -79,10 +79,11 @@ const Sidebar = ({ open }: SidebarProps) => {
     { route: "/self-service", title: "Self Service" },
   ]
   const activeItem2 = location.pathname.includes("/hiring");
+  const openDraw = useAuth(state => state.openDraw)
 
 
   return (
-    <section className={`sidebar sm:block bg-white overflow-y-scroll no-scrollbar`}>
+    <section className={`sidebar  ${openDraw && '!block'} hidden sm:block bg-white overflow-y-scroll no-scrollbar`}>
       <div
         className={` ${open ? "sm:w-[280px] ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
       >

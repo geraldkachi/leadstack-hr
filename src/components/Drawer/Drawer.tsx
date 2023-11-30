@@ -6,16 +6,19 @@ import { useAuth } from "../../hooks";
 
 
 const DrawerCom = () => {
-    const [openDraw, setOpenDraw] = useState(false);
+    // const [openDraw, setOpenDraw] = useState(false);
     const [placement] = useState<DrawerProps['placement']>('left');
     const open = useAuth(state => state.open)
+    const openDraw = useAuth(state => state.openDraw)
 
     const showDrawer = () => {
-        setOpenDraw(true);
+        // setOpenDraw(true);
+        useAuth.setState({ openDraw: true });
     };
 
     const onClose = () => {
-        setOpenDraw(false);
+        // setOpenDraw(false);
+        useAuth.setState({ openDraw: !openDraw });
     }
     return (
         <>
