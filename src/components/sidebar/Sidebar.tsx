@@ -4,14 +4,15 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // import { AdminIcon, CustomersIcon, DashboardIcon, LoanCalculatorIcon, PersonalBankingIcon, ReportsIcon, StatusIcon } from "../../assets";
 // import Accordion from "../Accordion/Accordion";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
-import { useWindowDimensions } from "../../hooks";
+import { useAuth, useWindowDimensions } from "../../hooks";
 import { DashboardIcon, DocumentsIcon, EmployeesIcon, FinanceIcon, HiriingArrow, HiringIcon, LeaveManagementIcon, MyTeamIcon, PerformanceIcon, ReportsAnalyticsIcon, SelfServiceIcon, TimeManagementIcon, TrainingIcon } from "../../assets";
 import { Accordion, HiringPop } from "..";
 interface SidebarProps {
   open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
+  setOpen?: Dispatch<SetStateAction<boolean>>;
 }
-const Sidebar = ({ open, setOpen }: SidebarProps) => {
+const Sidebar = ({ open }: SidebarProps) => {
+
   const [state, setState] = useState(false);
   const location = useLocation()
   const { width } = useWindowDimensions()
@@ -81,7 +82,7 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
 
 
   return (
-    <section className={`sidebar hidden sm:block bg-white overflow-y-scroll no-scrollbar`}>
+    <section className={`sidebar sm:block bg-white overflow-y-scroll no-scrollbar`}>
       <div
         className={` ${open ? "sm:w-[280px] ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
       >
@@ -89,7 +90,10 @@ const Sidebar = ({ open, setOpen }: SidebarProps) => {
           <div className={`${open ? "justify-between" : 'justify-center'} flex items-center`}>
             <img src="/logo.svg" alt="" className={`${!open && 'hidden'}`} />
 
-            <img src="/arrowbreak.svg" onClick={() => setOpen(!open)} alt="arrow" className="cursor-pointer" />
+            <img src="/arrowbreak.svg"
+             onClick={() => useAuth.setState({open: !open})}
+            //  onClick={() => setOpen(!open)}
+              alt="arrow" className="cursor-pointer" />
           </div>
         </div>
 

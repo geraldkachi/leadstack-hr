@@ -73,21 +73,22 @@ export default function Input(
 	};
 
 	return (
-		<div className={`bg-  mb-2 ${className}`}>
+		<div className={`bg-  ${className}`}>
 			{label && (
 				<label
 					className="my-1 text-[#0D1227] leading-[19.6px] flex items-center text-left text-sm font-semibold"
 					htmlFor={id}
 				>
 					{label}
-					{tooltip && (
-						<>
+				{tooltip && (
+						<span className='text-black'>
+						tooltip
 							{/* <Icon
 								icon="info-circle"
 								{...labelIconProps}
 								className={`inline-block ml-2 ${labelIconProps?.className}`}
 							/> */}
-						</>
+						</span>
 					)}
 				</label>
 			)}

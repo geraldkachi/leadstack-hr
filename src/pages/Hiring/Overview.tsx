@@ -29,6 +29,7 @@ const Overview = () => {
 
                     <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" />
                 </div>
+                <div className="bg-[#F5F6FA] px-4 md:px-8"></div>
             </div>
 
         </div>

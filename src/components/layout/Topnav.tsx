@@ -1,7 +1,7 @@
 // import { AdminIcon } from '../../assets'
 
 import { useNavigate } from "react-router-dom"
-import { Input } from ".."
+import { Drawer, Input } from ".."
 
 const Topnav = () => {
     const navigate = useNavigate()
@@ -9,12 +9,14 @@ const Topnav = () => {
         <>
             <div className="flex items-center justify-between border-b border-[rgba(0, 0, 0, 0.20)] bg-white z-50 px-2 gap-x-3">
                 <div className="flex items-center justify-center gap-3">
-                    <div className="cursor-pointer" onClick={() => navigate(-1)}>
+                    <span className="cursor-pointer hidden md:block w-full" onClick={() => navigate(-1)}>
                         <img src="/arrow-right.svg" alt="" />
-                    </div>
-                    <div className="cursor-pointer" onClick={() => navigate(+1)}>
+                    </span>
+                    <span className="cursor-pointer hidden md:block w-full" onClick={() => navigate(+1)}>
                         <img src="/arrow-left.svg" alt="" />
-                    </div>
+                    </span>
+                    
+                    <Drawer />
                 </div>
 
                 {/* <div className="relative w-fu flex items-center w-64">
@@ -23,9 +25,12 @@ const Topnav = () => {
                     </div>
                     <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3699FF] focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Search employees, teams..." required />
                 </div> */}
-                <Input inputClassName="w-64 pr-24 w-full font-noto" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt=""  />}
-                    type="search"
-                    placeholder="Search employees, teams..." />
+                <div className="w-80">
+                    <Input inputClassName="!w-full font-noto" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt="" />}
+                        type="search"
+                        tooltip="tooltip"
+                        placeholder="Search employees, teams..." />
+                </div>
 
                 <div className="flex gap-2 items-center py-2">
                     <p className="text-black text-[16px] mr-4 md:flex items-start gap-2 hidden">

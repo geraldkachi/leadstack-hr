@@ -23,6 +23,11 @@ body {
   }
 }
 
+/* drawer */
+.ant-drawer .ant-drawer-body {
+  padding: 5px !important;
+}
+
 .ant-table-thead .ant-table-cell {
   background-color: #f5f6fa !important;
   color: #535768 !important;

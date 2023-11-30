@@ -254,7 +254,7 @@ const AllEmployees = () => {
                 type="search"
                 placeholder="Search Employee by name, role, ID or any related keywords" />
 
-            <div className="border border-[#DEDFEC] rounded-md overflow-x-scroll">
+            <div className="border border-[#DEDFEC] rounded-md overflow-x-scroll mt-2 ">
                 <Table
                     size="large"
                     {...{ locale }}
@@ -435,3 +435,5 @@ const AllEmployees = () => {
 }
 
 export default AllEmployees
+
+// https://www.instagram.com/reel/C0Och78o8ku/?utm_source=ig_web_copy_link
