@@ -1,14 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
+import { DashboardIcon, EmployeesIcon, MyTeamIcon } from "../../assets";
 
 const BottomNav = () => {
   const location = useLocation();
 
   const routeList = [
-    { route: "/home", title: "Home" },
-    { route: "/task", title: "Task" },
-    { route: "/staff", title: "Staff" },
-    { route: "/history", title: "History" },
-    { route: "/stand-up", title: "Stand-up" },
+    { route: "/dashboard", title: "Dashboard" },
+    { route: "/employees", title: "Employees" },
+    { route: "/my-team", title: "My Team" },
     // ...(isAuthorised("super-admin")
     //   ? [{ route: "/administrator", title: "Administrator" }]
     //   : []),
@@ -19,18 +18,15 @@ const BottomNav = () => {
       {routeList.map((item, index) => {
         const activeItem = location.pathname.includes(item?.route);
         const iconArr = [
-          // <HomeIcon key={1} index={activeItem} />,
-          // <TaskIcon key={2} index={activeItem} />,
-          // <StandUpIcon key={4} index={activeItem} />,
-          // <HistoryIcon key={3} index={activeItem} />,
-          // <StandUpIcon key={5} index={activeItem} />,
-          ''
+          <DashboardIcon key={1} index={activeItem} />,
+          <EmployeesIcon key={2} index={activeItem} />,
+          <MyTeamIcon key={3} index={activeItem} />,
         ];
         return (
           <Link
             to={item.route}
             key={index}
-            className={`${activeItem && "text-white rounded-2xl bg-[#2B8572] w-max whitespace-nowrap"
+            className={`${activeItem && "text-white rounded-2xl bg-[#1D8EE6] w-max whitespace-nowrap"
               } flex justify-evenly flex-1 gap-x-1 items-center rounded-full px-3 py-2 cursor-pointer my-3  text-base space-x-1`}
           >
             <div className=""> {iconArr[index]}</div>

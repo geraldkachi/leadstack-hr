@@ -24,8 +24,8 @@ body {
 }
 
 /* drawer */
-.ant-drawer .ant-drawer-body {
-  padding: 5px !important;
+.ant-drawer, .ant-drawer-body {
+  padding: 10px !important;
 }
 
 .ant-table-thead .ant-table-cell {
