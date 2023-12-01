@@ -82,8 +82,12 @@ const AddEmployees = () => {
                 </div>
             </div>
 
+            <div className="px-4 md:px-8 flex items-center justify-end">
+                {data.map((_, idx) => <>
+                    <span key={idx} className={`${data[activeTab].label && 'border-b w-4 p-1 bg-[#1D8E6]'}"text border-b border-[#1D8EE6] w-4 p-2 bg-[#1D8EE6]"`}>{data[activeTab].label}</span>
+                </>)}
+            </div>
             <div className="mt-10  pb-36">
-
                 <Tabs data={data} {...{ activeTab }} />
             </div>
         </div>

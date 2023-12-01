@@ -5,7 +5,7 @@ interface Props {
 const PasswordMe = (props: Props) => {
   const { showPassword, setShowPassword } = props;
   return (
-    <div onClick={() => setShowPassword(!showPassword)}>
+    <div className="p-2" onClick={() => setShowPassword(!showPassword)}>
       {showPassword ? (
         <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="none">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9ZM11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12Z" fill="#000000" />

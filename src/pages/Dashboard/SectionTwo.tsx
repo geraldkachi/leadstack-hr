@@ -25,17 +25,17 @@ const SectionTwo = ({ setState }: Props) => {
 
             <div className="text-[27px] text-[#091E42] border-b border-gray-200 pb-3">Registration Info.</div>
 
-            <div className='flex items-center gap-x-4 py-6 relative'>
+            <div className='flex items-center justify-center md:justify-start gap-x-4 py-6 relative'>
                 <div className="relative">
                     {!register && (<img src="/register-check.svg" className="absolute top-2 right-0 px-2 ps-2" alt="" />)}
-                    <div className={`${!register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(false)}>
+                    <div className={`${!register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-4 md:p-10`} onClick={() => setRegister(false)}>
                         <img src="/unregistered.svg" alt="unregistered" />
                         <div className="mt-4">{" "}&nbsp; Registered &nbsp;</div>
                     </div>
                 </div>
                 <div className="relative">
                     {register && (<img src="/register-check.svg" className="absolute top-2 right-0 px-2 ps-2" alt="" />)}
-                    <div className={`${register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-10`} onClick={() => setRegister(true)}>
+                    <div className={`${register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-4 md:p-10`} onClick={() => setRegister(true)}>
                         <img src="/unregistered.svg" alt="unregistered" />
                         <div className="mt-4">UnRegistered</div>
                     </div>
@@ -62,9 +62,28 @@ const SectionTwo = ({ setState }: Props) => {
                                     <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
                                 </label>
                             </div>
-                        </div>
                         {/* Display the selected file name */}
-                        {selectedFile && <p className='flex items-center gap-3 mt-3'>Selected File: {selectedFile.name}  <img src="/register-check.svg" alt="" /> </p>}
+                        <div className="rounded-lg my-5">
+                            {selectedFile &&
+                                <div className="bg-[#72bf8b0d] border-[#1de653f1]  bg-white border border-d rounded-lg p-3 flex items-start justify-between gap-4">
+                                    <div className="flex items-center gap-x-2">
+                                        <div className="flex items-center gap-x-2">
+                                        </div>
+                                        <div>
+                                            {selectedFile && <div className="text-[13px] text-[#272848]">img.{selectedFile.name}</div>}
+                                            <div className="text-[#94A0B4] text-[10px] ">100%  • <span>Click to View</span></div>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-center gap-x-2">
+
+                                        <img src="/uploaddelete.svg" className="cursor-pointer" alt="" onClick={() => setSelectedFile(null)} />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        </div>
+                        {/* {selectedFile && <p className='flex items-center gap-3 mt-3'>Selected File: {selectedFile.name}  <img src="/register-check.svg" alt="" /> </p>} */}
                     </>
                 )}
             </div>

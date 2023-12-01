@@ -9,7 +9,7 @@ type State = {
     phoneNumber?: string
     setPhoneNumber?: (phoneNumber: string) => void
     isAuthenticated?: boolean
-    activeTab?: number
+    activeTab: number
     activeFont: string
     open: boolean
     openDraw: boolean

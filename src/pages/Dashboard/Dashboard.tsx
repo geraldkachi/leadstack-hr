@@ -15,6 +15,7 @@ import IconOne from './IconOne'
 import IconTwo from './IconTwo'
 import IconThree from './IconThree'
 import { openNotification } from "../../utils";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [color, setColor] = useColor("");
@@ -76,7 +77,7 @@ const Dashboard = () => {
           <img src="/cautionsuccess.svg" alt="caution" />
           <div>
             <div className='text-[#3F4254] font-bold text-base'>Account Verification Successful</div>
-            <div className='text-[#7E8299] text-sm md:text-base'>your account verification was successful, you can start with the following; <span className='text-[#00A3FF]'>Add Employees</span> </div>
+            <div className='text-[#7E8299] text-sm md:text-base'>your account verification was successful, you can start with the following; <Link to='/employees/add-employees' className='text-[#00A3FF] cursor-pointer'>Add Employees</Link> </div>
           </div>
         </div>
       ) : (
@@ -116,7 +117,7 @@ const Dashboard = () => {
         afterClose={() => setModalOpen(false)}
         width={1127}
       >
-        <div className='grid md:grid-cols-5 items-start justify-  p-8 h-[650px] overflow-y-scroll no-scrollbar'>
+        <div className='grid lg:grid-cols-5 items-start justify-  p-8 h-[650px] overflow-y-scroll no-scrollbar'>
           <div className='col-span-1 items-start hidden sm:block '>
             <div>
               <div className="text-base md:text-lg] whitespace-nowrap">Complete Onboarding</div>

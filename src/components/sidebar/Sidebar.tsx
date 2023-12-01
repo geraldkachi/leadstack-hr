@@ -85,7 +85,7 @@ const Sidebar = ({ open }: SidebarProps) => {
   return (
     <section className={`sidebar  ${openDraw && '!block px-1 w-max'} hidden sm:block bg-white overflow-y-scroll no-scrollbar`}>
       <div
-        className={` ${open ? "sm:w-[280px] ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300`}
+        className={` ${open ? "sm:w-[280px] ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300 mx-auto`}
       >
         <div className="px-2 py-5">
           <div className={`${open ? "justify-between" : 'justify-center'} flex items-center`}>

@@ -34,7 +34,7 @@ const DrawerCom = () => {
                 onClose={onClose}
                 open={openDraw}
                 key={placement}
-                width={`${open ? 230 : 60}`}
+                width={`${open ? 230 :0}`}
             >
                 <Sidebar {...{ open }} />
             </Drawer>

@@ -19,7 +19,7 @@ type Props = DetailedHTMLProps<
 };
 
 const variants = {
-    primary: 'bg-[#3699FF] text-white hover:bg-blue-2 border-none',
+    primary: 'bg-[#3699FF] text-white hover:bg-blue-2 border-none hover:bg-[#2692ff]',
     secondary: 'bg-red text-white hover:bg-red-1 border-none',
     link: 'bg-none text-blue hover:bg-white-azure border-none',
     outline:
