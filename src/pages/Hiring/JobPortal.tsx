@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Archive, Active, ScheduledPost } from ".."
-import { Breadcrumbs, Button, EmployeePop, Input, Tabs } from "../../components"
+import { Breadcrumbs, Button, EmployeePop, Tabs } from "../../components"
 
 interface BreadcrumsbProps {
     url?: string
