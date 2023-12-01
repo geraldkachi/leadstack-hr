@@ -43,6 +43,7 @@ const CreateAccount = () => {
 
       <div className="col-span- flex-col flex-1 p-3 flex md:justify-between relative">
         <div className="text-black flex items-center justify-end">bars</div>
+        
         <div className="md:mx-28">
           {currentStep === 1 && <CreateAccountForm {...{ setCurrentStep }} />}
           {currentStep === 2 && <CreateAccountForm2 {...{ setCurrentStep }} />}
@@ -50,8 +51,8 @@ const CreateAccount = () => {
           {currentStep === 4 && <EnterVerificationCode {...{ setCurrentStep }} />}
           {currentStep === 5 && <EnterVerificationCodeEmail {...{ setCurrentStep }} />}
         </div>
-        <div className="flex items-end justify-end">
 
+        <div className="flex items-end justify-end">
           {currentStep === 4 &&
             <div className="hidden md:flex items-center text-center justify-between ml-52 mr-32">
               <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-10 text-xs text-white text-centers mt-4 rounded-2xl w-auto ml-20">

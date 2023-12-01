@@ -16,6 +16,7 @@ const Employment = () => {
               <Input
                 label="Date"
                 ref={formInput}
+                className="mb-1"
                 type="date"
                 name="date"
                 placeholder="Development"
@@ -23,6 +24,7 @@ const Employment = () => {
               <Input
                 label="Unit"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="text"
                 placeholder="Technical"
@@ -31,6 +33,7 @@ const Employment = () => {
             <Input
               label="Official EmailOfficial Email"
               ref={formInput}
+              className="mb-1"
               type="email"
               name="email"
               placeholder="jane.d@leadstack.ng"
@@ -38,6 +41,7 @@ const Employment = () => {
             <Input
               label="Employee No"
               ref={formInput}
+              className="mb-1"
               type="number"
               name="Employee No"
               placeholder="EMP-2987"
@@ -46,6 +50,7 @@ const Employment = () => {
               <Input
                 label="Grade"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="grade"
                 placeholder="LEVEL 1"
@@ -53,6 +58,7 @@ const Employment = () => {
               <Input
                 label="Date of Employment"
                 ref={formInput}
+                className="mb-1"
                 type="date"
                 name="date of employment"
                 placeholder="Choose date"
@@ -62,6 +68,7 @@ const Employment = () => {
               <Input
                 label="Salary"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="Salary"
                 placeholder="NGN 450,000"
@@ -69,6 +76,7 @@ const Employment = () => {
               <Input
                 label="Pay Schedule"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="monthly"
                 placeholder="Monthly"
@@ -80,6 +88,7 @@ const Employment = () => {
             <Input
               label="Bank Name"
               ref={formInput}
+              className="mb-1"
               type="text"
               name="name"
               placeholder="Lord Name"
@@ -88,6 +97,7 @@ const Employment = () => {
               <Input
                 label="Bank Branch"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="name"
                 placeholder="Iida"
@@ -95,6 +105,7 @@ const Employment = () => {
               <Input
                 label="Bank Code"
                 ref={formInput}
+                className="mb-1"
                 type="number"
                 name="code"
                 placeholder="1234"
@@ -103,6 +114,7 @@ const Employment = () => {
             <Input
               label="Email"
               ref={formInput}
+              className="mb-1"
               type="email"
               name="password"
               placeholder="hr@tch.com"
@@ -110,6 +122,7 @@ const Employment = () => {
             <Input
               label="Email"
               ref={formInput}
+              className="mb-1"
               type="email"
               name="password"
               placeholder="hr@tch.com"
@@ -118,6 +131,7 @@ const Employment = () => {
               <Input
                 label="Email"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -125,6 +139,7 @@ const Employment = () => {
               <Input
                 label="Email"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"

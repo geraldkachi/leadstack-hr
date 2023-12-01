@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
-import { Button, Input } from "../../components"
+import { Button, Input, PasswordMe } from "../../components"
 import { Modal } from "antd";
 
 const PasswordResetForm = () => {
     const [modalOpen, setModalOpen] = useState(false)
+    const [showPassword, setShowPassword] = useState(false)
+    const [showPasswordNew, setShowPasswordNew] = useState(false)
     const formInput = useRef<HTMLInputElement>(null);
 
     console.log(modalOpen)
@@ -18,15 +20,16 @@ const PasswordResetForm = () => {
                     <Input
                         label="Enter Password"
                         ref={formInput}
+                        className="mb-1"
                         type="password"
                         name="password"
                         placeholder="techworldvibe"
-                    // TrailingIcon={() => (
-                    //     <PasswordMe
-                    //         showPassword={showPassword}
-                    //         setShowPassword={setShowPassword}
-                    //     />
-                    // )}
+                    TrailingIcon={() => (
+                        <PasswordMe
+                            showPassword={showPasswordNew}
+                            setShowPassword={setShowPasswordNew}
+                        />
+                    )}
                     />
                     <Input
                         label="Confirm Password"
@@ -34,12 +37,12 @@ const PasswordResetForm = () => {
                         type="password"
                         name="password"
                         placeholder="techworldvibe"
-                    // TrailingIcon={() => (
-                    //     <PasswordMe
-                    //         showPassword={showPassword}
-                    //         setShowPassword={setShowPassword}
-                    //     />
-                    // )}
+                        TrailingIcon={() => (
+                            <PasswordMe
+                                showPassword={showPassword}
+                                setShowPassword={setShowPassword}
+                            />
+                        )}
                     />
 
 

@@ -16,6 +16,7 @@ const JobHistory = () => {
                                     <Input
                                         label="Date"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="email"
                                         name="email"
                                         placeholder="hr@tch.com"
@@ -23,6 +24,7 @@ const JobHistory = () => {
                                     <Input
                                         label="Unit"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="text"
                                         placeholder="Sister"
@@ -31,6 +33,7 @@ const JobHistory = () => {
                                 <Input
                                     label="Email Address"
                                     ref={formInput}
+                                    className="mb-1"
                                     type="email"
                                     name="email"
                                     placeholder="hr@tch.com"
@@ -38,6 +41,7 @@ const JobHistory = () => {
                                 <Input
                                     label="Employee No"
                                     ref={formInput}
+                                    className="mb-1"
                                     type="email"
                                     name="email"
                                     placeholder="EMP-2987"
@@ -47,6 +51,7 @@ const JobHistory = () => {
                                     <Input
                                         label="Grade"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="phoneNumber"
                                         placeholder="Level 5"
@@ -54,6 +59,7 @@ const JobHistory = () => {
                                     <Input
                                         label="Date of Employment"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="date"
                                         name="text"
                                         placeholder="Chooose date"
@@ -61,6 +67,7 @@ const JobHistory = () => {
                                     <Input
                                         label="Salary"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="state"
                                         placeholder="NGN 450,000"
@@ -68,6 +75,7 @@ const JobHistory = () => {
                                     <Input
                                         label="Pay Schedule"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="year"
                                         placeholder="Monthly"

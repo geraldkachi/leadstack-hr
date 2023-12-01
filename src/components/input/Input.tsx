@@ -107,7 +107,7 @@ export default function Input(
 					// {...innerRef}
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
-					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0'} w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
+					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
 				/>
 				{TrailingIcon && (
 					<span className="absolute inset-y-0 end-0 flex items-center pe-1 cursor-pointer">

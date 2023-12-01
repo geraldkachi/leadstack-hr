@@ -19,12 +19,7 @@ const Topnav = () => {
                     <Drawer />
                 </div>
 
-                {/* <div className="relative w-fu flex items-center w-64">
-                    <div className="absolute flex items-center justify-center  pointer-events-none">
-                        <img src="/search.svg" className="pl-2" alt="" />
-                    </div>
-                    <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#3699FF] focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Search employees, teams..." required />
-                </div> */}
+            
                 <div className="w-80">
                     <Input inputClassName="!w-full font-noto" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt="" />}
                         type="search"

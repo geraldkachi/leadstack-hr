@@ -17,6 +17,7 @@ const Education = () => {
                                 <Input
                                     label="Role"
                                     ref={formInput}
+                                    className="mb-1"
                                     type="email"
                                     name="password"
                                     placeholder="hr@tch.com"
@@ -25,6 +26,7 @@ const Education = () => {
                                     <Input
                                         label="Institution Type"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="password"
                                         placeholder="hr@tch.com"
@@ -32,6 +34,7 @@ const Education = () => {
                                     <Input
                                         label="Qualification"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="password"
                                         placeholder="hr@tch.com"
@@ -40,6 +43,7 @@ const Education = () => {
                                 <Input
                                     label="Institution NameInstitution Name"
                                     ref={formInput}
+                                    className="mb-1"
                                     type="text"
                                     name="text"
                                     placeholder="hr@tch.com"
@@ -47,6 +51,7 @@ const Education = () => {
                                 <Input
                                     label="Course of Study"
                                     ref={formInput}
+                                    className="mb-1"
                                     type="text"
                                     name="text"
                                     placeholder="hr@tch.com"
@@ -55,6 +60,7 @@ const Education = () => {
                                     <Input
                                         label="Admission Year"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="number"
                                         name="year"
                                         placeholder="2011"
@@ -62,6 +68,7 @@ const Education = () => {
                                     <Input
                                         label="Graduation Year"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="number"
                                         name="year"
                                         placeholder="2014"

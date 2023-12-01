@@ -19,7 +19,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
         <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
           Register your Company
         </div>
-        <div className="text-[#535768] text-base leading-6 font-normal mt-2">
+        <div className="text-[#535768] text-sm md:text-base leading-6 font-normal mt-2">
           This is your first step to redefine work in your <br /> organization, kindly
           Fill in the details below to get started{" "}
         </div>
@@ -30,6 +30,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
           <Input
             label="Address:"
             ref={formInput}
+            className="mb-1"
             type="text"
             name="password"
             placeholder="103, Idowu Taylor, Off Eko Hotel, Victoria Island, Lagos"
@@ -47,6 +48,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
           <Input
             label="State"
             ref={formInput}
+            className="mb-1"
             type="email"
             name="password"
             placeholder="hr@tch.com"
@@ -54,6 +56,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
           <Input
             label="Country"
             ref={formInput}
+            className="mb-1"
             type="email"
             name="password"
             placeholder="09039278115"
@@ -63,6 +66,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
           <Input
             label="State"
             ref={formInput}
+            className="mb-1"
             type="email"
             name="password"
             placeholder="hr@tch.com"
@@ -70,19 +74,20 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
           <Input
             label="Country"
             ref={formInput}
+            className="mb-1"
             type="email"
             name="password"
             placeholder="09039278115"
           />
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between gap-3 mt-3 md:mt-5">
         
-            <p className="text-base mb-5">By clicking continue, you accept the <span className="text-[#1D8EE6]">Terms of Service</span> and <span className="text-[#1D8EE6]">Privacy Policy of Leadsatck</span></p>
+            <p className="text-xs md:text-sm mb-5">By clicking continue, you accept the <span className="text-[#1D8EE6]">Terms of Service</span> and <span className="text-[#1D8EE6]">Privacy Policy of Leadsatck</span></p>
 
           <Button
             type="button"
-            className="!bg-[#1D8EE6] !text-white !px-8 !mb-20"
+            className="!bg-[#1D8EE6] !text-white !px-8"
             onClick={() => {
               setCurrentStep(3)
               // navigate("/dashboard")

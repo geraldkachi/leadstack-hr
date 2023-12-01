@@ -12,7 +12,6 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
 
   return (
     <div className="w-full max-w-xl mx-auto px-3">
-      <div className="text-center mb-[20px]"> </div>
 
       <div className="text-[] mb-12">
         <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
@@ -29,6 +28,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           <Input
             label="First Name"
             ref={formInput}
+            className="mb-1"
             type="text"
             name="password"
             placeholder="hr@tch.com"
@@ -36,6 +36,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           <Input
             label="Last Name"
             ref={formInput}
+            className="mb-1"
             type="text"
             name="password"
             placeholder="hr@tch.com"
@@ -47,6 +48,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
         <Input
           label="Role"
           ref={formInput}
+          className="mb-1"
           type="email"
           name="password"
           placeholder="hr@tch.com"
@@ -54,6 +56,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
         <Input
           label="Email"
           ref={formInput}
+          className="mb-1"
           type="email"
           name="password"
           placeholder="hr@tch.com"
@@ -61,6 +64,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
         <Input
           label="Phone Number"
           ref={formInput}
+          className="mb-1"
           type="email"
           name="password"
           placeholder="LordGerald@gmail.com"
@@ -70,6 +74,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           <Input
             label="Password"
             ref={formInput}
+            className="mb-1"
             type="password"
             name="password"
             placeholder="techworldvibe"
@@ -77,6 +82,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           <Input
             label="Confirm Password"
             ref={formInput}
+            className="mb-1"
             type="password"
             name="password"
             placeholder="techworldvibe"
@@ -91,23 +97,23 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           /> */}
           <div className="block text-xs text-[#61646B]">
             <div className="flex items-center gap-2 mb-1">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.00033 0.166748C2.78383 0.166748 0.166992 2.78358 0.166992 6.00008C0.166992 9.21658 2.78383 11.8334 6.00033 11.8334C9.21683 11.8334 11.8337 9.21658 11.8337 6.00008C11.8337 2.78358 9.21683 0.166748 6.00033 0.166748ZM4.83424 8.57433L2.66833 6.41308L3.49199 5.58708L4.83308 6.92583L7.92124 3.83767L8.74608 4.6625L4.83424 8.57433Z" fill="#1EAA79" />
+              <svg className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
               </svg>
 
               <p>Password must be at least 8 characters long</p>
             </div>
             <div className="flex items-center gap-2 mb-1">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.00033 0.166748C2.78383 0.166748 0.166992 2.78358 0.166992 6.00008C0.166992 9.21658 2.78383 11.8334 6.00033 11.8334C9.21683 11.8334 11.8337 9.21658 11.8337 6.00008C11.8337 2.78358 9.21683 0.166748 6.00033 0.166748ZM4.83424 8.57433L2.66833 6.41308L3.49199 5.58708L4.83308 6.92583L7.92124 3.83767L8.74608 4.6625L4.83424 8.57433Z" fill="#1EAA79" />
+              <svg className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
               </svg>
 
               <p>Must contain at least 1 uppercase letter</p>
             </div>
 
             <div className="flex items-center gap-2 mb-1">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.00033 0.166748C2.78383 0.166748 0.166992 2.78358 0.166992 6.00008C0.166992 9.21658 2.78383 11.8334 6.00033 11.8334C9.21683 11.8334 11.8337 9.21658 11.8337 6.00008C11.8337 2.78358 9.21683 0.166748 6.00033 0.166748ZM4.83424 8.57433L2.66833 6.41308L3.49199 5.58708L4.83308 6.92583L7.92124 3.83767L8.74608 4.6625L4.83424 8.57433Z" fill="#1EAA79" />
+              <svg className="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
               </svg>
 
               <p>Must contain at least 1 number.</p>
@@ -121,11 +127,11 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           <Button
             type="button"
             className="!bg-[#1D8EE6] !text-white !px-8 "
-            
+
             onClick={() => setCurrentStep(4)}
             title="Continue"
-            />
-            </div>
+          />
+        </div>
       </form>
 
       <div></div>

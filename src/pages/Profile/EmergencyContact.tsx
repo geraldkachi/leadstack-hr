@@ -16,6 +16,7 @@ const EmergencyContact = () => {
                                 <Input
                                     label="Full Name"
                                     ref={formInput}
+                                    className="mb-1"
                                     type="text"
                                     name="name"
                                     placeholder="Lord Gerald"
@@ -24,6 +25,7 @@ const EmergencyContact = () => {
                                     <Input
                                         label="Email Address"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="email"
                                         name="email"
                                         placeholder="hr@tch.com"
@@ -31,6 +33,7 @@ const EmergencyContact = () => {
                                     <Input
                                         label="Relationship"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="text"
                                         placeholder="Sister"
@@ -40,6 +43,7 @@ const EmergencyContact = () => {
                                     <Input
                                         label="Country"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="text"
                                         placeholder="Nigeria"
@@ -48,6 +52,7 @@ const EmergencyContact = () => {
                                 <Input
                                     label="Phone Number"
                                     ref={formInput}
+                                    className="mb-1"
                                     type="number"
                                     name="phoneNumber"
                                     placeholder="09039278115"
@@ -56,6 +61,7 @@ const EmergencyContact = () => {
                                     <Input
                                         label="State"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="text"
                                         name="state"
                                         placeholder="Laggos state"
@@ -63,6 +69,7 @@ const EmergencyContact = () => {
                                     <Input
                                         label="LGA"
                                         ref={formInput}
+                                        className="mb-1"
                                         type="number"
                                         name="year"
                                         placeholder="Ikeja LGA"

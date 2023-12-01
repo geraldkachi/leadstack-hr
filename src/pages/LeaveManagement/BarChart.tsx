@@ -68,28 +68,32 @@ const BarChart = () => {
                 // categories: overall?.data.map((i: { staffName: string }) => i.staffName),
                 categories: ["Technical", "Sales", "Marketing", "Finance", "Human Resource", "Design", "Data Analyst", "QA", "Web"]
             },
+            // legend: {
+            //     position: 'right',
+            //     offsetY: 40
+            //   },
         },
         series: [
             {
                 name: "Annual Leave",
-                data: [20, 30, 0, 20, 100, 60, 70, 54],
+                data: [20, 30, 0, 20, 100, 60, 70, 54,88],
                 // data: overall?.data.map((i: { percent: string }) => i.percent),
             },
             {
                 name: "Casual Leave",
-                data: [2, 30, 40, 20, 0, 60, 70, 54],
+                data: [2, 30, 40, 20,100, 60, 70, 54, 52],
                 // data: overall?.data.map((i: { percent: string }) => i.percent),
             },
             {
                 name: "Casual Leave",
-                data: [20, 0, 40, 20, 100, 60, 70, 54],
+                data: [20, 0, 40, 20, 100, 60, 70, 54, 10],
                 // data: overall?.data.map((i: { percent: string }) => i.percent),
             },
         ],
     };
     return (
-        <div className="h-full bg-white ">
-            <div className="text-sm font-medium">Leave patterns by Departments</div>
+        <div className="h-full bg-white rounded-lg">
+            <div className="text-sm font-medium p-4 text-[#535768]">Leave patterns by Departments</div>
 
             <Chart
                 options={state.options}

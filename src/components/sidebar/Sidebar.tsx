@@ -130,6 +130,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                   ${!open && 'text-center flex items-center justify-center'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768] w-full`}
+                  onClick={() => useAuth.setState({openDraw: false})}
               >
                 <div key={index}> {iconArr[index]}</div>
 

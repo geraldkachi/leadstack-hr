@@ -30,6 +30,7 @@ const LoginForm = () => {
                     <Input
                         label="Email Address"
                         ref={formInput}
+                        className="mb-1"
                         type="text"
                         name="password"
                         placeholder="hr@techworld.com"
@@ -41,9 +42,11 @@ const LoginForm = () => {
                 <Input
                     label="Password"
                     ref={formInput}
+                    className="mb-1"
                     type={showPassword ? 'text' : 'password'}
                     name="password"
                     placeholder="techworldvibe"
+                    inputClassName="me-10"
                     TrailingIcon={() => (
                         <PasswordMe
                             showPassword={showPassword}

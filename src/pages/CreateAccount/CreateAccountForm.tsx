@@ -13,7 +13,6 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
 
   return (
     <div className="w-full max-w-xl mx-auto px-3">
-      <div className="text-center mb-[28px]"> </div>
 
       <div className="text-[] mb-12">
         <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
@@ -29,16 +28,11 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
         <div className="grid grid-col-1">
           <Input
             label="Organization Name"
+            className="mb-1"
             ref={formInput}
             type="text"
             name="password"
             placeholder="The Creative Hemisphere"
-            // TrailingIcon={() => (
-            //     <PasswordMe
-            //         showPassword={showPassword}
-            //         setShowPassword={setShowPassword}
-            //     />
-            // )}
           />
 
           {/* <Input inputClassName="border-b border-[#C5C5C5]" type="text" placeholder="Email here..." value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} className="" LeadingIcon={() => <></>} /> */}
@@ -47,6 +41,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
         <Input
           label="Official Email"
           ref={formInput}
+          className="mb-1"
           type="email"
           name="password"
           placeholder="hr@tch.com"
@@ -54,6 +49,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
         <Input
           label="Official Phone Number"
           ref={formInput}
+          className="mb-1"
           type="email"
           name="password"
           placeholder="09039278115"
@@ -61,12 +57,13 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
         <Input
           label="Company website"
           ref={formInput}
+          className="mb-1"
           type="email"
           name="password"
           placeholder="LordGerald@gmail.com"
         />
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-3">
           <img
             src="/linkedinsvg.svg"
             alt="linkedinnsvg"

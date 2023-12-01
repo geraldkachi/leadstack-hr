@@ -37,6 +37,7 @@ const Biodata = () => {
               <Input
                 label="First Name"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="password"
                 placeholder="hr@tch.com"
@@ -44,6 +45,7 @@ const Biodata = () => {
               <Input
                 label="Last Name"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="password"
                 placeholder="hr@tch.com"
@@ -51,6 +53,7 @@ const Biodata = () => {
               <Input
                 label="Date of Birth (Optional)"
                 ref={formInput}
+                className="mb-1"
                 type="date"
                 name="password"
                 placeholder="hr@tch.com"
@@ -58,6 +61,7 @@ const Biodata = () => {
               <Input
                 label="Gender"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="password"
                 placeholder="hr@tch.com"
@@ -67,6 +71,7 @@ const Biodata = () => {
             <Input
               label="Phone Number"
               ref={formInput}
+              className="mb-1"
               type="number"
               name="password"
               placeholder="hr@tch.com"
@@ -74,6 +79,7 @@ const Biodata = () => {
             {/* <Input
               label="Uplaod Passport Photograph"
               ref={formInput}
+              className="mb-1"
               type="file"
               name="password"
               placeholder="hr@tch.com"
@@ -97,6 +103,7 @@ const Biodata = () => {
               <Input
                 label="Role"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="password"
                 placeholder="hr@tch.com"
@@ -104,6 +111,7 @@ const Biodata = () => {
               <Input
                 label="Email Address"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -112,6 +120,7 @@ const Biodata = () => {
             <Input
               label="Country"
               ref={formInput}
+              className="mb-1"
               type="text"
               name="country"
               placeholder="hr@tch.com"
@@ -120,6 +129,7 @@ const Biodata = () => {
               <Input
                 label="State"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="state"
                 placeholder="Lagos state"
@@ -127,6 +137,7 @@ const Biodata = () => {
               <Input
                 label="LGA"
                 ref={formInput}
+                className="mb-1"
                 type="text"
                 name="lga"
                 placeholder="LGA"

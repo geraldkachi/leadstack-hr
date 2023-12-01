@@ -22,6 +22,7 @@ const Emergency = () => {
               <Input
                 label="Role"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -29,6 +30,7 @@ const Emergency = () => {
               <Input
                 label="Email"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -37,6 +39,7 @@ const Emergency = () => {
             <Input
               label="Email"
               ref={formInput}
+              className="mb-1"
               type="email"
               name="password"
               placeholder="hr@tch.com"
@@ -44,6 +47,7 @@ const Emergency = () => {
             <Input
               label="Email"
               ref={formInput}
+              className="mb-1"
               type="email"
               name="password"
               placeholder="hr@tch.com"
@@ -52,6 +56,7 @@ const Emergency = () => {
               <Input
                 label="Role"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -59,6 +64,7 @@ const Emergency = () => {
               <Input
                 label="Email"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"

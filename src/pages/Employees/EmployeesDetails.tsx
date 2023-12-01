@@ -19,6 +19,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="First Name"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="password"
                             placeholder="hr@tch.com"
@@ -26,6 +27,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="Last Name"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="password"
                             placeholder="hr@tch.com"
@@ -33,6 +35,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="Date of Birth"
                             ref={formInput}
+                            className="mb-1"
                             type="date"
                             name="password"
                             placeholder="hr@tch.com"
@@ -40,6 +43,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="Role"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="password"
                             placeholder="Accountant"
@@ -47,6 +51,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="Email Address"
                             ref={formInput}
+                            className="mb-1"
                             type="email"
                             name="password"
                             placeholder="hr@tch.com"
@@ -54,6 +59,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="Gender"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="password"
                             placeholder="hr@tch.com"
@@ -62,6 +68,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                     <Input
                         label="Contact Address"
                         ref={formInput}
+                        className="mb-1"
                         type="address"
                         name="address"
                         placeholder="12, Adetokunbo Street, VI"
@@ -70,6 +77,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="LGA"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="state"
                             placeholder="Eti-Osa"
@@ -77,6 +85,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="State"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="state"
                             placeholder="Lagos"
@@ -84,6 +93,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="Country"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="text"
                             placeholder="Nigeria"
@@ -91,6 +101,7 @@ const EmployeesDetails = ({ setModalDetails, setAcceptRequest, setDeclineRequest
                         <Input
                             label="Phone Number"
                             ref={formInput}
+                            className="mb-1"
                             type="text"
                             name="number"
                             placeholder="7012 346 1293"

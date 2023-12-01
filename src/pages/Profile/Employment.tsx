@@ -17,6 +17,7 @@ const Employment = () => {
                 <Input
                   label="Role"
                   ref={formInput}
+                  className="mb-1"
                   type="text"
                   name="product manager"
                   placeholder="Product Manager"
@@ -25,6 +26,7 @@ const Employment = () => {
                   <Input
                     label="Department *"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="first name"
                     placeholder="hr@tch.com"
@@ -32,6 +34,7 @@ const Employment = () => {
                   <Input
                     label="Unit"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="last name"
                     placeholder="HR Solution"
@@ -39,6 +42,7 @@ const Employment = () => {
                   <Input
                     label="HR Solution"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="first name"
                     placeholder="EMP-2987"
@@ -46,6 +50,7 @@ const Employment = () => {
                   <Input
                     label="Date of Employment *"
                     ref={formInput}
+                    className="mb-1"
                     type="date"
                     name="last name"
                     placeholder="Choose a date"
@@ -58,6 +63,7 @@ const Employment = () => {
                     <Input
                       label="Pay Schedule"
                       ref={formInput}
+                      className="mb-1"
                       type="text"
                       name="last name"
                       placeholder="Monthly"
@@ -65,6 +71,7 @@ const Employment = () => {
                     <Input
                       label="Salary"
                       ref={formInput}
+                      className="mb-1"
                       type="number"
                       name="number"
                       placeholder="NGN 450,000"
@@ -73,6 +80,7 @@ const Employment = () => {
                   <Input
                     label="Salary Account Number *"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="first name"
                     placeholder="hr@tch.com"
@@ -80,6 +88,7 @@ const Employment = () => {
                   <Input
                     label="Bank Name *"
                     ref={formInput}
+                    className="mb-1"
                     type="date"
                     name="last name"
                     placeholder="NUBAN Bank"
@@ -88,6 +97,7 @@ const Employment = () => {
                     <Input
                       label="Bank Branch "
                       ref={formInput}
+                      className="mb-1"
                       type="text"
                       name="last name"
                       placeholder="Bank Branch"
@@ -95,6 +105,7 @@ const Employment = () => {
                     <Input
                       label="Bank Code"
                       ref={formInput}
+                      className="mb-1"
                       type="number"
                       name="number"
                       placeholder="NGN 450,000"
@@ -109,6 +120,7 @@ const Employment = () => {
                   <Input
                     label="HMO No"
                     ref={formInput}
+                    className="mb-1"
                     type="number"
                     name="number"
                     placeholder="987654321"
@@ -117,6 +129,7 @@ const Employment = () => {
                     <Input
                       label="Pension No *"
                       ref={formInput}
+                      className="mb-1"
                       type="text"
                       name="first name"
                       placeholder="1287654321"
@@ -124,6 +137,7 @@ const Employment = () => {
                     <Input
                       label="PFA *"
                       ref={formInput}
+                      className="mb-1"
                       type="date"
                       name="last name"
                       placeholder="Leadway Assurance"

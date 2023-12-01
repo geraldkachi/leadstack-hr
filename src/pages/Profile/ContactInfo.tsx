@@ -19,6 +19,7 @@ const ContactInfo = () => {
                   <Input
                     label="First Name"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="first name"
                     placeholder="hr@tch.com"
@@ -26,6 +27,7 @@ const ContactInfo = () => {
                   <Input
                     label="Last Name"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="last name"
                     placeholder="hr@tch.com"
@@ -34,6 +36,7 @@ const ContactInfo = () => {
                 <Input
                   label="Official Email Address"
                   ref={formInput}
+                  className="mb-1"
                   type="email"
                   name="password"
                   placeholder="LordGerald@tch.com"
@@ -41,6 +44,7 @@ const ContactInfo = () => {
                 <Input
                   label="Phone Number"
                   ref={formInput}
+                  className="mb-1"
                   type="number"
                   name="password"
                   placeholder="hr@tch.com"
@@ -49,6 +53,7 @@ const ContactInfo = () => {
                   <Input
                     label="Gender"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="gender"
                     placeholder="hr@tch.com"
@@ -56,6 +61,7 @@ const ContactInfo = () => {
                   <Input
                     label="Date of Birth (Optional)"
                     ref={formInput}
+                    className="mb-1"
                     type="date"
                     name="password"
                     placeholder="Choose date"
@@ -64,6 +70,7 @@ const ContactInfo = () => {
                 <Input
                   label="Country"
                   ref={formInput}
+                  className="mb-1"
                   type="text"
                   name="country"
                   placeholder="Nigeria"
@@ -72,6 +79,7 @@ const ContactInfo = () => {
                   {/* <Input
                     label="Gender"
                     ref={formInput}
+                    className="mb-1"
                     type="text"
                     name="gender"
                     placeholder="hr@tch.com"
@@ -82,12 +90,14 @@ const ContactInfo = () => {
                     required
                     value={gender}
                     placeholder="Gender"
+                    className="mb-1"
                     //@ts-ignore
                     onChange={(value: string) => updateFieldValue(value)}
                   />
                   <Input
                     label="Date of Birth (Optional)"
                     ref={formInput}
+                    className="mb-1"
                     type="date"
                     name="password"
                     placeholder="Choose date"

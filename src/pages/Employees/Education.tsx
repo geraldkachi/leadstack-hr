@@ -16,6 +16,7 @@ const Education = () => {
               <Input
                 label="Role"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -23,6 +24,7 @@ const Education = () => {
               <Input
                 label="Email"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -31,6 +33,7 @@ const Education = () => {
             <Input
               label="Email"
               ref={formInput}
+              className="mb-1"
               type="email"
               name="password"
               placeholder="hr@tch.com"
@@ -38,6 +41,7 @@ const Education = () => {
             <Input
               label="Email"
               ref={formInput}
+              className="mb-1"
               type="email"
               name="password"
               placeholder="hr@tch.com"
@@ -46,6 +50,7 @@ const Education = () => {
               <Input
                 label="Role"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"
@@ -53,6 +58,7 @@ const Education = () => {
               <Input
                 label="Email"
                 ref={formInput}
+                className="mb-1"
                 type="email"
                 name="password"
                 placeholder="hr@tch.com"

@@ -23,6 +23,7 @@ const EnterVerificationCodeEmail = ({ setCurrentStep }: any) => {
                         <Input 
                         label="Enter Email"
                         ref={formInput}
+                        className="mb-1"
                         type="email"
                         name="email"
                         placeholder="hr@tch.com"

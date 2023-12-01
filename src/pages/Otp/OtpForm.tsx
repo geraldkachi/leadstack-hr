@@ -33,7 +33,7 @@ const OtpForm = () => {
             inputType='password'
           />
 
-          <div className="mt-2 text-xs">Didn’t receive the Code? <span className="text-[#1D8EE6] text-xs cursor-pointer" onClick={() => "navigate('/forgot-password')"}> Resend Code</span></div>
+          <div className="mt-2 text-xs">Didn&apos;t receive the Code? <span className="text-[#1D8EE6] text-xs cursor-pointer" onClick={() => "navigate('/forgot-password')"}> Resend Code</span></div>
 
         </div>
 
