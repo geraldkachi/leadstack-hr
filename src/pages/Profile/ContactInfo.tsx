@@ -10,8 +10,7 @@ const ContactInfo = () => {
     <>
       <div className="grid lg:grid-cols-2 h-max gap-x-8 mb">
         <div className="bg-white p-4 md:p-8 rounded-lg">
-          <div className="text-[#7C8091] mb-5">Primary Information  <span className="text-[E01507]"></span></div>
-
+          <div className="text-[#7C8091] mb-5 text-lg font-medium">Primary Information  <span className="text-[E01507]"></span></div>
 
           <form>
             <div className="grid lg:grid-cols-1  gap-x-8 mb-36">

@@ -59,15 +59,10 @@ const items: TabsProps['items'] = [
     {
         key: '4',
         label: 'Emergency Contact',
-        children: <Education />,
-    },
-    {
-        key: '5',
-        label: 'Emergency Contact',
         children: <EmergencyContact />,
     },
     {
-        key: '6',
+        key: '5',
         label: 'Emergency Contact',
         children: <EmergencyContact />,
     },
