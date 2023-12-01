@@ -12,11 +12,11 @@ const CreateAccount = () => {
 
   return (
     <div className="grid md:grid-cols-2 h-screen">
-      <div className="col-span- hidden md:block p-10 place-content-center">
+      <div className="col-span-1 hidden md:block p-10 place-content-center">
         {/* <Stepper {...{ currentStep, setCurrentStep }} /> */}
         <div className="relative col-span-2 place-content-center p-0 bg-[url(/signupimg.svg)] bg-contain bg-no-repeat w-full text-white h-full">
           <img src="/reg-logo.svg" className="top-[20%] left-[10%] pt-10 pl-8" alt="" />
-          <div className="absolute bottom-36 p-5 pr-16 text-2xl">
+          <div className="absolute bottom-36 p-5 pr-16 text-2xl w-full">
             {currentStep === 1 &&
               "Great employees are not born, they are made... by HR!"}
             {currentStep === 2 && (
