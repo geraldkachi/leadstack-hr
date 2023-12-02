@@ -27,24 +27,30 @@ const data = [
 const Overview = () => {
   return (
     <div>
-      <div className="grid lg:grid-cols-2 gap">
+        <div className="mt-3"></div>
+      <div className="grid lg:grid-cols-2 gap-8 my-4">
         <DonutChart />
         <div className="rounded-lg bg-white p-3">
           {data.map((item, idx) => (
             <div key={idx} className="flex items-center justify-between gap-4 p-2">
               <div className="flex items-center gap-3">
-                <img className="w-8 h-8 rounded-full" src="/face.svg" alt="" />
+                <img className="w-10 h-10 rounded-full" src="/face.svg" alt="" />
                 <div className="font-medium">
                   <div className="text-sm text-gray-500">{item.title}</div>
                   {/* <div className="text-sm text-gray-500">Joined in August 2014</div> */}
                 </div>
               </div>
               <span className="text-sm text-[#0D1227]">{item.leaves}</span>
-            </div> 
+            </div>
           ))}
         </div>
       </div>
       <BarChart />
+      <div className="flex items-center justify-between gap-4 my-3 md:my-8">
+        <span className="text-xl text-[#0D1227] font-semibold leading-[27.24px]">Leave Trends</span>
+
+        <span>wwww</span>
+      </div>
       <SplineAreaChart />
     </div>
   )
