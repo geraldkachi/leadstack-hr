@@ -24,7 +24,7 @@ const DrawerCom = () => {
         <>
             <Space>
                 <span onClick={showDrawer}>
-                    <img className="cursor-pointer md:hidden block w-full" src="/nav-icon.svg" alt="" />
+                    <img className="cursor-pointer md:hidden block h-10 w-10" src="/nav-icon.svg" alt="" />
                 </span>
             </Space>
             <Drawer

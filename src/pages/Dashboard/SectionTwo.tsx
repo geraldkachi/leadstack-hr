@@ -28,14 +28,14 @@ const SectionTwo = ({ setState }: Props) => {
             <div className='flex items-center justify-center md:justify-start gap-x-4 py-6 relative'>
                 <div className="relative">
                     {!register && (<img src="/register-check.svg" className="absolute top-2 right-0 px-2 ps-2" alt="" />)}
-                    <div className={`${!register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-4 md:p-10`} onClick={() => setRegister(false)}>
+                    <div className={`${!register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center h-28 md:h-40 p-2 sm:p-4 md:p-10`} onClick={() => setRegister(false)}>
                         <img src="/unregistered.svg" alt="unregistered" />
                         <div className="mt-4">{" "}&nbsp; Registered &nbsp;</div>
                     </div>
                 </div>
                 <div className="relative">
                     {register && (<img src="/register-check.svg" className="absolute top-2 right-0 px-2 ps-2" alt="" />)}
-                    <div className={`${register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center p-4 md:p-10`} onClick={() => setRegister(true)}>
+                    <div className={`${register && '!border-[#1D8EE6]'} cursor-pointer border border-[#DEDFEC] rounded-xl flex flex-col items-center justify-center h-28 md:h-40 p-2 sm:p-4 md:p-10`} onClick={() => setRegister(true)}>
                         <img src="/unregistered.svg" alt="unregistered" />
                         <div className="mt-4">UnRegistered</div>
                     </div>
@@ -46,18 +46,18 @@ const SectionTwo = ({ setState }: Props) => {
                 {!register && (
                     <>
                         <div className="max-w-md">
-                            <Input label='RC Number' placeholder='1234567RC' />
+                            <Input label='RC Number' placeholder='1234567RC' className="mb-3" />
                         </div>
                         {/* upload stuffs */}
 
                         <div className="upload max-w-md">
                             <div className="flex items-center justify-center w-full">
-                                <label htmlFor="dropzone-file" className={`flex flex-col items-center justify-center w-full h-48 border-2 border[#DEDFEC] border-dashed rounded-lg cursor-pointer`}>
+                                <label htmlFor="dropzone-file" className={`flex flex-col items-center justify-center w-full h-32 md:h-48 border-2 border[#DEDFEC] border-dashed rounded-lg cursor-pointer`}>
                                     <div className="flex flex-col items-center justify-center pt-5 pb-6">
                                         <img src="/upload.svg" alt="" />
 
-                                        <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Drag your file here,</span> <span className="text-[]">or browse</span></p>
-                                        <p className="text-xs text-[#BAC3D2]">supports: JPEG, PNG, PDF not more than 3MB</p>
+                                        <p className="mb-2 text-xs md:text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Drag your file here,</span> <span className="text-[]">or browse</span></p>
+                                        <p className="text-[10px] sm:text-xs text-[#BAC3D2]">supports: JPEG, PNG, PDF not more than 3MB</p>
                                     </div>
                                     <input id="dropzone-file" type="file" className="hidden" onChange={handleFileChange} />
                                 </label>

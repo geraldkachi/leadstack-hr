@@ -44,8 +44,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <div className="text-[#98A1B0] text-sm font-normal">Customize your UI theme </div>
       </div>
       <div className='flex items-center gap-x-3'>
-          <WhiteCard />
-          <DarkCard />
+          <WhiteCard index className='' />
+          <WhiteCard className='' />
+          <DarkCard index className='' />
       </div>
 
       <div className="w-full p-1 bg-white sm:p-4">
@@ -77,7 +78,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
             </li>
 
             <li className="pt-3 pb-0 sm:py-3">
-              <div className="flex items-center ">
+              <div className="flex items-center gap-3">
 
                 <div className="flex-1 min-w-0 ms-2">
                   <p className="text-sm md:text-base font-semibold text-[#0D1227] truncate">
@@ -104,7 +105,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
               </div>
             </li>
             <li className="pt-3 pb-0 sm:pt-3">
-              <div className="flex items-center ">
+              <div className="flex items-center gap-3">
                 {/* <div className="flex-shrink-0">
             <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="Thomas image" />
         </div> */}

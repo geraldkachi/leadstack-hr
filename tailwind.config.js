@@ -8,6 +8,11 @@ export default {
     extend: {},
     fontFamily: {
       colors: {
+        neutralB: 'var(--neutralBg)',
+        onNeutralBg: 'var(--onNeutralBg)',
+        primaryBg: 'var(--primaryBg)',
+        onPrimaryBg: 'var(--onPrimaryBg)',
+        primary: 'var(--primary)',
         // gray: colors.coolGray,
         // blue: colors.lightBlue,
         // red: colors.rose,

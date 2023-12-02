@@ -117,7 +117,7 @@ const Dashboard = () => {
         afterClose={() => setModalOpen(false)}
         width={1127}
       >
-        <div className='grid lg:grid-cols-5 items-start justify-  p-8 h-[650px] overflow-y-scroll no-scrollbar'>
+        <div className='grid lg:grid-cols-5 items-start justify-  py-8 h-[650px] overflow-y-scroll no-scrollbar'>
           <div className='col-span-1 items-start hidden sm:block '>
             <div>
               <div className="text-base md:text-lg] whitespace-nowrap">Complete Onboarding</div>
@@ -152,7 +152,7 @@ const Dashboard = () => {
 
           </div>
 
-          <div className="col-span-4 w-full sm:px-3 border-l border-grey-200 overflow-y-scroll no-scrollbar">
+          <div className="col-span-4 w-full border-l border-grey-200 overflow-y-scroll no-scrollbar">
             {/* State 1 */}
             {state === 0 &&
               <SectionOne {... { setState, setModalColor }} />

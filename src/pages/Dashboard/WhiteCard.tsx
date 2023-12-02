@@ -114,14 +114,15 @@ const WhiteCard = ({ index, ...props }: Props) => (
         fill="#D9D9D9"
         rx={1.769}
       />
-      <rect
+     <rect
         width={48.359}
         height={8.256}
         x={27.128}
         y={71.948}
         fill="#1D8EE6"
         rx={2.949}
-      />
+      /> 
+     
       <rect
         width={24.769}
         height={8.256}
@@ -195,20 +196,20 @@ const WhiteCard = ({ index, ...props }: Props) => (
         fill="#D9D9D9"
         rx={2.949}
       />
-      <rect
+      {index && <rect
         width={28.308}
         height={28.308}
         x={221.744}
         y={148.615}
         fill="#007AF4"
         rx={14.154}
-      />
+      />}
       <path
         fill="#fff"
         d="M234.5 166.599c-.264 0-.529-.1-.73-.302l-2.799-2.799a1.031 1.031 0 0 1 1.459-1.46l2.07 2.07 4.869-4.869a1.031 1.031 0 1 1 1.459 1.46l-5.598 5.598a1.028 1.028 0 0 1-.73.302Z"
       />
     </g>
-    <rect
+    {index && <rect
       width={254.769}
       height={181.641}
       x={1.179}
@@ -216,7 +217,7 @@ const WhiteCard = ({ index, ...props }: Props) => (
       stroke="#1D8EE6"
       strokeWidth={2.359}
       rx={8.256}
-    />
+    />}
     <defs>
       <clipPath id="a">
         <rect width={257.128} height={184} fill="#fff" rx={9.436} />

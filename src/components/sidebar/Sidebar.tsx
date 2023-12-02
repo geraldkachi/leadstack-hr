@@ -92,8 +92,8 @@ const Sidebar = ({ open }: SidebarProps) => {
             <img src="/logo.svg" alt="" className={`${!open && 'hidden'}`} />
 
             <img src="/arrowbreak.svg"
-             onClick={() => useAuth.setState({open: !open})}
-            //  onClick={() => setOpen(!open)}
+              onClick={() => useAuth.setState({ open: !open })}
+              //  onClick={() => setOpen(!open)}
               alt="arrow" className="cursor-pointer" />
           </div>
         </div>
@@ -130,7 +130,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                   ${!open && 'text-center flex items-center justify-center'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768] w-full`}
-                  onClick={() => useAuth.setState({openDraw: false})}
+                onClick={() => useAuth.setState({ openDraw: false })}
               >
                 <div key={index}> {iconArr[index]}</div>
 
@@ -152,7 +152,11 @@ const Sidebar = ({ open }: SidebarProps) => {
                   ${!open ? 'text-center flex items-center justify-center' : "justify-between"}
                   flex items-center  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768] w-full relative`}
-              onClick={() => setState(prev => !prev)}
+              onClick={() => {
+                setState(prev => !prev)
+                useAuth.setState({ openDraw: false })
+              }
+              }
             >
               <div className="flex items-center gap-2">
                 <HiringIcon key={4} index={activeItem2} />
@@ -191,6 +195,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                   ${!open && 'text-center flex items-center justify-center'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768] w-full`}
+                onClick={() => useAuth.setState({ openDraw: false })}
               >
                 <div key={index}> {iconArr[index]}</div>
 
