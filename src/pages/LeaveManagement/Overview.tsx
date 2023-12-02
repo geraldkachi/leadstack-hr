@@ -2,24 +2,46 @@ import BarChart from "./BarChart"
 import DonutChart from "./DonutChart"
 import SplineAreaChart from "./SplineAreaChart"
 
+const data = [
+  {
+    title: 'Jese Leos',
+    leaves: "20 Leaves",
+  },
+  {
+    title: 'Jese Leos',
+    leaves: "5 Leaves",
+  },
+  {
+    title: 'Jese Leos',
+    leaves: "4 Leaves",
+  },
+  {
+    title: 'Jese Leos',
+    leaves: "0 Leaves",
+  },
+  {
+    title: 'Jese Leos',
+    leaves: "3 Leaves",
+  }
+]
 const Overview = () => {
   return (
     <div>
       <div className="grid lg:grid-cols-2">
         <DonutChart />
         <div>
-
-          <div className="flex items-center justify-between gap-4 bg-white rounded-lg p-4">
-            <div>
-              <img className="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="" />
-              <div className="font-medium">
-                <div className="text-sm text-gray-500">Jese Leos</div>
-                {/* <div className="text-sm text-gray-500">Joined in August 2014</div> */}
+          {data.map((item, idx) => (
+            <div key={idx} className="flex items-center justify-between gap-4 bg-white rounded-lg p-4">
+              <div className="flex items-center gap-3">
+                <img className="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="" />
+                <div className="font-medium">
+                  <div className="text-sm text-gray-500">{item.title}</div>
+                  {/* <div className="text-sm text-gray-500">Joined in August 2014</div> */}
+                </div>
               </div>
+              <span className="text-sm text-[#0D1227]">{item.leaves}</span>
             </div>
-            <span  className="text-sm text-[#0D1227]">23 Leaves</span>
-          </div>
-
+          ))}
         </div>
       </div>
       <BarChart />
