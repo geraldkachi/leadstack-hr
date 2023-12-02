@@ -40,7 +40,7 @@ const Overview = () => {
                 </div>
               </div>
               <span className="text-sm text-[#0D1227]">{item.leaves}</span>
-            </div>
+            </div> 
           ))}
         </div>
       </div>
