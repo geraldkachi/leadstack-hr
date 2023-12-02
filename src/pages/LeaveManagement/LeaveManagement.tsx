@@ -85,8 +85,8 @@ const LeaveManagement = () => {
         <Breadcrumbs {...{ bread }} />
         <div className="flex items-center justify-between">
             <div>
-                <div className="text-lg md:text-2xl">Add Employees</div>
-                <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
+                <div className="text-lg md:text-2xl">Leave Management</div>
+                <div className="text-[#98A1B0] text-[13px] ">Efficiently track, manage, and approve employee leaves</div>
             </div>
         </div>
     </div>
