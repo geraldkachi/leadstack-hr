@@ -9,8 +9,6 @@ const BarChart = () => {
                     yaxis: {
                         // categories: overall?.data.map((i: { staffName: string }) => i.staffName),
                         categories: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 1000]
-
-
                     },
                     options: {
                         plotOptions: {
@@ -66,7 +64,7 @@ const BarChart = () => {
             },
             xaxis: {
                 // categories: overall?.data.map((i: { staffName: string }) => i.staffName),
-                categories: ["Technical", "Sales", "Marketing", "Finance", "Human Resource", "Design", "Data Analyst", "QA", "Web"]
+                categories: ["Technical", "Sales", "Marketing", "Finance", "Human Resource", "Design", "Data Analyst", "QA", "Web flow", 'Mobile Developer', 'AI']
             },
             // legend: {
             //     position: 'right',
@@ -76,17 +74,17 @@ const BarChart = () => {
         series: [
             {
                 name: "Annual Leave",
-                data: [20, 30, 0, 20, 100, 60, 70, 54,88],
+                data: [20, 30, 0, 20, 100, 60, 70, 54,88, 91, 100],
                 // data: overall?.data.map((i: { percent: string }) => i.percent),
             },
             {
                 name: "Casual Leave",
-                data: [2, 30, 40, 20,100, 60, 70, 54, 52],
+                data: [2, 30, 40, 20,100, 60, 70, 54, 52, 43, 100],
                 // data: overall?.data.map((i: { percent: string }) => i.percent),
             },
             {
                 name: "Casual Leave",
-                data: [20, 0, 40, 20, 100, 60, 70, 54, 10],
+                data: [20, 0, 40, 20, 100, 60, 70, 54, 10, 23, 100],
                 // data: overall?.data.map((i: { percent: string }) => i.percent),
             },
         ],
