@@ -5,7 +5,6 @@ import CreateAccountForm from "./CreateAccountForm";
 import CreateAccountForm2 from "./CrreateAccountForm2";
 import CreateAccountForm3 from "./CreateAccountForm3";
 import EnterVerificationCode from "./EnterVerificationCode";
-import EnterVerificationCodeEmail from "./EnterVerificationCodeEmail";
 
 const CreateAccount = () => {
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -49,22 +48,23 @@ const CreateAccount = () => {
       </div>
 
       <div className="col-span- flex-col flex-1 p-3 flex justify-between relative">
-        <div className="text-[#94A0B4] flex flex-row items-center justify-end">
+        <div className="text-[#94A0B4] flex flex-row items-center justify-end mx-2 md:mx-10">
           <div className="stepper-div flex items-center my-3">
             {arrayOfSteps.map((_, index) => {
               const isStepCompleted = index <= currentStep;
-              console.log(isStepCompleted, 'isStepCompleted')
               return (
                 <div
                   key={index}
-                  className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC] ${isStepCompleted && 'step--completed cursor-pointer !bg-[#1D8EE6]'}`}
-                  {...(isStepCompleted ? { onClick: () => handleStepClick(index) } : {})}
+                  className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC]  ${isStepCompleted && 'step--completed cursor-pointer !bg-[#1D8EE6]'}`}
+                  {...(isStepCompleted
+                    ? { onClick: () => handleStepClick(index) }
+                    : {})}
                 ></div>
               );
             })}
           </div>
           <p className="stepper-count text-[#94A0B4] text-xs">
-            Step <span className={`${completedSteps && ''} completed-count text-[#fb4e4e]`}>{completedSteps}</span> of {noOfSteps}
+            Step <span className={`completed-count text-[#272848]`}>{completedSteps}</span> of {noOfSteps}
           </p>
         </div>
 
@@ -73,7 +73,6 @@ const CreateAccount = () => {
           {currentStep === 1 && <CreateAccountForm2 {...{ setCurrentStep }} />}
           {currentStep === 2 && <CreateAccountForm3 {...{ setCurrentStep }} />}
           {currentStep === 3 && <EnterVerificationCode {...{ setCurrentStep }} />}
-          {currentStep === 4 && <EnterVerificationCodeEmail {...{ setCurrentStep }} />}
         </div>
 
         <div className="flex items-end justify-end">

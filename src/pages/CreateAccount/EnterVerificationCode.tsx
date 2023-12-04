@@ -3,9 +3,10 @@ import OtpInput from 'react-otp-input';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../components';
 import { Modal } from 'antd';
+import EnterVerificationCodeEmail from './EnterVerificationCodeEmail';
 interface Props {
     setCurrentStep: Dispatch<SetStateAction<number>>
-  }
+}
 const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     const [modalOpen, setModalOpen] = useState(false)
     const navigate = useNavigate()
@@ -14,6 +15,7 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     const [isAccountVerified, setAccountVerified] = useState(false);
     const [isAccountVerifying, setAccountVerifying] = useState(false);
     const [isResendModalOpen, setIsResendModalOpen] = useState(false);
+    const [codeEmail, setCodeEmail] = useState(false);
 
     const inputStyle = {
         width: "60px",
@@ -30,7 +32,7 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
         setAccountVerifying(true)
         setAccountVerified(false)
         // navigate("/login")
-        setModalOpen(true) 
+        setModalOpen(true)
 
         const timeOutPromise = new Promise(resolve => {
             setTimeout(resolve, 2000);
@@ -60,29 +62,31 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     }
     const handleRedirectToEmailChange = () => {
         // navigate('/forgot/password');
-        setCurrentStep(4)
+        setCodeEmail(true)
     }
     // const handleNavigateForward = () => {
     //     navigate('/personal/information');
     // }
 
-    console.log(isAccountVerified)
-    console.log(isAccountVerifying)
     return (
         <div className="w-full max-w-xl mx-auto py-3 flex flex-col justify-between">
             {/* <img src="" alt="" /> */}
             <div>
-            <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(2)} />
+                <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(2)} />
 
                 <div className="text-[] mb-12">
                     <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
                         Enter Verification Code
                     </div>
-                    <div className="text-[#535768] text-base leading-6 font-normal mt-2">
-                        We have just sent a verification code to hr@tch.com and +234 70123456789
+                    <div className="text-[#535768] text-sm md:text-base leading-6 font-normal mt-2">
+                        {codeEmail ? 'We have just sent a verification code to hr@tch.com' : 
+                        'We have just sent a verification code to hr@tch.com and +234 70123456789'
+                        }
                     </div>
                 </div>
-
+                {codeEmail ?
+                    <EnterVerificationCodeEmail {...{ setCodeEmail }} /> :
+                (
                 <form action="" className="w-full">
                     <div className="grid grid-col-1">
                         <OtpInput
@@ -106,6 +110,7 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
                         {/* <Input inputClassName="border-b border-[#C5C5C5]" type="text" placeholder="Email here..." value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} className="" LeadingIcon={() => <></>} /> */}
                     </div>
                 </form>
+                    )}
             </div>
 
 
@@ -138,7 +143,7 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
                 <div className='grid grid-cols-1 items-center justify- text-center p-8 w-full'>
                     <div className='flex items-center justify-center'>
 
-                    <img src="/success-check.svg"  alt="" />
+                        <img src="/success-check.svg" alt="" />
                     </div>
 
                     <div>
