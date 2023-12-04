@@ -23,7 +23,7 @@ const BottomNav = () => {
           <MyTeamIcon key={3} index={activeItem} />,
         ];
         return (
-          <Link
+          <Link 
             to={item.route}
             key={index}
             className={`${activeItem && "text-white rounded-2xl bg-[#1D8EE6] w-max whitespace-nowrap"
