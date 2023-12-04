@@ -1,8 +1,5 @@
 import React from "react";
 import { toast } from "react-toastify";
-// import { toastMessage } from "../../entities";
-// import { generateId } from "../../utils";
-// const id = generateId();
 
 interface PropTypes {
     label?: string;

@@ -56,7 +56,7 @@ const CreateAccount = () => {
               return (
                 <div
                   key={index}
-                  className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC] ${completedSteps && 'bg-[#1D8EE6]'}  ${isStepCompleted && 'step--completed cursor-pointer bg-[#1D8EE6]'}`}
+                  className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC] ${isStepCompleted && 'bg-[#1D8EE6]'}  ${isStepCompleted && 'step--completed cursor-pointer bg-[#1D8EE6]'}`}
                   {...(isStepCompleted
                     ? { onClick: () => handleStepClick(index) }
                     : {})}
