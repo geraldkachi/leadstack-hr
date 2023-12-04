@@ -2,7 +2,7 @@ import ForgotPasswordForm from "./ForgotPasswordForm"
 
 const ForgotPassword = () => {
     return (
-        <div className="grid md:grid-cols-2 h-screen bg-[#F2F5F9]">
+        <div className="grid md:grid-cols-2 h-screen bg-[#F2F5F9] relative">
             <div className=" hidden md:block p-10 place-content-center">
                 {/* <Stepper {...{ currentStep, setCurrentStep }} /> */}
                 <div className="relative col-span-2 place-content-center p-0  bg-contain bg-no-repeat w-full text-white h-full">
@@ -15,17 +15,20 @@ const ForgotPassword = () => {
                     <div className=" bottom-36 p-5 pr-16 text-2xl">
 
                     </div>
-                    <img src="/forgot-password.svg" alt="" />
+                    {/* <img src="/forgot-password.svg" alt="" /> */}
                 </div>
 
             </div>
 
-            <div className="flex-col flex-1 flex mx-auto md:m-20 mt-20 md:mt-[unset] md:justify-between relative">
+            <div className="flex-col flex-1 flex mx-auto md:m-10 justify-center md:justify-between relative">
                 <div></div>
-                <div className="p-8 md:pt-20 md:pb-32 rounded-[19.095px] bg-white ">
+                <div className="mx-3">
                     <ForgotPasswordForm />
                 </div>
                 <div></div>
+            </div>
+            <div className="absolute bottom-0 hidden md:block z-10">
+                <img src="/forgot-password.svg"  className="md:h-80"  alt="" />
             </div>
         </div>
     )

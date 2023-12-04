@@ -12,8 +12,8 @@ const LoginForm = () => {
 
 
     return (
-        <div className="w-full max-w-xl mx-auto">
-            <div className="text-[#535768] text-sm md:text-[19.09px] leading-6 font-normal mt-2 mb-12">
+        <div className="max-w-xl mx-auto bg-white px-4 py-8 md:p-8 rounded-[19.095px] ">
+            <div className="text-[#535768] text-base md:text-[19.09px] leading-6 font-normal mt-2 mb-12">
                 Enter the email address and password associated with your HR account.
             </div>
 
@@ -49,7 +49,7 @@ const LoginForm = () => {
                 <div className="mt-2 text-xs">Forgot Password? <span className="text-[#1D8EE6] text-xs cursor-pointer" onClick={() => navigate('/forgot-password')}> Retrieve Here</span></div>
 
 
-                <div className="flex items-center justify-between mt-10">
+                <div className="flex items-center justify-between my-14">
                     <div className="text-sm md:text-[14.321px]">
                         Don&apos;t have an account? <span className="text-[#1D8EE6] cursor-pointer" onClick={() => navigate('/')}>Sign Up</span>
                     </div>
@@ -63,7 +63,7 @@ const LoginForm = () => {
                 </div>
 
 
-                <div className="text-center mt-6">
+                <div className="text-center mt-6 text-sm">
                     Having issues signing  in? <span className="text-[#1D8EE6] cursor-pointer" onClick={() => navigate('/')}>Click here</span>
                 </div>
             </form>

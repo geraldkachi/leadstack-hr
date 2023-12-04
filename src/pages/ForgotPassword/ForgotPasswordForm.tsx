@@ -7,9 +7,7 @@ const ForgotPasswordForm = () => {
     const navigate = useNavigate();
 
     return (
-        <div className="w-full max-w-xl mx-auto px-3">
-            <div className="text-center mb-[28px]"> </div>
-
+        <div className="max-w-xl mx-auto bg-white px-4 py-8 md:px-8 md:py-14 rounded-[19.095px] ">
             <form action="" className="w-full">
                 <div className="grid grid-col-1">
                     <Input
