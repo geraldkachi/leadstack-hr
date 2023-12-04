@@ -1,7 +1,11 @@
-import { useRef } from "react";
+import { useRef, Dispatch, SetStateAction } from "react";
 import { Button, Input } from "../../components"
 
-const EnterVerificationCodeEmail = ({ setCurrentStep }: any) => {
+interface Props {
+    setCurrentStep: Dispatch<SetStateAction<number>>
+  }
+
+const EnterVerificationCodeEmail = ({ setCurrentStep }: Props) => {
     const formInput= useRef<HTMLInputElement>(null);
     return (
         <div className="w-full max-w-xl mx-auto py-3 flex flex-col justify-between">

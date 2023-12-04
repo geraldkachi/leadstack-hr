@@ -9,9 +9,9 @@ import EnterVerificationCodeEmail from "./EnterVerificationCodeEmail";
 
 const CreateAccount = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
-  const noOfSteps = 4
+  const noOfSteps = 5
   const arrayOfSteps = [...Array(noOfSteps)];
-  const completedSteps = currentStep + 1;
+  const completedSteps = currentStep;
 
   const handleStepClick = (index: number) => {
     setCurrentStep(index);
