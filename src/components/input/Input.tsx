@@ -100,7 +100,7 @@ export default function Input(
 				</label>
 			)}
 			<div
-				className={`relative w-full   flex items-center overflow-hidden  focus-within:border-[#DEDEC disabled:bg-grey read-only:bg-grey
+				className={`relative w-full flex items-center overflow-hidden  focus-within:border-[#DEDEC disabled:bg-grey read-only:bg-grey
                 ${(disabled || readOnly) && 'bg-grey border-none'
 					}`}
 			>
@@ -113,7 +113,8 @@ export default function Input(
 					// {...innerRef}
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
-					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
+					// className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
+					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#1D8EE6] placeholder:text-base placeholder:font-normal placeholder:text-[#B2B7C2] placeholder:leading-6 ${inputClassName}`}
 				/>
 				{TrailingIcon && (
 					<span className="absolute inset-y-0 end-0 flex items-center pe-1 cursor-pointer">

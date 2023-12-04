@@ -20,7 +20,7 @@ const App: React.FC = () => {
     // Simulate an API call
     setTimeout(() => {
       setIsLoading(false);
-      document.body.style.background === 'white';
+      // document.body.style.background === 'white';
     }, 3000);
   }, []);
 

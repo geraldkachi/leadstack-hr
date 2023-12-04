@@ -9,6 +9,13 @@ import EnterVerificationCodeEmail from "./EnterVerificationCodeEmail";
 
 const CreateAccount = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
+  const noOfSteps = 4
+  const arrayOfSteps = [...Array(noOfSteps)];
+  const completedSteps = currentStep + 1;
+
+  const handleStepClick = (index: number) => {
+    setCurrentStep(index);
+  };
 
   return (
     <div className="grid md:grid-cols-2 h-screen">
@@ -41,9 +48,27 @@ const CreateAccount = () => {
         </div>
       </div>
 
-      <div className="col-span- flex-col flex-1 p-3 flex md:justify-between relative">
-        <div className="text-black flex items-center justify-end">bars</div>
-        
+      <div className="col-span- flex-col flex-1 p-3 flex justify-between relative">
+        <div className="text-black flex flex-row items-center justify-end">
+          <div className="stepper-div flex items-center my-3">
+            {arrayOfSteps.map((_, index) => {
+              const isStepCompleted = index <= currentStep;
+              return (
+                <div
+                  key={index}
+                  className={`step h-1 w-10 mr-2 ${isStepCompleted ? 'step--completed text-blue-600' : ''}`}
+                  {...(isStepCompleted
+                    ? { onClick: () => handleStepClick(index) }
+                    : {})}
+                ></div>
+              );
+            })}
+          </div>
+          <p className="stepper-count  text-xs">
+            Step <span className='completed-count text-red-500'>{completedSteps}</span> of {noOfSteps}
+          </p>
+        </div>
+
         <div className="md:mx-28">
           {currentStep === 1 && <CreateAccountForm {...{ setCurrentStep }} />}
           {currentStep === 2 && <CreateAccountForm2 {...{ setCurrentStep }} />}

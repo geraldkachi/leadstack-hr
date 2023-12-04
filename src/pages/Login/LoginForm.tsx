@@ -12,17 +12,9 @@ const LoginForm = () => {
 
 
     return (
-        <div className="w-full max-w-xl mx-auto px-3">
-            <div className="text-center mb-[28px]"> </div>
-
-            <div className="text-[] mb-12">
-                {/* <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
-          Register your Company
-        </div> */}
-                <div className="text-[#535768] text-base leading-6 font-normal mt-2">
-                    This is your first step to redefine work in your organization, kindly
-                    Fill in the details below to get started{" "}
-                </div>
+        <div className="w-full max-w-xl mx-auto">
+            <div className="text-[#535768] text-sm md:text-[19.09px] leading-6 font-normal mt-2 mb-12">
+                Enter the email address and password associated with your HR account.
             </div>
 
             <form action="" className="w-full">
@@ -46,7 +38,7 @@ const LoginForm = () => {
                     type={showPassword ? 'text' : 'password'}
                     name="password"
                     placeholder="techworldvibe"
-                    inputClassName="me-10"
+                    inputClassName="pe-10"
                     TrailingIcon={() => (
                         <PasswordMe
                             showPassword={showPassword}
@@ -58,7 +50,7 @@ const LoginForm = () => {
 
 
                 <div className="flex items-center justify-between mt-10">
-                    <div className="text-[14.321px]">
+                    <div className="text-sm md:text-[14.321px]">
                         Don&apos;t have an account? <span className="text-[#1D8EE6] cursor-pointer" onClick={() => navigate('/')}>Sign Up</span>
                     </div>
 

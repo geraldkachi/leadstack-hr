@@ -7,7 +7,7 @@ const Login = () => {
 
     return (
         <div className="relative">
-            <div className="grid lg:grid-cols-2 h-screen bg-[#F2F5F9]">
+            <div className="grid lg:grid-cols-2 h-screen bg-[#F2F5F9] z-50 ">
                 <div className=" hidden lg:block p-10 place-content-center">
                     {/* <Stepper {...{ currentStep, setCurrentStep }} /> */}
                     <div className="relative col-span-2 place-content-center p-0  bg-contain bg-no-repeat w-full text-white h-full">
@@ -24,15 +24,15 @@ const Login = () => {
 
                 <div className="flex-col flex-1 flex mx-auto md:m-20 justify-center md:justify-between relative">
                     <div></div>
-                    <div className="mb-32 p-8 rounded-[19.095px] bg-white ">
+                    <div className="mx-3 p-4 md:p-8 rounded-[19.095px] bg-white ">
                         {/* {currentStep === 1 && <LoginForm  />} */}
                         {<LoginForm />}
                     </div>
                     <div></div>
                 </div>
             </div>
-            <div className="absolute bottom-0">
-                <img src="/login-img1.svg" alt="" />
+            <div className="absolute bottom-0 hidden md:block z-10">
+                <img src="/login-img1.svg" className="md:h-72" alt="" />
             </div>
         </div>
     )

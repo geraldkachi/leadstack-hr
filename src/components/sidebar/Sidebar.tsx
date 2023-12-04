@@ -1,8 +1,5 @@
 import "./sidebar.css";
-// import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { AdminIcon, CustomersIcon, DashboardIcon, LoanCalculatorIcon, PersonalBankingIcon, ReportsIcon, StatusIcon } from "../../assets";
-// import Accordion from "../Accordion/Accordion";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { useAuth, useWindowDimensions } from "../../hooks";
 import { DashboardIcon, DocumentsIcon, EmployeesIcon, FinanceIcon, HiriingArrow, HiringIcon, LeaveManagementIcon, MyTeamIcon, PerformanceIcon, ReportsAnalyticsIcon, SelfServiceIcon, TimeManagementIcon, TrainingIcon } from "../../assets";
@@ -127,9 +124,9 @@ const Sidebar = ({ open }: SidebarProps) => {
                 key={index}
                 className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                   }
-                  ${!open && 'text-center flex items-center justify-center'}
+                  ${!open ? 'text-center flex items-center justify-center' : "w-full"}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
-                  !text-[#535768] w-full`}
+                  !text-[#535768]`}
                 onClick={() => useAuth.setState({ openDraw: false })}
               >
                 <div key={index}> {iconArr[index]}</div>
@@ -149,9 +146,9 @@ const Sidebar = ({ open }: SidebarProps) => {
               // to={''}
               className={`${activeItem2 && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                 }
-                  ${!open ? 'text-center flex items-center justify-center' : "justify-between"}
+                  ${!open ? 'text-center flex items-center justify-center' : "w-full"}
                   flex items-center  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
-                  !text-[#535768] w-full relative`}
+                  !text-[#535768] relative`}
               onClick={() => {
                 setState(prev => !prev)
                 useAuth.setState({ openDraw: false })
@@ -192,9 +189,9 @@ const Sidebar = ({ open }: SidebarProps) => {
                 key={index}
                 className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                   }
-                  ${!open && 'text-center flex items-center justify-center'}
+                  ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
-                  !text-[#535768] w-full`}
+                  !text-[#535768]`}
                 onClick={() => useAuth.setState({ openDraw: false })}
               >
                 <div key={index}> {iconArr[index]}</div>
@@ -221,8 +218,6 @@ const Sidebar = ({ open }: SidebarProps) => {
           {faqArr.map((item, index) => {
             const activeItem = location.pathname.includes(item?.route);
             const iconArr = [
-              // <DashboardIcon key={1} index={activeItem} />,
-              // <DashboardIcon key={2} index={activeItem} />,
               <img src="/finance.svg" alt="" />,
               <img src="/self-service.svg" alt="" />
             ];
@@ -232,10 +227,8 @@ const Sidebar = ({ open }: SidebarProps) => {
                   <Link
                     to={item.route}
                     key={index}
-
-                    className={`${activeItem && "bg-[#] rounded-[4px]"} ${activeItem ? "text-[#716C81]" : "text-[#716C81]"
+                    className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
                       } flex items-center cursor-pointer text-base gap-4 px-4 `}
-                  // className="flex items-center gap-4 js"
                   >
                     <span>{iconArr[index]}</span>
                     <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
@@ -248,10 +241,10 @@ const Sidebar = ({ open }: SidebarProps) => {
           })}
 
           <p className={`${!open ? "hidden" : "sm:block text-[#BFBFBF] mx-2 lg:block text-xs  text-start md:text-lg"}`}>ACCOUNT</p>
-          <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6 px-2"}
-                  ${!open && 'px-2 text-center flex items-center justify-center'}
+          <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6"}
+                  ${!open ? 'px-2 text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
-                  !text-[rgb(83,87,104)] w-full`}
+                  !text-[rgb(83,87,104)]`}
             onClick={logout}>
             <div><img src="/signnout.svg" alt="singout" /></div>
 

@@ -98,6 +98,9 @@ const Profile = () => {
                             <img className="w-10 h-10 md:w-[160px] md:h-[160px] rounded-full" src="/profileface.svg" alt="profile image" />
                             <span className="top-0 end-1 md:end-9 absolute w-3.5 h-3.5 md:w-4 md:h-4 bg-[#50CD89] border-2 border-white rounded-full"></span>
                         </div>
+                          {/* <div className="w-20 h-20 md:w-40 md:h-40 rounded-full bg-[url(/profileface.svg)] bg-top md:bg-center bg-no-repeat relative">
+                                <span className=" top-10 right-1 px-1 pe-2 md:end-9  w-3.5 h-2 md:w-4 md:h-4 bg-[#50CD89] border-2 border-white rounded-full"></span>
+                            </div> */}
 
                         <div>
                             <div className="text-lg md:text-[19px] flex items-center my-4">Kingsley Okon {" "}<span className="flex items-center text-[#94A0B4] text-base"> <img src="/admin-check.svg" alt="" /> Admin</span></div>
