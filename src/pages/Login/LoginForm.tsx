@@ -23,8 +23,8 @@ const LoginForm = () => {
                         label="Email Address"
                         ref={formInput}
                         className="mb-1"
-                        type="text"
-                        name="password"
+                        type="email"
+                        name="email"
                         placeholder="hr@techworld.com"
                     />
 

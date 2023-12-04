@@ -13,8 +13,8 @@ const ForgotPasswordForm = () => {
                     <Input
                         label="Enter Email Address"
                         ref={formInput}
-                        type="text"
-                        name="password"
+                        type="email"
+                        name="email"
                         placeholder="hr@techworld.com"
                     // TrailingIcon={() => (
                     //     <PasswordMe
@@ -41,8 +41,8 @@ const ForgotPasswordForm = () => {
                 </div>
 
 
-                <div className="text-center mt-6">
-                    Still having issues signing  in?<span className="text-[#1D8EE6] cursor-pointer" onClick={() => navigate('/')}>Click here</span>
+                <div className="text-center mt-6 text-sm">
+                    Still having issues signing  in? <span className="text-[#1D8EE6] cursor-pointer" onClick={() => navigate('/')}>Click here</span>
                 </div>
             </form>
 

@@ -20,7 +20,7 @@ const ForgotPassword = () => {
 
             </div>
 
-            <div className="flex-col flex-1 flex mx-auto md:m-10 justify-center md:justify-between relative">
+            <div className="flex-col flex-1 flex mx-auto md:m-10 justify-center md:justify-between relative w-full">
                 <div></div>
                 <div className="mx-3">
                     <ForgotPasswordForm />
