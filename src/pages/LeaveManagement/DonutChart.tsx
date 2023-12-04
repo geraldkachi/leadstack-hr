@@ -20,6 +20,7 @@ const DonutChart = () => {
 
   return (
     <div className="h-full bg-white rounded-lg">
+      {/* @ts-ignore */}
       <ReactApexChart options={chartData.options} series={chartData.series} type="donut" height={350} />
       <button onClick={updateChartData}>Update Chart</button>
     </div>

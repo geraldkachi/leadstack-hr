@@ -19,10 +19,10 @@ const localizer = dateFnsLocalizer({
 
 const defaultView = Views.MONTH;
 
-// const formats = {
-//   dateFormat: 'dd', // Adjust the date format as needed
-//   dayFormat: 'EEEEEE', // Short day names, adjust as needed
-// };
+const formats = {
+  dateFormat: 'dd', // Adjust the date format as needed
+  dayFormat: 'EEEEEE', // Short day names, adjust as needed
+};
 
 const views = [Views.MONTH];
 
@@ -36,9 +36,9 @@ const events = [
 ];
 
 
-const formats = {
-  dayFormat: (date, culture) => localizer.format(date, 'DD', culture),
-};
+// const formats = {
+//   dayFormat: (date, culture) => localizer.format(date, 'DD', culture),
+// };
 // const date_today = new Date();
 // const firstDay = new Date(date_today.getFullYear(), date_today.getMonth(), 1);
 
