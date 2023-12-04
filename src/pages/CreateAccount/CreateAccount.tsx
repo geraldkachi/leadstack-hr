@@ -53,19 +53,18 @@ const CreateAccount = () => {
           <div className="stepper-div flex items-center my-3">
             {arrayOfSteps.map((_, index) => {
               const isStepCompleted = index <= currentStep;
+              console.log(isStepCompleted, 'isStepCompleted')
               return (
                 <div
                   key={index}
-                  className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC] ${isStepCompleted && 'bg-[#1D8EE6]'}  ${isStepCompleted && 'step--completed cursor-pointer bg-[#1D8EE6]'}`}
-                  {...(isStepCompleted
-                    ? { onClick: () => handleStepClick(index) }
-                    : {})}
+                  className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC] ${isStepCompleted && 'step--completed cursor-pointer !bg-[#1D8EE6]'}`}
+                  {...(isStepCompleted ? { onClick: () => handleStepClick(index) } : {})}
                 ></div>
               );
             })}
           </div>
           <p className="stepper-count text-[#94A0B4] text-xs">
-            Step <span className={`${completedSteps && ''} completed-count text-[#272848]`}>{completedSteps}</span> of {noOfSteps}
+            Step <span className={`${completedSteps && ''} completed-count text-[#fb4e4e]`}>{completedSteps}</span> of {noOfSteps}
           </p>
         </div>
 
