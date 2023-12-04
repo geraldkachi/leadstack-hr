@@ -1,5 +1,6 @@
 import { EmailProfileIcon, HumanResourceIcon, LocationnProfileIcon, PhoneProfileIcon } from "../../assets"
 import { Breadcrumbs, Button } from "../../components"
+import { BreadcrumsbProps } from "../../types"
 import Certifications from "./Certifications"
 import ContactInfo from "./ContactInfo"
 import Education from "./Education"
@@ -10,10 +11,7 @@ import NextofKin from "./NextofKin"
 
 import { Tabs } from 'antd';
 import type { TabsProps } from 'antd';
-interface BreadcrumsbProps {
-    url?: string
-    name?: string
-}
+
 const bread: BreadcrumsbProps[] = [
     {
         name: 'Home',

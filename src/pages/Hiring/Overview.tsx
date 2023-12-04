@@ -1,10 +1,7 @@
 import { Breadcrumbs, Button } from "../../components"
+import { BreadcrumsbProps } from "../../types"
 
 
-interface BreadcrumsbProps {
-    url?: string
-    name?: string
-}
 const bread: BreadcrumsbProps[] = [
     {
         name: 'Home',

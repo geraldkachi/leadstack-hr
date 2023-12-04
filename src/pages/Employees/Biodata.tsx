@@ -35,6 +35,7 @@ const Biodata = () => {
 
             <div className="grid grid-cols-2 gap-x-2">
               <Input
+              inputType="default"
                 label="First Name"
                 ref={formInput}
                 className="mb-1"

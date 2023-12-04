@@ -5,6 +5,22 @@ interface Props {
     setState: React.Dispatch<React.SetStateAction<boolean>>
 }
 const HiringPop = ({ state, setState }: Props) => {
+        // dropdown list
+//   const items: MenuProps['items'] = [
+//     {
+//       key: '1',
+//       label: (<Link to="/hiring/overview" className="cursor-pointer flex items-center gap-4 p-2 text-xs w-full">   <span>•</span> <span>Overview</span></Link>),
+//     },
+//     {
+//       key: '2',
+//       label: (<Link to="/hiring/job-portal" className="cursor-pointer flex items-center gap-4 p-2 text-xs w-full"  >  <span>•</span><span >Job Portal</span></Link>),
+//     },
+//     {
+//       key: '3',
+//       label: (<Link to="/hiring/application" className="cursor-pointer flex items-center gap-4 p-2 text-xs w-full"   >     <span>•</span><span >Application</span></Link>),
+//     },
+//   ];
+
     return (
         <>
             <ClickOutside onclickoutside={() => setState(false)} className={` text-black`} >

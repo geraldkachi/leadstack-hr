@@ -1,4 +1,4 @@
-import { Dropdown, Modal, Space, Table, Tag } from "antd"
+import { Dropdown, Modal, Table, Tag } from "antd"
 import { useState } from "react";
 import { format } from "date-fns";
 // import { useNavigate } from "react-router-dom";
@@ -208,12 +208,10 @@ const AllEmployees = () => {
         {
             title: "Action",
             render: () => (
-                <span onClick={() => null} className="cursor-pointer capitalize whitespace-nowrap p-6">
+                <span onClick={() => null} className="cursor-pointer capitalize whitespace-nowrap">
                     <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">
                         <a onClick={(e) => e.preventDefault()}>
-                            <Space>
-                                <img src="/action-table.svg" className="p-1"  alt="" />
-                            </Space>
+                            <img src="/action-table.svg" className="p-1"  alt="" />
                         </a>
                     </Dropdown>
                 </span>

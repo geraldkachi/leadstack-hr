@@ -1,8 +1,6 @@
 import { Breadcrumbs, Button } from "../../components"
-interface BreadcrumsbProps {
-    url?: string
-    name?: string
-}
+import { BreadcrumsbProps } from "../../types"
+
 const bread: BreadcrumsbProps[] = [
     {
         name: 'Home',
@@ -20,7 +18,7 @@ const Application = () => {
     <div className="px-4 md:px-8">
         <Breadcrumbs {...{ bread }} />
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between gap-3">
             <div>
                 <div className="text-lg md:text-2xl">Recruitment</div>
                 <div className="text-[#98A1B0] text-[13px] ">Track and manage organization activities. </div>

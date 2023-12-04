@@ -7,7 +7,6 @@ import { useAuth } from "../../hooks";
 
 
 const Layout = () => {
-  // const [open, setOpen] = useState<boolean>(true);
 const open = useAuth(state => state.open)
   return (
     <div>

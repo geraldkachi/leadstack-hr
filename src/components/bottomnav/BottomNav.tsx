@@ -27,7 +27,7 @@ const BottomNav = () => {
             to={item.route}
             key={index}
             className={`${activeItem && "text-white rounded-2xl bg-[#1D8EE6] w-max whitespace-nowrap"
-              } flex justify-evenly flex-1 gap-x-1 items-center rounded-full px-3 py-2 cursor-pointer my-3  text-base space-x-1`}
+              } flex justify-evenly flex-1 gap-x-1 items-center rounded-full px-3 py-1 cursor-pointer my-0  text-base space-x-1`}
           >
             <div className=""> {iconArr[index]}</div>
 

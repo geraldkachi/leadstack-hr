@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom'
-// import { BreadcrumbsProps, BreadcrumsbItemsProps } from '../../pages/Userdetails/UserDetails'
-interface BreadcrumsbProps {
-  url?: string
-  name?: string
-}
+import { BreadcrumsbProps } from '../../types'
+
 interface BreadcrumsbItemsProps {
   bread: Array<BreadcrumsbProps>
 }
@@ -22,7 +19,7 @@ interface BreadcrumsbItemsProps {
 //   }
 // ]
 
-const BreadcrumbItems = ({bread}: BreadcrumsbItemsProps) => {
+const BreadcrumbItems = ({ bread }: BreadcrumsbItemsProps) => {
   const isLast = (index: number) => index === bread.length - 1
   return (
     <>
@@ -31,10 +28,11 @@ const BreadcrumbItems = ({bread}: BreadcrumsbItemsProps) => {
         const { name, url } = item
         return (
           <li key={index} className="text-sm py-2">
-            <Link to={disabled ? '#' : `/${url}`} className={`${disabled ? 'text-gray-600' : ' text-[#7C8091] hover:text-[#535768]'}`}>{name}</Link>
-            <li className='inline'><span className={`${disabled && 'hidden invisible'}text-gray-500 mx-2`}>{">"}</span></li>
+            <Link to={disabled ? '#' : `/${url}`} className={`${disabled ? 'text-gray-600' : ' text-[#7C8091]  flex items-center hover:text-[#535768]'}`}>{name}
+              <span className=' flex items-center'><span className={`${disabled && 'hidden invisible'}text-gray-500 mx-2`}> <img src="/breadangle.svg" alt="" /> </span></span>
+            </Link>
           </li>
-        ) 
+        )
       })}
     </>
   )
@@ -47,7 +45,7 @@ const Breadcrumbs = ({ bread }: BreadcrumsbItemsProps) => {
     <>
       <nav className="bg-grey-light rounded-md w-full">
         <ol className="list-reset flex text-sm">
-          <BreadcrumbItems {...{bread}} />
+          <BreadcrumbItems {...{ bread }} />
         </ol>
       </nav>
 

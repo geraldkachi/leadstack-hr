@@ -3,7 +3,7 @@ import { Button, Tabs } from "../../components"
 const Hiring = () => {
   return (
     <div className="h-full pt-3">
-      <div className="flex items-center justify-between">
+      <div className="flex items-start justify-between gap-3">
         <div>
           <div className="text-lg md:text-2xl">Recruitment</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
@@ -12,11 +12,11 @@ const Hiring = () => {
         <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" />
       </div>
 
-      <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] md:mr-56">
+      <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] lg:mr-56">
         <img src="/cautionsign.svg" alt="caution" />
         <div>
-          <div className='text-[#3F4254] font-bold text-base'>ATTENTION!!!</div>
-          <div className='text-[#7E8299] text-sm md:text-base'>Kindly note that job posted is automatically moved to the archive after the expiration dateKindly note that job posted is automatically moved to the archive after the expiration date</div>
+          <div className='text-[#3F4254] font-bold text-sm md:text-base'>ATTENTION!!!</div>
+          <div className='text-[#7E8299] text-[10px] md:text-sm'>Kindly note that job posted is automatically moved to the archive after the expiration dateKindly note that job posted is automatically moved to the archive after the expiration date</div>
         </div>
       </div>
 

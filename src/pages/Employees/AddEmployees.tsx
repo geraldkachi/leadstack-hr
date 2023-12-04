@@ -5,14 +5,8 @@ import Biodata from "./Biodata"
 import Education from "./Education"
 import Emergency from "./Emergency"
 import Employment from "./Employment"
+import { BreadcrumsbProps } from "../../types"
 
-interface BreadcrumsbProps {
-    url?: string
-    name?: string
-}
-// interface BreadcrumsbItemsProps {
-//   breadcrumbsItems: Array<BreadcrumsbProps>
-// }
 const bread: BreadcrumsbProps[] = [
     {
         name: 'Dashboard',

@@ -52,7 +52,7 @@ const Button = ({
         <button {...rest}
             type={type}
             disabled={disabled || loading}
-            className={`flex items-center !text-xs py-2 md:py-2 px-2 md:px-4 rounded-[4px] disabled:bg-grey border disabled:text-gray-50 whitespace-nowrap ${variants[variant]} ${sizes[size]} ${className} ${loading && 'py-3 md:py-4 px-8 md:px-12 bg-[#EEF5FC] text-[#ABBED1]'}`}>
+            className={`flex items-center !text-xs py-2 md:py-2 px-2 md:px-6 rounded-[4px] disabled:bg-grey border disabled:text-gray-50 whitespace-nowrap ${variants[variant]} ${sizes[size]} ${className} ${loading && 'py-3 md:py-4 px-8 md:px-12 bg-[#EEF5FC] text-[#ABBED1]'}`}>
             {prefixIcon && (<> {prefixIcon}&nbsp;&nbsp;</>)}
             {loading ? <Spinner /> : <>{title || children}</>}
             {suffixIcon && (<> &nbsp;&nbsp;{suffixIcon}</>)}

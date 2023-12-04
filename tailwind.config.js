@@ -17,7 +17,7 @@ export default {
         // blue: colors.lightBlue,
         // red: colors.rose,
         // pink: colors.fuchsia,
-        primary: '#3490dc',
+        primaryb: '#3490dc',
         secondary: '#ffed4a',
       },
       noto: ["Noto Sans", "sans-serif"],

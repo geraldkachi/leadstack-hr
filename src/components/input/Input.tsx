@@ -18,7 +18,14 @@
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
         </svg>Search
     </button>
-</form>  */}
+</form> 
+
+	className={`relative  flex items-center w-full rounded-[4px] overflow-hidden border border-[#DEDFE focus-within:border-[#DEDEC] disabled:bg-grey read-only:bg-grey 
+                borderrrrr-${col()}
+                ${(disabled || readOnly) && 'bg-grey border-none'
+					}`}
+
+*/}
 
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 
@@ -59,14 +66,14 @@ export default function Input(
 	} = props;
 
 	const col = () => {
-		let color = 'grey-beau';
+		let color= `red-600` ;
 
 		if (inputType === 'success') {
-			color = 'meador';
+			color = 'green-500';
 		} else if (inputType === 'warning') {
-			color = 'yellow';
+			color = 'yellow-500';
 		} else if (inputType === 'error') {
-			color = 'orange';
+			color = 'red-500';
 		}
 
 		return color;
@@ -82,7 +89,7 @@ export default function Input(
 					{label}
 				{tooltip && (
 						<span className='text-black'>
-						tooltip
+						
 							{/* <Icon
 								icon="info-circle"
 								{...labelIconProps}
@@ -93,8 +100,7 @@ export default function Input(
 				</label>
 			)}
 			<div
-				className={`relative  flex items-center w-full rounded-[4px] overflow-hidden border border-[#DEDFE focus-within:border-[#DEDEC] disabled:bg-grey read-only:bg-grey 
-                border-${col()}
+				className={`relative w-full   flex items-center overflow-hidden  focus-within:border-[#DEDEC disabled:bg-grey read-only:bg-grey
                 ${(disabled || readOnly) && 'bg-grey border-none'
 					}`}
 			>
@@ -107,7 +113,7 @@ export default function Input(
 					// {...innerRef}
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
-					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
+					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
 				/>
 				{TrailingIcon && (
 					<span className="absolute inset-y-0 end-0 flex items-center pe-1 cursor-pointer">
