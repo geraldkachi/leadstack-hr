@@ -171,7 +171,7 @@ const EmployeePop = () => {
                             </div>
                           </div>
 
-                          <img src="/uploaddelete.svg" className="cursor-pointer" alt="" onClick={() =>  handleFileChange(null)} />
+                          <img src="/uploaddelete.svg" className="cursor-pointer" alt="" onClick={() =>  setSelectedFile(null)} />
                         </div>
                       </div>
                         )}
