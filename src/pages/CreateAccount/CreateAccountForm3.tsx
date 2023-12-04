@@ -128,7 +128,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
             type="button"
             className="!bg-[#1D8EE6] !text-white !px-8 "
 
-            onClick={() => setCurrentStep(4)}
+            onClick={() => setCurrentStep(3)}
             title="Continue"
           />
         </div>

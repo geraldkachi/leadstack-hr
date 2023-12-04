@@ -60,7 +60,7 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     }
     const handleRedirectToEmailChange = () => {
         // navigate('/forgot/password');
-        setCurrentStep(5)
+        setCurrentStep(4)
     }
     // const handleNavigateForward = () => {
     //     navigate('/personal/information');
@@ -72,7 +72,7 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
         <div className="w-full max-w-xl mx-auto py-3 flex flex-col justify-between">
             {/* <img src="" alt="" /> */}
             <div>
-            <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(3)} />
+            <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(2)} />
 
                 <div className="text-[] mb-12">
                     <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">

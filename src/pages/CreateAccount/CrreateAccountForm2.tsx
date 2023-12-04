@@ -13,7 +13,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
 
   return (
     <div className="w-full max-w-xl mx-auto px-3">
-      <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(1)} />
+      <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(0)} />
 
       <div className="text-[] mb-12">
         <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
@@ -89,7 +89,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
             type="button"
             className="!bg-[#1D8EE6] !text-white !px-8"
             onClick={() => {
-              setCurrentStep(3)
+              setCurrentStep(2)
               // navigate("/dashboard")
             }
             }

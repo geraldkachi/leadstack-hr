@@ -74,7 +74,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
             type="button"
             className="!bg-[rgb(29,142,230)] !text-white !px-8"
             onClick={() => {
-                setCurrentStep(2)
+                setCurrentStep(1)
             }
         }
             title="Next"

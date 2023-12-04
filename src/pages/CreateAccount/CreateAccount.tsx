@@ -8,10 +8,10 @@ import EnterVerificationCode from "./EnterVerificationCode";
 import EnterVerificationCodeEmail from "./EnterVerificationCodeEmail";
 
 const CreateAccount = () => {
-  const [currentStep, setCurrentStep] = useState<number>(1);
-  const noOfSteps = 5
+  const [currentStep, setCurrentStep] = useState<number>(0);
+  const noOfSteps = 4
   const arrayOfSteps = [...Array(noOfSteps)];
-  const completedSteps = currentStep;
+  const completedSteps = currentStep + 1;
 
   const handleStepClick = (index: number) => {
     setCurrentStep(index);
@@ -24,8 +24,14 @@ const CreateAccount = () => {
         <div className="relative col-span-2 place-content-center p-0 bg-[url(/signupimg.svg)] bg-contain bg-no-repeat w-full text-white h-full">
           <img src="/reg-logo.svg" className="top-[20%] left-[10%] pt-10 pl-8" alt="" />
           <div className="absolute bottom-36 p-5 pr-16 text-2xl w-full">
-            {currentStep === 1 &&
+            {currentStep === 0 &&
               "Great employees are not born, they are made... by HR!"}
+            {currentStep === 1 && (
+              <p>
+                Start managing your HR needs with ease. <br />
+                Create your account now.
+              </p>
+            )}
             {currentStep === 2 && (
               <p>
                 Start managing your HR needs with ease. <br />
@@ -38,25 +44,19 @@ const CreateAccount = () => {
                 Create your account now.
               </p>
             )}
-            {currentStep === 4 && (
-              <p>
-                Start managing your HR needs with ease. <br />
-                Create your account now.
-              </p>
-            )}
           </div>
         </div>
       </div>
 
       <div className="col-span- flex-col flex-1 p-3 flex justify-between relative">
-        <div className="text-black flex flex-row items-center justify-end">
+        <div className="text-[#94A0B4] flex flex-row items-center justify-end">
           <div className="stepper-div flex items-center my-3">
             {arrayOfSteps.map((_, index) => {
               const isStepCompleted = index <= currentStep;
               return (
                 <div
                   key={index}
-                  className={`step h-1 w-10 mr-2 ${isStepCompleted ? 'step--completed text-blue-600' : ''}`}
+                  className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC] ${completedSteps && 'bg-[#1D8EE6]'}  ${isStepCompleted && 'step--completed cursor-pointer bg-[#1D8EE6]'}`}
                   {...(isStepCompleted
                     ? { onClick: () => handleStepClick(index) }
                     : {})}
@@ -64,17 +64,17 @@ const CreateAccount = () => {
               );
             })}
           </div>
-          <p className="stepper-count  text-xs">
-            Step <span className='completed-count text-red-500'>{completedSteps}</span> of {noOfSteps}
+          <p className="stepper-count text-[#94A0B4] text-xs">
+            Step <span className={`${completedSteps && ''} completed-count text-[#272848]`}>{completedSteps}</span> of {noOfSteps}
           </p>
         </div>
 
         <div className="md:mx-28">
-          {currentStep === 1 && <CreateAccountForm {...{ setCurrentStep }} />}
-          {currentStep === 2 && <CreateAccountForm2 {...{ setCurrentStep }} />}
-          {currentStep === 3 && <CreateAccountForm3 {...{ setCurrentStep }} />}
-          {currentStep === 4 && <EnterVerificationCode {...{ setCurrentStep }} />}
-          {currentStep === 5 && <EnterVerificationCodeEmail {...{ setCurrentStep }} />}
+          {currentStep === 0 && <CreateAccountForm {...{ setCurrentStep }} />}
+          {currentStep === 1 && <CreateAccountForm2 {...{ setCurrentStep }} />}
+          {currentStep === 2 && <CreateAccountForm3 {...{ setCurrentStep }} />}
+          {currentStep === 3 && <EnterVerificationCode {...{ setCurrentStep }} />}
+          {currentStep === 4 && <EnterVerificationCodeEmail {...{ setCurrentStep }} />}
         </div>
 
         <div className="flex items-end justify-end">

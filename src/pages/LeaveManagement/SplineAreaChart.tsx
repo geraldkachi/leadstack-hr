@@ -88,7 +88,7 @@ const SplineAreaChart = () => {
             <div className="text-sm font-medium p-4 text-[#535768]">Leave Trends Over Time</div>
 
             <ReactApexChart
-              {/* @ts-ignore */}
+            // @ts-ignore
                 options={state.options}
                 series={state.series}
                 width="100%"
