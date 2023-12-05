@@ -27,31 +27,97 @@ const data = [
 const Overview = () => {
   return (
     <div>
-        <div className="mt-3"></div>
-      <div className="grid lg:grid-cols-2 gap-8 my-4">
-        <DonutChart />
-        <div className="rounded-lg bg-white p-3">
-          {data.map((item, idx) => (
-            <div key={idx} className="flex items-center justify-between gap-4 p-2">
-              <div className="flex items-center gap-3">
-                <img className="w-10 h-10 rounded-full" src="/face.svg" alt="" />
-                <div className="font-medium">
-                  <div className="text-sm text-gray-500">{item.title}</div>
-                  {/* <div className="text-sm text-gray-500">Joined in August 2014</div> */}
+      <div className="flex items-center justify-between py-3">
+        <span className="tex">By Leave Type</span>
+
+        <span></span>
+      </div>
+
+      <div className="grid lg:grid-cols-8 md:gap-4">
+        <div className="md:col-span-6 gap-4 h-max">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 py-3">
+
+            <a className="flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50 w-max">
+              <div className="w-full h-full flex items-center justify-center bg-[#E8F4FC]">
+                {/* <img className="bg-[#E8F4FC] p-3" src="/card-file.svg" alt="" /> */}
+                16 <br />
+                days
+              </div>
+
+              <div className="flex flex-col justify-between p-4 leading-norma pr-20">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight">Casual 🏝</h5>
+                <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Currently on:</p>
+                <div className="flex -space-x-4 rtl:space-x-reverse">
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
                 </div>
               </div>
-              <span className="text-sm text-[#0D1227]">{item.leaves}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-      <BarChart />
-      <div className="flex items-center justify-between gap-4 my-3 md:my-8">
-        <span className="text-xl text-[#0D1227] font-semibold leading-[27.24px]">Leave Trends</span>
+            </a>
 
-        <span>wwww</span>
+            <a className="flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50 w-max">
+              <div className="flex flex-col justify-between p-4 leading-norma pr-20">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight">50</h5>
+                <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Current Job <br /> Openings</p>
+              </div>
+
+              <div className="w-full h-full flex items-center justify-center bg-[#fff7ec]">
+                <img className="bg-[#fff7ec] p-3" src="/card-clock.svg" alt="" />
+              </div>
+            </a>
+          </div>
+
+
+          <div className="grid lg:grid-cols-2 gap-8 my-4">
+            <DonutChart />
+            <div className="rounded-lg bg-white p-3">
+              {data.map((item, idx) => (
+                <div key={idx} className="flex items-center justify-between gap-4 p-2">
+                  <div className="flex items-center gap-3">
+                    <img className="w-10 h-10 rounded-full" src="/face.svg" alt="" />
+                    <div className="font-medium">
+                      <div className="text-sm text-gray-500">{item.title}</div>
+                      {/* <div className="text-sm text-gray-500">Joined in August 2014</div> */}
+                    </div>
+                  </div>
+                  <span className="text-sm text-[#0D1227]">{item.leaves}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <BarChart />
+
+          <div className="flex items-center justify-between gap-4 my-3 md:my-8">
+            <span className="text-xl text-[#0D1227] font-semibold leading-[27.24px]">Leave Trends</span>
+
+            <span></span>
+          </div>
+
+
+          <SplineAreaChart />
+
+        </div>
+        <div className="md:col-span-2">
+          <div className="rounded-lg bg-white p-3">
+            {data.map((item, idx) => (
+              <div key={idx} className="flex items-center justify-between gap-4 p-2">
+                <div className="flex items-center gap-3">
+                  <img className="w-10 h-10 rounded-full" src="/face.svg" alt="" />
+                  <div className="font-medium">
+                    <div className="text-sm text-gray-500">{item.title}</div>
+                    {/* <div className="text-sm text-gray-500">Joined in August 2014</div> */}
+                  </div>
+                </div>
+                <span className="text-sm text-[#0D1227]">{item.leaves}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
-      <SplineAreaChart />
+
     </div>
   )
 }

@@ -18,3 +18,4 @@ export { default as EmailProfileIcon } from "./Profile/EmailProfileIcon";
 export { default as PhoneProfileIcon } from "./Profile/PhoneProfileIcon";
 export { default as LocationnProfileIcon } from "./Profile/LocationnProfileIcon";
 export { default as EditProfileIcon } from "./Profile/EditProfileIcon";
+export { default as ChevronDownIcon } from "./Random/ChevronDownIcon";

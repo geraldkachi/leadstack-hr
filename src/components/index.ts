@@ -16,4 +16,5 @@ export { default as Toast } from "./Toast/Toast";
 export { default as Select } from "./Select/Select";
 export { default as Drawer } from "./Drawer/Drawer";
 export { default as PasswordMe } from "./otherComponents/PasswordMe";
+export { default as ReactSelect } from "./ReactSelect/ReactSelect";
 

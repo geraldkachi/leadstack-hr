@@ -12,6 +12,7 @@
   "dependencies": {
     "antd": "^5.10.3",
     "apexcharts": "^3.44.0",
+    "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
