@@ -272,7 +272,7 @@ const Overview = () => {
                 </div>
                 <div className="bg-[#F5F6FA] px-4 md:px-8"></div>
             </div>
-            <div className="bg-[#F5F6FA]">
+            <div className="bg-[#F5F6FA] px-4 md:px-8">
 
                 <CardOverview />
                 <div className="grid xl:grid-cols-8 gap-4 mb-5">
