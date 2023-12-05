@@ -1,0 +1,10 @@
+<svg width="32" height="44" viewBox="0 0 32 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M8 4H2C0.895431 4 0 4.89543 0 6V42C0 43.1046 0.895431 44 2 44H30C31.1046 44 32 43.1046 32 42V6C32 4.89543 31.1046 4 30 4H24V5C24 6.65685 22.6569 8 21 8H11C9.34315 8 8 6.65685 8 5V4Z" fill="#3A86FF"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 2C18 0.895431 17.1046 0 16 0C14.8954 0 14 0.895431 14 2H10.5C10.2239 2 10 2.22386 10 2.5V5.5C10 5.77614 10.2239 6 10.5 6H21.5C21.7761 6 22 5.77614 22 5.5V2.5C22 2.22386 21.7761 2 21.5 2H18Z" fill="#3A86FF"/>
+<rect opacity="0.3" x="12" y="16" width="14" height="4" rx="2" fill="#3A86FF"/>
+<rect opacity="0.3" x="6" y="16" width="4" height="4" rx="2" fill="#3A86FF"/>
+<rect opacity="0.3" x="6" y="24" width="4" height="4" rx="2" fill="#3A86FF"/>
+<rect opacity="0.3" x="12" y="24" width="14" height="4" rx="2" fill="#3A86FF"/>
+<rect opacity="0.3" x="6" y="32" width="4" height="4" rx="2" fill="#3A86FF"/>
+<rect opacity="0.3" x="12" y="32" width="14" height="4" rx="2" fill="#3A86FF"/>
+</svg>

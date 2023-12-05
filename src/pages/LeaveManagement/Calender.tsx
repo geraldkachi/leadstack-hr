@@ -49,7 +49,6 @@ const Calender = () => {
       <div className="flex items-center justify-between py-3">
         <span className="tex">Calender</span>
 
-        {/* <Button className='flex items-center rounded-lg !text-white p-3' title="Export List" onClick={(e) => e.preventDefault()} /> */}
       </div>
 
       <div className="flex items-center justify-between p-3 bg-white my-2">
@@ -60,6 +59,7 @@ const Calender = () => {
 
         <Button className='flex items-center rounded-lg !text-white p-3' title="Add Holiday" onClick={(e) => e.preventDefault()} />
       </div>
+      
       <Calendar
         localizer={localizer}
         events={events}
