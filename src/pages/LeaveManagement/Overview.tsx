@@ -60,6 +60,8 @@ const Overview = () => {
               </div>
             </a>
             <a className="col-span-1 flex flex-col items-start bg-white rounded-md shadow md:flex- md:max-w-xl hover:bg-slate-50 p-4 md:p-5">
+            <div className="text-lg md:text-4xl text-[rgb(13,18,39)]">84</div>
+
               <div className="flex items-center my-3">
                 <div className="h-4 w-4 rounded-full bg-#FF5A4F]"></div>
                 <span className="text-sm text-[#7C8091] ml-2">Rejected</span>
@@ -74,7 +76,7 @@ const Overview = () => {
             <span></span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 py-3 h-max">
-            <a className="col-span-1 flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+            <a className="relative col-span-1 flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
               <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#E8F4FC]">
                 16 <br />
                 days
@@ -90,6 +92,7 @@ const Overview = () => {
                   <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
                 </div>
               </div>
+              {/* <div className="absolute bg-[#1EAA7933] text-[#1EAA79] rounded-[4px] p-3 pe-0">active</div> */}
             </a>
 
             <a className="flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
@@ -106,7 +109,8 @@ const Overview = () => {
               </div>
             </a>
 
-            <a className="col-span-1 flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+            <a className="relative col-span-1 flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+              {/* <div className="absolute bg-[#1EAA7933] text-[#1EAA79] rounded-md">active</div> */}
               <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#D1E3FF]">
                 90 <br />
                 days
