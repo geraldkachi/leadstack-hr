@@ -27,25 +27,61 @@ const data = [
 const Overview = () => {
   return (
     <div>
-      <div className="flex items-center justify-between py-3">
-        <span className="tex">By Leave Type</span>
 
-        <span></span>
-      </div>
 
-      <div className="grid lg:grid-cols-8 md:gap-4">
-        <div className="md:col-span-6 gap-4 h-max">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 py-3">
 
-            <a className="flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50 w-max">
-              <div className="w-full h-full flex items-center justify-center bg-[#E8F4FC]">
-                {/* <img className="bg-[#E8F4FC] p-3" src="/card-file.svg" alt="" /> */}
+      <div className="grid xl:grid-cols-8 md:gap-4">
+        <div className="md:col-span-6 gap-2 h-max">
+          <div className="flex items-center justify-between py-3">
+            <span className="tex">Leave Summary</span>
+
+            <span></span>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 py-3 h-max">
+            <a className="col-span-1 flex flex-col items-start bg-white rounded-md shadow md:flex- md:max-w-xl hover:bg-slate-50 p-4 md:p-5">
+              <div className="text-lg md:text-4xl text-[rgb(13,18,39)]">234</div>
+              <div className="flex items-center my-3">
+                <div className="h-4 w-4 rounded-full bg-[#1D8EE6]"></div>
+                <span className="text-sm text-[#7C8091] ml-2">Total</span>
+              </div>
+            </a>
+            <a className="col-span-1 flex flex-col items-start bg-white rounded-md shadow md:flex- md:max-w-xl hover:bg-slate-50 p-4 md:p-5">
+              <div className="text-lg md:text-4xl text-[rgb(13,18,39)]">20</div>
+              <div className="flex items-center my-3">
+                <div className="h-4 w-4 rounded-full bg-[#FFB240]"></div>
+                <span className="text-sm text-[#7C8091] ml-2">Pending</span>
+              </div>
+            </a>
+            <a className="col-span-1 flex flex-col items-start bg-white rounded-md shadow md:flex- md:max-w-xl hover:bg-slate-50 p-4 md:p-5">
+              <div className="text-lg md:text-4xl text-[rgb(13,18,39)]">160</div>
+              <div className="flex items-center my-3">
+                <div className="h-4 w-4 rounded-full bg-[#1EAA79]"></div>
+                <span className="text-sm text-[#7C8091] ml-2">Approved</span>
+              </div>
+            </a>
+            <a className="col-span-1 flex flex-col items-start bg-white rounded-md shadow md:flex- md:max-w-xl hover:bg-slate-50 p-4 md:p-5">
+              <div className="flex items-center my-3">
+                <div className="h-4 w-4 rounded-full bg-#FF5A4F]"></div>
+                <span className="text-sm text-[#7C8091] ml-2">Rejected</span>
+              </div>
+            </a>
+
+          </div>
+
+          <div className="flex items-center justify-between py-3">
+            <span className="tex">By Leave Type</span>
+
+            <span></span>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 py-3 h-max">
+            <a className="col-span-1 flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+              <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#E8F4FC]">
                 16 <br />
                 days
               </div>
 
-              <div className="flex flex-col justify-between p-4 leading-norma pr-20">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight">Casual 🏝</h5>
+              <div className="col-span-1 flex flex-col justify-between p-4 leading-norma">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight whitespace-nowrap">Casual 🏝</h5>
                 <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Currently on:</p>
                 <div className="flex -space-x-4 rtl:space-x-reverse">
                   <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
@@ -56,14 +92,35 @@ const Overview = () => {
               </div>
             </a>
 
-            <a className="flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50 w-max">
-              <div className="flex flex-col justify-between p-4 leading-norma pr-20">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight">50</h5>
-                <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Current Job <br /> Openings</p>
+            <a className="flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+              <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#fff7ec]">
+                20 <br />
+                days
               </div>
 
-              <div className="w-full h-full flex items-center justify-center bg-[#fff7ec]">
-                <img className="bg-[#fff7ec] p-3" src="/card-clock.svg" alt="" />
+              <div className="flex flex-col justify-between p-4 leading-norma">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight whitespace-nowrap">Annual 🎉</h5>
+                <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Currently on:</p>
+
+                <div className="mt-5 text-xs  text-[#BFBFBF]">No one is currently on this leave</div>
+              </div>
+            </a>
+
+            <a className="col-span-1 flex flex-col items-center bg-white rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+              <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#D1E3FF]">
+                90 <br />
+                days
+              </div>
+
+              <div className="flex flex-col justify-between p-4 leading-norma">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight whitespace-nowrap">Maternity 🏝</h5>
+                <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Currently on:</p>
+                <div className="flex -space-x-4 rtl:space-x-reverse">
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
+                  <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
+                </div>
               </div>
             </a>
           </div>
