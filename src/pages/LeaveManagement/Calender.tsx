@@ -5,6 +5,7 @@ import parse from 'date-fns/parse'
 import startOfWeek from 'date-fns/startOfWeek'
 import getDay from 'date-fns/getDay'
 import enUS from 'date-fns/locale/en-US'
+import { Button } from '../../components';
 
 const locales = {
   'en-US': enUS,
@@ -45,6 +46,20 @@ const events = [
 const Calender = () => {
   return (
     <div>
+      <div className="flex items-center justify-between py-3">
+        <span className="tex">Calender</span>
+
+        {/* <Button className='flex items-center rounded-lg !text-white p-3' title="Export List" onClick={(e) => e.preventDefault()} /> */}
+      </div>
+
+      <div className="flex items-center justify-between p-3 bg-white my-2">
+        <span className="flex items-center gap-3">
+          <img className="cursor-pointer md:hidden block h-10 w-10" src="/nav-icon.svg" alt="" />
+          <span>July</span>
+        </span>
+
+        <Button className='flex items-center rounded-lg !text-white p-3' title="Add Holiday" onClick={(e) => e.preventDefault()} />
+      </div>
       <Calendar
         localizer={localizer}
         events={events}

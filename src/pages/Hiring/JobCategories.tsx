@@ -27,10 +27,10 @@ const JobCategories = () => {
         <div>
             <div className="bg-white rounded-md p-4">
                 <div className="border rounded-md p-4 space-y-2 text-sm text-[#7C8091]">
-                    <div className="flex items-center justify-between gap-4">
+                    {/* <div className="flex items-center justify-between gap-4">
                         <span className='text-[#0D1227] font-semibold text-sm'>FILTER</span>
                         <span className='text-[#1D8EE6] font-semibold text-sm cursor-pointer' onClick={() => setCheckedList([])}>Clear</span>
-                    </div>
+                    </div> */}
                     <>
                         <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
                             <div className="flex items-center">
@@ -46,23 +46,23 @@ const JobCategories = () => {
                     {/* <CheckboxGroup options={plainOptions} value={checkedList} onChange={onChange} > */}
                     <div className="flex items-center justify-between">
                         <span>Developer</span>
-                        <Checkbox value={checkedList} />
+                        <Checkbox value={plainOptions[0]} checked={checkAll} />
                     </div>
                     <div className="flex items-center justify-between">
                         <span>Designer</span>
-                        <Checkbox value={checkedList} />
+                        <Checkbox value={plainOptions[1]} checked={checkAll} />
                     </div>
                     <div className="flex items-center justify-between">
                         <span>Human Resources</span>
-                        <Checkbox value={checkedList} />
+                        <Checkbox value={plainOptions[3]} checked={checkAll} />
                     </div>
                     <div className="flex items-center justify-between">
                         <span>Admin</span>
-                        <Checkbox value={checkedList} />
+                        <Checkbox value={plainOptions[4]} checked={checkAll} />
                     </div>
                     <div className="flex items-center justify-between">
                         <span>Marketing</span>
-                        <Checkbox value={checkedList} />
+                        <Checkbox value={plainOptions[5]} checked={checkAll} />
                     </div>
                     {/* </CheckboxGroup> */}
                 </div>

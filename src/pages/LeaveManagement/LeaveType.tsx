@@ -3,10 +3,8 @@ import { format } from "date-fns";
 import { Dropdown, Modal, Table, Tag } from "antd"
 import { AlignType } from "rc-table/lib/interface";
 import type { TableRowSelection } from 'antd/es/table/interface';
-import { Breadcrumbs, Button, Input } from "../../components";
+import { Button, Input } from "../../components";
 import type { MenuProps } from 'antd';
-import { BreadcrumsbProps } from "../../types";
-
 interface DataType {
   key: React.Key;
   name: string;
@@ -14,16 +12,6 @@ interface DataType {
   address: string;
 }
 
-const bread: BreadcrumsbProps[] = [
-  {
-    name: 'Home',
-    url: 'dashboard'
-  },
-  {
-    name: 'Recruitment & Hiring',
-    url: "employees/job-portal"
-  },
-]
 const LeaveType = () => {
   const [modalDetails, setModalDetails] = useState<boolean>(false);
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([])
@@ -235,8 +223,6 @@ const LeaveType = () => {
   };
   return (
     <div className="mb-20 overflow-x-auto">
-      <Breadcrumbs {...{ bread }} />
-
       <div className="flex items-center justify-between py-3">
         <span className="tex">Leave Type List</span>
 

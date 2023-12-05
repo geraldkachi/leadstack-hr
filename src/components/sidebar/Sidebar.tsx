@@ -151,7 +151,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                   !text-[#535768] relative`}
               onClick={() => {
                 setState(prev => !prev)
-                useAuth.setState({ openDraw: false })
+                // useAuth.setState({ openDraw: false })
               }
               }
             >

@@ -26,10 +26,10 @@ const JobStyle = () => {
         <div>
             <div className="bg-white rounded-md p-4">
                 <div className="border rounded-md p-4 space-y-2 text-sm text-[#7C8091]">
-                    <div className="flex items-center justify-between gap-4">
+                    {/* <div className="flex items-center justify-between gap-4">
                         <span className='text-[#0D1227] font-semibold text-sm'>FILTER</span>
                         <span className='text-[#1D8EE6] font-semibold text-sm cursor-pointer' onClick={() => setCheckedList([])}>Clear</span>
-                    </div>
+                    </div> */}
                     <>
                         <Checkbox indeterminate={indeterminate} onChange={onCheckAllChange} checked={checkAll}>
                             Job Style
