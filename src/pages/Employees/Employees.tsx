@@ -24,7 +24,7 @@ const Employees = () => {
             {
               label: `All Employee`,
               content: (
-                <div className="-mt-4">
+                <div className="">
                   <AllEmployees />
                 </div>
               )
@@ -32,7 +32,7 @@ const Employees = () => {
             {
               label: 'Pending Approval',
               content: (
-                <div className="-mt-4">
+                <div className="">
                   <PendingApproval />
                 </div>
               )

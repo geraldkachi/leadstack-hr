@@ -1,14 +1,16 @@
+import { Pagination } from "antd"
 import { Input } from "../../components"
 import CardHire from "./CardHire"
 import JobCategories from "./JobCategories"
 import JobStyle from "./JobStyle"
 import JobType from "./JobType"
 import './styles.css'
+import { dataCards } from "."
 
 const Active = () => {
 
   return (
-    <div>
+    <>
       <div className="mb-3">
         <Input LeadingIcon={() => <>
           <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,21 +24,17 @@ const Active = () => {
 
       <div className="grid lg:grid-cols-8 gap-y-4 md:gap-x-16">
         <div className="md:col-span-6 grid lg:grid-cols-2 gap-4 h-max">
-          <CardHire />
-          <CardHire />
-          <CardHire />
-          <CardHire />
-          <CardHire />
-          <CardHire />
+          {dataCards.map((item) => <CardHire key={item.position} {...item} />)}
         </div>
         {/* <div className="col-span-1"></div> */}
-        <div className="col-span-2 gap-8">
+        <div className="md:col-span-2 gap-8">
           <JobType />
           <JobStyle />
           <JobCategories />
         </div>
+      <Pagination defaultCurrent={1} total={50} />
       </div>
-    </div>
+    </>
   )
 }
 

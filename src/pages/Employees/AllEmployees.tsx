@@ -252,7 +252,7 @@ const AllEmployees = () => {
                 type="search"
                 placeholder="Search Employee by name, role, ID or any related keywords" />
 
-            <div className="border border-[#DEDFEC] rounded-md overflow-x-scroll mt-2 ">
+            <div className="border border-[#DEDFEC] rounded-md overflow-x-scroll mt-2 md:mt-4">
                 <Table
                     size="large"
                     {...{ locale }}

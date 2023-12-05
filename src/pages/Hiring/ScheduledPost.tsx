@@ -1,9 +1,15 @@
+import { Pagination } from "antd"
+import { dataCards } from "."
 import { Input } from "../../components"
 import CardHire from "./CardHire"
+import JobCategories from "./JobCategories"
+import JobStyle from "./JobStyle"
+import JobType from "./JobType"
+import './styles.css'
 
 const ScheduledPost = () => {
   return (
-    <div>
+    <>
       <div className="mb-3">
         <Input LeadingIcon={() => <>
           <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,15 +23,16 @@ const ScheduledPost = () => {
 
       <div className="grid lg:grid-cols-5 gap-5">
         <div className="md:col-span-4 grid  gap-4">
-          <CardHire />
-          <CardHire />
-          <CardHire />
+          {dataCards.map((item) => <CardHire key={item.position} {...item} />)}
         </div>
-        <div className="col-span-1">
-
+        <div className="md:col-span-2 gap-8">
+          <JobType />
+          <JobStyle />
+          <JobCategories />
         </div>
+        <Pagination defaultCurrent={1} total={50} />
       </div>
-    </div>
+    </>
   )
 }
 

@@ -1,5 +1,11 @@
+import { Pagination } from "antd"
 import { Input } from "../../components"
 import CardHire from "./CardHire"
+import JobCategories from "./JobCategories"
+import JobStyle from "./JobStyle"
+import JobType from "./JobType"
+import './styles.css'
+import { dataCards } from "."
 
 const Archive = () => {
   return (
@@ -15,19 +21,19 @@ const Archive = () => {
           placeholder="Search Employee by name, role, ID or any related keywords" />
       </div>
 
-      <div className="grid lg:grid-cols-5 gap-5">
-        <div className="md:col-span-4 grid lg:grid-cols-2 gap-4">
-          <CardHire />
-          <CardHire />
-          <CardHire />
-          <CardHire />
-          <CardHire />
-          <CardHire />
+      <div className="grid lg:grid-cols-8 gap-y-4 md:gap-x-16">
+        <div className="md:col-span-6 grid lg:grid-cols-2 gap-4 h-max">
+          {dataCards.map((item) => <CardHire {...item} /> )}
         </div>
-        <div className="col-span-1">
-
+        {/* <div className="col-span-1"></div> */}
+        <div className="md:col-span-2 gap-8">
+          <JobType />
+          <JobStyle />
+          <JobCategories />
         </div>
       </div>
+
+      <Pagination defaultCurrent={1} total={50} />
     </div>
   )
 }

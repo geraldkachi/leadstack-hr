@@ -40,20 +40,19 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
   return (
     <div>
       <div className="relative">
-        <div className="flex space-x- border-b px-4 md:px-8 overflow-x-scroll">
+        <div className="flex space-x- border-b px-4 md:px-5">
           {data.map((tab, idx) => {
             return (
               <button
                 key={idx}
                 ref={(el) => (tabsRef.current[idx] = el)}
-                className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-4 text-sm leading-[19.6px] flex items-center whitespace-nowrap`}
+                className={`${activeTabIndex === idx && "!text-[#1D8EE6]"} pt-2 pb-3 text-[#AFB1B6] px-3 md:px-4 text-xs md:text-sm leading-[19.6px] flex items-center whitespace-nowrap`}
                 onClick={() => {
                   setActiveTabIndex(idx)
                   useAuth.setState({ activeTab: idx })
                 }}
               >
                 {tab.label}  
-                 {/* {data[0] && <div className='text-center w-5 h-5 ms-3 bg-red-600 text-white rounded-full text-[10px]'> 4</div>} */}
               </button>
             );
           })}
@@ -63,7 +62,7 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
           style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
         />
       </div>
-      <div className="py-4 bg-[#F5F6FA] px-4 md:p-8 pb-72">
+      <div className="py-4 bg-[#F5F6FA] p-4 md:px-8 pb-72">
         <Render />
       </div>
     </div>

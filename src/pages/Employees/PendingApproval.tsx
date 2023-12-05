@@ -240,7 +240,7 @@ const PendingApproval = () => {
             </>}
                 // TrailingIcon={() => <><img className="cursor-pointer" src="/filtersearch.svg" alt="" /></>}
                 TrailingIcon={() => <>
-                    <div className="flex items-center gap-x-3 mr-20">
+                    <div className="hidden lg:flex items-center gap-x-3 mr-20">
                         <Button prefixIcon={<ActionCheck index="#ffffff" />} className='!px-8 bg-[#1EAA79]' title='Approve' onClick={() => {
                             setAcceptRequest(true)
                         }} />
@@ -253,7 +253,7 @@ const PendingApproval = () => {
                 type="search"
                 placeholder="Search Employee by name, role, ID or any related keywords" />
 
-            <div className="border border-[#DEDFEC] rounded-md overflow-x-scroll mt-2">
+            <div className="border border-[#DEDFEC] rounded-md overflow-x-scroll mt-2 md:mt-4">
                 <Table
                     size="large"
                     {...{ locale }}

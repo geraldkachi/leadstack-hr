@@ -9,7 +9,7 @@ import EnterVerificationCode from "./EnterVerificationCode";
 const CreateAccount = () => {
   const [currentStep, setCurrentStep] = useState<number>(0);
   const noOfSteps = 4
-  const arrayOfSteps = [...Array(noOfSteps)];
+  const arrayOfSteps: number[] = [...Array(noOfSteps)];
   const completedSteps = currentStep + 1;
 
   const handleStepClick = (index: number) => {

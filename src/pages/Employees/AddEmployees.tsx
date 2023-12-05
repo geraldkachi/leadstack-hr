@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Breadcrumbs, Tabs } from "../../components"
 import { useAuth } from "../../hooks"
 import Biodata from "./Biodata"
@@ -57,6 +57,14 @@ const data = [
 ]
 const AddEmployees = () => {
     const activeTab = useAuth(state => state.activeTab)
+    const noOfSteps = 4
+    // const arrayOfSteps = [...Array(noOfSteps)];
+    const completedSteps = activeTab + 1;
+
+    const handleStepClick = (index: number) => {
+        useAuth.setState({ activeTab: index })
+    };
+
 
     useEffect(() => {
         return () => {
@@ -77,11 +85,27 @@ const AddEmployees = () => {
             </div>
 
             <div className="px-4 md:px-8 flex items-center justify-end">
-                {data.map((_, idx) => <>
-                    <span key={idx} className={`${data[activeTab].label && 'border-b w-4 p-1 bg-[#1D8E6]'}"text border-b border-[#1D8EE6] w-4 p-2 bg-[#1D8EE6]"`}>{data[activeTab].label}</span>
-                </>)}
+                <div className="text-[#94A0B4] flex flex-row items-center justify-end mx-2 md:mx-10 mt-8">
+                    <div className="stepper-div flex items-center">
+                        {data.map((_, index) => {
+                            const isStepCompleted = index <= activeTab
+                            return (
+                                <div
+                                    key={index}
+                                    className={`step rounded-sm h-1 w-10 mr-2 bg-[#DEDFEC]  ${isStepCompleted && 'step--completed cursor-pointer !bg-[#1D8EE6]'}`}
+                                    {...(isStepCompleted
+                                        ? { onClick: () => handleStepClick(index) }
+                                        : {})}
+                                ></div>
+                            );
+                        })}
+                    </div>
+                    <p className="stepper-count text-[#94A0B4] text-xs">
+                        Step <span className={`completed-count text-[#272848]`}>{completedSteps}</span> of {noOfSteps}
+                    </p>
+                </div>
             </div>
-            <div className="mt-10  pb-36">
+            <div className="mt-5  pb-36">
                 <Tabs data={data} {...{ activeTab }} />
             </div>
         </div>
