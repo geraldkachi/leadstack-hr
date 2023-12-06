@@ -27,17 +27,19 @@ const ScheduledPost = () => {
           placeholder="Search Employee by name, role, ID or any related keywords" />
       </div>
 
-      <div className="grid lg:grid-cols-5 gap-5">
+      <div className="grid lg:grid-cols-6 gap-5">
         <div className="md:col-span-4 grid  gap-4">
           {dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())
             || item?.position?.toLowerCase().includes(search.toLowerCase())
           ).map((item) => <CardHire key={item.position} {...item} />)}        </div>
-        <div className="md:col-span-2 gap-8">
+        <div className="md:col-span-2 gap-8 lg:w-60 lg:ml-auto">
           <JobType />
           <JobStyle />
           <JobCategories />
         </div>
-        <Pagination defaultCurrent={1} total={50} />
+      </div>
+      <div className="flex items-center justify-center mt-5">
+      <Pagination defaultCurrent={1} total={50} />
       </div>
     </>
   )

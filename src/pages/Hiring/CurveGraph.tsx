@@ -35,14 +35,23 @@ const CurveGraph = () => {
                 },
             },
             chart: {
-                type: 'bar',
+                type: 'line',
                 stacked: false,
                 animations: {
-                    enabled: true, //no animations
-                    speed: 100,
-                },
+                    enabled: true, // Enable animations for smooth transitions
+                    easing: 'easeinout', // Set easing for animations
+                    speed: 800, // Set animation speed
+                    animateGradually: {
+                      enabled: true,
+                      delay: 150,
+                    },
+                    dynamicAnimation: {
+                      enabled: true,
+                      speed: 350,
+                    },
+                  },
             },
-            colors: ["#64D2FF", "#"],
+            colors: ["#64D2FF", "#ffffff"],
             dataLabels: {
                 enabled: false, //no animations
                 position: "top",

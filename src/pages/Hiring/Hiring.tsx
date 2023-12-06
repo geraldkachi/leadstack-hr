@@ -24,7 +24,7 @@ const Hiring = () => {
       <Tabs
         data={[
           {
-            label: 'Active',
+            label: 'Running Jobs',
             content: (
               <>
                 <a href="#" className="flex flex-col gap-2 items p-2 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-md">

@@ -1,5 +1,5 @@
-import { Archive, Active, ScheduledPost } from ".."
-import { Breadcrumbs, EmployeePop, Tabs } from "../../components"
+import { Archive, RunningJobs, ScheduledPost } from ".."
+import { Breadcrumbs, Button, Tabs } from "../../components"
 import { BreadcrumsbProps } from "../../types"
 
 const bread: BreadcrumsbProps[] = [
@@ -19,13 +19,16 @@ const JobPortal = () => {
             <div className="px-4 md:px-8">
                 <Breadcrumbs {...{ bread }} />
 
-                <div className="flex items-start justify-between gap-x-3">
+                <div className="flex items-center justify-between gap-x-3">
                     <div className="break-words">
-                        <div className="text-lg md:text-2xl">Recruitment</div>
+                        <div className="text-lg md:text-2xl">Recruitment • Jobs</div>
                         <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
                     </div>
 
-                    <EmployeePop  />
+                    <div className="flex items-center gap-3">
+                        <img className="p-2 rounded-[4px] border border-[#1D8EE6]" src="/settings-icon.svg" alt="" />
+                        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" />
+                    </div>
                 </div>
 
 
@@ -42,10 +45,10 @@ const JobPortal = () => {
             <Tabs
                 data={[
                     {
-                        label: 'Active',
+                        label: 'Running Jobs',
                         content: (
                             <>
-                                <Active />
+                                <RunningJobs />
                             </>
                         )
                     },

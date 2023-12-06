@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 import Context from './components/context';
 import { Layout, Loading } from './components';
-import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal, Profile, Application } from './pages';
+import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal, Profile, Application, CreateNewJob } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 import { useAuth } from './hooks';
 
@@ -69,6 +69,7 @@ const App: React.FC = () => {
                   <Route path="/hiring/job-portal" element={<JobPortal />} />
                   <Route path="/hiring/application" element={<Application />} />
                   <Route path="/hiring/job-portal" element={<Hiring />} />
+                  <Route path="/hiring/create-new-job" element={<CreateNewJob />} />
                   <Route path="/time-management" element={<TimeManagement />} />
                   <Route path="/leave-management" element={<LeaveManagement />} />
                   <Route path="/training" element={<Training />} />

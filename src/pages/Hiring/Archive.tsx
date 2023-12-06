@@ -33,14 +33,14 @@ const Archive = () => {
             || item?.position?.toLowerCase().includes(search.toLowerCase())
           ).map((item) => <CardHire key={item.position} {...item} />)}        </div>
         {/* <div className="col-span-1"></div> */}
-        <div className="md:col-span-2 gap-8">
+        <div className="lg:col-span-2 gap-8">
           <JobType />
           <JobStyle />
           <JobCategories />
         </div>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mt-5">
         <Pagination defaultCurrent={1} total={50} />
       </div>
     </div>

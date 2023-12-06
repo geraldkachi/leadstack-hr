@@ -127,3 +127,14 @@ div.rcp-interactive > .rcp-hue {
 .ant-tabs-nav-list {
   margin-left: 0 !important;
 }
+
+
+
+input, textarea, select {
+  background-color: #f7fafc;
+
+  @apply text-sm border-2 border-gray-200
+  rounded-sm px-4 py-2.5 text-gray-800 tracking-wide focus-visible:outline-white
+  focus:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2
+  transition-all duration-300 ease-in-out;
+}
