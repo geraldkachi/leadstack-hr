@@ -77,7 +77,7 @@ const LeaveManagement = () => {
         <div className="h-full pt-3">
             <div className="px-4 md:px-8">
                 <Breadcrumbs {...{ bread }} />
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-4 mt-3">
                     <div>
                         <div className="text-lg md:text-2xl">Leave Management</div>
                         <div className="text-[#98A1B0] text-[13px] ">Efficiently track, manage, and approve employee leaves</div>
@@ -92,7 +92,7 @@ const LeaveManagement = () => {
             <span key={idx} className={`${data[activeTab].label && 'border-b w-4 p-1 bg-[#1D8E6]'}"text border-b border-[#1D8EE6] w-4 p-2 bg-[#1D8EE6]"`}>{data[activeTab].label}</span>
         </>)}
     </div> */}
-            <div className="mt-10  pb-36">
+            <div className="mt-3  pb-36">
                 <Tabs data={data} />
             </div>
         </div>

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+// @ts-ignore
 import Select, { Props, ValueType, OptionsType, DropdownIndicatorProps, ClearIndicatorProps, MultiValueRemoveProps, components } from 'react-select';
 import { ChevronDownIcon } from "../../assets";
 import clsx from 'clsx';
@@ -57,7 +58,7 @@ const multiValueRemoveStyles =
 const indicatorsContainerStyles = "p-1 gap-1";
 const clearIndicatorStyles =
     "text-gray-500 p-1 rounded-md hover:bg-red-50 hover:text-red-800";
-const indicatorSeparatorStyles = "bg-gray-300";
+const indicatorSeparatorStyles = "bg-gray-300 hidden";
 const dropdownIndicatorStyles =
     "p-1 hover:bg-gray-100 text-gray-500 rounded-md hover:text-black";
 const menuStyles = "p-1 mt-2 border border-gray-200 bg-white rounded-lg";
@@ -95,7 +96,7 @@ const ReactSelect: FC<ReusableSelectProps> = ({
 
     return (
         <div>
-            {label && <label className='text-sm mb-1' htmlFor={name}>{label}</label>}
+            {label && <label className='text-[10px] md:text-sm mb-1' htmlFor={name}>{label}</label>}
             <br />
             <Select
                 // components={{ DropdownIndicator }}
@@ -167,8 +168,7 @@ const ReactSelect: FC<ReusableSelectProps> = ({
                         ),
                     noOptionsMessage: () => noOptionsMessageStyles,
                 }}
-            // @ts-ignore
-            {...props}
+                {...props}
             />
             {error && (<span className="text-[10px]">{error}</span>)}
         </div>
