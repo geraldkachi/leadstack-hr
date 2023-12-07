@@ -26,3 +26,4 @@ export {  default as ReportsAnalytics } from "./ReportsAnalytics/ReportsAnalytic
 export {  default as Finance } from "./Finance/Finance"
 export {  default as SelfService } from "./SelfService/SelfService"
 export {  default as Profile } from "./Profile/Profile"
+export {  default as Settings } from "./Settings/Settings"

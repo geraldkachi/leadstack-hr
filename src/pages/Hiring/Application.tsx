@@ -2,7 +2,7 @@ import { Breadcrumbs, Button, Tabs } from "../../components"
 import { BreadcrumsbProps } from "../../types"
 import PendingApplication from "./PendingApplication"
 import InReview from "./InReview"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const bread: BreadcrumsbProps[] = [
     {
@@ -16,6 +16,7 @@ const bread: BreadcrumsbProps[] = [
 ]
 
 const Application = () => {
+    const navigate = useNavigate()
     return (
         <div className="h-full pt-3 ">
             <div className="px-4 md:px-8">
@@ -28,10 +29,10 @@ const Application = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <Link to='/hiring/create-new-job'>
+                        <Link to='/settings'>
                             <img className="p-2 rounded-[4px] border border-[#1D8EE6]" src="/settings-icon.svg" alt="" />
                         </Link>
-                        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" />
+                        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" onClick={() => navigate('/hiring/create-new-job')} />
                     </div>
                 </div>
 

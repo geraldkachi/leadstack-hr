@@ -99,7 +99,6 @@ const ReactSelect: FC<ReusableSelectProps> = ({
             {label && <label className='text-[10px] md:text-sm mb-1' htmlFor={name}>{label}</label>}
             <br />
             <Select
-                // components={{ DropdownIndicator }}
                 defaultValue={value}
                 value={value}
                 onChange={onChange}

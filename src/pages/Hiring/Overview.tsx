@@ -8,7 +8,7 @@ import { AlignType } from "rc-table/lib/interface";
 import type { TableRowSelection } from 'antd/es/table/interface';
 import { Button, Input, Breadcrumbs } from "../../components";
 import type { MenuProps } from 'antd';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 interface DataType {
     key: React.Key;
     name: string;
@@ -49,6 +49,8 @@ const bread: BreadcrumsbProps[] = [
     },
 ]
 const Overview = () => {
+    const navigate = useNavigate()
+
     const [modalDetails, setModalDetails] = useState<boolean>(false);
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([])
 
@@ -270,11 +272,11 @@ const Overview = () => {
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <Link to='/hiring/create-new-job'>
+                        <Link to='/settings'>
                             <img className="p-2 rounded-[4px] border border-[#1D8EE6]" src="/settings-icon.svg" alt="" />
                         </Link>
-                        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" />
-                    </div>                </div>
+                        <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" onClick={() => navigate('/hiring/create-new-job')} />
+                    </div>              </div>
                 <div className="bg-[#F5F6FA] px-4 md:px-8"></div>
             </div>
             <div className="bg-[#F5F6FA] px-4 md:px-8">
