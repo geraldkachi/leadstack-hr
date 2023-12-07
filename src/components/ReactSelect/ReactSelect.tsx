@@ -130,13 +130,13 @@ const ReactSelect: FC<ReusableSelectProps> = ({
                         transition: "none",
                         // border: 'none', // Remove the border
                         boxShadow: 'none', // Remove the box shadow
-                        padding: 10,
-                        margin: 0,
-                        marginLeft: 0,
-                        border: "0px solid black",
+                        // padding: 10,
+                        // margin: 0,
+                        // marginLeft: 0,
+                        // border: "0px solid black",
                         fontSize: 13,
-                        backgroundColor: 'white',
-                        outline: 'none'
+                        // backgroundColor: 'white',
+                        // outline: 'none'
                     }),
                 }}
                 components={{ DropdownIndicator, ClearIndicator, MultiValueRemove }}
