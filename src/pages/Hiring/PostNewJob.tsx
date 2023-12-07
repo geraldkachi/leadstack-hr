@@ -1,14 +1,25 @@
-import { useState } from "react";
-import { ReactSelect } from "../../components";
+import { useState, useRef } from "react";
+import { Button, Input, ReactSelect } from "../../components";
 import { ValueType } from 'react-select';
 
 const PostNewJob = () => {
+    const formInput = useRef<HTMLInputElement>(null);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [article, setArticle] = useState<string>(`We are looking for a skilled Full Stack Developer to join our team and help us create and maintain cutting-edge software solutions. \n  Collaborate with cross-functional teams to understand project requirements and deliver high-quality software solutions.
+    Design and develop user-friendly and visually appealing front-end applications.
+    Create responsive web applications that work seamlessly on desktop and mobile devices.
+    Develop back-end components and server-side logic to ensure optimal system functionality.
+    Integrate external services and APIs into applications as needed.
+    Optimize applications for maximum speed and scalability.
+    Implement security and data protection in applications.
+    Perform code reviews and address code-related issues to ensure code quality.
+    Stay up to date with industry trends and emerging technologies to drive innovation.
+    Troubleshoot, debug, and resolve software defects and issues.`);
 
     const [selectedOption, setSelectedOption] = useState<
         ValueType<{ value: string; label: string }>
     >(null);
-    const handleChange = (selected:  ValueType<{ value: string; label: string }>) => {
+    const handleChange = (selected: ValueType<{ value: string; label: string }>) => {
         setSelectedOption(selected);
     };
 
@@ -69,7 +80,6 @@ const PostNewJob = () => {
                     </div>
 
                     <div className="my-3">
-
                         <ReactSelect label="Options" options={options} placeholder="Select Options Now!!" value={selectedOption} onChange={handleChange} required />
                     </div>
                     <form>
@@ -152,13 +162,46 @@ const PostNewJob = () => {
                             </div>
                             <div className="px-4 py-2 bg-white rounded-b-lg">
                                 <label htmlFor="editor" className="sr-only">Publish post</label>
-                                <textarea id="editor" rows={8} className="block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="Write an article..." required></textarea>
+                                <textarea id="editor" value={article} onChange={(e) => setArticle(e.target.value)} rows={8} className="block w-full px-0 text-sm text-gray-800 bg-white border-0 focus:ring-0" placeholder="Write an article..." required></textarea>
                             </div>
                         </div>
                         {/* <Button type="button" className="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-whit rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
                         Publish post
                     </Button> */}
 
+                        <div className="my-3">
+                            <ReactSelect
+                                isMulti
+                                closeMenuOnSelect={false}
+                                hideSelectedOption
+                                unstyled
+                                label="Required Skills *" error="" options={options} placeholder="Required Skill" value={selectedOption} onChange={handleChange} required />
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-x-2">
+                            <Input
+                                label="Job Type (Optional)"
+                                ref={formInput}
+                                className="mb-1"
+                                type="text"
+                                name="job"
+                                placeholder="Part Time"
+                            />
+                            <Input
+                                label="Salary Budget Range (Optional)"
+                                ref={formInput}
+                                className="mb-1"
+                                type="text"
+                                name="salary"
+                                placeholder="NGN 350,000 - NGN 450,000"
+                            />
+                        </div>
+
+
+                        <div className="flex items-center justify-end mt-5 gap-2">
+                            <Button className='!px-6' title='Preview' onClick={() => null} />
+                            <Button style={{border: '1px solid #1D8EE6'}} className='!px-6 !bg-white !border !border-[#1D8EE6] !text-[#1D8EE6]' title='Save' onClick={() => null} />
+                        </div>
                     </form>
                 </div>
 

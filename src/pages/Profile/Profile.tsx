@@ -93,9 +93,9 @@ const Profile = () => {
 
                 <div className="flex md:items-center justify-between pb-4">
 
-                    <div className="flex">
-                        <div className="relative me-4">
-                            <img className="w-10 h-10 md:w-[160px] md:h-[160px] rounded-full" src="/profileface.svg" alt="profile image" />
+                    <div className="flex flex-col sm:flex-row items-start  my-2">
+                        <div className="relative me-4 block">
+                            <img className="w-20 h-20 md:w-[160px] md:h-[160px] rounded-full" src="/profileface.svg" alt="profile image" />
                             <span className="top-0 end-1 md:end-9 absolute w-3.5 h-3.5 md:w-4 md:h-4 bg-[#50CD89] border-2 border-white rounded-full"></span>
                         </div>
                           {/* <div className="w-20 h-20 md:w-40 md:h-40 rounded-full bg-[url(/profileface.svg)] bg-top md:bg-center bg-no-repeat relative">

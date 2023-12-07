@@ -85,7 +85,7 @@ const ReactSelect: FC<ReusableSelectProps> = ({
     name,
     label,
     // ref
-    // ...props
+    ...props
 
 }: ReusableSelectProps) => {
     // const [selectedOption, setSelectedOption] = useState(null);
@@ -168,7 +168,7 @@ const ReactSelect: FC<ReusableSelectProps> = ({
                     noOptionsMessage: () => noOptionsMessageStyles,
                 }}
             // @ts-ignore
-            // {...props}
+            {...props}
             />
             {error && (<span className="text-[10px]">{error}</span>)}
         </div>
