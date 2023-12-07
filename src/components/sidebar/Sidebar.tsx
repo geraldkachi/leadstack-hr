@@ -147,7 +147,7 @@ const Sidebar = ({ open }: SidebarProps) => {
               className={`${activeItem2 && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                 }
                   ${!open ? 'text-center flex items-center justify-center' : "w-full"}
-                  flex items-center  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  flex items-center justify-between  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768] relative`}
               onClick={() => {
                 setState(prev => !prev)
@@ -156,15 +156,17 @@ const Sidebar = ({ open }: SidebarProps) => {
               }
             >
               <div className="flex items-center gap-2">
-                <HiringIcon key={4} index={activeItem2} />
+                <HiringIcon key={4} index={activeItem2} className={`${open &&  'hidden'}`} />
 
                 <span
                   className={`${!open && "hidden"} ${width < 1200 ? "" : ""
                     } origin-left ease-in-out duration-500 whitespace-nowrap`}>Recruitment & Hiring</span>
               </div>
-
-              <HiriingArrow key={4} index={activeItem2} className={` ${!open && 'hidden'}`} />
-              <span className={`${!open && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span>
+              
+              <div className={` ${!open && 'hidden'}`} >
+                <HiriingArrow key={4} index={activeItem2} />
+                <span className={`${!open && state === false && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span>
+              </div>
             </span>
           </>
           {routeList2.map((item, index) => {
@@ -207,7 +209,8 @@ const Sidebar = ({ open }: SidebarProps) => {
           })}
         </div>
 
-        <div className="flex flex-col items-center justify-center text-black">
+        <div className={`flex flex-col justify-center items-center  md:px-4 ${open ? "ease-in-out duration-500" : "ease-in-out duration-500"}`}>
+          {/* <div className="flex flex-col items-center justify-center text-black"> */}
           <div
             className={`${open && "flex items-center w-full ease-in-out duration-500"
               } inline-flex items-center pb-3 ease-in-out duration-500`}
@@ -240,7 +243,12 @@ const Sidebar = ({ open }: SidebarProps) => {
             )
           })}
 
-          <p className={`${!open ? "hidden" : "sm:block text-[#BFBFBF] mx-2 lg:block text-xs  text-start md:text-lg"}`}>ACCOUNT</p>
+          <div
+            className={`${open && "flex items-center w-full ease-in-out duration-500"
+              } inline-flex items-center pb-3 ease-in-out duration-500`}
+          >
+            <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>ACCOUNT</p>
+          </div>
           <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6"}
                   ${!open ? 'px-2 text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
