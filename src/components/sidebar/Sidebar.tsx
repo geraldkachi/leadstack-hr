@@ -156,7 +156,7 @@ const Sidebar = ({ open }: SidebarProps) => {
               }
             >
               <div className="flex items-center gap-2">
-                <HiringIcon key={4} index={activeItem2} className={`${open &&  'hidden'}`} />
+                <HiringIcon key={4} index={activeItem2} className={`${open &&  ''}`} onClick={() => setState(prev => !prev)} />
 
                 <span
                   className={`${!open && "hidden"} ${width < 1200 ? "" : ""
@@ -168,6 +168,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                 <span className={`${!open && state === false && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span>
               </div>
             </span>
+                <span className={`${!open && state === false && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span>
           </>
           {routeList2.map((item, index) => {
             const activeItem = location.pathname.includes(item.route);
