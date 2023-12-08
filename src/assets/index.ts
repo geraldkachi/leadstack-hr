@@ -19,3 +19,6 @@ export { default as PhoneProfileIcon } from "./Profile/PhoneProfileIcon";
 export { default as LocationnProfileIcon } from "./Profile/LocationnProfileIcon";
 export { default as EditProfileIcon } from "./Profile/EditProfileIcon";
 export { default as ChevronDownIcon } from "./Random/ChevronDownIcon";
+export { default as ProfileIcon } from "./Profile/ProfileIcon";
+export { default as Settings } from "./Settings/Settings";
+export { default as AppLogo } from "./Others/AppLogo";

@@ -2,6 +2,7 @@
 
 import { useNavigate } from "react-router-dom"
 import { Drawer, Input } from ".."
+import { AppLogo } from "../../assets"
 
 const Topnav = () => {
     const navigate = useNavigate()
@@ -16,31 +17,33 @@ const Topnav = () => {
                         <img src="/arrow-left.svg" alt="" />
                     </span>
                     
-                    <Drawer />
+                    <AppLogo className="md:hidden block" />
                 </div>
 
             
-                <div className="w-80">
+                <div className="w-80  hidden md:block">
                     <Input inputClassName="!w-full font-noto" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt="" />}
                         type="search"
                         inputType="success"
                         placeholder="Search employees, teams..." />
                 </div>
 
-                <div className="flex gap-2 items-center py-2">
+                <div className="flex gap-4 items-center py-2">
                     <p className="text-[#535768] text-sm font-medium mr-4 md:flex items-start gap-2 hidden bg-[#FAFAFA] p-2 rounded-2xl">
                         <img src="/calenda.svg" alt="calenda" />
                         <span className="whitespace-nowrap font-noto">August 8th 2022 . 09:00 AM</span>
                     </p>
-                    <div className="w-10 h-10  cursor-pointer">
+                    <div className="w-10 h-10 flex items-center justify-center  cursor-pointer">
                         <img src="/notemsg.svg" alt="notemsg" />
                     </div>
-                    <div className="w-10 h-10  cursor-pointer">
+                    <div className="w-10 h-10 flex items-center justify-center  cursor-pointer">
                         <img src="/notification.svg" alt="notificationß" />
                     </div>
-                    <div onClick={() => navigate('/profile')} className="cursor-pointer w-10 h-10 pr-3 py-2 flex gap-4 items-center justify-center rounded-full px-3 whitespace-nowrap text-[12px] font-bold text-white bg-[#1D8EE6]">
+                    <div onClick={() => navigate('/profile')} className="cursor-pointer hidden w-10 h-10 pr-3 py-2 md:flex gap-4 items-center justify-center rounded-full px-3 whitespace-nowrap text-[12px] font-bold text-white bg-[#1D8EE6]">
                         MB
                     </div>
+
+                    <Drawer />
                 </div>
             </div>
         </>

@@ -9,10 +9,34 @@ import { Layout, Loading } from './components';
 import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal, Profile, Application, CreateNewJob, Settings } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 import { useAuth } from './hooks';
-
+const colors = ['green', 'yellow', 'red`']
+const modes = ['light', 'dark']
 const App: React.FC = () => {
   const activeFont = useAuth(state => state.activeFont)
+  // const color = useAuth(state => state.color)
+  // const mode = useAuth(state => state.mode)
   // const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
+
+  // console.log(mode, 'mode')
+  // console.log(color, 'color')
+
+  const useStickyState = (state: string | undefined, key: string): [string | undefined, (v: string) => void] => {
+    const [value, setValue] = useState<string | undefined>(state)
+
+    useEffect(() => {
+      const stickValue = localStorage.getItem(value)
+      if(stickValue !== null) {
+        setValue(stickValue)
+      }
+    }, [key, setValue])
+
+    return [value, (y: string) => {
+      localStorage.setItem(key, y)
+      setValue(y)
+    }]
+  }
+  const [color, setColor] = useStickyState(colors[0], 'theme-color')
+  const [mode, setMode] = useStickyState(modes[0], 'theme-modde')
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -44,7 +68,12 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className={`${activeFont}`}>
+    // <div className={`${activeFont}`[
+    <div className={[
+      `bg-primaryBg ${activeFont} `,
+      `theme-${color}`,
+      `theme-${mode}`,
+    ].filter(Boolean).join(' ')}>
       <QueryClientProvider client={ref.current}>
         <Context>
           <Suspense fallback={<>{isLoading && <Loading />}</>}>

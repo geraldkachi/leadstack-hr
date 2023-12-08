@@ -23,7 +23,7 @@ const Loading = () => {
                     <span className="mt-5 text-[#535768]">Leadstack initializing...</span>
                 </div>
 
-                <div className='absolute bottom-0 right-0 p-3 text-9xl text-[#E5E6E9] font-black    '>
+                <div className='absolute bottom-0 right-0 p-3 text-3xl md:text-4xl lg:text-9xl text-[#E5E6E9] font-black    '>
                     <h1>{percentage}%</h1>
                 </div>
             </div>

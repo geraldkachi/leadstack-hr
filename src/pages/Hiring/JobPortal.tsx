@@ -67,6 +67,54 @@ const JobPortal = () => {
                                 <ScheduledPost />
                             </>
                         )
+                    },
+                    {
+                        label: 'Archive',
+                        content: (
+                            <>
+                                <Archive />
+                            </>
+                        )
+                    },
+                    {
+                        label: 'Scheduled post',
+                        content: (
+                            <>
+                                <ScheduledPost />
+                            </>
+                        )
+                    },
+                    {
+                        label: 'Archive',
+                        content: (
+                            <>
+                                <Archive />
+                            </>
+                        )
+                    },
+                    {
+                        label: 'Scheduled post',
+                        content: (
+                            <>
+                                <ScheduledPost />
+                            </>
+                        )
+                    },
+                    {
+                        label: 'Archive',
+                        content: (
+                            <>
+                                <Archive />
+                            </>
+                        )
+                    },
+                    {
+                        label: 'Scheduled post',
+                        content: (
+                            <>
+                                <ScheduledPost />
+                            </>
+                        )
                     }
                 ]}
             />

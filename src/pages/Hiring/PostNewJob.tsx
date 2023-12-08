@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { Button, Input, ReactSelect } from "../../components";
+// @ts-ignore
 import { ValueType } from 'react-select';
 
 const PostNewJob = () => {
@@ -171,6 +172,7 @@ const PostNewJob = () => {
 
                         <div className="my-3">
                             <ReactSelect
+                            // @ts-ignore
                                 isMulti
                                 closeMenuOnSelect={false}
                                 hideSelectedOption

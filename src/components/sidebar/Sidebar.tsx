@@ -168,7 +168,6 @@ const Sidebar = ({ open }: SidebarProps) => {
                 <span className={`${!open && state === false && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span>
               </div>
             </span>
-                <span className={`${!open && state === false && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span>
           </>
           {routeList2.map((item, index) => {
             const activeItem = location.pathname.includes(item.route);

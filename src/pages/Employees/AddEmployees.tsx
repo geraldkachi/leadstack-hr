@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { Breadcrumbs, Tabs } from "../../components"
 import { useAuth } from "../../hooks"
 import Biodata from "./Biodata"

@@ -12,8 +12,8 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     const navigate = useNavigate()
     const [otp, setOtp] = useState('');
     const [accountStatus, setAccountStatus] = useState('no')
-    const [isAccountVerified, setAccountVerified] = useState(false);
-    const [isAccountVerifying, setAccountVerifying] = useState(false);
+    // const [isAccountVerified, setAccountVerified] = useState(false);
+    // const [isAccountVerifying, setAccountVerifying] = useState(false);
     const [isResendModalOpen, setIsResendModalOpen] = useState(false);
     const [codeEmail, setCodeEmail] = useState(false);
 
@@ -29,8 +29,8 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
         console.log(otp);
-        setAccountVerifying(true)
-        setAccountVerified(false)
+        // setAccountVerifying(true)
+        // setAccountVerified(false)
         // navigate("/login")
         setModalOpen(true)
 
@@ -52,8 +52,8 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
 
     useEffect(() => {
         if (accountStatus === 'yes') {
-            setAccountVerifying(false)
-            setAccountVerified(true)
+            // setAccountVerifying(false)
+            // setAccountVerified(true)
         }
 
     }, [accountStatus])

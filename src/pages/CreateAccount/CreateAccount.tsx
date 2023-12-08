@@ -20,7 +20,7 @@ const CreateAccount = () => {
     <div className="grid md:grid-cols-2 h-screen">
       <div className="col-span-1 hidden md:block p-10 place-content-center">
         {/* <Stepper {...{ currentStep, setCurrentStep }} /> */}
-        <div className="relative col-span-2 place-content-center p-0 bg-[url(/signupimg.svg)] bg-contain bg-no-repeat w-full text-white h-full">
+        <div className="relative p-0 bg-[url(/signupimg.svg)] bg-contain bg-no-repeat w-full text-white h-full ">
           <img src="/reg-logo.svg" className="top-[20%] left-[10%] pt-10 pl-8" alt="" />
           <div className="absolute bottom-36 p-5 pr-16 text-2xl w-full">
             {currentStep === 0 &&
@@ -75,10 +75,10 @@ const CreateAccount = () => {
           {currentStep === 3 && <EnterVerificationCode {...{ setCurrentStep }} />}
         </div>
 
-        <div className="flex items-end justify-end">
+        <div className="flex items-end justify-end w-max h-max">
           {currentStep === 4 &&
             <div className="hidden md:flex items-center text-center justify-between ml-52 mr-32">
-              <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-10 text-xs text-white text-centers mt-4 rounded-2xl w-auto ml-20">
+              <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-10 text-xs text-white text-centers mt-4 rounded-2xl w-max ml-20 overflow-hidden">
                 <img src="/lightbulb.svg" className='absolute -top-3 left-1 ' alt="" />
                 <img src="/cancel-lightbulb.svg" className='absolute top-2 right-1 p-1' alt="" />
                 OTPs have a limited validity period. Enter the OTP promptly to ensure a smooth verification process. Delayed entries may result in expiration and require generating a new OTP.
