@@ -34,7 +34,7 @@ const Dashboard = () => {
     { route: 1, title: "Registration Info", onclick: () => setState(1) },
     { route: 2, title: "Company Domain", onclick: () => setState(2) },
   ];
-  console.log(colorHex, "colorHex")
+  // console.log(colorHex, "colorHex")
 
   const changeColor = (e: string) =>
     setColorHex((prev) => ({ ...prev, hex: e }))
@@ -235,11 +235,11 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <form className="mt-10">
+            <form className="mt-10" onSubmit={(e) => e.preventDefault()}>
               <Input
                 label="Hex Number"
                 ref={formInput}
-                value={color.hex}
+                value={colorHex.hex}
                 // onChange={(e: React.ChangeEvent<HTMLInputElement>) => setColorHex(e.target.value)}
                 onChange={(e) =>  changeColor(e.target.value)}
                 type="text"

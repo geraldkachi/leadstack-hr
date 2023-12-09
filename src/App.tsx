@@ -9,12 +9,12 @@ import { Layout, Loading } from './components';
 import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal, Profile, Application, CreateNewJob, Settings } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 import { useAuth } from './hooks';
-const colors = ['green', 'yellow', 'red`']
-const modes = ['light', 'dark']
+// const colors = ['green', 'yellow', 'red`']
+// const modes = ['light', 'dark']
 const App: React.FC = () => {
+  const colors = useAuth(state => state.color)
+  const modes = useAuth(state => state.mode)
   const activeFont = useAuth(state => state.activeFont)
-  // const color = useAuth(state => state.color)
-  // const mode = useAuth(state => state.mode)
   // const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
 
   // console.log(mode, 'mode')
@@ -24,7 +24,7 @@ const App: React.FC = () => {
     const [value, setValue] = useState<string | undefined>(state)
 
     useEffect(() => {
-      const stickValue = localStorage.getItem(value)
+      const stickValue = localStorage.getItem(key)
       if(stickValue !== null) {
         setValue(stickValue)
       }
@@ -36,7 +36,10 @@ const App: React.FC = () => {
     }]
   }
   const [color, setColor] = useStickyState(colors[0], 'theme-color')
-  const [mode, setMode] = useStickyState(modes[0], 'theme-modde')
+  const [mode, setMode] = useStickyState(modes[0], 'theme-mode')
+
+
+  console.log(mode, 'mode')
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -45,7 +48,7 @@ const App: React.FC = () => {
     setTimeout(() => {
       setIsLoading(false);
       // document.body.style.background === 'white';
-    }, 3000);
+    }, 1000);
   }, []);
 
   const ref = useRef<QueryClient>();
@@ -71,9 +74,22 @@ const App: React.FC = () => {
     // <div className={`${activeFont}`[
     <div className={[
       `bg-primaryBg ${activeFont} `,
-      `theme-${color}`,
-      `theme-${mode}`,
+      color && `theme-${color}`,
+      mode && `theme-${mode}`,
     ].filter(Boolean).join(' ')}>
+      <div className="bg-neutralBg text-onNeutralBg border border-onNeutralBg p-5 max-w-lg flex items-center justify-center ml-auto">
+        <div className="text-3xl fond-bold text-center">
+          Tailwind Theme 
+        </div>
+        {colors.map((c) => <div key={c} className=" flex items-center gap-4">{c}</div> )}
+        <input type="checkbox" checked={color === 'green'} onChange={() => setColor(color === 'green' ? 'yellow' : 'green')} />
+
+        <div className="text-3xl fond-bold text-center">
+          Enable Dark Mode Theme 
+        </div>
+        <input type="checkbox" checked={mode === 'dark'} onChange={() => setMode(mode === 'light' ? 'dark' : 'light')} />
+
+      </div>
       <QueryClientProvider client={ref.current}>
         <Context>
           <Suspense fallback={<>{isLoading && <Loading />}</>}>

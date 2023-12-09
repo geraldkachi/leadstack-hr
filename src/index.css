@@ -59,7 +59,6 @@
     --primaryBg: var(--color-primary-100)
     --onPrimaryBg: var(--color-primary-900)
     --primary: var(--color-primary-500)
---
 } 
 .theme-dark{
   --neutralBg: var(--color-neutral-900) 

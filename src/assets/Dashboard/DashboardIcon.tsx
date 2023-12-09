@@ -1,7 +1,7 @@
 import { SVGProps } from "react"
 type Props = {
   index: boolean;
-  bottom: boolean;
+  bottom?: boolean;
 } & SVGProps<SVGSVGElement>;
 
 const DashboardIcon = ({ index,bottom, ...props }: Props) => (

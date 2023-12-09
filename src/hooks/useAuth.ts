@@ -14,8 +14,8 @@ type State = {
     activeFont: string
     open: boolean
     openDraw: boolean
-    color: string 
-    mode:  string
+    color: string[] 
+    mode:  string[]
 }
 // const useAuth = create<State>((set, get) => ({
 const useAuth = create<State>(() => ({
@@ -24,8 +24,8 @@ const useAuth = create<State>(() => ({
     openDraw: false,
     activeTab: 0,
     activeFont: 'font-noto',
-    mode: modes[0],
-    color: colors[0]
+    mode: modes,
+    color: colors
 }));
                         
 export default useAuth;
