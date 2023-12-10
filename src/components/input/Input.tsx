@@ -83,7 +83,7 @@ export default function Input(
 		<div className={`bg-  ${className}`}>
 			{label && (
 				<label
-					className="my-1 text-[#0D1227] leading-[19.6px] flex items-center text-left text-[10px] md:text-sm font-semibold"
+					className="my-1 text-[#0D1227] leading-[19.6px] flex items-center text-left text-xs md:text-sm font-semibold"
 					htmlFor={id}
 				>
 					{label}
