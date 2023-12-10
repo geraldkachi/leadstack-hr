@@ -36,7 +36,7 @@ const JobPortal = () => {
                     <img src="/cautionsign.svg" alt="caution" />
                     <div>
                         <div className='text-[#3F4254] font-bold text-sm md:text-base'>ATTENTION!!!</div>
-                        <div className='text-[#7E8299] text-[10px] md:text-sm'>Kindly note that job posted is automatically moved to the archive after the expiration dateKindly note that job posted is automatically moved to the archive after the expiration date</div>
+                        <div className='text-[#7E8299] text-xs md:text-sm'>Kindly note that job posted is automatically moved to the archive after the expiration dateKindly note that job posted is automatically moved to the archive after the expiration date</div>
                     </div>
                 </div>
 

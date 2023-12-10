@@ -74,7 +74,7 @@ const Dashboard = () => {
           <img src="/cautionsuccess.svg" alt="caution" />
           <div>
             <div className='text-[#3F4254] font-bold text-sm md:text-base'>Account Verification Successful</div>
-            <div className='text-[#7E8299] text-[10px] md:text-base'>your account verification was successful, you can start with the following; <Link to='/employees/add-employees' className='text-[#00A3FF] cursor-pointer'>Add Employees</Link> </div>
+            <div className='text-[#7E8299] text-xs md:text-base'>your account verification was successful, you can start with the following; <Link to='/employees/add-employees' className='text-[#00A3FF] cursor-pointer'>Add Employees</Link> </div>
           </div>
         </div>
       ) : (
@@ -82,7 +82,7 @@ const Dashboard = () => {
           <img src="/caution.svg" alt="caution" />
           <div>
             <div className='text-[#3F4254] font-bold text-sm md:text-base'>We need your attention!</div>
-            <div className='text-[#7E8299] text-[10px] md:text-sm'>To start adding employees & doing the cool stuffs, please <span className='text-[#00A3FF] cursor-pointer' onClick={() => {
+            <div className='text-[#7E8299] text-xs md:text-sm'>To start adding employees & doing the cool stuffs, please <span className='text-[#00A3FF] cursor-pointer' onClick={() => {
               setState(0)
               setModalOpen(true)
             }}>Complete Onboarding</span> </div>
@@ -97,7 +97,7 @@ const Dashboard = () => {
         <Cards />
       </div>
 
-      <div className="my-3 flex flex-col items-center justify-center pb-10">
+      <div className="my-3 flex flex-col items-center justify-center pt-10 pb-20">
         <img src="/no-record.svg" alt="no-record" />
 
         <Button className='flex items-center !text-[15.85px] rounded-lg !text-white my-5' prefixIcon={<img src="/pluswhite.svg" alt="" />} onClick={() => setModalOpen(true)} title="Complete Onboarding" />
