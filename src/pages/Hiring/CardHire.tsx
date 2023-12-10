@@ -34,7 +34,7 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
                 <img className="object-cover w-14 rounded-t-lg h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/cardi.svg" alt="" />
                 <div className="flex flex-col justify-between p-3 leading-normal w-full">
                     <div>
-                        <div className="flex items-center justify-between gap-3 w-full mb-2">
+                        <div className="flex items-center justify-between gap-2 w-full mb-2">
                             <div className="flex items-center my-1 sm:gap-1">
                                 <h5 className=" text-sm md:text-sm font-bold tracking-tight text-[#0D1227] mr-1">{position}</h5>
                                 <Button className="!bg-[#1EAA7933] !text-[#1EAA79] !p-1 text-[10px]" title="Active" />
@@ -47,17 +47,17 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
                         </div>
                         <div className="flex items-center whitespace-nowrap">
                             <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] md:text-x">
-                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-2"><img src="/briefcase.svg" alt="" /> 0 - {years} Years</p>
-                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-2"><img src="/graduate.svg" alt="" /> Html, Python, CSS</p>
-                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-2"><img src="/credit-card-hire.svg" alt="" /> 200k - 350k</p>
-                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-2"><img src="/credit-card-hire.svg" alt="" />{staff}</p>
+                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/briefcase.svg" alt="" /> 0 - {years} Years</p>
+                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/graduate.svg" alt="" /> Html, Python, CSS</p>
+                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/credit-card-hire.svg" alt="" /> 200k - 350k</p>
+                                <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/credit-card-hire.svg" alt="" />{staff}</p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-3 text-[10px] md:text-x mt-2">
-                        <p className="font-normal text-[#AFB1B6] flex items-center gap-2">{applicants} Applicants</p>
-                        <p className="font-normal text-[#FF3B30] flex items-center gap-2"><img src="/time-circle.svg" alt="" /> Expiry Date: {formattedDate}</p>
+                    <div className="flex items-center gap-2 text-[10px] md:text-x mt-2">
+                        <p className="font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2">{applicants} Applicants</p>
+                        <p className="font-normal text-[#FF3B30] flex items-center gap-1 md:gap-2"><img src="/time-circle.svg" alt="" /> Expiry Date: {formattedDate}</p>
                     </div>
                 </div>
             </div>
