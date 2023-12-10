@@ -77,7 +77,7 @@ const App: React.FC = () => {
       color && `theme-${color}`,
       mode && `theme-${mode}`,
     ].filter(Boolean).join(' ')}>
-      <div className="bg-neutralBg text-onNeutralBg border border-onNeutralBg p-5 max-w-lg flex items-center justify-center ml-auto">
+      <div className="hidden bg-neutralBg text-onNeutralBg border border-onNeutralBg p-5 max-w-lg fle items-center justify-center ml-auto">
         <div className="text-3xl fond-bold text-center">
           Tailwind Theme 
         </div>
