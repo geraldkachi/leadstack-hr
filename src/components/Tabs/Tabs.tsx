@@ -32,9 +32,6 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
     setActiveTabIndex(activeTab)
   }, [activeTab])
 
-  // console.log(activeTab, 'activeTab')
-  // console.log(activeTabIndex, 'activeTabIndex')
-
   const Render = () => data[activeTabIndex].content
 
   return (

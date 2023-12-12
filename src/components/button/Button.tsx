@@ -19,7 +19,7 @@ type Props = DetailedHTMLProps<
 };
 
 const variants = {
-    primary: 'bg-[#3699FF] text-white hover:bg-blue-2 border-none hover:bg-[#2692ff]',
+    primary: 'bg-[#3699FF] text-white hover:bg-blue-2 border-none hover:bg-[#0080ff] text-xs md:text-sm py-3 md:py-2 px-2 md:px-6',
     secondary: 'bg-red text-white hover:bg-red-1 border-none',
     link: 'bg-none text-blue hover:bg-white-azure border-none',
     outline:
@@ -29,7 +29,7 @@ const variants = {
 };
 
 const sizes = {
-    sm: 'p-1 px-10 -w-128',
+    sm: 'text-xs md:text-sm py-3 md:py-2 px-2 md:px-6 min-w-40',
     md: 'p-2 px-10 -w-152',
     lg: 'p-3 px-10 -w-196'
 };
@@ -52,7 +52,7 @@ const Button = ({
         <button {...rest}
             type={type}
             disabled={disabled || loading}
-            className={`flex items-center text-xs md:!text-sm py-2 md:py-2 px-2 md:px-6 rounded-[4px] disabled:bg-grey border disabled:text-gray-50 whitespace-nowrap ${variants[variant]} ${sizes[size]} ${className} ${loading && 'py-3 md:py-4 px-8 md:px-12 bg-[#EEF5FC] text-[#ABBED1]'}`}>
+            className={`flex items-center text-xs md:text-sm py-3 md:py-2 px-2 md:px-6 hover:bg-[#0080ff] rounded-[4px] disabled:bg-grey border disabled:text-gray-50 whitespace-nowrap ${variants[variant]} ${sizes[size]} ${className} ${loading && 'py-3 md:py-4 px-8 md:px-12 bg-[#EEF5FC] text-[#ABBED1]'}`}>
             {prefixIcon && (<> {prefixIcon}&nbsp;&nbsp;</>)}
             {loading ? <Spinner /> : <>{title || children}</>}
             {suffixIcon && (<> &nbsp;&nbsp;{suffixIcon}</>)}

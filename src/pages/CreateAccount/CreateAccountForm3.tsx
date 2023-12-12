@@ -11,7 +11,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
   const formInput = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="w-full max-w-xl mx-auto px-3">
+    <div className="w-full max-w-xl mx-auto">
 
       <div className="text-[] mb-12">
         <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
@@ -122,7 +122,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
 
         </div>
 
-        <div className="!flex !items-center !justify-end">
+        <div className="!flex !items-center !justify-end mt-5 mb-10 md:mb-[unset]">
 
           <Button
             type="button"

@@ -12,7 +12,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
   const formInput = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="w-full max-w-xl mx-auto px-3">
+    <div className="w-full max-w-xl mx-auto">
 
       <div className="text-[] mb-12">
         <div className="text-[#0D1227] text-2xl font-bold  md:text-4xl ">
@@ -63,7 +63,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
           placeholder="LordGerald@gmail.com"
         />
 
-        <div className="flex items-center justify-between mt-3">
+        <div className="flex items-center justify-between mt-8">
           <img
             src="/linkedinsvg.svg"
             alt="linkedinnsvg"

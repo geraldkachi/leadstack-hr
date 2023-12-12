@@ -12,7 +12,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
   const formInput = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="w-full max-w-xl mx-auto px-3">
+    <div className="w-full max-w-xl mx-auto">
       <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(0)} />
 
       <div className="text-[] mb-12">
@@ -81,7 +81,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
           />
         </div>
 
-        <div className="flex items-start justify-between gap-3 mt-3 md:mt-5">
+        <div className="flex items-start justify-between gap-3 mt-5">
         
             <p className="text-xs md:text-sm mb-5">By clicking continue, you accept the <span className="text-[#1D8EE6]">Terms of Service</span> and <span className="text-[#1D8EE6]">Privacy Policy of Leadsatck</span></p>
 

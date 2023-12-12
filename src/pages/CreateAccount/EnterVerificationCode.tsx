@@ -5,9 +5,11 @@ import { Button } from '../../components';
 import { Modal } from 'antd';
 import EnterVerificationCodeEmail from './EnterVerificationCodeEmail';
 interface Props {
-    setCurrentStep: Dispatch<SetStateAction<number>>
+    setCurrentStep: Dispatch<SetStateAction<number>>,
+    setCodeEmail: Dispatch<SetStateAction<boolean>>
+    codeEmail: boolean
 }
-const EnterVerificationCode = ({ setCurrentStep }: Props) => {
+const EnterVerificationCode = ({ codeEmail, setCurrentStep, setCodeEmail }: Props) => {
     const [modalOpen, setModalOpen] = useState(false)
     const navigate = useNavigate()
     const [otp, setOtp] = useState('');
@@ -15,7 +17,6 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     // const [isAccountVerified, setAccountVerified] = useState(false);
     // const [isAccountVerifying, setAccountVerifying] = useState(false);
     const [isResendModalOpen, setIsResendModalOpen] = useState(false);
-    const [codeEmail, setCodeEmail] = useState(false);
 
     const inputStyle = {
         width: "60px",
@@ -69,7 +70,7 @@ const EnterVerificationCode = ({ setCurrentStep }: Props) => {
     // }
 
     return (
-        <div className="w-full max-w-xl mx-auto py-3 flex flex-col justify-between">
+        <div className="w-full max-w-xl mx-auto flex flex-col justify-between">
             {/* <img src="" alt="" /> */}
             <div>
                 <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setCurrentStep(2)} />
