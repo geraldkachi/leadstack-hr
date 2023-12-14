@@ -229,12 +229,12 @@ const ApplicationDetail = () => {
 
 
 
-            <div className="bg-[#F5F6FA] px-4 md:px-8">
+            <div className="bg-[#F5F6FA] px-4 md:px-4">
                 <div className="grid grid-cols-2 lg:grid-cols-6 gap-4 py-3 h-max">
                     <a className="col-span-1 flex flex-col items-start bg-white rounded-md shadow md:flex- md:max-w-xl hover:bg-slate-50 p-4 md:p-5">
                         <div className="text-lg md:text-4xl text-[rgb(13,18,39)]">710</div>
                         <div className="flex items-center my-3">
-                            {/* <div className="h-4 w-4 rounded-full bg-[#1D8EE6]"></div> */}
+                            {/* <div className="h-4 w-4 rounded-full bg-[#ffff]"></div> */}
                             <span className="text-sm text-[#7C8091] ml-2">Total Application</span>
                         </div>
                     </a>
@@ -263,7 +263,7 @@ const ApplicationDetail = () => {
                         <div className="text-lg md:text-4xl text-[rgb(13,18,39)]">100</div>
 
                         <div className="flex items-center my-3">
-                            <div className="h-4 w-4 rounded-full bg-#FF5A4F]"></div>
+                            <div className="h-4 w-4 rounded-full bg-[#FF5A4F]"></div>
                             <span className="text-sm text-[#7C8091] ml-2">Rejected</span>
                         </div>
                     </a>
@@ -271,7 +271,7 @@ const ApplicationDetail = () => {
                         <div className="text-lg md:text-4xl text-[rgb(13,18,39)]">100</div>
 
                         <div className="flex items-center my-3">
-                            <div className="h-4 w-4 rounded-full bg-#ad01e2]"></div>
+                            <div className="h-4 w-4 rounded-full bg-[#ad01e2]"></div>
                             <span className="text-sm text-[#7C8091] ml-2">Interview</span>
                         </div>
                     </a>

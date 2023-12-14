@@ -35,7 +35,7 @@ const HiringDetail = () => {
 
           <div className="flex items-center gap-3">
 
-            <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/edit.svg" alt="" />} title="Edit Post" onClick={() => null} />
+            <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/edit-post.svg" alt="" />} title="Edit Post" onClick={() => null} />
           </div>
         </div>
       </div>
