@@ -21,7 +21,7 @@ const BottomNav = () => {
         const iconArr = [
           <DashboardIcon key={1} index={!activeItem} bottom />,
           <EmployeesIcon key={2} index={!activeItem} bottom />,
-          <Settings key={3} index={!activeItem} />,
+          <Settings key={3} index={!activeItem} bottom />,
           <ProfileIcon key={4} index={!activeItem} />,
         ];
         return (

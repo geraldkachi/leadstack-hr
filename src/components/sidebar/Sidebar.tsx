@@ -2,8 +2,8 @@ import "./sidebar.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Dispatch, SetStateAction, useCallback, useState } from "react";
 import { useAuth, useWindowDimensions } from "../../hooks";
-import { DashboardIcon, DocumentsIcon, EmployeesIcon, FinanceIcon, HiriingArrow, HiringIcon, LeaveManagementIcon, MyTeamIcon, PerformanceIcon, ReportsAnalyticsIcon, SelfServiceIcon, Settings, TimeManagementIcon, TrainingIcon } from "../../assets";
-import { Accordion, HiringPop } from "..";
+import { DashboardIcon, DocumentsIcon, EmployeesIcon, FinanceIcon, HelpIcon, HiriingArrow, HiringIcon, LeaveManagementIcon, MyTeamIcon, PerformanceIcon, ReportsAnalyticsIcon, SelfServiceIcon, Settings, TimeManagementIcon, TrainingIcon } from "../../assets";
+import { HiringPop } from "..";
 interface SidebarProps {
   open: boolean;
   setOpen?: Dispatch<SetStateAction<boolean>>;
@@ -36,20 +36,20 @@ const Sidebar = ({ open }: SidebarProps) => {
   //   //   : []),
   // ];
 
-  const faqArr = [
-    {
-      header: "Government?",
-      content: `content for clients.`,
-      route: "/Finance",
-      title: "Finance",
-    },
-    {
-      header: "What offer?",
-      content: `content for clients..`,
-      route: "/Self Service",
-      title: "Self Service",
-    },
-  ];
+  // const faqArr = [
+  //   {
+  //     header: "Government?",
+  //     content: `content for clients.`,
+  //     route: "/Finance",
+  //     title: "Finance",
+  //   },
+  //   {
+  //     header: "What offer?",
+  //     content: `content for clients..`,
+  //     route: "/Self Service",
+  //     title: "Self Service",
+  //   },
+  // ];
 
   const routeList = [
     { route: "/dashboard", title: "Dashboard" },
@@ -252,9 +252,9 @@ const Sidebar = ({ open }: SidebarProps) => {
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768]`}
-            // onClick={logout}
+            onClick={() => useAuth.setState({ openDraw: false })}
             >
-              <Settings index={location.pathname.includes('/help')} />
+              <HelpIcon index={location.pathname.includes('/help')} />
 
               <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Help</span>
             </Link>
@@ -269,7 +269,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768]`}
-            // onClick={logout}
+            onClick={() => useAuth.setState({ openDraw: false })}
             >
               <Settings index={location.pathname.includes('/settings')} />
 

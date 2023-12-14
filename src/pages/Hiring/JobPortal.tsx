@@ -27,7 +27,7 @@ const navigate = useNavigate()
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <Link to="/settings" className="cursor-default">
+                        <Link to="/settings" className="cursor-pointer">
                             <img className="p-2 rounded-[4px] border border-[#1D8EE6]" src="/settings-icon.svg" alt="" />
                         </Link>
                         <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" onClick={() => navigate('/hiring/create-new-job')}/>

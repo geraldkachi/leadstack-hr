@@ -1,4 +1,4 @@
-import { Breadcrumbs } from "../../components"
+import { Breadcrumbs, Tabs } from "../../components"
 import { BreadcrumsbProps } from "../../types/types"
 
 const bread: BreadcrumsbProps[] = [
@@ -26,6 +26,61 @@ const Settings = () => {
         </div>
 
     </div>
+
+    <div className="mt-10">
+                <Tabs
+                    data={[
+                        {
+                            label: 'Contact Info',
+                            content: (
+                                <>
+                                    {/* <PendingApplication /> */}
+                                </>
+                            )
+                        },
+                        {
+                            label: 'Emergency contact',
+                            content: (
+                                <>
+                                    {/* <InReview /> */}
+                                </>
+                            )
+                        },
+                        {
+                            label: 'Education',
+                            content: (
+                                <>
+                                    {/* <InReview /> */}
+                                </>
+                            )
+                        },
+                        {
+                            label: 'Job History',
+                            content: (
+                                <>
+                                    {/* <InReview /> */}
+                                </>
+                            )
+                        },
+                        {
+                            label: 'Certifications',
+                            content: (
+                                <>
+                                    {/* <InReview /> */}
+                                </>
+                            )
+                        },
+                        {
+                            label: 'Work',
+                            content: (
+                                <>
+                                    {/* <InReview /> */}
+                                </>
+                            )
+                        }
+                    ]}
+                />
+            </div>
     </div>
   )
 }

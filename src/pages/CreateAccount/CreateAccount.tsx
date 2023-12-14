@@ -78,7 +78,7 @@ const CreateAccount = () => {
         </div>
 
         <div className="flex items-end justify-end w-max h-max">
-          {currentStep === 3 &&
+          {/* {currentStep === 3 &&
             <div className="hidden md:flex items-center text-center justify-between ml-52 mr-32 w-max">
               <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-10 text-xs bg-[#0D1227B2] text-white text-centers mt-4 rounded-2xl w-max ml-20 overflow-hidden">
                 <img src="/lightbulb.svg" className='absolute -top-3 left-1 ' alt="" />
@@ -91,7 +91,7 @@ const CreateAccount = () => {
             <div className="hidden md:flex items-center text-center justify-between mr-32">
               <img src="/verify-bulb.svg" alt="" />
             </div>
-          }
+          } */}
         </div>
       </div>
     </div>
