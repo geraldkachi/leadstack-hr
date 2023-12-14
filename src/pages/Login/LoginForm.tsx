@@ -1,15 +1,53 @@
-import { useRef, useState } from "react";
+import * as yup from 'yup';
+import { FormEvent, useRef, useState } from "react";
 import { Button, Input, PasswordMe } from "../../components"
 import { useNavigate } from "react-router-dom";
 // interface Props {
 //     setCurrentStep?: Dispatch<SetStateAction<number>>
 //   }
-
+ const schema = yup.object().shape({
+    email: yup.string().required(),
+    password: yup
+      .string()
+      .min(8, 'Password must be at least 8 characters long')
+      .matches(/[A-Z]/, 'Must contain at least 1 uppercase letter')
+      .matches(/[0-9]/, 'Must contain at least 1 number')
+      .required('Password is required'),
+  });
 const LoginForm = () => {
     const navigate = useNavigate();
     const formInput = useRef<HTMLInputElement>(null);
     const [showPassword, setShowPassword] = useState(false);
+    const [error, setError] = useState('');
 
+
+  const onFinish = (e: FormEvent) => {
+    e.preventDefault();
+
+    const values: {
+      email: string;
+      password: string;
+    } = {
+      email: e.target['email'].value,
+      password: e.target['password'].value
+    };
+
+    console.log(values, 'values')
+
+    schema
+      .validate(values)
+      .then(() => {
+        // @ts-ignore
+        mutation.mutate(values);
+      })
+      .catch((e: unknown) => {
+        if (e instanceof Error) {
+          // toast.error(e.message);
+          setError(e.message);
+
+        }
+      });
+  };
 
     return (
         <div className="max-w-xl mx-auto bg-white px-4 py-8 md:p-8 rounded-[19.095px] ">
@@ -17,7 +55,7 @@ const LoginForm = () => {
                 Enter the email address and password associated with your HR account.
             </div>
 
-            <form action="" className="w-full">
+            <form action="" className="w-full" onSubmit={onFinish}>
                 <div className="grid grid-col-1">
                     <Input
                         label="Email Address"
@@ -39,6 +77,8 @@ const LoginForm = () => {
                     name="password"
                     placeholder="techworldvibe"
                     inputClassName="pe-10"
+                    helptext={error ? error : ''}
+                    inputType={error ? "error": "success"}
                     TrailingIcon={() => (
                         <PasswordMe
                             showPassword={showPassword}
@@ -55,9 +95,9 @@ const LoginForm = () => {
                     </div>
 
                     <Button
-                        type="button"
+                        type="submit"
                         className="!bg-[#1D8EE6] !text-white !px-8"
-                        onClick={() => navigate('/dashboard')}
+                        // onClick={() => navigate('/dashboard')}
                         title="Continue"
                     />
                 </div>

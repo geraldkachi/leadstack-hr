@@ -1,6 +1,6 @@
 import { EmailProfileIcon, HumanResourceIcon, LocationnProfileIcon, PhoneProfileIcon } from "../../assets"
 import { Breadcrumbs, Button, Tabs } from "../../components"
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 import Certifications from "./Certifications"
 import ContactInfo from "./ContactInfo"
 import Education from "./Education"

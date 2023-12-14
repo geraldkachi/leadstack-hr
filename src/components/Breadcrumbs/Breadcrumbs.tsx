@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { BreadcrumsbProps } from '../../types'
+import { BreadcrumsbProps } from '../../types/types'
 
 interface BreadcrumsbItemsProps {
   bread: Array<BreadcrumsbProps>

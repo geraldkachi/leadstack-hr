@@ -1,6 +1,6 @@
 import { Archive, RunningJobs, ScheduledPost } from ".."
 import { Breadcrumbs, Button, Tabs } from "../../components"
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 
 const bread: BreadcrumsbProps[] = [
     {
@@ -68,54 +68,7 @@ const JobPortal = () => {
                             </>
                         )
                     },
-                    {
-                        label: 'Archive',
-                        content: (
-                            <>
-                                <Archive />
-                            </>
-                        )
-                    },
-                    {
-                        label: 'Scheduled post',
-                        content: (
-                            <>
-                                <ScheduledPost />
-                            </>
-                        )
-                    },
-                    {
-                        label: 'Archive',
-                        content: (
-                            <>
-                                <Archive />
-                            </>
-                        )
-                    },
-                    {
-                        label: 'Scheduled post',
-                        content: (
-                            <>
-                                <ScheduledPost />
-                            </>
-                        )
-                    },
-                    {
-                        label: 'Archive',
-                        content: (
-                            <>
-                                <Archive />
-                            </>
-                        )
-                    },
-                    {
-                        label: 'Scheduled post',
-                        content: (
-                            <>
-                                <ScheduledPost />
-                            </>
-                        )
-                    }
+                   
                 ]}
             />
         </div>

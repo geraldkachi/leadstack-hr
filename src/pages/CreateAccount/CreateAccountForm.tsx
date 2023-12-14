@@ -1,15 +1,56 @@
-import { Dispatch, SetStateAction, useRef } from "react";
+import { Dispatch, SetStateAction } from "react";
 // import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../components";
+import { useAuth } from "../../hooks";
 
 interface Props {
   setCurrentStep: Dispatch<SetStateAction<number>>
 }
 const CreateAccountForm = ({setCurrentStep}: Props) => {
   // const navigate = useNavigate();
-  // const [email, setEmail] = useState<string>("");
-  // const otpRef = useRef<HTMLInputElement>(null);
-  const formInput = useRef<HTMLInputElement>(null);
+  const createAccount = useAuth(state => state.createAccount)
+  const organizationName = useAuth(state => state.createAccount.organizationName)
+  const officialEmail = useAuth(state => state.createAccount.officialEmail)
+  const officialPhoneNumber = useAuth(state => state.createAccount.officialPhoneNumber)
+  const companyWebsite = useAuth(state => state.createAccount.companyWebsite)
+
+  const checkDisabled = !organizationName || !officialEmail || !officialPhoneNumber || !companyWebsite
+
+  const handleOrganizationName = (e: React.ChangeEvent<HTMLInputElement>) => {
+    useAuth.setState({
+      createAccount: {
+        ...createAccount,
+        organizationName: String(e.target.value)
+      }
+    })
+  };
+
+  const handleOfficialEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    useAuth.setState({
+      createAccount: {
+        ...createAccount,
+        officialEmail: String(e.target.value)
+      }
+    })
+  };
+
+  const handleOfficialPhoneNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
+    useAuth.setState({
+      createAccount: {
+        ...createAccount,
+        officialPhoneNumber: Number(e.target.value)
+      }
+    })
+  };
+
+  const handleCompanyWebsite = (e: React.ChangeEvent<HTMLInputElement>) => {
+    useAuth.setState({
+      createAccount: {
+        ...createAccount,
+        companyWebsite: String(e.target.value)
+      }
+    })
+  };
 
   return (
     <div className="w-full max-w-xl mx-auto">
@@ -29,9 +70,10 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
           <Input
             label="Organization Name"
             className="mb-1"
-            ref={formInput}
+            value={organizationName}
             type="text"
-            name="password"
+            onChange={handleOrganizationName}
+            // sOrganization Name"
             placeholder="The Creative Hemisphere"
           />
 
@@ -40,26 +82,29 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
 
         <Input
           label="Official Email"
-          ref={formInput}
           className="mb-1"
+          value={officialEmail}
           type="email"
-          name="password"
+          onChange={handleOfficialEmail}
+          // sOfficial email"
           placeholder="hr@tch.com"
         />
         <Input
           label="Official Phone Number"
-          ref={formInput}
           className="mb-1"
-          type="email"
-          name="password"
+          value={officialPhoneNumber}
+          type="text"
+          onChange={handleOfficialPhoneNumber}
+          // sOfficial phone"
           placeholder="09039278115"
         />
         <Input
           label="Company website"
-          ref={formInput}
           className="mb-1"
-          type="email"
-          name="password"
+          value={companyWebsite}
+          type="url"
+          onChange={handleCompanyWebsite}
+          // scompany Website"
           placeholder="LordGerald@gmail.com"
         />
 
@@ -72,9 +117,14 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
 
           <Button
             type="button"
-            className="!bg-[rgb(29,142,230)] !text-white !px-8"
+            disabled={checkDisabled}
+            className="!text-white !px-8"
             onClick={() => {
+              if(organizationName || officialEmail || officialPhoneNumber || companyWebsite) {
                 setCurrentStep(1)
+              } else {
+                setCurrentStep(0)
+              }
             }
         }
             title="Next"

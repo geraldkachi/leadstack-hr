@@ -5,7 +5,7 @@ import Biodata from "./Biodata"
 import Education from "./Education"
 import Emergency from "./Emergency"
 import Employment from "./Employment"
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 
 const bread: BreadcrumsbProps[] = [
     {
@@ -85,7 +85,7 @@ const AddEmployees = () => {
             </div>
 
             <div className="px-4 md:px-8 flex items-center justify-end">
-                <div className="text-[#94A0B4] flex flex-row items-center justify-end mx-2 md:mx-10 mt-8">
+                {/* <div className="text-[#94A0B4] flex flex-row items-center justify-end mx-2 md:mx-10 mt-8">
                     <div className="stepper-div flex items-center">
                         {data.map((_, index) => {
                             const isStepCompleted = index <= activeTab
@@ -103,7 +103,28 @@ const AddEmployees = () => {
                     <p className="stepper-count text-[#94A0B4] text-xs">
                         Step <span className={`completed-count text-[#272848]`}>{completedSteps}</span> of {noOfSteps}
                     </p>
+                </div> */}
+
+                <div className="text-[#94A0B4] flex flex-col items-end justify-end mx-0 md:mx-20">
+                    <div className="stepper-div flex items-center my-3">
+                        {data.map((_, index) => {
+                            const isStepCompleted = index <= activeTab;
+                            return (
+                                <div
+                                    key={index}
+                                    className={`step rounded-sm h-1 w-10 ml-2 bg-[#DEDFEC]  ${isStepCompleted && 'step--completed cursor-pointer !bg-[#1D8EE6]'}`}
+                                    {...(isStepCompleted
+                                        ? { onClick: () => handleStepClick(index) }
+                                        : {})}
+                                ></div>
+                            );
+                        })}
+                    </div>
+                    <p className="stepper-count text-[#94A0B4] text-xs">
+                        Step <span className={`completed-count text-[#272848]`}>{completedSteps}</span> of {noOfSteps}
+                    </p>
                 </div>
+
             </div>
             <div className="mt-5  pb-36">
                 <Tabs data={data} {...{ activeTab }} />

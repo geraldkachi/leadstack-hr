@@ -1,5 +1,5 @@
 import { Breadcrumbs, Button, Tabs } from "../../components"
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 import Calender from "./Calender"
 import History from "./History"
 import Holidays from "./Holidays"

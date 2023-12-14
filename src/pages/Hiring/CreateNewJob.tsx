@@ -1,6 +1,6 @@
 import { CreateNewForm, PostNewJob } from ".."
 import { Breadcrumbs, Tabs } from "../../components"
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 
 const bread: BreadcrumsbProps[] = [
   {

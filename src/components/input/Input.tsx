@@ -66,14 +66,14 @@ export default function Input(
 	} = props;
 
 	const col = () => {
-		let color= `red-600` ;
+		let color= `[#DEDEC]` ;
 
 		if (inputType === 'success') {
 			color = 'green-500';
 		} else if (inputType === 'warning') {
 			color = 'yellow-500';
 		} else if (inputType === 'error') {
-			color = 'red-500';
+			color = 'red-600';
 		}
 
 		return color;

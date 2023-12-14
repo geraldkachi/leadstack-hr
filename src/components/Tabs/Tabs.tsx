@@ -1,13 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../../hooks';
+
+type Color = 'red-600' | 'orange-600' | 'yellow-600' | 'grey-600' | 'white'
 interface Props {
   data: {
     label: string
     content: JSX.Element
+    badge?: number
+    badgeColor?: Color
+    badgeTextColor?: Color
+    render?: () => JSX.Element
   }[],
   activeTab?: number
+  className?: string
 }
-const Tabs = ({ data, activeTab = 0 }: Props) => {
+const Tabs = ({ data, activeTab = 0, className }: Props) => {
   const [activeTabIndex, setActiveTabIndex] = useState(activeTab);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
@@ -36,7 +43,7 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
 
   return (
     <div>
-      <div className="relative overflow-scroll no-scrollbar mr-4">
+      <div className={`${className} relative overflow-scroll no-scrollbar mr-4`}>
         <div className="flex space-x- border-b px-4 md:px-5">
           {data.map((tab, idx) => {
             return (
@@ -50,6 +57,10 @@ const Tabs = ({ data, activeTab = 0 }: Props) => {
                 }}
               >
                 {tab.label}  
+
+                {tab.badge && (
+                  <span className={`p-2 rounded-full w-3 h-3 bg-${tab.badgeColor} text-xs text-center flex items-center justify-center  border border-r text-${tab.badgeTextColor} ml-2`}>{tab.badge}</span>
+                )}
               </button>
             );
           })}

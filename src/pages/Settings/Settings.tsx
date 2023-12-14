@@ -1,5 +1,5 @@
 import { Breadcrumbs } from "../../components"
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 
 const bread: BreadcrumsbProps[] = [
     {

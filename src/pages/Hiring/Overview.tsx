@@ -1,4 +1,4 @@
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 import CardOverview from "./CardOverview"
 import CurveGraph from "./CurveGraph"
 import { useState } from "react";

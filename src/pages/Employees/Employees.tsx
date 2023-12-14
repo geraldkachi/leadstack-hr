@@ -31,6 +31,10 @@ const Employees = () => {
             },
             {
               label: 'Pending Approval',
+              render: () =>  <></>,
+              badge: 4,
+              badgeColor: 'red-600',
+              badgeTextColor: 'white',
               content: (
                 <div className="">
                   <PendingApproval />

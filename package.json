@@ -12,8 +12,10 @@
   "dependencies": {
     "antd": "^5.10.3",
     "apexcharts": "^3.44.0",
+    "axios": "^1.6.2",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
+    "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.1",
     "react-big-calendar": "^1.8.5",
@@ -29,6 +31,7 @@
     "zustand": "^4.4.4"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/react": "^18.2.15",
     "@types/react-big-calendar": "^1.8.5",
     "@types/react-dom": "^18.2.7",

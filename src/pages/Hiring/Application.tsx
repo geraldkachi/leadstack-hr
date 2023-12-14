@@ -1,5 +1,5 @@
 import { Breadcrumbs, Button, Tabs } from "../../components"
-import { BreadcrumsbProps } from "../../types"
+import { BreadcrumsbProps } from "../../types/types"
 import PendingApplication from "./PendingApplication"
 import InReview from "./InReview"
 import { Link, useNavigate } from "react-router-dom"
