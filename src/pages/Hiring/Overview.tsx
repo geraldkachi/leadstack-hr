@@ -276,7 +276,8 @@ const Overview = () => {
                             <img className="p-2 rounded-[4px] border border-[#1D8EE6]" src="/settings-icon.svg" alt="" />
                         </Link>
                         <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" onClick={() => navigate('/hiring/create-new-job')} />
-                    </div>              </div>
+                    </div>
+                </div>
                 <div className="bg-[#F5F6FA] px-4 md:px-8"></div>
             </div>
             <div className="bg-[#F5F6FA] px-4 md:px-8">

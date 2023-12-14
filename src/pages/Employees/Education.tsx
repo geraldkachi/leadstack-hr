@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Button, Input } from "../../components"
+import { Button, EmptyData, Input } from "../../components"
 import { useAuth } from "../../hooks";
 
 const Education = () => {
@@ -82,11 +82,7 @@ const Education = () => {
           {/* half */}
           <div className="flex flex-col justify-between items-center ">
             {/* <div className="flex flex-col w-max items-center justify-center"> */}
-            <div className="flex flex-col justify-center items-center ">
-            <img src="/edu.svg" alt="" />
-              <div className="text-lg md:text-xl text-center">Education History is Empty</div>
-              <div className="text-[#98A1B0] text-[13px] ">Education history will show here when you save them</div>
-            </div>
+            <EmptyData title="Education History is Empty"  subtitle="Education history will show here when you save them" />
             {/* </div> */}
 
 

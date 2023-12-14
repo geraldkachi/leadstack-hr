@@ -1,5 +1,5 @@
 import { Pagination } from "antd"
-import { Input } from "../../components"
+import { EmptyData, Input } from "../../components"
 import CardHire from "./CardHire"
 import JobCategories from "./JobCategories"
 import JobStyle from "./JobStyle"
@@ -42,9 +42,16 @@ const RunningJobs = () => {
 
       <div className="grid lg:grid-cols-8 gap-y-4 md:gap-x-16">
         <div className="md:col-span-6 grid lg:grid-cols-2 gap-4 h-max">
-          {dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())
-            || item?.position?.toLowerCase().includes(search.toLowerCase())
-          ).map((item) => <CardHire key={item.position} {...item} />)}
+
+          {dataCards.length === 0 ||
+          dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())).length=== 0 ?
+          <div className="flex ml-auto items-center justify-center my-auto h-full">
+            <EmptyData title="Education History is Empty" subtitle="Education history will show here when you save them" />
+          </div>
+            :
+            dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())
+              || item?.position?.toLowerCase().includes(search.toLowerCase())
+            ).map((item) => <CardHire key={item.position} {...item} />)}
         </div>
         {/* <div className="col-span-1"></div> */}
         <div className="md:col-span-2 gap-8">

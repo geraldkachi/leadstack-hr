@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import * as yup from 'yup';
 import { FormEvent, useRef, useState } from "react";
 import { Button, Input, PasswordMe } from "../../components"
@@ -28,7 +29,9 @@ const LoginForm = () => {
       email: string;
       password: string;
     } = {
+         // @ts-ignore
       email: e.target['email'].value,
+       // @ts-ignore
       password: e.target['password'].value
     };
 

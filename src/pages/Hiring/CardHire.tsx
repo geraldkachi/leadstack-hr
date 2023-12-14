@@ -2,6 +2,7 @@ import { Dropdown } from "antd"
 import type { MenuProps } from 'antd';
 import { Button } from "../../components";
 import { format } from 'date-fns';
+import { Link } from "react-router-dom";
 
 const formattedDate = format(new Date(2023, 9, 31), 'MMMM dd, yyyy');
 
@@ -16,16 +17,16 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
     const items: MenuProps['items'] = [
         {
             key: '1',
-            label: (<span onClick={() => (true)} className="flex items-center gap-x-3"><img src="/share-pop.svg" alt="" />Share</span>)
+            label: (<Link to="/hiring/1" onClick={() => (true)} className="flex items-center gap-x-3"> <img src="/action-eye.svg" alt="" /> View Details</Link>),
         },
         {
             key: '2',
-            label: (<span onClick={() => (true)} className="flex items-center gap-x-3"> <img src="/action-eye.svg" alt="" /> View Details</span>),
+            label: (<span onClick={() => (true)} className="flex items-center gap-x-3"><img src="/share-pop.svg" alt="" />Share</span>)
         },
-        {
-            key: '3',
-            label: (<span onClick={() => (true)} className="flex items-center gap-x-3"> <img src="/archive-hire.svg" alt="" /> Archive</span>),
-        },
+        // {
+        //     key: '3',
+        //     label: (<span onClick={() => (true)} className="flex items-center gap-x-3"> <img src="/archive-hire.svg" alt="" /> Archive</span>),
+        // },
     ];
 
     return (
