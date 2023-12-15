@@ -67,6 +67,8 @@ const LoginForm = () => {
                         type="email"
                         name="email"
                         placeholder="hr@techworld.com"
+                        helptext={error ? error : ''}
+                        inputType={error ? "error": "success"}
                     />
 
                     {/* <Input inputClassName="border-b border-[#C5C5C5]" type="text" placeholder="Email here..." value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} className="" LeadingIcon={() => <></>} /> */}

@@ -72,6 +72,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
             className="mb-1"
             value={organizationName}
             type="text"
+            name="companyName"
             onChange={handleOrganizationName}
             // sOrganization Name"
             placeholder="The Creative Hemisphere"
@@ -85,6 +86,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
           className="mb-1"
           value={officialEmail}
           type="email"
+          name="email"
           onChange={handleOfficialEmail}
           // sOfficial email"
           placeholder="hr@tch.com"
@@ -94,6 +96,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
           className="mb-1"
           value={officialPhoneNumber}
           type="text"
+          name="phone"
           onChange={handleOfficialPhoneNumber}
           // sOfficial phone"
           placeholder="09039278115"
@@ -103,6 +106,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
           className="mb-1"
           value={companyWebsite}
           type="url"
+          name="url"
           onChange={handleCompanyWebsite}
           // scompany Website"
           placeholder="LordGerald@gmail.com"

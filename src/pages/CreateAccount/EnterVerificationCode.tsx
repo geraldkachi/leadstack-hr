@@ -98,6 +98,8 @@ const EnterVerificationCode = ({ codeEmail, setCurrentStep, setCodeEmail }: Prop
                             inputStyle={inputStyle}
                             renderInput={(props) => <input {...props} />}
                             inputType='password'
+                            // name="otp"
+                            
                         />
 
                         <p className="text-xs md:text-sm my-3">
@@ -106,7 +108,7 @@ const EnterVerificationCode = ({ codeEmail, setCurrentStep, setCodeEmail }: Prop
                         <div className='flex items-center justify-end  mr-4 gap-3 mt-[20%] my-5'>
                             <p className='cursor-pointer p-3' onClick={handleRedirectToEmailChange}>Change Email</p>
 
-                            <Button className="!px-8" onClick={handleSubmit} title="Verify" />
+                            <Button className="!px-8" disabled={!otp || otp.length < 4} onClick={handleSubmit} title="Verify" />
                         </div>
                         {/* <Input inputClassName="border-b border-[#C5C5C5]" type="text" placeholder="Email here..." value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} className="" LeadingIcon={() => <></>} /> */}
                     </div>

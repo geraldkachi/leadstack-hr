@@ -36,7 +36,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
       <div className="flex items-center gap-2 py-2">
         <Checkbox defaultChecked />
 
-        <p className='text-[#60708F] text-sm font-normal'>I dona&apos;t have a logo image for now.</p>
+        <p className='text-[#60708F] text-sm font-normal'>I don&apos;t have a logo image for now.</p>
       </div>
 
       <div className='my-2'>

@@ -50,7 +50,7 @@ const CreateAccount = () => {
       </div>
 
       <div className="col-span- flex-col flex-1 flex justify-between relative my-5">
-        <div className="text-[#94A0B4] flex flex-col items-end justify-end mx-2 md:mx-20">
+        <div className="text-[#94A0B4] flex flex-col items-end justify-end mx-5 md:mx-20">
           <div className="stepper-div flex items-center my-3">
             {arrayOfSteps.map((_, index) => {
               const isStepCompleted = index <= currentStep;
@@ -70,7 +70,7 @@ const CreateAccount = () => {
           </p>
         </div>
 
-        <div className="md:mx-28 px-3 md:px-0">
+        <div className="md:mx-28 px-4 md:px-0">
           {currentStep === 0 && <CreateAccountForm {...{ setCurrentStep }} />}
           {currentStep === 1 && <CreateAccountForm2 {...{ setCurrentStep }} />}
           {currentStep === 2 && <CreateAccountForm3 {...{ setCurrentStep }} />}

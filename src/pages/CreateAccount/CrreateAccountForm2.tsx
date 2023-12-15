@@ -91,7 +91,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
             className="mb-1"
             type="text"
             onChange={handleAddress}
-            name="password"
+            name="address"
             placeholder="103, Idowu Taylor, Off Eko Hotel, Victoria Island, Lagos"
           // TrailingIcon={() => (
           //     <PasswordMe
@@ -110,7 +110,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
             className="mb-1"
             type="text"
             onChange={handleState}
-            name="password"
+            name="state"
             placeholder="State"
           />
           <Input
@@ -152,7 +152,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
             value={employeeSize}
             className="mb-1"
             type="text"
-            name="Employee Size"
+            name="size"
             onChange={handleEmployeeSize}
             placeholder="Employee Size"
           />
