@@ -66,14 +66,16 @@ export default function Input(
 	} = props;
 
 	const col = () => {
-		let color= `[#DEDEC]` ;
+		let color = `[#DEDEC]`;
 
 		if (inputType === 'success') {
-			color = 'green-500';
-		} else if (inputType === 'warning') {
-			color = 'yellow-500';
-		} else if (inputType === 'error') {
-			color = 'red-600';
+			color = '[#4BB543]';
+		}
+		if (inputType === 'warning') {
+			color = '[#ff9966]';
+		}
+		if (inputType === 'error') {
+			color = '[#FF0000]';
 		}
 
 		return color;
@@ -87,9 +89,9 @@ export default function Input(
 					htmlFor={id}
 				>
 					{label}
-				{tooltip && (
+					{tooltip && (
 						<span className='text-black'>
-						
+
 							{/* <Icon
 								icon="info-circle"
 								{...labelIconProps}
@@ -114,7 +116,13 @@ export default function Input(
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
 					// className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
-					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#1D8EE6] placeholder:text-base placeholder:font-normal placeholder:text-[#B2B7C2] placeholder:leading-6 ${inputClassName}`}
+					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} 
+					border-${col()} 
+					${inputType === 'default' && 'border-[#DEDEC]'}
+					${inputType === 'success' && 'border-[#4BB543]'}
+					${inputType === 'error' && 'border-[#FF0000]'}
+					${inputType === 'warning' && 'border-[#ff9966]'}
+					border w-full p-3 rounded-[4px] focus:outline-[#1D8EE6] placeholder:text-base placeholder:font-normal placeholder:text-[#B2B7C2] placeholder:leading-6 ${inputClassName}`}
 				/>
 				{TrailingIcon && (
 					<span className="absolute inset-y-0 end-0 flex items-center pe-1 cursor-pointer">
@@ -123,7 +131,12 @@ export default function Input(
 				)}
 			</div>
 			{helptext && (
-				<small className={`text-xs my-2 text-${col()}`}>{helptext}</small>
+				<small className={`text-xs my-2 text-${col()}
+				${inputType === 'default' && 'text-[#DEDEC]'}
+				${inputType === 'success' && 'text-[#4BB543]'}
+				${inputType === 'error' && 'text-[#FF0000]'}
+				${inputType === 'warning' && 'text-[#ff9966]'}
+				`}>{helptext}</small>
 			)}
 		</div>
 	);
