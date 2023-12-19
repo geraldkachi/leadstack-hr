@@ -149,7 +149,7 @@ const Dashboard = () => {
 
           </div>
 
-          <div className="col-span-4 w-full border-l border-grey-200 overflow-y-scroll no-scrollbar">
+          <div className="col-span-4 w-full lg:border-l border-grey-200 overflow-y-scroll no-scrollbar">
             {/* State 1 */}
             {state === 0 &&
               <SectionOne {... { setState, setModalColor }} />

@@ -103,10 +103,10 @@ const EmployeePop = () => {
               <div className="text-[#535768] text-[13px]"> Strictly with the company’s domain</div>
             </div>
           </div>
-          <div className="flex flex-row items-center justify-between mt-10">
+          <div className="flex flex-col md:flex-row items-center justify-between mt-10 gap-4">
             <Button className='!px-8 !text-[#1D8EE6] !bg-white' title='Add Manually' onClick={() => navigate('/employees/add-employees')} />
 
-            <div className="flex items-center">
+            <div className="flex items-center gap-2">
               <Button className='!px-8 !bg-white !text-[#535768]' title='Cancel' onClick={() => setModalOpen(false)} />
               <Button className='!px-8' title='Send Invite' onClick={() => {
                 setModalOpen(false);

@@ -15,7 +15,7 @@ const BottomNav = () => {
   ];
 
   return (
-    <section className="bg-[#ffffff] md:hidden px-3 py- fixed  bottom-0 w-full shadow-xl flex items-center gap-3 justify-between overflow-x-scroll rounded-tr-3xl rounded-tl-3xl">
+    <section className="bg-[#ffffff] md:hidden px-3 py-1 fixed  bottom-0 w-full shadow-xl flex items-center gap-3 justify-between overflow-x-scroll rounded-tr-3xl rounded-tl-3xl">
       {routeList.map((item, index) => {
         const activeItem = location.pathname.includes(item?.route);
         const iconArr = [

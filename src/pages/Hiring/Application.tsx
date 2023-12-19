@@ -22,7 +22,7 @@ const Application = () => {
             <div className="px-4 md:px-8">
                 <Breadcrumbs {...{ bread }} />
 
-                <div className="flex items-center justify-between gap-3">
+                <div className="block space-y-3 md:space-y-0 md:flex items-center justify-between gap-3">
                     <div>
                         <div className="text-lg md:text-2xl">Applications</div>
                         <div className="text-[#98A1B0] text-[13px] ">Track and manage organization activities. </div>

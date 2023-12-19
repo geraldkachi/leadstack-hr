@@ -28,8 +28,8 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
       <div className="text-[27px] font-bold text-[#091E42] border-b border-gray-200 pb-3 font-">Customize Experience</div>
       {/* {activeFont} */}
       <label className="flex flex-col items-center justify-start py-2 w-max cursor-pointer">
-        <span className="py-2 text-base leading-6 font-medium">Upload Logo</span>
-        <div className="border border-dashed border-[#DEDFEC] font-medium text-[46.29px] text-center p-4 rounded-md">TH</div>
+        <span className="py-2 text-xs md:text-base leading-6 font-medium">Upload Logo</span>
+        <div className="border border-dashed border-[#DEDFEC] font-medium text-xl md:text-[46.29px] text-center p-4 rounded-md">TH</div>
         <input type="file" className="hidden" />
       </label>
 
@@ -44,9 +44,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <div className="text-[#98A1B0] text-sm font-normal">Customize your UI theme </div>
       </div>
       <div className='flex items-center gap-x-3'>
-          <WhiteCard index className='cursor-pointer' />
-          <WhiteCard className='cursor-pointer' />
-          <DarkCard index className='cursor-pointer' />
+          <WhiteCard index className='cursor-pointer w-20' />
+          {/* <WhiteCard className='cursor-pointer' /> */}
+          <DarkCard index className='cursor-pointer w-20' />
       </div>
 
       <div className="w-full p-1 bg-white sm:p-4">

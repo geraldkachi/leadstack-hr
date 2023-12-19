@@ -23,3 +23,4 @@ export { default as ProfileIcon } from "./Profile/ProfileIcon";
 export { default as Settings } from "./Settings/Settings";
 export { default as HelpIcon } from "./Help/HelpIcon";
 export { default as AppLogo } from "./Others/AppLogo";
+export { default as SupportIcon } from "./Others/SupportIcon";

@@ -4,10 +4,16 @@ import { Outlet } from "react-router-dom";
 import Sidebar from "../sidebar/Sidebar";
 import BottomNav from "../bottomnav/BottomNav";
 import { useAuth } from "../../hooks";
+import { useState } from "react";
+import { ClickOutside } from "../../hooks/useClickOutside";
+import { SupportIcon } from "../../assets";
+import CustomerSupport from "./CustomerSupport";
 
 
 const Layout = () => {
 const open = useAuth(state => state.open)
+const [openCustomer, setOpenCustomer] = useState<boolean>(false);
+
   return (
     <div>
       {/* {open ? <ChangePasswordModal {...{ open }} {...{ close }} /> : null} */}
@@ -23,6 +29,16 @@ const open = useAuth(state => state.open)
         </div>
         <BottomNav />
       </section>
+
+      <div onClick={() => setOpenCustomer(true)} className="fixed bottom-14 md:bottom-4 right-6 md:right-11 cursor-pointer">
+        <SupportIcon />
+      </div>
+
+      <ClickOutside onclickoutside={() => setOpenCustomer(false)}>
+        {openCustomer && (
+          <CustomerSupport />
+        )}
+      </ClickOutside>
     </div>
   );
 };

@@ -8,6 +8,11 @@ import EmergencyContact from "./EmergencyContact"
 import Employment from "./Employment"
 import JobHistory from "./JobHistory"
 import NextofKin from "./NextofKin"
+import { useState } from 'react';
+// import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
+import { 
+    // Button as AntButton, 
+    Progress } from 'antd';
 
 // import { Tabs } from 'antd';
 // import type { TabsProps } from 'antd';
@@ -86,6 +91,29 @@ const box = [
 // };
 
 const Profile = () => {
+
+    const [percent, setPercent] = useState<number>(0);
+
+    // const increase = () => {
+    //     setPercent((prevPercent) => {
+    //         const newPercent = prevPercent + 10;
+    //         if (newPercent > 100) {
+    //             return 100;
+    //         }
+    //         return newPercent;
+    //     });
+    // };
+
+    // const decline = () => {
+    //     setPercent((prevPercent) => {
+    //         const newPercent = prevPercent - 10;
+    //         if (newPercent < 0) {
+    //             return 0;
+    //         }
+    //         return newPercent;
+    //     });
+    // };
+
     return (
         <div className="h-full pt-3">
             <div className="px-4 md:px-8">
@@ -98,7 +126,7 @@ const Profile = () => {
                             <img className="w-20 h-20 md:w-[160px] md:h-[160px] rounded-full" src="/profileface.svg" alt="profile image" />
                             <span className="top-0 end-1 md:end-9 absolute w-3.5 h-3.5 md:w-4 md:h-4 bg-[#50CD89] border-2 border-white rounded-full"></span>
                         </div>
-                          {/* <div className="w-20 h-20 md:w-40 md:h-40 rounded-full bg-[url(/profileface.svg)] bg-top md:bg-center bg-no-repeat relative">
+                        {/* <div className="w-20 h-20 md:w-40 md:h-40 rounded-full bg-[url(/profileface.svg)] bg-top md:bg-center bg-no-repeat relative">
                                 <span className=" top-10 right-1 px-1 pe-2 md:end-9  w-3.5 h-2 md:w-4 md:h-4 bg-[#50CD89] border-2 border-white rounded-full"></span>
                             </div> */}
 
@@ -141,6 +169,18 @@ const Profile = () => {
                             // setDeclineRequest(true)
                             // setAcceptRequest(false)
                         }} />
+
+
+                        <>
+                            <div style={{ marginBottom: 10 }}>
+                                <Progress percent={percent} size={"default"} />
+                                {/* <Progress type="circle" percent={percent} /> */}
+                            </div>
+                            {/* <AntButton.Group>
+                                <AntButton onClick={decline} icon={<MinusOutlined />} />
+                                <AntButton onClick={increase} icon={<PlusOutlined />} />
+                            </AntButton.Group> */}
+                        </>
                     </div>
 
                     {/* <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/plusdash.svg" alt="" />} title="Post New Job" /> */}

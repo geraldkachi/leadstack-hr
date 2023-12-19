@@ -103,7 +103,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
 
           {/* <Input inputClassName="border-b border-[#C5C5C5]" type="text" placeholder="Email here..." value={email} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} className="" LeadingIcon={() => <></>} /> */}
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-3">
           <Input
             label="State"
             value={state}
@@ -123,7 +123,7 @@ const CreateAccountForm2 = ({ setCurrentStep }: Props) => {
             placeholder="country"
           />
         </div>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-3">
           {/* <Input
             label="State"
             className="mb-1"
