@@ -23,6 +23,7 @@ const passwordSchema = yup.object().shape({
     .required('Password is required'),
   confirmPassword: yup
     .string()
+    // @ts-ignore
     .oneOf([yup.ref('password'), null], 'Passwords must match')
     // .required('Confirm Password is required'),
 });

@@ -52,9 +52,9 @@ const passwordSchema1Number = yup.object().shape({
     .required('Password is required'),
 });
 
-const emailSchema = yup.object().shape({
-  email: yup.string().email('Invalid email format').required('Email is required'),
-});
+// const emailSchema = yup.object().shape({
+//   email: yup.string().email('Invalid email format').required('Email is required'),
+// });
 
 interface Props {
   setCurrentStep: Dispatch<SetStateAction<number>>
