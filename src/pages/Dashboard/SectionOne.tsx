@@ -44,9 +44,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <div className="text-[#98A1B0] text-sm font-normal">Customize your UI theme </div>
       </div>
       <div className='flex items-center gap-x-3'>
-          <WhiteCard index className='' />
-          <WhiteCard className='' />
-          <DarkCard index className='' />
+          <WhiteCard index className='cursor-pointer' />
+          <WhiteCard className='cursor-pointer' />
+          <DarkCard index className='cursor-pointer' />
       </div>
 
       <div className="w-full p-1 bg-white sm:p-4">

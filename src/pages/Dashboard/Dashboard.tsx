@@ -59,7 +59,7 @@ const Dashboard = () => {
         onClose={() => setShowToast(false)}
       />
       <div className="px-4 md:px-8">
-      <div className="flex items-start justify-between gap-3 bg-white">
+      <div className="block space-y-3 md:space-y-0 md:flex items-start justify-between gap-3 bg-white">
         <div>
           <div className="text-lg md:text-2xl">Dashboard</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>

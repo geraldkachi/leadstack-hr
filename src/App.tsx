@@ -40,6 +40,7 @@ const App: React.FC = () => {
 
 
   console.log(mode, 'mode')
+  console.log(color, 'color')
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -77,6 +78,13 @@ const App: React.FC = () => {
       color && `theme-${color}`,
       mode && `theme-${mode}`,
     ].filter(Boolean).join(' ')}>
+      {/* <div className={[
+      `p-8 bg-primaryBg ${activeFont} `,
+      color && `!theme-${color}`,
+      mode && `!theme-${mode}`,
+    ].filter(Boolean).join(' ')}>
+kdnkwkdnkw
+    </div> */}
       <div className="hidden bg-neutralBg text-onNeutralBg border border-onNeutralBg p-5 max-w-lg fle items-center justify-center ml-auto">
         <div className="text-3xl fond-bold text-center">
           Tailwind Theme 

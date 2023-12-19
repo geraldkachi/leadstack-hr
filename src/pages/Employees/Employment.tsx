@@ -12,7 +12,7 @@ const Employment = () => {
         <div className="grid lg:grid-cols-2 gap-x-8 mb-36">
           <div>
 
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
                 label="Date"
                 ref={formInput}
@@ -46,7 +46,7 @@ const Employment = () => {
               name="Employee No"
               placeholder="EMP-2987"
             />
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
                 label="Grade"
                 ref={formInput}
@@ -64,7 +64,7 @@ const Employment = () => {
                 placeholder="Choose date"
               />
             </div>
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
                 label="Salary"
                 ref={formInput}
@@ -93,7 +93,7 @@ const Employment = () => {
               name="name"
               placeholder="Lord Name"
             />
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
                 label="Bank Branch"
                 ref={formInput}
@@ -127,7 +127,7 @@ const Employment = () => {
               name="password"
               placeholder="hr@tch.com"
             />
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
                 label="Email"
                 ref={formInput}

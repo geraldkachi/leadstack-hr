@@ -105,7 +105,7 @@ const AddEmployees = () => {
                     </p>
                 </div> */}
 
-                <div className="text-[#94A0B4] flex flex-col items-end justify-end mx-0 md:mx-20">
+                <div className="text-[#94A0B4] flex flex-col items-end justify-end my-3 md:mx-20">
                     <div className="stepper-div flex items-center my-3">
                         {data.map((_, index) => {
                             const isStepCompleted = index <= activeTab;

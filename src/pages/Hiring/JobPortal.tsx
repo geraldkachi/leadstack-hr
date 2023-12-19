@@ -20,7 +20,7 @@ const navigate = useNavigate()
             <div className="px-4 md:px-8">
                 <Breadcrumbs {...{ bread }} />
 
-                <div className="flex items-center justify-between gap-x-3">
+                <div className="block space-y-3 md:space-y-0 md:flex items-center justify-between gap-x-3">
                     <div className="break-words">
                         <div className="text-lg md:text-2xl">Recruitment • Jobs</div>
                         <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>

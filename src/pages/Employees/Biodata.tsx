@@ -33,7 +33,7 @@ const Biodata = () => {
         <div className="grid lg:grid-cols-2 gap-x-8 mb-36">
           <div>
 
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
               inputType="default"
                 label="First Name"
@@ -100,7 +100,7 @@ const Biodata = () => {
             {selectedFile && <p className='flex items-center gap-3 mt-3'>Selected File: {selectedFile.name}  <img src="/register-check.svg" alt="" /> </p>}
           </div>
           <div>
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
                 label="Role"
                 ref={formInput}
@@ -126,7 +126,7 @@ const Biodata = () => {
               name="country"
               placeholder="hr@tch.com"
             />
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid md:grid-cols-2 gap-x-2">
               <Input
                 label="State"
                 ref={formInput}
