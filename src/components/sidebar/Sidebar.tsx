@@ -247,12 +247,12 @@ const Sidebar = ({ open }: SidebarProps) => {
             className={`${open && "flex items-center w-full ease-in-out duration-500"
               } inline-flex items-center pb-0 ease-in-out duration-500`}
           >
-            <Link to='/help'  className={`${location.pathname.includes('/help') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+            <Link to='/help' className={`${location.pathname.includes('/help') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
               }
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768]`}
-            onClick={() => useAuth.setState({ openDraw: false })}
+              onClick={() => useAuth.setState({ openDraw: false })}
             >
               <HelpIcon index={location.pathname.includes('/help')} />
 
@@ -260,39 +260,43 @@ const Sidebar = ({ open }: SidebarProps) => {
             </Link>
           </div>
 
-          <div
-            className={`${open && "flex items-center w-full ease-in-out duration-500"
-              } inline-flex items-center pb-0 ease-in-out duration-500`}
-          >
-            <Link to="/settings" className={`${location.pathname.includes('/settings') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
-              }
+          <div className="pb-5">
+
+            <div
+              className={`${open && "flex items-center w-full ease-in-out duration-500"
+                } inline-flex items-center pb-0 ease-in-out duration-500`}
+            >
+              <Link to="/settings" className={`${location.pathname.includes('/settings') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+                }
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[#535768]`}
-            onClick={() => useAuth.setState({ openDraw: false })}
+                onClick={() => useAuth.setState({ openDraw: false })}
+              >
+                <Settings index={location.pathname.includes('/settings')} />
+
+                <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Settings</span>
+              </Link>
+            </div>
+
+
+            <div
+              className={`${open && "flex items-center w-full ease-in-out duration-500"
+                } inline-flex items-center pb-3 ease-in-out duration-500`}
             >
-              <Settings index={location.pathname.includes('/settings')} />
-
-              <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Settings</span>
-            </Link>
-          </div>
-
-
-          <div
-            className={`${open && "flex items-center w-full ease-in-out duration-500"
-              } inline-flex items-center pb-3 ease-in-out duration-500`}
-          >
-            <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>ACCOUNT</p>
-          </div>
-          <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6"}
+              <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>ACCOUNT</p>
+            </div>
+            <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6"}
                   ${!open ? 'px-2 text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[rgb(83,87,104)]`}
-            onClick={logout}>
-            <div><img src="/signnout.svg" className="w-8" alt="singout" /></div>
+              onClick={logout}>
+              <div><img src="/signnout.svg" className="w-8" alt="singout" /></div>
 
-            <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
+              <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
+            </div>
           </div>
+
         </div>
 
       </div>
