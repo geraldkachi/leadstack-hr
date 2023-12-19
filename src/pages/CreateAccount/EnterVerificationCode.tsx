@@ -95,7 +95,7 @@ const EnterVerificationCode = ({ codeEmail, setCurrentStep, setCodeEmail }: Prop
                     <EnterVerificationCodeEmail {...{ setCodeEmail }} /> :
                 (
                 <form action="" className="w-full">
-                    <div className="grid grid-col-1">
+                    <div className="grid grid-col-1 place-items-center md:place-content-start">
                         <OtpInput
                             value={otp}
                             onChange={setOtp}

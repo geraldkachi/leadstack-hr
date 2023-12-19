@@ -122,7 +122,7 @@ const CreateAccountForm = ({setCurrentStep}: Props) => {
           <Button
             type="button"
             disabled={checkDisabled}
-            className="!text-white !px-16"
+            className="!text-white !px-8"
             onClick={() => {
               if(organizationName || officialEmail || officialPhoneNumber || companyWebsite) {
                 setCurrentStep(1)
