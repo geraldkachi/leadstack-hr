@@ -1,10 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Button, Input } from "../../components"
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const ForgotPasswordForm = () => {
     const formInput = useRef<HTMLInputElement>(null);
     const navigate = useNavigate();
+    const [email, setEmail] = useState('')
+
 
     return (
         <div className="max-w-xl mx-auto bg-white px-4 py-8 md:px-8 md:py-14 rounded-[19.095px] ">
@@ -13,8 +15,10 @@ const ForgotPasswordForm = () => {
                     <Input
                         label="Enter Email Address"
                         ref={formInput}
+                        value={email}
                         type="email"
                         name="email"
+                        onChange={e => setEmail(e.target.value)}
                         placeholder="hr@techworld.com"
                     />
                 </div>
@@ -28,6 +32,7 @@ const ForgotPasswordForm = () => {
                         type="button"
                         className="!bg-[#1D8EE6] !text-white !px-8"
                         onClick={() => navigate('/dashboard')}
+                        disabled={!email}
                         title="Continue"
                     />
                 </div>
