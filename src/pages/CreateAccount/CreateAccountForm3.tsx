@@ -262,7 +262,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
       </div>
 
       <form action="" className="w-full" onSubmit={onFinish}>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-3">
           <Input
             label="First Name"
             ref={formInput}
@@ -318,7 +318,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           placeholder="090********"
         />
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid md:grid-cols-2 gap-3">
           <Input
             label="Password"
             ref={formInput}
