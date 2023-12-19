@@ -92,7 +92,8 @@ const box = [
 
 const Profile = () => {
 
-    const [percent, setPercent] = useState<number>(0);
+    // const [percent, setPercent] = useState<number>(0);
+    const [percent] = useState<number>(0);
 
     // const increase = () => {
     //     setPercent((prevPercent) => {
