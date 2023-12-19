@@ -15,7 +15,7 @@ const ContactInfo = () => {
           <form>
             <div className="grid lg:grid-cols-1  gap-x-8 mb-36">
               <div>
-                <div className="grid grid-cols-2 gap-x-2">
+                <div className="grid md:grid-cols-2 gap-x-2">
                   <Input
                     label="First Name"
                     ref={formInput}
@@ -49,7 +49,7 @@ const ContactInfo = () => {
                   name="password"
                   placeholder="hr@tch.com"
                 />
-                <div className="grid grid-cols-2 gap-x-2">
+                <div className="grid md:grid-cols-2 gap-x-2">
                   <Input
                     label="Gender"
                     ref={formInput}
@@ -75,7 +75,7 @@ const ContactInfo = () => {
                   name="country"
                   placeholder="Nigeria"
                 />
-                <div className="grid grid-cols-2 gap-x-2">
+                <div className="grid md:grid-cols-2 gap-x-2">
                   {/* <Input
                     label="Gender"
                     ref={formInput}

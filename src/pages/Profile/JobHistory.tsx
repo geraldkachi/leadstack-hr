@@ -12,7 +12,7 @@ const JobHistory = () => {
                     <form>
                         <div className="grid lg:grid-cols-1 gap-x-8 mb">
                             <div>
-                                <div className="grid grid-cols-2 gap-x-2">
+                                <div className="grid md:grid-cols-2 gap-x-2">
                                     <Input
                                         label="Date"
                                         ref={formInput}
@@ -47,7 +47,7 @@ const JobHistory = () => {
                                     placeholder="EMP-2987"
                                 />
 
-                                <div className="grid grid-cols-2 gap-x-2">
+                                <div className="grid md:grid-cols-2 gap-x-2">
                                     <Input
                                         label="Grade"
                                         ref={formInput}

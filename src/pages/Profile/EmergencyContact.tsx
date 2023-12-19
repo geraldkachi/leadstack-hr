@@ -21,7 +21,7 @@ const EmergencyContact = () => {
                                     name="name"
                                     placeholder="Lord Gerald"
                                 />
-                                <div className="grid grid-cols-2 gap-x-2">
+                                <div className="grid md:grid-cols-2 gap-x-2">
                                     <Input
                                         label="Email Address"
                                         ref={formInput}
@@ -39,7 +39,7 @@ const EmergencyContact = () => {
                                         placeholder="Sister"
                                     />
                                 </div>
-                                <div className="grid grid-cols-2 gap-x-2">
+                                <div className="grid md:grid-cols-2 gap-x-2">
                                     <Input
                                         label="Country"
                                         ref={formInput}
@@ -57,7 +57,7 @@ const EmergencyContact = () => {
                                     name="phoneNumber"
                                     placeholder="09039278115"
                                 />
-                                <div className="grid grid-cols-2 gap-x-2">
+                                <div className="grid md:grid-cols-2 gap-x-2">
                                     <Input
                                         label="State"
                                         ref={formInput}

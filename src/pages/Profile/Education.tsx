@@ -22,7 +22,7 @@ const Education = () => {
                                     name="password"
                                     placeholder="hr@tch.com"
                                 />
-                                <div className="grid grid-cols-2 gap-x-2">
+                                <div className="grid md:grid-cols-2 gap-x-2">
                                     <Input
                                         label="Institution Type"
                                         ref={formInput}
@@ -56,7 +56,7 @@ const Education = () => {
                                     name="text"
                                     placeholder="hr@tch.com"
                                 />
-                                <div className="grid grid-cols-2 gap-x-2">
+                                <div className="grid md:grid-cols-2 gap-x-2">
                                     <Input
                                         label="Admission Year"
                                         ref={formInput}

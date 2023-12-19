@@ -22,7 +22,7 @@ const Employment = () => {
                   name="product manager"
                   placeholder="Product Manager"
                 />
-                <div className="grid grid-cols-2 gap-x-2">
+                <div className="grid md:grid-cols-2 gap-x-2">
                   <Input
                     label="Department *"
                     ref={formInput}
@@ -59,7 +59,7 @@ const Employment = () => {
                 {/* Payment Information */}
                 <div className="mt-2">
                   <div className="text-[#7C8091] mb-5 text-lg font-medium">Payment Information <span className="text-[#E01507]"></span></div>
-                  <div className="grid grid-cols-2 gap-x-2">
+                  <div className="grid md:grid-cols-2 gap-x-2">
                     <Input
                       label="Pay Schedule"
                       ref={formInput}
@@ -93,7 +93,7 @@ const Employment = () => {
                     name="last name"
                     placeholder="NUBAN Bank"
                   />
-                  <div className="grid grid-cols-2 gap-x-2">
+                  <div className="grid md:grid-cols-2 gap-x-2">
                     <Input
                       label="Bank Branch "
                       ref={formInput}
@@ -125,7 +125,7 @@ const Employment = () => {
                     name="number"
                     placeholder="987654321"
                   />
-                  <div className="grid grid-cols-2 gap-x-2">
+                  <div className="grid md:grid-cols-2 gap-x-2">
                     <Input
                       label="Pension No *"
                       ref={formInput}
