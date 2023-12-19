@@ -27,9 +27,9 @@ const CreateAccount = () => {
           <img src="/reg-logo.svg" className="top-[0%] left-[8%] pt-0 pl-8" alt="" />
           <div className="absolute bottom-36  text-xl w-max mr-20">
             {currentStep === 0 &&
-             <p className="">
-              Great employees are not born, they are made... by HR!
-             </p>}
+              <p className="">
+                Great employees are not born, they are made... by HR!
+              </p>}
             {currentStep === 1 && (
               <p className="">
                 Start managing your HR needs with ease. <br />
@@ -83,12 +83,13 @@ const CreateAccount = () => {
         <div className="flex items-end justify- w-auto h- overflow-hidden px-2">
           {(currentStep === 3 && codeEmail === false) &&
             <div className="hidden md:flex items-center  ml-5 mr-3 w-max">
-              <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-10 text-xs bg-[#0D1227B2] text-white text-center mt-4 rounded-2xl w-max ml-20">
+              <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-7 text-xs bg-[#0D1227B2] text-white text-center mt-4 rounded-2xl w-[530px] ml-20">
                 <img src="/lightbulb.svg" className='absolute -top-3 left-1 ' alt="" />
                 <img src="/cancel-lightbulb.svg" className='absolute top-2 right-1 p-1' alt="" />
-                <div className="whitespace-pre-wrap w-max">
-                OTPs have a limited validity period. Enter the OTP promptly to ensure a smooth verification process. Delayed entries may result in expiration and require generating a new OTP.
-                </div>
+                <span className="whitespace-pre-wrap w-max">
+                    OTPs have a limited validity period. Enter the OTP promptly to ensure a smooth verification process.
+                    Delayed entries may result in expiration and require generating a new OTP.
+                </span>
               </div>
             </div>}
 

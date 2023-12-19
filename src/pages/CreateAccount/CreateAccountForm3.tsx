@@ -16,7 +16,7 @@ const schema = yup.object().shape({
     .required('Password is required'),
   confirmPassword: yup
     .string()
-    .oneOf([yup.ref('password'), null], 'Passwords must match')
+    // .oneOf([yup.ref('password'), null], 'Passwords must match')
     .required('Confirm Password is required'),
 });
 
@@ -42,7 +42,8 @@ const passwordSchema1Number = yup.object().shape({
     // .oneOf([yup.ref('password'), null], 'Passwords must match')
     .required('Confirm Password is required'),
 });
-export const passwordSchema = yup.object().shape({
+
+ const passwordSchema = yup.object().shape({
   password: yup
     .string()
     .min(8, 'Password must be at least 8 characters long')
@@ -81,7 +82,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
 
 
 
-  const checkDisabled = !firstName || !lastName || !role || !email || !phoneNumber || !password || !confirmPassword || (password !== confirmPassword) || passwordIcon || confirmPasswordIcon
+  const checkDisabled = !firstName || !lastName || !role || !email || !phoneNumber || !password || !confirmPassword || (password !== confirmPassword) || !!passwordIcon || !!confirmPasswordIcon
 
   const handleFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
     useAuth.setState({
@@ -159,6 +160,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
       setPasswordIcon('');
     } catch (validationError) {
       // If validation fails, set icon color to red
+      //@ts-ignore
       setPasswordIcon(validationError.errors[0]);
     }
 
@@ -196,6 +198,7 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
       setConfirmPasswordIcon('');
     } catch (validationError) {
       // If validation fails, set icon color to red
+      //@ts-ignore
       setConfirmPasswordIcon(validationError.errors[0]);
     }
   };
