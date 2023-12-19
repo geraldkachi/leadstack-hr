@@ -14,23 +14,44 @@ const schema = yup.object().shape({
     .matches(/[A-Z]/, 'Must contain at least 1 uppercase letter')
     .matches(/[0-9]/, 'Must contain at least 1 number')
     .required('Password is required'),
-});
-
-
- const passwordSchema = yup.object().shape({
-  password: yup
-    .string()
-    .min(8, 'Password must be at least 8 characters long')
-    .matches(/[A-Z]/, 'Must contain at least 1 uppercase letter')
-    .matches(/[0-9]/, 'Must contain at least 1 number')
-    .required('Password is required'),
   confirmPassword: yup
     .string()
     .oneOf([yup.ref('password'), null], 'Passwords must match')
     .required('Confirm Password is required'),
 });
 
- const emailSchema = yup.object().shape({
+
+const passwordSchema1Uppercase = yup.object().shape({
+  password: yup
+    .string()
+    .matches(/[A-Z]/, 'Must contain at least 1 uppercase letter')
+    // .matches(/[0-9]/, 'Must contain at least 1 number')
+    .required('Password is required'),
+    confirmPassword: yup
+    .string()
+    // .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required('Confirm Password is required'),
+});
+const passwordSchema1Number = yup.object().shape({
+  password: yup
+    .string()
+    .matches(/[0-9]/, 'Must contain at least 1 number')
+    .required('Password is required'),
+    confirmPassword: yup
+    .string()
+    // .oneOf([yup.ref('password'), null], 'Passwords must match')
+    .required('Confirm Password is required'),
+});
+export const passwordSchema = yup.object().shape({
+  password: yup
+    .string()
+    .min(8, 'Password must be at least 8 characters long')
+    .matches(/[A-Z]/, 'Must contain at least 1 uppercase letter')
+    .matches(/[0-9]/, 'Must contain at least 1 number')
+    .required('Password is required'),
+});
+
+const emailSchema = yup.object().shape({
   email: yup.string().email('Invalid email format').required('Email is required'),
 });
 
@@ -50,9 +71,17 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
+  const [password1Uppercase, setpassword1Uppercase] = useState<boolean>(false);
+  const [password1UppercaseConfirm, setpassword1UppercaseConfirm] = useState<boolean>(false);
+  const [password1NumberConfirm, setpassword1NumberConfirm] = useState<boolean>(false);
+  const [password1Number, setpassword1Number] = useState<boolean>(false);
+
+  const [passwordIcon, setPasswordIcon] = useState('');
+  const [confirmPasswordIcon, setConfirmPasswordIcon] = useState('');
 
 
-  const checkDisabled = !firstName || !lastName || !role || !email || !phoneNumber || !password || !confirmPassword || (password !== confirmPassword)
+
+  const checkDisabled = !firstName || !lastName || !role || !email || !phoneNumber || !password || !confirmPassword || (password !== confirmPassword) || passwordIcon || confirmPasswordIcon
 
   const handleFirstName = (e: React.ChangeEvent<HTMLInputElement>) => {
     useAuth.setState({
@@ -99,22 +128,76 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
     })
   };
 
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePasswordChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newPassword = e.target.value;
     useAuth.setState({
       createAccount: {
         ...createAccount,
-        password: String(e.target.value)
+        password: String(newPassword)
       }
     })
+    try {
+      await passwordSchema1Uppercase.validate({ password: newPassword, confirmPassword }, { abortEarly: false });
+      setpassword1Uppercase(true)
+      setpassword1UppercaseConfirm(true)
+    } catch (validationError) {
+      setpassword1Uppercase(false)
+      setpassword1UppercaseConfirm(false)
+    }
+      // number
+      try {
+        await passwordSchema1Number.validate({ password: newPassword, confirmPassword }, { abortEarly: false });
+        setpassword1Number(true)
+        setpassword1NumberConfirm(true)
+      } catch (validationError) {
+        setpassword1Number(false)
+        setpassword1NumberConfirm(false)
+      }
+    try {
+      await passwordSchema.validate({ password: newPassword, confirmPassword }, { abortEarly: false });
+      // If validation succeeds, set icon color to green
+      setPasswordIcon('');
+    } catch (validationError) {
+      // If validation fails, set icon color to red
+      setPasswordIcon(validationError.errors[0]);
+    }
+
   };
 
-  const handlePasswordConfirmChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePasswordConfirmChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newConfirmPassword = e.target.value;
     useAuth.setState({
       createAccount: {
         ...createAccount,
-        confirmPassword: String(e.target.value)
+        confirmPassword: String(newConfirmPassword)
       }
     })
+
+    try {
+      await passwordSchema1Uppercase.validate({ password: newConfirmPassword, confirmPassword }, { abortEarly: false });
+      setpassword1Uppercase(true)
+      setpassword1UppercaseConfirm(true)
+    } catch (validationError) {
+      setpassword1Uppercase(false)
+      setpassword1UppercaseConfirm(false)
+    }
+    // number
+    try {
+      await passwordSchema1Number.validate({ password: newConfirmPassword, confirmPassword }, { abortEarly: false });
+      setpassword1Number(true)
+      setpassword1NumberConfirm(true)
+    } catch (validationError) {
+      setpassword1Number(false)
+      setpassword1NumberConfirm(false)
+    }
+    try {
+      await passwordSchema.validate({ password: newConfirmPassword, confirmPassword }, { abortEarly: false });
+      // If validation succeeds, set icon color to green
+      setConfirmPasswordIcon('');
+    } catch (validationError) {
+      // If validation fails, set icon color to red
+      setConfirmPasswordIcon(validationError.errors[0]);
+    }
   };
 
   const mutation = useMutation("custmerLogin", {
@@ -241,6 +324,8 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
             type={showPassword ? "text" : "password"}
             name="password"
             placeholder=""
+            helptext={passwordIcon ? passwordIcon : ''}
+            inputType={passwordIcon ? "error" : "default"}
             onChange={handlePasswordChange}
             TrailingIcon={() => (
               <PasswordMe
@@ -257,8 +342,9 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
             type={showPasswordConfirm ? "text" : "password"}
             name="password"
             placeholder=""
+            helptext={confirmPasswordIcon ? confirmPasswordIcon : ''}
+            inputType={confirmPasswordIcon ? "error" : "default"}
             onChange={handlePasswordConfirmChange}
-            // helptext={'helptext'}
             TrailingIcon={() => (
               <PasswordMe
                 showPassword={showPasswordConfirm}
@@ -276,7 +362,8 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
           /> */}
           <div className="block text-xs text-[#61646B]">
             <div className="flex items-center gap-2 mb-1">
-              {(password !== confirmPassword || (password.length < 8 && confirmPassword.length < 8) || (password.length == 0 && confirmPassword.length == 0)) ?
+              {/* {(password !== confirmPassword || (password.length < 8 && confirmPassword.length < 8) || (password.length == 0 && confirmPassword.length == 0)) ? */}
+              {((password.length < 8 || confirmPassword.length < 8)) ?
                 <svg className="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                 </svg>
@@ -289,23 +376,31 @@ const CreateAccountForm3 = ({ setCurrentStep }: Props) => {
               <p>Password must be at least 8 characters long</p>
             </div>
             <div className="flex items-center gap-2 mb-1">
-              {password.includes(`/[A-Z]/`) !== confirmPassword.includes(`/[A-Z]/`) ?
-                <svg className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                </svg>
+
+              {/* {!password1UppercaseConfirm ===   true && "yes"} */}
+              {(password1Uppercase && password1UppercaseConfirm)  ?
+                 <svg className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+               </svg>
                 :
-                <svg className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                </svg>
+                <svg className="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
               }
 
               <p>Must contain at least 1 uppercase letter</p>
             </div>
 
             <div className="flex items-center gap-2 mb-1">
-              <svg className="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              {password1Number && password1NumberConfirm ?
+                <svg className="w-3.5 h-3.5 me-2 text-green-500 dark:text-green-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
               </svg>
+                :
+                <svg className="w-3.5 h-3.5 me-2 text-gray-500 dark:text-gray-400 flex-shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              }
 
               <p>Must contain at least 1 number.</p>
             </div>

@@ -73,7 +73,7 @@ const CreateAccount = () => {
           </p>
         </div>
 
-        <div className="md:mx-28 px-4 md:px-0">
+        <div className="md:mx-28 px-4 md:px-0 overflow-y-scroll no-scrollbar">
           {currentStep === 0 && <CreateAccountForm {...{ setCurrentStep }} />}
           {currentStep === 1 && <CreateAccountForm2 {...{ setCurrentStep }} />}
           {currentStep === 2 && <CreateAccountForm3 {...{ setCurrentStep }} />}
@@ -83,7 +83,7 @@ const CreateAccount = () => {
         <div className="flex items-end justify- w-auto h- overflow-hidden px-2">
           {(currentStep === 3 && codeEmail === false) &&
             <div className="hidden md:flex items-center  ml-5 mr-3 w-max">
-              <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-10 text-xs bg-[#0D1227B2] text-white text-centers mt-4 rounded-2xl w-max ml-20 whitespace-pre-wrap">
+              <div className="relative bg-[url('/bglightbulb.svg')] bg-no-repeat bg-cover p-10 text-xs bg-[#0D1227B2] text-white text-center mt-4 rounded-2xl w-max ml-20">
                 <img src="/lightbulb.svg" className='absolute -top-3 left-1 ' alt="" />
                 <img src="/cancel-lightbulb.svg" className='absolute top-2 right-1 p-1' alt="" />
                 <div className="whitespace-pre-wrap w-max">

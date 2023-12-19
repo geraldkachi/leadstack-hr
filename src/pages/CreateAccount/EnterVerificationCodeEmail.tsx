@@ -1,4 +1,4 @@
-import { useRef, Dispatch, SetStateAction } from "react";
+import { useRef, Dispatch, SetStateAction, useState } from "react";
 import { Button, Input } from "../../components"
 
 interface Props {
@@ -6,6 +6,7 @@ interface Props {
 }
 
 const EnterVerificationCodeEmail = ({ setCodeEmail }: Props) => {
+    const [email, setEmail] = useState('')
     const formInput = useRef<HTMLInputElement>(null);
     return (
 
@@ -14,9 +15,11 @@ const EnterVerificationCodeEmail = ({ setCodeEmail }: Props) => {
                 <Input
                     label="Enter Email"
                     ref={formInput}
+                    value={email}
                     className="mb-1"
                     type="email"
                     name="email"
+                    onChange={e => setEmail(e.target.value)}
                     placeholder="hr@tch.com"
                 />
 
@@ -28,7 +31,7 @@ const EnterVerificationCodeEmail = ({ setCodeEmail }: Props) => {
                 </div>
                 <div className='flex items-center justify-end  mr-4 gap-3 mt-[20%] my-5'>
 
-                    <Button loading className="!px-8" onClick={() => 'handleSubmit'} title="Verify" />
+                    <Button disabled={!email} className="!px-8" onClick={() => 'handleSubmit'} title="Verify" />
                 </div>
             </div>
         </form>

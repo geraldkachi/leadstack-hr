@@ -5,11 +5,11 @@ import { Button } from '../../components';
 import { Modal } from 'antd';
 import EnterVerificationCodeEmail from './EnterVerificationCodeEmail';
 interface Props {
-    setCurrentStep?: Dispatch<SetStateAction<number>>,
+    setCurrentStep: Dispatch<SetStateAction<number>>,
     setCodeEmail: Dispatch<SetStateAction<boolean>>
     codeEmail: boolean
 }
-const EnterVerificationCode = ({ codeEmail, setCodeEmail }: Props) => {
+const EnterVerificationCode = ({ codeEmail, setCurrentStep, setCodeEmail }: Props) => {
     const [modalOpen, setModalOpen] = useState(false)
     const navigate = useNavigate()
     const [otp, setOtp] = useState('');
@@ -74,8 +74,11 @@ const EnterVerificationCode = ({ codeEmail, setCodeEmail }: Props) => {
             {/* <img src="" alt="" /> */}
             <div>
                 <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => {
-                    // setCurrentStep(2)
-                    setCodeEmail(false)
+                    if(codeEmail) {
+                        setCodeEmail(false)
+                    } else {
+                    setCurrentStep(2)
+                    }
                 }} />
 
                 <div className="text-[] mb-12">
