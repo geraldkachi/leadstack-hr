@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom"
-import { Breadcrumbs, Button, Tabs } from "../../components"
+import { Breadcrumbs, Button } from "../../components"
 import { BreadcrumsbProps } from "../../types/types"
-import ApplicationDetail from "./ApplicationDetail"
-import JobDetails from "./JobDetails"
+import { PostNewJob } from ".."
 
 const bread: BreadcrumsbProps[] = [
   {
@@ -14,8 +13,9 @@ const bread: BreadcrumsbProps[] = [
     url: "employees/overview"
   },
 ]
-const HiringDetail = () => {
+const HiringDetailEdit = () => {
   const navigate = useNavigate()
+
   return (
     <div className="h-full pt-3 ">
       <div className="px-4 md:px-8">
@@ -36,38 +36,18 @@ const HiringDetail = () => {
           </div>
 
           <div className="flex items-center gap-3">
-
-            <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/edit-post.svg" alt="" />} title="Edit Post" onClick={() => navigate('/hiring/1/edit')} />
+            <Button className='flex items-center rounded-lg !text-white my-5' prefixIcon={<img src="/edit-.svg" alt="" />} title="Save" onClick={() => navigate('/hiring/1/edit')} />
+            <Button style={{ border: "1px solid #E01507" }} className='flex items-center rounded-lg  !border !bg-white !border-[#E01507] !text-[#E01507] my-5' prefixIcon={<img src="/edit-.svg" alt="" />} title="Cancel" onClick={() => navigate('/hiring/1/edit')} />
           </div>
         </div>
       </div>
-      <div className="mt-10  pb-36">
-        <Tabs
-          data={[
-            {
-              label: 'Job Details',
-              content: (
-                <>
-                  <JobDetails />
-                </>
-              )
-            },
-            {
-              label: 'ApplicationDetail',
-              badge: 4,
-              badgeColor: 'red-600',
-              badgeTextColor: 'white',
-              content: (
-                <>
-                  <ApplicationDetail />
-                </>
-              )
-            }
-          ]}
-        />
+
+      <div className="mt-3">
+        <PostNewJob />
       </div>
+
     </div>
   )
 }
 
-export default HiringDetail
+export default HiringDetailEdit

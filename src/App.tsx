@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 import Context from './components/context';
 import { Layout, Loading } from './components';
-import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal, Profile, Application, CreateNewJob, Settings, HiringDetail, Help } from './pages';
+import { CreateAccount, Employees, Dashboard, MyTeam, Login, ForgotPassword, Otp, PasswordReset, Hiring, TimeManagement, LeaveManagement, Training, Documents, Performance, ReportsAnalytics, Finance, SelfService, AddEmployees, Overview, JobPortal, Profile, Application, CreateNewJob, Settings, HiringDetail, Help, HiringDetailEdit } from './pages';
 import { ProtectedRoutes, UnProtectedRoutes } from './routers';
 import { useAuth } from './hooks';
 // const colors = ['green', 'yellow', 'red`']
@@ -119,6 +119,7 @@ kdnkwkdnkw
                   <Route path="/my-team" element={<MyTeam />} />
                   <Route path="/hiring" element={<Hiring />} />
                   <Route path="/hiring/:id" element={<HiringDetail />} />
+                  <Route path="/hiring/:id/edit" element={<HiringDetailEdit />} />
                   <Route path="/hiring/overview" element={<Overview />} />
                   <Route path="/hiring/job-portal" element={<JobPortal />} />
                   <Route path="/hiring/application" element={<Application />} />
