@@ -260,7 +260,7 @@ const Sidebar = ({ open }: SidebarProps) => {
             </Link>
           </div>
 
-          <div className="pb-5">
+          {/* <div className="pb-5"> */}
 
             <div
               className={`${open && "flex items-center w-full ease-in-out duration-500"
@@ -286,7 +286,7 @@ const Sidebar = ({ open }: SidebarProps) => {
             >
               <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>ACCOUNT</p>
             </div>
-            <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-6"}
+            <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-16"}
                   ${!open ? 'px-2 text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
                   !text-[rgb(83,87,104)]`}
@@ -295,7 +295,7 @@ const Sidebar = ({ open }: SidebarProps) => {
 
               <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
             </div>
-          </div>
+          {/* </div> */}
 
         </div>
 
