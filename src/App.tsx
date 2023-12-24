@@ -123,6 +123,7 @@ kdnkwkdnkw
                   <Route path="/hiring/overview" element={<Overview />} />
                   <Route path="/hiring/job-portal" element={<JobPortal />} />
                   <Route path="/hiring/application" element={<Application />} />
+                  {/* <Route path="/hiring/application/:id" element={<ApplicationDetail />} />s */}
                   <Route path="/hiring/job-portal" element={<Hiring />} />
                   <Route path="/hiring/create-new-job" element={<CreateNewJob />} />
                   <Route path="/time-management" element={<TimeManagement />} />

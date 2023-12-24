@@ -1,13 +1,12 @@
-import { useState } from "react"
-import type { DrawerProps } from 'antd';
-import { Drawer, Space } from 'antd';
+import {  Space } from 'antd';
 import { Sidebar } from "..";
 import { useAuth } from "../../hooks";
+import Drawer from "./DrawerCom";
 
 
 const DrawerCom = () => {
     // const [openDraw, setOpenDraw] = useState(false);
-    const [placement] = useState<DrawerProps['placement']>('left');
+    // const [placement] = useState<DrawerProps['placement']>('left');
     const open = useAuth(state => state.open)
     const openDraw = useAuth(state => state.openDraw)
 
@@ -28,6 +27,14 @@ const DrawerCom = () => {
                 </span>
             </Space>
             <Drawer
+                position="top"
+                close={onClose}
+                open={openDraw}
+                key={"1"}
+            >
+                <Sidebar {...{ open }} />
+            </Drawer>
+            {/* <Drawer
                 title=""
                 placement={placement}
                 closable={false}
@@ -37,7 +44,7 @@ const DrawerCom = () => {
                 width={`${open ? 230 :0}`}
             >
                 <Sidebar {...{ open }} />
-            </Drawer>
+            </Drawer> */}
         </>
     )
 }

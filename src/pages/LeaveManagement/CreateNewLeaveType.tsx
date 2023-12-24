@@ -17,7 +17,7 @@ const CreateNewLeaveType = ({ setModalDetails, setAcceptRequest, setDeclineReque
                 {/* <div className=" md:text-lg whitespace-nowrap mb-4 text-[#7C8091]">Bio Data</div> */}
 
                 <div className="">
-                    <div className="grid md:grid-cols-2 gap-x-2">
+                    <div className="">
                         <Input
                             label="Leave Type"
                             ref={formInput}
@@ -98,8 +98,8 @@ const CreateNewLeaveType = ({ setModalDetails, setAcceptRequest, setDeclineReque
                             <Button
                                 type="button"
                                 className="!bg-[#1D8EE6] !text-white !px-8 flex items-center"
-                                title="Approve"
-                                suffixIcon={<> <img src="/decline-check.svg" alt="" /></>}
+                                title="Create"
+                                // suffixIcon={<> <img src="/decline-check.svg" alt="" /></>}
                                 onClick={() => {
                                     setModalDetails(false)
                                     setAcceptRequest(true)

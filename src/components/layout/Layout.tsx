@@ -17,7 +17,7 @@ const [openCustomer, setOpenCustomer] = useState<boolean>(false);
   return (
     <div>
       {/* {open ? <ChangePasswordModal {...{ open }} {...{ close }} /> : null} */}
-      <section className={` `}>
+      <section className={`bg-blck `}>
         <Sidebar {...{ open }} />
         <div className={`layout__content  ${open ? "md:pl-60" : "md:pl-10"} `}>
           <div className={`layout__content-main pl-0 md:pl-10`}>
