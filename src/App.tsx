@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
     useEffect(() => {
       const stickValue = localStorage.getItem(key)
-      if(stickValue !== null) {
+      if (stickValue !== null) {
         setValue(stickValue)
       }
     }, [key, setValue])
@@ -37,12 +37,28 @@ const App: React.FC = () => {
   }
   const [color, setColor] = useStickyState(colors[0], 'theme-color')
   const [mode, setMode] = useStickyState(modes[0], 'theme-mode')
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<string | null>('light');
 
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark')
+    } else{
+      setTheme('light')
+    }
+  }, [])
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  },[theme])
   console.log(mode, 'mode')
   console.log(color, 'color')
 
-  const [isLoading, setIsLoading] = useState(true);
+  const handleThemeSwitch = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
   useEffect(() => {
     // Simulate an API call
@@ -74,30 +90,26 @@ const App: React.FC = () => {
   return (
     // <div className={`${activeFont}`[
     <div className={[
-      `bg-primaryBg ${activeFont} `,
+      `bg-white  dark:bg-[#161819] ${activeFont} `,
       color && `theme-${color}`,
       mode && `theme-${mode}`,
     ].filter(Boolean).join(' ')}>
-      {/* <div className={[
-      `p-8 bg-primaryBg ${activeFont} `,
-      color && `!theme-${color}`,
-      mode && `!theme-${mode}`,
-    ].filter(Boolean).join(' ')}>
-kdnkwkdnkw
-    </div> */}
-      <div className="hidden bg-neutralBg text-onNeutralBg border border-onNeutralBg p-5 max-w-lg fle items-center justify-center ml-auto">
-        <div className="text-3xl fond-bold text-center">
-          Tailwind Theme 
+
+          <button className='flex items-center justify-end float-right' onClick={handleThemeSwitch}>handleThemeSwitch</button>
+      {/* <div className=" bg- dark:text-white text-onNeutralBg border border-onNeutralBg p-5 max-w-lg fle items-center justify-center ml-auto">
+        <div className="text-3xl fond-bold text-center ">
+          Tailwind Theme
+
         </div>
-        {colors.map((c) => <div key={c} className=" flex items-center gap-4">{c}</div> )}
+        {colors.map((c) => <div key={c} className=" flex items-center gap-4">{c}</div>)}
         <input type="checkbox" checked={color === 'green'} onChange={() => setColor(color === 'green' ? 'yellow' : 'green')} />
 
         <div className="text-3xl fond-bold text-center">
-          Enable Dark Mode Theme 
+          Enable Dark Mode Theme
         </div>
         <input type="checkbox" checked={mode === 'dark'} onChange={() => setMode(mode === 'light' ? 'dark' : 'light')} />
 
-      </div>
+      </div> */}
       <QueryClientProvider client={ref.current}>
         <Context>
           <Suspense fallback={<>{isLoading && <Loading />}</>}>

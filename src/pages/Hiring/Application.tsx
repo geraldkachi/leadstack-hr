@@ -24,7 +24,7 @@ const Application = () => {
 
                 <div className="block space-y-3 md:space-y-0 md:flex items-center justify-between gap-3">
                     <div>
-                        <div className="text-lg md:text-2xl">Applications</div>
+                        <div className="text-lg md:text-2xl dark:text-[#ffffff]">Applications</div>
                         <div className="text-[#98A1B0] text-[13px] ">Track and manage organization activities. </div>
                     </div>
 

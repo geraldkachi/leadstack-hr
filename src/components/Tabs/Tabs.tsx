@@ -44,7 +44,7 @@ const Tabs = ({ data, activeTab = 0, className }: Props) => {
   return (
     <div>
       <div className={`${className} relative overflow-scroll no-scrollbar mr-4`}>
-        <div className="flex space-x- border-b px-4 md:px-5">
+        <div className="flex space-x- border-b dark:border-[#2C2C2C] px-4 md:px-5">
           {data.map((tab, idx) => {
             return (
               <button
@@ -56,7 +56,7 @@ const Tabs = ({ data, activeTab = 0, className }: Props) => {
                   useAuth.setState({ activeTab: idx })
                 }}
               >
-                {tab.label}  
+                {tab.label}
 
                 {tab.badge && (
                   <span className={`p-2 rounded-full w-3 h-3 bg-${tab.badgeColor} text-xs text-center flex items-center justify-center  border border-r text-${tab.badgeTextColor} ml-2`}>{tab.badge}</span>
@@ -70,7 +70,7 @@ const Tabs = ({ data, activeTab = 0, className }: Props) => {
           style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
         />
       </div>
-      <div className="py-4 bg-[#F5F6FA] p-4 md:px-8 pb-[100%]">
+      <div className="py-4 bg-[#F5F6FA] dark:bg-[#161819] p-4 md:px-8 pb-[100%]">
         <Render />
       </div>
     </div>

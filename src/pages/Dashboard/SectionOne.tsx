@@ -24,7 +24,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
   }, [activeFont]);
 
   return (
-    <div className={`${activeFont}`}>
+    <div className={`${activeFont} dark:bg-[#161819]`}>
       <div className="text-[27px] font-bold text-[#091E42] border-b border-gray-200 pb-3 font-">Customize Experience</div>
       {/* {activeFont} */}
       <label className="flex flex-col items-center justify-start py-2 w-max cursor-pointer">

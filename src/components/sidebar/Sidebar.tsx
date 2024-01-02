@@ -80,9 +80,9 @@ const Sidebar = ({ open }: SidebarProps) => {
 
 
   return (
-    <section className={`sidebar  ${openDraw && '!block px-1 w-max'} hidden md:block bg-white overflow-y-scroll no-scrollbar`}>
+    <section className={`sidebar dark:bg-[#161819]  ${openDraw && '!block px-1 w-max'} hidden md:block overflow-y-scroll no-scrollbar`}>
       <div
-        className={` ${open ? "sm:w-[280px] ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-scroll flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300 mx-auto`}
+        className={` ${open ? "sm:w-[280px] ease-in-out duration-500" : "w-20 ease-in-out duration-500"} overflow-y-hidden flex flex-col justify- transition-all ease-in-out text-white  h- relative duration-300 mx-auto`}
       >
         <div className="px-2 py-5">
           <div className={`${open ? "justify-between" : 'justify-center'} flex items-center`}>
@@ -125,7 +125,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                 className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                   }
                   ${!open ? 'text-center flex items-center justify-center' : "w-full"}
-                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[#535768]`}
                 onClick={() => useAuth.setState({ openDraw: false })}
               >
@@ -147,7 +147,7 @@ const Sidebar = ({ open }: SidebarProps) => {
               className={`${activeItem2 && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                 }
                   ${!open ? 'text-center flex items-center justify-center' : "w-full"}
-                  flex items-center justify-between  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  flex items-center justify-between  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[#535768] relative`}
               onClick={() => {
                 setState(prev => !prev)
@@ -192,7 +192,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                 className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                   }
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
-                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[#535768]`}
                 onClick={() => useAuth.setState({ openDraw: false })}
               >
@@ -250,7 +250,7 @@ const Sidebar = ({ open }: SidebarProps) => {
             <Link to='/help' className={`${location.pathname.includes('/help') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
               }
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
-                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[#535768]`}
               onClick={() => useAuth.setState({ openDraw: false })}
             >
@@ -269,7 +269,7 @@ const Sidebar = ({ open }: SidebarProps) => {
               <Link to="/settings" className={`${location.pathname.includes('/settings') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
                 }
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
-                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[#535768]`}
                 onClick={() => useAuth.setState({ openDraw: false })}
               >
@@ -288,7 +288,7 @@ const Sidebar = ({ open }: SidebarProps) => {
             </div>
             <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-16"}
                   ${!open ? 'px-2 text-center flex items-center justify-center' : 'w-full'}
-                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs 
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[rgb(83,87,104)]`}
               onClick={logout}>
               <div><img src="/signnout.svg" className="w-8" alt="singout" /></div>

@@ -267,7 +267,7 @@ const Overview = () => {
 
                 <div className="block space-y-3 md:space-y-0 md:flex items-center justify-between gap-x-3">
                     <div>
-                        <div className="text-lg md:text-2xl">Recruitment</div>
+                        <div className="text-lg md:text-2xl dark:text-[#ffffff]">Recruitment</div>
                         <div className="text-[#98A1B0] text-[13px] ">Track and manage organization activities. </div>
                     </div>
 

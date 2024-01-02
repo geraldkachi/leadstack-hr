@@ -22,8 +22,8 @@ const [openCustomer, setOpenCustomer] = useState<boolean>(false);
         <div className={`layout__content  ${open ? "md:pl-60" : "md:pl-10"} `}>
           <div className={`layout__content-main pl-0 md:pl-10`}>
             <Topnav />
-            <div className="">
-              <Outlet />
+            <div className="overflow-y-hidden">
+              <Outlet  />
             </div>
           </div>
         </div>

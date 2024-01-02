@@ -8,7 +8,7 @@ const Topnav = () => {
     const navigate = useNavigate()
     return (
         <>
-            <div className="flex items-center justify-between border-b border-[rgba(0, 0, 0, 0.20)] bg-white z-50 px-2 gap-x-3">
+            <div className="flex items-center justify-between border-b border-[rgba(0, 0, 0, 0.20)] dark:border-[#2C2C2C] bg-white z-50 px-2 gap-x-3 dark:bg-[#161819]">
                 <div className="flex items-center justify-center gap-3">
                     <span className="cursor-pointer hidden md:block w-full" onClick={() => navigate(-1)}>
                         <img src="/arrow-right.svg" alt="" />
@@ -16,20 +16,20 @@ const Topnav = () => {
                     <span className="cursor-pointer hidden md:block w-full" onClick={() => navigate(+1)}>
                         <img src="/arrow-left.svg" alt="" />
                     </span>
-                    
+
                     <AppLogo className="md:hidden block" />
                 </div>
 
-            
+
                 <div className="w-80  hidden md:block">
-                    <Input inputClassName="!w-full font-noto !py-2" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt="" />}
+                    <Input inputClassName="!w-full font-noto !py-2 dark:bg-[#242729]" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt="" />}
                         type="search"
                         // inputType="success"
                         placeholder="Search employees, teams..." />
                 </div>
 
                 <div className="flex gap-1 md:gap-4 items-center py-2">
-                    <p className="text-[#535768] text-sm font-medium mr-4 md:flex items-start gap-2 hidden bg-[#FAFAFA] p-2 rounded-2xl">
+                    <p className="text-[#535768] text-sm font-medium mr-4 md:flex items-start gap-2 hidden bg-[#FAFAFA] dark:bg-[#242729] p-2 rounded-2xl">
                         <img src="/calenda.svg" alt="calenda" />
                         <span className="whitespace-nowrap font-noto">August 8th 2022 . 09:00 AM</span>
                     </p>

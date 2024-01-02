@@ -10,8 +10,8 @@ import JobHistory from "./JobHistory"
 import NextofKin from "./NextofKin"
 import { useState } from 'react';
 // import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
-import { 
-    // Button as AntButton, 
+import {
+    // Button as AntButton,
     Progress } from 'antd';
 
 // import { Tabs } from 'antd';
@@ -132,7 +132,7 @@ const Profile = () => {
                             </div> */}
 
                         <div>
-                            <div className="text-lg md:text-[19px] flex items-center my-4">Kingsley Okon {" "}<span className="flex items-center text-[#94A0B4] text-base"> <img src="/admin-check.svg" alt="" /> Admin</span></div>
+                            <div className="text-lg md:text-[19px] flex items-center my-4 dark:text-[#ffffff]">Kingsley Okon {" "}<span className="flex items-center text-[#94A0B4] text-base"> <img src="/admin-check.svg" alt="" /> Admin</span></div>
 
                             <div className="flex items-center gap-3 mt-2 flex-wrap">
                                 <div className="text-[#98A1B0] text-[13px] flex items-center gap-x-1">

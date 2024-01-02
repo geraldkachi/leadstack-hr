@@ -9,7 +9,7 @@ interface Props {
 
 const SectionThree = ({ setState, setModalSuccess, setModalOpen }: Props) => {
   return (
-    <div className='w-full'>
+    <div className='w-full dark:bg-[#161819]'>
       <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setState(1)} />
 
       <div className="text-[27px] text-[#091E42] border-b border-gray-200 pb-3">Company Domain</div>

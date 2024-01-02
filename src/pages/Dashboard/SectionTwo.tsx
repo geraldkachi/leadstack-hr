@@ -20,7 +20,7 @@ const SectionTwo = ({ setState }: Props) => {
         // Example: uploadFileToServer(file);
     };
     return (
-        <div>
+        <div className="dark:bg-[#161819]">
             <img src="/back-icon.svg" alt='' className='cursor-pointer mb-4' onClick={() => setState(0)} />
 
             <div className="text-[27px] text-[#091E42] border-b border-gray-200 pb-3">Registration Info.</div>

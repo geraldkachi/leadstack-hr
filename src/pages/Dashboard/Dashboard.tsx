@@ -38,14 +38,14 @@ const Dashboard = () => {
 
   const changeColor = (e: string) =>
     setColorHex((prev) => ({ ...prev, hex: e }))
-    
+
 
     // toast?
     const [showToast, setShowToast] = useState(false);
 
     const showToastMessage = () => {
       setShowToast(true);
-  
+
       // Close the toast after 6 seconds
       setTimeout(() => {
         setShowToast(false);
@@ -59,13 +59,13 @@ const Dashboard = () => {
         onClose={() => setShowToast(false)}
       />
       <div className="px-4 md:px-8">
-      <div className="block space-y-3 md:space-y-0 md:flex items-start justify-between gap-3 bg-white">
+      <div className="block space-y-3 md:space-y-0 md:flex items-start justify-between gap-3 bg-whit">
         <div>
-          <div className="text-lg md:text-2xl">Dashboard</div>
+          <div className="text-lg md:text-2xl dark:text-[#ffffff]">Dashboard</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
         </div>
 
-          <EmployeePop  />
+        <EmployeePop />
       </div>
 
 
@@ -78,7 +78,7 @@ const Dashboard = () => {
           </div>
         </div>
       ) : (
-        <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] lg:mr-56">
+        <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] dark:bg-[#393938] rounded-md border-dashed border border-[#FFA800] lg:mr-56">
           <img src="/caution.svg" alt="caution" />
           <div>
             <div className='text-[#3F4254] font-bold text-sm md:text-base'>We need your attention!</div>
@@ -113,8 +113,9 @@ const Dashboard = () => {
         closable
         afterClose={() => setModalOpen(false)}
         width={1127}
+        style={{backgroundColor: '#161819'}}
       >
-        <div className='grid lg:grid-cols-5 items-start justify-  py-8 h-[650px] overflow-y-scroll no-scrollbar'>
+        <div className='grid lg:grid-cols-5 items-start justify- py-8 h-[650px] overflow-y-scroll no-scrollbar dark:bg-[#161819]'>
           <div className='col-span-1 items-start hidden sm:block '>
             <div>
               <div className="text-base md:text-lg] whitespace-nowrap">Complete Onboarding</div>
@@ -134,13 +135,10 @@ const Dashboard = () => {
                   ${!open && 'text-center flex items-center justify-center'}
                   flex items-center gap-2  px-6 py-3 cursor-pointer mb-1 text-sm
                    w-full`}
-                  onClick={item.onclick}
-                >
+                  onClick={item.onclick}>
                   <div key={index}> {iconArr[index]}</div>
 
-                  <span
-                    className={`origin-left ease-in-out duration-500 whitespace-nowrap text-[#535768]`}
-                  >
+                  <span className={`origin-left ease-in-out duration-500 whitespace-nowrap text-[#535768]`}>
                     {item.title}
                   </span>
                 </div>
