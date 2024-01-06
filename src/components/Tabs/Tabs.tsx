@@ -70,7 +70,7 @@ const Tabs = ({ data, activeTab = 0, className }: Props) => {
           style={{ left: tabUnderlineLeft, width: tabUnderlineWidth }}
         />
       </div>
-      <div className="py-4 bg-[#F5F6FA] dark:bg-[#161819] p-4 md:px-8 pb-[100%]">
+      <div className="py-4 bg-[#F5F6FA] dark:bg-[#161819] p-4 md:px-8 pb-[10%]">
         <Render />
       </div>
     </div>

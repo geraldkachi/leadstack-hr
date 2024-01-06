@@ -51,7 +51,7 @@ const Drawer = (props: Props) => {
 						className={`w-screen max-w-max ${
 							position === 'right' ? 'right-0' : 'left-0'
 						} absolute bg-white h-full ${
-							position === 'right' ? 'rounded-l-2xl' : 'rounded-r-2xl'
+							position === 'right' ? 'rounded-l-2xl' : 'rounded-r-0'
 						} shadow-xl duration-500 ease-in-out transition-all transform translate-x-0`}
 					>
 						<div className="relative flex flex-col space-y-3 overflow-y-scroll h-full">

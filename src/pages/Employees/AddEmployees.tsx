@@ -78,7 +78,7 @@ const AddEmployees = () => {
                 <Breadcrumbs {...{ bread }} />
                 <div className="flex items-center justify-between">
                     <div>
-                        <div className="text-lg md:text-2xl">Add Employees</div>
+                        <div className="text-lg md:text-2xl dark:text-[#ffffff]">Add Employees</div>
                         <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@ const AddEmployees = () => {
                         })}
                     </div>
                     <p className="stepper-count text-[#94A0B4] text-xs">
-                        Step <span className={`completed-count text-[#272848]`}>{completedSteps}</span> of {noOfSteps}
+                        Step <span className={`completed-count text-[#272848] dark:text-[#ffffff]`}>{completedSteps}</span> of {noOfSteps}
                     </p>
                 </div>
 

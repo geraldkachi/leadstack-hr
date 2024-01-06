@@ -38,27 +38,6 @@ const App: React.FC = () => {
   const [color, setColor] = useStickyState(colors[0], 'theme-color')
   const [mode, setMode] = useStickyState(modes[0], 'theme-mode')
   const [isLoading, setIsLoading] = useState(true);
-  const [theme, setTheme] = useState<string | null>('light');
-
-  useEffect(() => {
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark')
-    } else{
-      setTheme('light')
-    }
-  }, [])
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  },[theme])
-  console.log(mode, 'mode')
-  console.log(color, 'color')
-
-  const handleThemeSwitch = () => setTheme(theme === 'dark' ? 'light' : 'dark')
 
   useEffect(() => {
     // Simulate an API call
@@ -94,22 +73,7 @@ const App: React.FC = () => {
       color && `theme-${color}`,
       mode && `theme-${mode}`,
     ].filter(Boolean).join(' ')}>
-
-          <button className='flex items-center justify-end float-right' onClick={handleThemeSwitch}>handleThemeSwitch</button>
-      {/* <div className=" bg- dark:text-white text-onNeutralBg border border-onNeutralBg p-5 max-w-lg fle items-center justify-center ml-auto">
-        <div className="text-3xl fond-bold text-center ">
-          Tailwind Theme
-
-        </div>
-        {colors.map((c) => <div key={c} className=" flex items-center gap-4">{c}</div>)}
-        <input type="checkbox" checked={color === 'green'} onChange={() => setColor(color === 'green' ? 'yellow' : 'green')} />
-
-        <div className="text-3xl fond-bold text-center">
-          Enable Dark Mode Theme
-        </div>
-        <input type="checkbox" checked={mode === 'dark'} onChange={() => setMode(mode === 'light' ? 'dark' : 'light')} />
-
-      </div> */}
+          {/* <button className='flex items-center justify-end float-right' onClick={handleThemeSwitch}>handleThemeSwitch</button> */}
       <QueryClientProvider client={ref.current}>
         <Context>
           <Suspense fallback={<>{isLoading && <Loading />}</>}>

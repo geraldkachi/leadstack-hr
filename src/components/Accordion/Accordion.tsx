@@ -31,7 +31,7 @@ function Accordion({
 
     return (
         <div
-            className={`relative bg-transparent max-w-4xl w-full mx-auto mb-4 rounded-xl  ${openAccordion ? activeClass : ""
+            className={`relative bg-transparent  w-full mx-auto mb-1 rounded-xl  ${openAccordion ? activeClass : ""
                 } ${otherClasses || ""}`}
         >
             {showHeader && (
@@ -44,9 +44,9 @@ function Accordion({
                 >
                     <div
                         onClick={toggleAccordion}
-                        className={`flex cursor-pointer items-center w-full gap-2 justify-between py-2 bg-transparent`}
+                        className={`flex cursor-pointer items-center w-full gap-2 justify-between py-3 bg-transparent`}
                     >
-                        <span style={{ flexGrow: 2 }} className="font-medium text-left text-[#716C81]">
+                        <span style={{ flexGrow: 0 }} className="font-medium text-xs text-left text-[#716C81]">
                             {heading}{" "}
                         </span>
 
@@ -73,7 +73,7 @@ function Accordion({
                 className={`relative transition-all
         } overflow-hidden transition-all duration-[0.7rem]`}
             >
-                <div className="px-5">{children}</div>
+                <div className="px-">{children}</div>
             </div>
         </div>
     );

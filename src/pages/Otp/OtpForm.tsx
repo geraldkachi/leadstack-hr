@@ -14,7 +14,7 @@ const OtpForm = () => {
     fontSize: "16px",
     marginRight: "20px",
   };
-  
+
   return (
     <div className="w-full max-w-xl mx-auto px-3">
       <div className="text-center mb-[28px]"> </div>

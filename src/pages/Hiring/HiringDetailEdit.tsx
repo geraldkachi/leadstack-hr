@@ -23,7 +23,7 @@ const HiringDetailEdit = () => {
 
         <div className="block space-y-3 md:space-y-0 md:flex items-center justify-between gap-3">
           <div>
-            <div className="text-lg md:text-2xl whitespace-nowrap flex items-center gap-3 mt-5">Full Stack Developer  <Button className="!bg-[#D1EEE4] !text-[#1EAA79] !p-1 text-[10px]" title="Active" /></div>
+            <div className="text-lg md:text-2xl whitespace-nowrap flex items-center gap-3 mt-5 dark:text-[#ffffff]">Full Stack Developer  <Button className="!bg-[#D1EEE4] !text-[#1EAA79] !p-1 text-[10px]" title="Active" /></div>
             <div className="text-[#98A1B0] text-sm mt-5">
               <div className="flex flex-wrap gap-x-3 ga-8 gap-y-1  md:text-x">
                 <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/briefcase.svg" alt="" /> Part Time (Remote)</p>

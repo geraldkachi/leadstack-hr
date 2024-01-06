@@ -31,13 +31,13 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
 
     return (
         <>
-            <div className="flex gap-2 items p-1 bg-white border border-gray-200 rounded-lg shadow whitespace-nowrap w-full">
+            <div className="flex gap-2 items p-1 bg-white dark:bg-[#292929] border border-gray-200 rounded-lg shadow whitespace-nowrap w-full">
                 <img className="object-cover w-14 rounded-t-lg h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/cardi.svg" alt="" />
                 <div className="flex flex-col justify-between p-3 leading-normal w-full">
                     <div>
                         <div className="flex items-center justify-between gap-2 w-full mb-2">
                             <div className="flex items-center my-1 sm:gap-1">
-                                <h5 className=" text-sm md:text-sm font-bold tracking-tight text-[#0D1227] mr-1">{position}</h5>
+                                <h5 className=" text-sm md:text-sm font-bold tracking-tight text-[#0D1227] dark:text-[#ffffff] mr-1">{position}</h5>
                                 <Button className="!bg-[#1EAA7933] !text-[#1EAA79] !p-1 text-[10px]" title="Active" />
                             </div>
                             <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">

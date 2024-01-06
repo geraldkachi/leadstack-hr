@@ -19,7 +19,7 @@ const Settings = () => {
 
         <div className="flex items-center gap-x-3 my-3">
             <div className="break-words">
-                <div className="text-lg md:text-2xl">Settings</div>
+                <div className="text-lg md:text-2xl dark:text-[#ffffff]">Settings</div>
                 <div className="text-[#98A1B0] text-[13px] ">Manage your account settings and preferences </div>
             </div>
 

@@ -1,5 +1,5 @@
 import { Checkbox } from 'antd';
-import { Dispatch, SetStateAction, useEffect } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 
 import DarkCard from "./DarkCard"
 import WhiteCard from "./WhiteCard"
@@ -23,6 +23,28 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
     localStorage.setItem('selectedFont', (activeFont));
   }, [activeFont]);
 
+  const [theme, setTheme] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark')
+    } else{
+      setTheme('light')
+    }
+  }, [])
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  },[theme])
+
+
+  const handleThemeSwitch = () => setTheme(theme === 'dark' ? 'light' : 'dark')
+
+
   return (
     <div className={`${activeFont} dark:bg-[#161819]`}>
       <div className="text-[27px] font-bold text-[#091E42] border-b border-gray-200 pb-3 font-">Customize Experience</div>
@@ -44,9 +66,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <div className="text-[#98A1B0] text-sm font-normal">Customize your UI theme </div>
       </div>
       <div className='flex items-center gap-x-3'>
-          <WhiteCard index className='cursor-pointer w-20' />
+          <WhiteCard onClick={handleThemeSwitch} index className='cursor-pointer w-20' />
           {/* <WhiteCard className='cursor-pointer' /> */}
-          <DarkCard index className='cursor-pointer w-20' />
+          <DarkCard onClick={handleThemeSwitch} index className='cursor-pointer w-20' />
       </div>
 
       <div className="w-full p-1 bg-white sm:p-4">

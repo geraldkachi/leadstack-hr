@@ -35,10 +35,10 @@ const navigate = useNavigate()
                 </div>
 
 
-                <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] lg:mr-56">
+                <div className="flex items-center gap-3 p-2 mb-2 mt-5 bg-[#FFF7E7] rounded-md border-dashed border border-[#FFA800] dark:bg-[#393938] lg:mr-56">
                     <img src="/cautionsign.svg" alt="caution" />
                     <div>
-                        <div className='text-[#3F4254] font-bold text-sm md:text-base'>ATTENTION!!!</div>
+                        <div className='text-[#3F4254] dark:text-[#ffffff] font-bold text-sm md:text-base'>ATTENTION!!!</div>
                         <div className='text-[#7E8299] text-xs md:text-sm'>Kindly note that job posted is automatically moved to the archive after the expiration dateKindly note that job posted is automatically moved to the archive after the expiration date</div>
                     </div>
                 </div>

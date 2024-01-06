@@ -1,4 +1,5 @@
-import {  Space } from 'antd';
+import { Space } from 'antd';
+import { useState } from 'react';
 import { Sidebar } from "..";
 import { useAuth } from "../../hooks";
 import Drawer from "./DrawerCom";
@@ -27,7 +28,7 @@ const DrawerCom = () => {
                 </span>
             </Space>
             <Drawer
-                position="top"
+                position="left"
                 close={onClose}
                 open={openDraw}
                 key={"1"}
@@ -41,7 +42,7 @@ const DrawerCom = () => {
                 onClose={onClose}
                 open={openDraw}
                 key={placement}
-                width={`${open ? 230 :0}`}
+                width={`${open ? 230 : '90'}`}
             >
                 <Sidebar {...{ open }} />
             </Drawer> */}
