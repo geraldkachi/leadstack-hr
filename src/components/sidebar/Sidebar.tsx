@@ -172,59 +172,6 @@ const Sidebar = ({ open }: SidebarProps) => {
           })}
           {/* hiring */}
           <>
-            <span
-              // to={''}
-              className={`${activeItem2 && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
-                }
-                  ${!open ? 'text-center flex items-center justify-center' : "w-full"}
-                  flex items-center justify-between  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
-                  !text-[#535768] relative`}
-              onClick={() => {
-                if (!open) {
-                  useAuth.setState({ open: !open })
-                  setState(false)
-                }
-                setState(prev => !prev)
-              }
-              }
-            >
-              <div className="flex items-center gap-2">
-                <HiringIcon key={4} index={activeItem2} className={`${open && ''}`} onClick={() => {
-                  setState(prev => !prev)
-                }} />
-
-                <span
-                  className={`${!open && "hidden"} ${width < 1200 ? "" : ""
-                    } origin-left ease-in-out duration-500 whitespace-nowrap`}>Recruitment & Hiring</span>
-              </div>
-
-              <div className={` ${!open && 'hidden'}`} >
-                <HiriingArrow key={4} index={activeItem2} />
-                {/* <span className={`${!open && state === false && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span> */}
-              </div>
-
-              {state && <>
-                {/* <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] dark:bg-gradient-to-t transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2"> */}
-                <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
-                  <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                    <span>•</span>
-                    <span>Overview</span>
-                  </Link>
-
-                  <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                    <span>•</span>
-                    <span >Job Portal</span>
-                  </Link>
-                  <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                    <span>•</span>
-                    <span >Application</span>
-                  </Link>
-                </div>
-              </>
-              }
-            </span>
-
-
             {hireArr.map((item, index) => {
               const activeItem = location.pathname.includes(item?.route);
               const iconArr = [
@@ -239,8 +186,25 @@ const Sidebar = ({ open }: SidebarProps) => {
                       key={index}
                       className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
                         } flex items-center cursor-pointer gap-2 px-0  text-xs`}
+                        onClick={() => {
+                          if (!open) {
+                            useAuth.setState({ open: !open })
+                            setState(false)
+                          }
+                          setState(prev => !prev)
+                        }
+                        }
                     >
-                        <span>{iconArr[index]}</span>
+                      <span
+                      onClick={() => {
+                        if (!open) {
+                          useAuth.setState({ open: !open })
+                          setState(false)
+                        }
+                        setState(prev => !prev)
+                      }
+                      }
+                      >{iconArr[index]}</span>
                         <h1 className={`${!open && "hidden"} "font-semibold my-1 text-xs text-[#]  text-xs"`}>{item?.title}</h1>
                     </span>
                   }>
@@ -412,3 +376,53 @@ const Sidebar = ({ open }: SidebarProps) => {
 export default Sidebar;
 
 
+// <span
+// className={`${activeItem2 && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+//   }
+//     ${!open ? 'text-center flex items-center justify-center' : "w-full"}
+//     flex items-center justify-between  gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
+//     !text-[#535768] relative`}
+// onClick={() => {
+//   if (!open) {
+//     useAuth.setState({ open: !open })
+//     setState(false)
+//   }
+//   setState(prev => !prev)
+// }
+// }
+// >
+// <div className="flex items-center gap-2">
+//   <HiringIcon key={4} index={activeItem2} className={`${open && ''}`} onClick={() => {
+//     setState(prev => !prev)
+//   }} />
+
+//   <span
+//     className={`${!open && "hidden"} ${width < 1200 ? "" : ""
+//       } origin-left ease-in-out duration-500 whitespace-nowrap`}>Recruitment & Hiring</span>
+// </div>
+
+// <div className={` ${!open && 'hidden'}`} >
+//   <HiriingArrow key={4} index={activeItem2} />
+//   {/* <span className={`${!open && state === false && 'hidden'}   "ml-4"`}><HiringPop {...{ state, setState }} /> </span> */}
+// </div>
+
+// {state && <>
+//   {/* <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] dark:bg-gradient-to-t transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2"> */}
+//   <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
+//     <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+//       <span>•</span>
+//       <span>Overview</span>
+//     </Link>
+
+//     <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+//       <span>•</span>
+//       <span >Job Portal</span>
+//     </Link>
+//     <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+//       <span>•</span>
+//       <span >Application</span>
+//     </Link>
+//   </div>
+// </>
+// }
+// </span>

@@ -33,12 +33,13 @@ function Accordion({
         <div
             className={`relative bg-transparent  w-full mx-auto mb-1 rounded-xl  ${openAccordion ? activeClass : ""
                 } ${otherClasses || ""}`}
+                onClick={toggleAccordion}
         >
             {showHeader && (
                 <div
                     className={` ${open || openAccordion
-                        ? "w-full"
-                        : "text-center "
+                        ? "w-full "
+                        : "text-center"
                         //   : "border shadow-[0px_8px_22px_rgba(151,143,175,0.08)]"
                         } w-full
                         `}
@@ -67,7 +68,7 @@ function Accordion({
                 style={{
                     maxHeight: open || openAccordion ? ref.current.scrollHeight : 0,
                 }}
-                className={`relative overflow-hidden transition-all duration-[0.7rem]`}>
+                className={`relative overflow-hidden transition-all duration-[.8s]`}>
                 <div className="px-">{children}</div>
             </div>
         </div>

@@ -73,9 +73,9 @@ const Overview = () => {
             <span></span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 py-3 h-max">
-            <a className="relative col-span-1 flex flex-col items-center bg-white dark:bg-[#242729] rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+            <a className="relative col-span-1 flex flex-col items-center bg-white dark:bg-[#242729] rounded-md rounded-s-xl shadow md:flex-row md:max-w-xl hover:bg-slate-50">
               <div className="absolute top-0 right-0 m-1 text-xs bg-[#1EAA7933] text-[#1EAA79] rounded-[4px] px-1 py-[2px] w-max">Active</div>
-              <div className="w-full md:w-max p-4 h-full flex items-center justify-center rounded-s-xl bg-[#fff7ec]">
+              <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#fff7ec]">
                 16 <br />
                 days
               </div>
@@ -96,10 +96,10 @@ const Overview = () => {
               </div>
             </a>
 
-            <a className="relative flex flex-col items-center bg-white dark:bg-[#242729] rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+            <a className="relative flex flex-col items-center bg-white dark:bg-[#242729] rounded-md rounded-s-xl shadow md:flex-row md:max-w-xl hover:bg-slate-50">
             <div className="absolute top-0 right-0 m-1 text-xs bg-[#E0150733] text-[#E01507] rounded-[4px] px-1 py-[2px] w-max">Inactive</div>
 
-              <div className="w-full md:w-max p-4 h-full flex items-center justify-center rounded-s-xl bg-[#D6F5F3]">
+              <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#D6F5F3]">
                 20 <br />
                 days
               </div>
@@ -112,10 +112,10 @@ const Overview = () => {
               </div>
             </a>
 
-            <a className="relative col-span-1 flex flex-col items-center bg-white dark:bg-[#242729] rounded-md shadow md:flex-row md:max-w-xl hover:bg-slate-50">
+            <a className="relative col-span-1 flex flex-col items-center bg-white dark:bg-[#242729] rounded-md rounded-s-xl shadow md:flex-row md:max-w-xl hover:bg-slate-50">
             <div className="absolute top-0 right-0 m-1 text-xs bg-[#1EAA7933] text-[#1EAA79] rounded-[4px] px-1 py-[2px] w-max">Active</div>
 
-              <div className="w-full md:w-max p-4 h-full flex items-center justify-center rounded-s-xl bg-[#D1E3FF]">
+              <div className="w-full md:w-max p-4 h-full flex items-center justify-center bg-[#D1E3FF]">
                 90 <br />
                 days
               </div>
