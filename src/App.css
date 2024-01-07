@@ -90,3 +90,11 @@
     --main-color: var(--main-color-orange);
     --second-color: var(--second-color-orange);
 }
+
+.ant-modal-content {
+    /* background-color: #10d4d2 !important; */
+}
+
+/* .anticon .anticon-close .ant-modal-close-icon {
+    color: white !important;
+} */

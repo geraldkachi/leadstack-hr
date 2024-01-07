@@ -30,7 +30,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       // setTheme('dark')
       useAuth.setState({ theme: 'dark' })
-    } else{
+    } else {
       // setTheme('light')
       useAuth.setState({ theme: 'light' })
     }
@@ -42,13 +42,13 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
     } else {
       document.documentElement.classList.remove('dark')
     }
-  },[theme])
+  }, [theme])
 
 
   // const handleThemeSwitch = () => setTheme(theme === 'dark' ? 'light' : 'dark')
   // const handleThemeSwitch = () => useAuth.setState({ theme: theme === 'dark' ? 'light' : 'dark'})
   const handleThemeSwitchDark = () => useAuth.setState({ theme: 'dark' })
-  const handleThemeSwitchLight = () => useAuth.setState({ theme: 'light'})
+  const handleThemeSwitchLight = () => useAuth.setState({ theme: 'light' })
 
 
   return (
@@ -72,9 +72,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <div className="text-[#98A1B0] text-sm font-normal">Customize your UI theme </div>
       </div>
       <div className='flex items-center gap-x-3'>
-          <WhiteCard onClick={handleThemeSwitchLight} index className='cursor-pointer w-' />
-          {/* <WhiteCard className='cursor-pointer' /> */}
-          <DarkCard onClick={handleThemeSwitchDark} index className='cursor-pointer w-' />
+        <WhiteCard {...{ theme }} onClick={handleThemeSwitchLight} className='cursor-pointer' />
+        {/* <WhiteCard className='cursor-pointer' /> */}
+        <DarkCard {...{ theme }} onClick={handleThemeSwitchDark} className='cursor-pointer' />
       </div>
 
       <div className="w-full p-1 bg-white sm:p-4">

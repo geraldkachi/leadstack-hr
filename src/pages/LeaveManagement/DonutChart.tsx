@@ -9,7 +9,6 @@ const DonutChart = () => {
         type: 'donut',
         foreColor: theme === 'dark' && '#ffffff',
         height: 42,
-        // type: "pie",
         toolbar: {
           show: true
         },

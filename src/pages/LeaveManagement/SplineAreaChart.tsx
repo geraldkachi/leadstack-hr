@@ -1,6 +1,8 @@
 import ReactApexChart from 'react-apexcharts';
+import { useAuth } from '../../hooks';
 
 const SplineAreaChart = () => {
+    const theme = useAuth(state => state.theme)
     const state = {
         options: {
             responsive: [
@@ -37,6 +39,7 @@ const SplineAreaChart = () => {
             chart: {
                 type: 'bar',
                 stacked: false,
+                foreColor: theme === 'dark' && '#ffffff',
                 animations: {
                     enabled: true, //no animations
                     speed: 100,
@@ -84,11 +87,11 @@ const SplineAreaChart = () => {
         ],
     }
     return (
-        <div className="h-full bg-white rounded-lg mt-5">
-            <div className="text-sm font-medium p-4 text-[#535768]">Leave Trends Over Time</div>
-
+        <div className="h-full bg-white dark:bg-[#242729] rounded-lg mt-5">
+            <div className="text-sm font-medium p-4 text-[#535768] dark:text-[#ffffff]">Leave Trends Over Time</div>
+            {/* @ts-ignore */}
             <ReactApexChart
-            // @ts-ignore
+                // @ts-ignore
                 options={state.options}
                 series={state.series}
                 width="100%"

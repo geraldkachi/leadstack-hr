@@ -1,6 +1,8 @@
 import Chart from "react-apexcharts";
+import { useAuth } from "../../hooks";
 
 const BarChart = () => {
+    const theme = useAuth(state => state.theme)
     const state = {
         options: {
             responsive: [
@@ -39,6 +41,7 @@ const BarChart = () => {
                 id: "basic-bar",
                 width: "100%",
                 stacked: true,
+                foreColor: theme === 'dark' && '#ffffff',
                 animations: {
                     enabled: false, //no animations
                     speed: 100,
@@ -90,9 +93,10 @@ const BarChart = () => {
         ],
     };
     return (
-        <div className="h-full bg-white rounded-lg">
-            <div className="text-sm font-medium p-4 text-[#535768]">Leave patterns by Departments</div>
+        <div className="h-full bg-white dark:bg-[#242729] rounded-lg">
+            <div className="text-sm font-medium p-4 text-[#535768] dark:text-[#ffffff]">Leave patterns by Departments</div>
 
+            {/* @ts-ignore */}
             <Chart
                 options={state.options}
                 series={state.series}

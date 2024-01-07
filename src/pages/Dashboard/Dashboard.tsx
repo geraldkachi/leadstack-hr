@@ -6,7 +6,6 @@ import { useRef, useState } from 'react'
 import { Hue, Saturation, useColor } from "react-color-palette";
 
 
-
 import SectionOne from './SectionOne'
 import SectionTwo from './SectionTwo'
 import SectionThree from './SectionThree'
@@ -16,8 +15,10 @@ import IconTwo from './IconTwo'
 import IconThree from './IconThree'
 import { openNotification } from "../../utils";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks";
 
 const Dashboard = () => {
+  const theme = useAuth(state => state.theme)
   const [color, setColor] = useColor("");
   const formInput = useRef<HTMLInputElement>(null);
 
@@ -113,7 +114,8 @@ const Dashboard = () => {
         closable
         afterClose={() => setModalOpen(false)}
         width={1127}
-        style={{backgroundColor: '#161819'}}
+        // style={{ backgroundColor: theme === 'dark' && '#242729' }}
+
       >
         <div className='grid lg:grid-cols-5 items-start justify- py-8 h-[650px] overflow-y-scroll no-scrollbar dark:bg-[#161819]'>
           <div className='col-span-1 items-start hidden sm:block '>

@@ -1,9 +1,9 @@
 import { SVGProps } from "react";
 type Props = {
-  index?: boolean;
+  theme?: string | null;
 } & SVGProps<SVGSVGElement>;
 
-const WhiteCard = ({ index, ...props }: Props) => (
+const WhiteCard = ({ theme, ...props }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={258}
@@ -121,8 +121,8 @@ const WhiteCard = ({ index, ...props }: Props) => (
         y={71.948}
         fill="#1D8EE6"
         rx={2.949}
-      /> 
-     
+      />
+
       <rect
         width={24.769}
         height={8.256}
@@ -196,7 +196,7 @@ const WhiteCard = ({ index, ...props }: Props) => (
         fill="#D9D9D9"
         rx={2.949}
       />
-      {index && <rect
+      {theme=== "light" && <rect
         width={28.308}
         height={28.308}
         x={221.744}
@@ -209,7 +209,7 @@ const WhiteCard = ({ index, ...props }: Props) => (
         d="M234.5 166.599c-.264 0-.529-.1-.73-.302l-2.799-2.799a1.031 1.031 0 0 1 1.459-1.46l2.07 2.07 4.869-4.869a1.031 1.031 0 1 1 1.459 1.46l-5.598 5.598a1.028 1.028 0 0 1-.73.302Z"
       />
     </g>
-    {index && <rect
+    {(theme === 'light') && <rect
       width={254.769}
       height={181.641}
       x={1.179}

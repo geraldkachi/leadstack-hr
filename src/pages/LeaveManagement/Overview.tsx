@@ -27,9 +27,6 @@ const data = [
 const Overview = () => {
   return (
     <div>
-
-
-
       <div className="grid xl:grid-cols-8 md:gap-4">
         <div className="md:col-span-6 gap-2 h-max">
           <div className="flex items-center justify-between py-3">
@@ -63,7 +60,7 @@ const Overview = () => {
               <div className="text-lg md:text-4xl dark:text-[#ffffff] text-[rgb(13,18,39)]">84</div>
 
               <div className="flex items-center my-3">
-                <div className="h-4 w-4 rounded-full bg-#FF5A4F]"></div>
+                <div className="h-4 w-4 rounded-full bg-[#FF5A4F]"></div>
                 <span className="text-sm text-[#7C8091] ml-2">Rejected</span>
               </div>
             </a>
@@ -88,7 +85,7 @@ const Overview = () => {
 
                   <span></span>
                 </div> */}
-                <h5 className="mb-2 text-2xl dark:text-[#ffffff] font-bold tracking-tight whitespace-nowrap">Casual 🏝</h5>
+                <h5 className="flex items-center mb-2 text-2xl dark:text-[#ffffff] font-bold tracking-tight whitespace-nowrap">Casual &nbsp;<img src="/casualicon.svg" alt="" /> </h5>
                 <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Currently on:</p>
                 <div className="flex -space-x-4 rtl:space-x-reverse">
                   <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
@@ -124,7 +121,7 @@ const Overview = () => {
               </div>
 
               <div className="flex flex-col justify-between p-4 leading-norma w-full">
-                <h5 className="mb-2 text-2xl dark:text-[#ffffff] font-bold tracking-tight whitespace-nowrap">Maternity 🏝</h5>
+                <h5 className="flex items-center mb-2 text-2xl dark:text-[#ffffff] font-bold tracking-tight whitespace-nowrap">Maternity  &nbsp;<img src="/casualicon.svg" alt="" /></h5>
                 <p className="mb-3 font-normal text-[#7C8091] text-[10px] md:text-sm wh whitespace-nowrap">Currently on:</p>
                 <div className="flex -space-x-4 rtl:space-x-reverse">
                   <img className="w-10 h-10 rounded-full" src="/asian-face.svg" alt="" />
@@ -168,17 +165,17 @@ const Overview = () => {
 
         </div>
         <div className="md:col-span-2">
-          <div className="rounded-lg bg-white p-3">
+          <div className="rounded-lg bg-white dark:bg-[#242729] p-3">
             {data.map((item, idx) => (
               <div key={idx} className="flex items-center justify-between gap-4 p-2">
                 <div className="flex items-center gap-3">
                   <img className="w-10 h-10 rounded-full" src="/face.svg" alt="" />
                   <div className="font-medium">
-                    <div className="text-sm text-gray-500">{item.title}</div>
+                    <div className="text-sm text-gray-500 dark:text-[#ffffff]">{item.title}</div>
                     {/* <div className="text-sm text-gray-500">Joined in August 2014</div> */}
                   </div>
                 </div>
-                <span className="text-sm text-[#0D1227]">{item.leaves}</span>
+                <span className="text-sm text-[#0D1227] dark:text-[#ffffff]">{item.leaves}</span>
               </div>
             ))}
           </div>
