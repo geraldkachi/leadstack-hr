@@ -40,25 +40,41 @@ const Sidebar = ({ open }: SidebarProps) => {
   const hireArr = [
     {
       header: "Recruitment & Hiring",
-      content: `content for clients.`,
+      content:  <>
+      <div className="flex flex-col items-start justify-start list-none opacity-100  bg-[#1D8EE6] transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
+        <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+          <span>•</span>
+          <span>Overview</span>
+        </Link>
+
+        <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+          <span>•</span>
+          <span >Job Portal</span>
+        </Link>
+        <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+          <span>•</span>
+          <span >Application</span>
+        </Link>
+      </div>
+    </>,
       route: "/hiring/overview" || "/hiring/job-portal" || "/hiring/application",
       title: "Recruitment & Hiring",
     },
   ];
-  // const hireArr = [
-  //   {
-  //     header: "Government?",
-  //     content: `content for clients.`,
-  //     route: "/Finance",
-  //     title: "Finance",
-  //   },
-  //   {
-  //     header: "What offer?",
-  //     content: `content for clients..`,
-  //     route: "/Self Service",
-  //     title: "Self Service",
-  //   },
-  // ];
+  const faqArr = [
+    {
+      header: "Government?",
+      content: `content for clients.`,
+      route: "/Finance",
+      title: "Finance",
+    },
+    {
+      header: "What offer?",
+      content: `content for clients..`,
+      route: "/Self Service",
+      title: "Self Service",
+    },
+  ];
 
   const routeList = [
     { route: "/dashboard", title: "Dashboard" },
@@ -86,7 +102,7 @@ const Sidebar = ({ open }: SidebarProps) => {
   ]
   const activeItem2 = location.pathname.includes("/hiring");
   const openDraw = useAuth(state => state.openDraw)
-
+  const theme = useAuth(state => state.theme)
 
   return (
     <section className={`sidebar dark:bg-[#161819]  ${openDraw && '!block px-1 w-max'} hidden md:block overflow-y-scroll no-scrollbar`}>
@@ -95,7 +111,11 @@ const Sidebar = ({ open }: SidebarProps) => {
       >
         <div className="px-2 py-5">
           <div className={`${open ? "justify-between" : 'justify-center'} flex items-center`}>
-            <img src="/logo.svg" alt="" className={`${!open && 'hidden'}`} />
+            {theme === 'light' ?
+              <img src="/homelogo.svg" alt="" className={`${!open && 'hidden'}`}  />
+              :
+              <img src="/logo.svg" alt="" className={`${!open && 'hidden'}`} />
+            }
 
             <img src="/arrowbreak.svg"
               onClick={() => useAuth.setState({ open: !open })}
@@ -224,29 +244,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                       <h1 className={`${!open && "hidden"} "font-semibold my-1 text-xs text-[#]  text-xs"`}>{item?.title}</h1>
                     </span>
                   }>
-                    <p className={` "py-5 text-[#]"`}>
-                      {
-                        state &&
-                        <>
-                          {/* <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] dark:bg-gradient-to-t transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2"> */}
-                          <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
-                            <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                              <span>•</span>
-                              <span>Overview</span>
-                            </Link>
-
-                            <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                              <span>•</span>
-                              <span >Job Portal</span>
-                            </Link>
-                            <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                              <span>•</span>
-                              <span >Application</span>
-                            </Link>
-                          </div>
-                        </>
-                      }
-                    </p>
+                    {item?.content}
                   </Accordion>
                 </>
               )
@@ -407,6 +405,33 @@ const Sidebar = ({ open }: SidebarProps) => {
 
         </div>
 
+
+
+{faqArr.map((item, index) => {
+  const activeItem = location.pathname.includes(item?.route);
+  const iconArr = [
+    <img src="/finance.svg" alt="" />,
+    <img src="/self-service.svg" alt="" />
+  ];
+  return (
+    <>
+      <Accordion key={`faq_${index}`} heading={
+        <Link
+          to={item.route}
+          key={index}
+          className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
+            } flex items-center cursor-pointer text-base gap-4 px-4 `}
+        >
+          <span>{iconArr[index]}</span>
+          <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
+        </Link>
+      }>
+        <p className={` "py-5 text-[#]"`}>{item?.content}</p>
+      </Accordion>
+    </>
+  )
+})}
+
       </div>
     </section>
   );
@@ -414,27 +439,3 @@ const Sidebar = ({ open }: SidebarProps) => {
 export default Sidebar;
 
 
-// {faqArr.map((item, index) => {
-//   const activeItem = location.pathname.includes(item?.route);
-//   const iconArr = [
-//     <img src="/finance.svg" alt="" />,
-//     <img src="/self-service.svg" alt="" />
-//   ];
-//   return (
-//     <>
-//       <Accordion key={`faq_${index}`} heading={
-//         <Link
-//           to={item.route}
-//           key={index}
-//           className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
-//             } flex items-center cursor-pointer text-base gap-4 px-4 `}
-//         >
-//           <span>{iconArr[index]}</span>
-//           <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
-//         </Link>
-//       }>
-//         <p className={` "py-5 text-[#]"`}>{item?.content}</p>
-//       </Accordion>
-//     </>
-//   )
-// })}

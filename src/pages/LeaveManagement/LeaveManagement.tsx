@@ -89,7 +89,7 @@ const LeaveManagement = () => {
         <div className="h-full pt-3">
             <div className="px-4 md:px-8">
                 <Breadcrumbs {...{ bread }} />
-                <div className="block space-y-3 md:space-y-0 md:flex items-start justify-between gap-4 mt-3">
+                <div className="block space-y-3 md:space-y-0 md:flex items-center justify-between gap-4 mt-3">
                     <div>
                         <div className="text-lg md:text-2xl dark:text-[#ffffff]">Leave Management</div>
                         <div className="text-[#98A1B0] text-[13px] ">Efficiently track, manage, and approve employee leaves</div>

@@ -52,12 +52,12 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
 
 
   return (
-    <div className={`${activeFont} dark:bg-[#161819]`}>
-      <div className="text-[27px] font-bold text-[#091E42] border-b border-gray-200 pb-3 font-">Customize Experience</div>
+    <div className={`${activeFont} dark:bg-[#161819] md:p-3`}>
+      <div className="text-[27px] font-bold text-[#091E42] dark:text-[#ffffff] border-b border-gray-200 pb-3 font-">Customize Experience</div>
       {/* {activeFont} */}
       <label className="flex flex-col items-center justify-start py-2 w-max cursor-pointer">
-        <span className="py-2 text-xs md:text-base leading-6 font-medium">Upload Logo</span>
-        <div className="border border-dashed border-[#DEDFEC] font-medium text-xl md:text-[46.29px] text-center p-4 rounded-md">TH</div>
+        <span className="py-2 text-xs md:text-base leading-6 font-medium dark:text-[#ffffff]">Upload Logo</span>
+        <div className="border border-dashed border-[#DEDFEC] font-medium text-xl md:text-[46.29px] text-center p-4 rounded-md dark:text-[#ffffff]">TH</div>
         <input type="file" className="hidden" />
       </label>
 
@@ -77,14 +77,14 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <DarkCard {...{ theme }} onClick={handleThemeSwitchDark} className='cursor-pointer' />
       </div>
 
-      <div className="w-full p-1 bg-white sm:p-4">
+      <div className="w-full p-1 bg-white dark:bg-[#242729] sm:p-4">
 
         <div className="flow-root">
           <ul role="list" className="divide-y divide-gray-200">
             <li className="py-3 sm:py-3">
               <div className="flex items-center">
                 <div className="flex-1 min-w-0 ms-2">
-                  <p className="text-sm md:text-base font-semibold text-[#0D1227] truncate">
+                  <p className="text-sm md:text-base font-semibold text-[#0D1227] dark:text-[#ffffff] truncate">
                     Accent Color
                   </p>
                   <p className="text-xs md:text-sm font-normal text-[#535768] truncate">
@@ -109,7 +109,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
               <div className="flex items-center gap-3">
 
                 <div className="flex-1 min-w-0 ms-2">
-                  <p className="text-sm md:text-base font-semibold text-[#0D1227] truncate">
+                  <p className="text-sm md:text-base font-semibold text-[#0D1227] dark:text-[#ffffff] truncate">
                     Header Style
                   </p>
                   <p className="text-xs md:text-sm font-normal text-[#535768] truncate">
@@ -138,7 +138,7 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
             <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-5.jpg" alt="Thomas image" />
         </div> */}
                 <div className="flex-1 min-w-0 ms-2">
-                  <p className="text-sm md:text-base font-semibold text-[#0D1227] truncate">
+                  <p className="text-sm md:text-base font-semibold text-[#0D1227] dark:text-[#ffffff] truncate">
                     Font Style
                   </p>
                   <p className="text-xs md:text-sm font-normal text-[#535768] truncate">

@@ -36,17 +36,20 @@ function Accordion({
         >
             {showHeader && (
                 <div
-                    className={`w-full px-1 ${open || openAccordion
-                        ? ""
+                    className={` ${open || openAccordion
+                        ? "w-full"
                         : "flex items-center justify-center"
                         //   : "border shadow-[0px_8px_22px_rgba(151,143,175,0.08)]"
-                        }`}
+                        }
+
+                        `}
                 >
                     <div
                         onClick={toggleAccordion}
-                        className={`flex cursor-pointer items-center w-full gap-2 justify-between py-3 bg-transparent`}
+                        className={`flex items-center rounded-xl px-6 py-3 cursor-pointer text-xs
+                        !text-[#535768] truncate bg-transparent`}
                     >
-                        <span style={{ flexGrow: 0 }} className="font-medium text-xs text-left text-[#716C81]">
+                        <span className="font-medium text-xs text-[#716C81]">
                             {heading}{" "}
                         </span>
 

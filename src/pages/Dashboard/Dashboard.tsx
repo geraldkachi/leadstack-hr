@@ -60,7 +60,7 @@ const Dashboard = () => {
         onClose={() => setShowToast(false)}
       />
       <div className="px-4 md:px-8">
-      <div className="block space-y-3 md:space-y-0 md:flex items-start justify-between gap-3 bg-whit">
+      <div className="block space-y-3 md:space-y-0 md:flex items-center justify-between gap-3 bg-whit">
         <div>
           <div className="text-lg md:text-2xl dark:text-[#ffffff]">Dashboard</div>
           <div className="text-[#98A1B0] text-[13px] ">Track and manage employee information and manage your <br className='hidden md:block' /> organization activities. </div>
@@ -114,7 +114,7 @@ const Dashboard = () => {
         closable
         afterClose={() => setModalOpen(false)}
         width={1127}
-        // style={{ backgroundColor: theme === 'dark' && '#242729' }}
+        style={{ backgroundColor: theme === 'dark' && '#242729' }}
 
       >
         <div className='grid lg:grid-cols-5 items-start justify- py-8 h-[650px] overflow-y-scroll no-scrollbar dark:bg-[#161819]'>
