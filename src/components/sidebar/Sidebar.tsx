@@ -11,10 +11,14 @@ interface SidebarProps {
 }
 const Sidebar = ({ open }: SidebarProps) => {
 
-  const [state, setState] = useState(false);
+  const [_, setState] = useState(false);
+  const navigate = useNavigate();
   const location = useLocation()
   const { width } = useWindowDimensions()
-  const navigate = useNavigate();
+
+  const activehire = location.pathname.includes("/hiring");
+  const openDraw = useAuth(state => state.openDraw)
+  const theme = useAuth(state => state.theme)
 
   const logout = useCallback(() => {
     navigate("/");
@@ -42,16 +46,16 @@ const Sidebar = ({ open }: SidebarProps) => {
       header: "Recruitment & Hiring",
       content: <>
         <div className="flex flex-col items-start justify-start list-none opacity-100  bg-[#1D8EE6] transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
-          <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+          <Link to="/hiring/overview" className={`${location.pathname.includes("/hiring/overview") ? 'text-[#ffffff] ' : "text-[#FFFFFF99] "} cursor-pointer flex items-center gap-4 p-2 text-xs w-full`} onClick={() => setState(false)}>
             <span>•</span>
             <span>Overview</span>
           </Link>
 
-          <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+          <Link to="/hiring/job-portal" className={`${location.pathname.includes("/hiring/job-portal") ? 'text-[#ffffff] ' : "text-[#FFFFFF99] "} cursor-pointer flex items-center gap-4 p-2 text-xs w-full`} onClick={() => setState(false)}>
             <span>•</span>
             <span >Job Portal</span>
           </Link>
-          <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+          <Link to="/hiring/application" className={`${location.pathname.includes("/hiring/application") ? 'text-[#ffffff] ' : "text-[#FFFFFF99] "} cursor-pointer flex items-center gap-4 p-2 text-xs w-full`} onClick={() => setState(false)}>
             <span>•</span>
             <span >Application</span>
           </Link>
@@ -100,9 +104,6 @@ const Sidebar = ({ open }: SidebarProps) => {
     { route: "/finance", title: "Finance" },
     { route: "/self-service", title: "Self Service" },
   ]
-  const activeItem2 = location.pathname.includes("/hiring");
-  const openDraw = useAuth(state => state.openDraw)
-  const theme = useAuth(state => state.theme)
 
   return (
     <section className={`sidebar dark:bg-[#161819]  ${openDraw && '!block px-1 w-max'} hidden md:block overflow-y-scroll no-scrollbar`}>
@@ -196,14 +197,14 @@ const Sidebar = ({ open }: SidebarProps) => {
                         }
                     >
                       <span
-                      onClick={() => {
-                        if (!open) {
-                          useAuth.setState({ open: !open })
-                          setState(false)
-                        }
-                        setState(prev => !prev)
-                      }
-                      }
+                      // onClick={() => {
+                      //   if (!open) {
+                      //     useAuth.setState({ open: !open })
+                      //     setState(false)
+                      //   }
+                      //   setState(prev => !prev)
+                      // }
+                      // }
                       >{iconArr[index]}</span>
                         <h1 className={`${!open && "hidden"} "font-semibold my-1 text-xs text-[#]  text-xs"`}>{item?.title}</h1>
                     </span>

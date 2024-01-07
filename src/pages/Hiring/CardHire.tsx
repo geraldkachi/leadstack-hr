@@ -31,7 +31,7 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
 
     return (
         <>
-            <div className="flex gap-2 items p-1 bg-white dark:bg-[#292929] border border-gray-200 rounded-lg shadow whitespace-nowrap w-full">
+            <div className="flex gap-2 items p-1 bg-white dark:bg-[#292929] border border-gray-200 rounded-lg shadow whitespace-nowrap w-full h-max">
                 <img className="object-cover w-14 rounded-t-lg h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/cardi.svg" alt="" />
                 <div className="flex flex-col justify-between p-3 leading-normal w-full">
                     <div>
