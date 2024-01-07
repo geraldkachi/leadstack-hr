@@ -405,33 +405,6 @@ const Sidebar = ({ open }: SidebarProps) => {
 
         </div>
 
-
-
-        {faqArr.map((item, index) => {
-          const activeItem = location.pathname.includes(item?.route);
-          const iconArr = [
-            <img src="/finance.svg" alt="" />,
-            <img src="/self-service.svg" alt="" />
-          ];
-          return (
-            <>
-              <Accordion key={`faq_${index}`} heading={
-                <Link
-                  to={item.route}
-                  key={index}
-                  className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
-                    } flex items-center cursor-pointer text-base gap-4 px-4 `}
-                >
-                  <span>{iconArr[index]}</span>
-                  <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
-                </Link>
-              }>
-                <p className={` "py-5 text-[#]"`}>{item?.content}</p>
-              </Accordion>
-            </>
-          )
-        })}
-
       </div>
     </section>
   );
