@@ -27,6 +27,11 @@ const DonutChart = () => {
 
   return (
     <div className="h-full bg-white dark:bg-[#242729] rounded-lg">
+      <div className="flex items-center justify-between gap-3 my-2 p-4">
+      <span className="text-sm dark:text-[#ffffff]">Leave Type Distribution</span>
+
+      </div>
+
       {/* @ts-ignore */}
       <ReactApexChart options={chartData.options} series={chartData.series} type="donut" height={350} />
       {/* <button onClick={updateChartData}>Update Chart</button> */}
