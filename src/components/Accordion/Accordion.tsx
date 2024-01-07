@@ -70,9 +70,7 @@ function Accordion({
                 style={{
                     maxHeight: open || openAccordion ? ref.current.scrollHeight : 0,
                 }}
-                className={`relative transition-all
-        } overflow-hidden transition-all duration-[0.7rem]`}
-            >
+                className={`relative overflow-hidden transition-all duration-[0.7rem]`}>
                 <div className="px-">{children}</div>
             </div>
         </div>

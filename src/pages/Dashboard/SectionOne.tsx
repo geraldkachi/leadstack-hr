@@ -1,5 +1,5 @@
 import { Checkbox } from 'antd';
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect } from "react"
 
 import DarkCard from "./DarkCard"
 import WhiteCard from "./WhiteCard"
@@ -12,6 +12,7 @@ interface Props {
 }
 const SectionOne = ({ setState, setModalColor }: Props) => {
   const activeFont = useAuth(state => state.activeFont)
+  const theme = useAuth(state => state.theme)
   // const [selectedFont, setSelectedFont] = useState(initialFont);
 
   // Get the saved font from localStorage or set a default
@@ -23,13 +24,15 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
     localStorage.setItem('selectedFont', (activeFont));
   }, [activeFont]);
 
-  const [theme, setTheme] = useState<string | null>(null);
+  // const [theme, setTheme] = useState<string | null>(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark')
+      // setTheme('dark')
+      useAuth.setState({ theme: 'dark' })
     } else{
-      setTheme('light')
+      // setTheme('light')
+      useAuth.setState({ theme: 'light' })
     }
   }, [])
 
@@ -42,7 +45,10 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
   },[theme])
 
 
-  const handleThemeSwitch = () => setTheme(theme === 'dark' ? 'light' : 'dark')
+  // const handleThemeSwitch = () => setTheme(theme === 'dark' ? 'light' : 'dark')
+  // const handleThemeSwitch = () => useAuth.setState({ theme: theme === 'dark' ? 'light' : 'dark'})
+  const handleThemeSwitchDark = () => useAuth.setState({ theme: 'dark' })
+  const handleThemeSwitchLight = () => useAuth.setState({ theme: 'light'})
 
 
   return (
@@ -66,9 +72,9 @@ const SectionOne = ({ setState, setModalColor }: Props) => {
         <div className="text-[#98A1B0] text-sm font-normal">Customize your UI theme </div>
       </div>
       <div className='flex items-center gap-x-3'>
-          <WhiteCard onClick={handleThemeSwitch} index className='cursor-pointer w-20' />
+          <WhiteCard onClick={handleThemeSwitchLight} index className='cursor-pointer w-' />
           {/* <WhiteCard className='cursor-pointer' /> */}
-          <DarkCard onClick={handleThemeSwitch} index className='cursor-pointer w-20' />
+          <DarkCard onClick={handleThemeSwitchDark} index className='cursor-pointer w-' />
       </div>
 
       <div className="w-full p-1 bg-white sm:p-4">

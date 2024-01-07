@@ -41,7 +41,7 @@ const Sidebar = ({ open }: SidebarProps) => {
     {
       header: "Recruitment & Hiring",
       content: `content for clients.`,
-      route: "/hiring/overview" || "/hiring/job-portal" || "/hiring/application" ,
+      route: "/hiring/overview" || "/hiring/job-portal" || "/hiring/application",
       title: "Recruitment & Hiring",
     },
   ];
@@ -129,7 +129,7 @@ const Sidebar = ({ open }: SidebarProps) => {
             ];
             return (
               <Link
-                style={{width:'max'}}
+                style={{ width: 'max' }}
                 to={item.route}
                 key={index}
                 className={`${activeItem && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
@@ -170,7 +170,7 @@ const Sidebar = ({ open }: SidebarProps) => {
             >
               <div className="flex items-center gap-2">
                 <HiringIcon key={4} index={activeItem2} className={`${open && ''}`} onClick={() => {
-                    setState(prev => !prev)
+                  setState(prev => !prev)
                 }} />
 
                 <span
@@ -184,73 +184,73 @@ const Sidebar = ({ open }: SidebarProps) => {
               </div>
 
               {state && <>
-                    {/* <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] dark:bg-gradient-to-t transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2"> */}
-                    <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
-                        <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                            <span>•</span>
-                            <span>Overview</span>
-                        </Link>
+                {/* <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] dark:bg-gradient-to-t transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2"> */}
+                <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
+                  <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+                    <span>•</span>
+                    <span>Overview</span>
+                  </Link>
 
-                        <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                            <span>•</span>
-                            <span >Job Portal</span>
-                        </Link>
-                        <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                            <span>•</span>
-                            <span >Application</span>
-                        </Link>
-                    </div>
-                </>
-                }
+                  <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+                    <span>•</span>
+                    <span >Job Portal</span>
+                  </Link>
+                  <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+                    <span>•</span>
+                    <span >Application</span>
+                  </Link>
+                </div>
+              </>
+              }
             </span>
 
 
-              {hireArr.map((item, index) => {
-            const activeItem = location.pathname.includes(item?.route);
-            const iconArr = [
-              <HiringIcon key={0} index={activeItem} />,
+            {hireArr.map((item, index) => {
+              const activeItem = location.pathname.includes(item?.route);
+              const iconArr = [
+                <HiringIcon key={0} index={activeItem} />,
 
-            ];
-            return (
-              <>
-                <Accordion key={`hire ${index}`} heading={
-                  <span
-                    // to={item.route}
-                    key={index}
-                    className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
-                      } flex items-center cursor-pointer gap-4 px-4  text-xs`}
-                  >
-                    <span>{iconArr[index]}</span>
-                    <h1 className={`${!open && "hidden"} "font-semibold my-1 text-xs text-[#]  text-xs"`}>{item?.title}</h1>
-                  </span>
-                }>
-                  <p className={` "py-5 text-[#]"`}>
-                    {
-                      state &&
-                      <>
-                    {/* <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] dark:bg-gradient-to-t transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2"> */}
-                    <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
-                        <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                            <span>•</span>
-                            <span>Overview</span>
-                        </Link>
+              ];
+              return (
+                <>
+                  <Accordion key={`hire ${index}`} heading={
+                    <span
+                      // to={item.route}
+                      key={index}
+                      className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
+                        } flex items-center cursor-pointer gap-4 px-4  text-xs`}
+                    >
+                      <span>{iconArr[index]}</span>
+                      <h1 className={`${!open && "hidden"} "font-semibold my-1 text-xs text-[#]  text-xs"`}>{item?.title}</h1>
+                    </span>
+                  }>
+                    <p className={` "py-5 text-[#]"`}>
+                      {
+                        state &&
+                        <>
+                          {/* <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] dark:bg-gradient-to-t transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2"> */}
+                          <div className="flex flex-col items-start justify-start list-none top-10 opacity-100 absolute -left-2 bg-[#1D8EE6] transition-all m-2 dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
+                            <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+                              <span>•</span>
+                              <span>Overview</span>
+                            </Link>
 
-                        <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                            <span>•</span>
-                            <span >Job Portal</span>
-                        </Link>
-                        <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-                            <span>•</span>
-                            <span >Application</span>
-                        </Link>
-                    </div>
+                            <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+                              <span>•</span>
+                              <span >Job Portal</span>
+                            </Link>
+                            <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+                              <span>•</span>
+                              <span >Application</span>
+                            </Link>
+                          </div>
+                        </>
+                      }
+                    </p>
+                  </Accordion>
                 </>
-                }
-                  </p>
-                </Accordion>
-              </>
-            )
-          })}
+              )
+            })}
           </>
           {routeList2.map((item, index) => {
             const activeItem = location.pathname.includes(item.route);
@@ -276,7 +276,7 @@ const Sidebar = ({ open }: SidebarProps) => {
                   }
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
-                  !text-[#535768]`}
+                  !text-[#535768] truncate`}
                 onClick={() => useAuth.setState({ openDraw: false })}
               >
                 <div key={index}> {iconArr[index]}</div>
@@ -299,32 +299,9 @@ const Sidebar = ({ open }: SidebarProps) => {
               } inline-flex items-center pb-3 ease-in-out duration-500`}
           >
 
-            <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>SUPPORT</p>
+            <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>Self Service</p>
           </div>
-          {/* {faqArr.map((item, index) => {
-            const activeItem = location.pathname.includes(item?.route);
-            const iconArr = [
-              <img src="/finance.svg" alt="" />,
-              <img src="/self-service.svg" alt="" />
-            ];
-            return (
-              <>
-                <Accordion key={`faq_${index}`} heading={
-                  <Link
-                    to={item.route}
-                    key={index}
-                    className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
-                      } flex items-center cursor-pointer text-base gap-4 px-4 `}
-                  >
-                    <span>{iconArr[index]}</span>
-                    <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
-                  </Link>
-                }>
-                  <p className={` "py-5 text-[#]"`}>{item?.content}</p>
-                </Accordion>
-              </>
-            )
-          })} */}
+
 
           <div
             className={`${open && "flex items-center w-full ease-in-out duration-500"
@@ -345,39 +322,87 @@ const Sidebar = ({ open }: SidebarProps) => {
 
           {/* <div className="pb-5"> */}
 
-            <div
-              className={`${open && "flex items-center w-full ease-in-out duration-500"
-                } inline-flex items-center pb-0 ease-in-out duration-500`}
-            >
-              <Link to="/settings" className={`${location.pathname.includes('/settings') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
-                }
+          <div
+            className={`${open && "flex items-center w-full ease-in-out duration-500"
+              } inline-flex items-center pb-0 ease-in-out duration-500`}
+          >
+            <Link to="/settings" className={`${location.pathname.includes('/settings') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+              }
                   ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[#535768]`}
-                onClick={() => useAuth.setState({ openDraw: false })}
-              >
-                <Settings index={location.pathname.includes('/settings')} />
-
-                <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Settings</span>
-              </Link>
-            </div>
-
-
-            <div
-              className={`${open && "flex items-center w-full ease-in-out duration-500"
-                } inline-flex items-center pb-3 ease-in-out duration-500`}
+              onClick={() => useAuth.setState({ openDraw: false })}
             >
-              <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>ACCOUNT</p>
-            </div>
-            <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-16"}
+              <Settings index={location.pathname.includes('/settings')} />
+
+              <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Settings</span>
+            </Link>
+          </div>
+
+
+        </div>
+
+        <div className={`flex flex-col justify-center items-center  md:px-4 ${open ? "ease-in-out duration-500" : "ease-in-out duration-500"}`}>
+          {/* <div className="flex flex-col items-center justify-center text-black"> */}
+          <div
+            className={`${open && "flex items-center w-full ease-in-out duration-500"
+              } inline-flex items-center pb-3 ease-in-out duration-500`}
+          >
+
+            <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>SUPPORT</p>
+          </div>
+
+          <div
+            className={`${open && "flex items-center w-full ease-in-out duration-500"
+              } inline-flex items-center pb-0 ease-in-out duration-500`}
+          >
+            <Link to='/help' className={`${location.pathname.includes('/help') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+              }
+                  ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
+                  !text-[#535768]`}
+              onClick={() => useAuth.setState({ openDraw: false })}
+            >
+              <HelpIcon index={location.pathname.includes('/help')} />
+
+              <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Help</span>
+            </Link>
+          </div>
+
+
+          <div
+            className={`${open && "flex items-center w-full ease-in-out duration-500"
+              } inline-flex items-center pb-0 ease-in-out duration-500`}
+          >
+            <Link to="/settings" className={`${location.pathname.includes('/settings') && "bg-[#1D8EE6] rounded-xl !text-[#fff]"
+              }
+                  ${!open ? 'text-center flex items-center justify-center' : 'w-full'}
+                  flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
+                  !text-[#535768]`}
+              onClick={() => useAuth.setState({ openDraw: false })}
+            >
+              <Settings index={location.pathname.includes('/settings')} />
+
+              <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Settings</span>
+            </Link>
+          </div>
+
+
+          <div
+            className={`${open && "flex items-center w-full ease-in-out duration-500"
+              } inline-flex items-center pb-3 ease-in-out duration-500`}
+          >
+            <p className={`${!open ? "hidden" : "!text-start sm:block text-[#BFBFBF] mx-2 lg:block text-xs  md:text-lg"}`}>ACCOUNT</p>
+          </div>
+          <div className={`${"bg-[#] px-2 rounded-xl !text-[#535768] mb-16"}
                   ${!open ? 'px-2 text-center flex items-center justify-center' : 'w-full'}
                   flex items-center gap-2 rounded-xl px-6 py-3 cursor-pointer mb-1 text-xs
                   !text-[rgb(83,87,104)]`}
-              onClick={logout}>
-              <div><img src="/signnout.svg" className="w-8" alt="singout" /></div>
+            onClick={logout}>
+            <div><img src="/signnout.svg" className="w-8" alt="singout" /></div>
 
-              <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
-            </div>
+            <span className={`${!open && "hidden"} ${width < 1200 ? "" : ""} origin-left ease-in-out duration-500`}>Logout</span>
+          </div>
           {/* </div> */}
 
         </div>
@@ -387,3 +412,29 @@ const Sidebar = ({ open }: SidebarProps) => {
   );
 };
 export default Sidebar;
+
+
+// {faqArr.map((item, index) => {
+//   const activeItem = location.pathname.includes(item?.route);
+//   const iconArr = [
+//     <img src="/finance.svg" alt="" />,
+//     <img src="/self-service.svg" alt="" />
+//   ];
+//   return (
+//     <>
+//       <Accordion key={`faq_${index}`} heading={
+//         <Link
+//           to={item.route}
+//           key={index}
+//           className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
+//             } flex items-center cursor-pointer text-base gap-4 px-4 `}
+//         >
+//           <span>{iconArr[index]}</span>
+//           <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
+//         </Link>
+//       }>
+//         <p className={` "py-5 text-[#]"`}>{item?.content}</p>
+//       </Accordion>
+//     </>
+//   )
+// })}

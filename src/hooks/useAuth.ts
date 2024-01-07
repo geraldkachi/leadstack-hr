@@ -31,6 +31,7 @@ type State = {
     isAuthenticated?: boolean
     activeTab: number
     activeFont: string
+    theme: string | null
     open: boolean
     openDraw: boolean
     color: string[]
@@ -45,6 +46,7 @@ const useAuth = create<State>(() => ({
     activeFont: 'font-noto',
     mode: modes,
     color: colors,
+    theme: null,
     createAccount: {
         organizationName: '',
         officialEmail: '',

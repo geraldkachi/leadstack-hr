@@ -59,9 +59,9 @@
     --primaryBg: var(--color-primary-100)
     --onPrimaryBg: var(--color-primary-900)
     --primary: var(--color-primary-500)
-} 
+}
 .theme-dark{
-  --neutralBg: var(--color-neutral-900) 
+  --neutralBg: var(--color-neutral-900)
   --onNeutralBg: theme('colors.white')
   --primaryBg: var(--color-primary-900)
   --onPrimaryBg: var(--color-primary-50)
@@ -89,7 +89,7 @@ body {
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
     }
-    
+
   }
 }
 
@@ -142,4 +142,8 @@ div.rcp-interactive > .rcp-hue {
 .react-select__indicator-separator {
   display: none;
   width: none
+} */
+
+/* .apexcharts-tooltip span {
+  color: #ffffff;
 } */
