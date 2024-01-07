@@ -40,23 +40,23 @@ const Sidebar = ({ open }: SidebarProps) => {
   const hireArr = [
     {
       header: "Recruitment & Hiring",
-      content:  <>
-      <div className="flex flex-col items-start justify-start list-none opacity-100  bg-[#1D8EE6] transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
-        <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-          <span>•</span>
-          <span>Overview</span>
-        </Link>
+      content: <>
+        <div className="flex flex-col items-start justify-start list-none opacity-100  bg-[#1D8EE6] transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
+          <Link to="/hiring/overview" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+            <span>•</span>
+            <span>Overview</span>
+          </Link>
 
-        <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-          <span>•</span>
-          <span >Job Portal</span>
-        </Link>
-        <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
-          <span>•</span>
-          <span >Application</span>
-        </Link>
-      </div>
-    </>,
+          <Link to="/hiring/job-portal" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+            <span>•</span>
+            <span >Job Portal</span>
+          </Link>
+          <Link to="/hiring/application" className="text-white cursor-pointer flex items-center gap-4 p-2 text-xs w-full" onClick={() => setState(false)}>
+            <span>•</span>
+            <span >Application</span>
+          </Link>
+        </div>
+      </>,
       route: "/hiring/overview" || "/hiring/job-portal" || "/hiring/application",
       title: "Recruitment & Hiring",
     },
@@ -112,7 +112,7 @@ const Sidebar = ({ open }: SidebarProps) => {
         <div className="px-2 py-5">
           <div className={`${open ? "justify-between" : 'justify-center'} flex items-center`}>
             {theme === 'light' ?
-              <img src="/homelogo.svg" alt="" className={`${!open && 'hidden'}`}  />
+              <img src="/homelogo.svg" alt="" className={`${!open && 'hidden'}`} />
               :
               <img src="/logo.svg" alt="" className={`${!open && 'hidden'}`} />
             }
@@ -238,10 +238,10 @@ const Sidebar = ({ open }: SidebarProps) => {
                       // to={item.route}
                       key={index}
                       className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
-                        } flex items-center cursor-pointer gap-4 px-4  text-xs`}
+                        } flex items-center cursor-pointer gap-2 px-0  text-xs`}
                     >
-                      <span>{iconArr[index]}</span>
-                      <h1 className={`${!open && "hidden"} "font-semibold my-1 text-xs text-[#]  text-xs"`}>{item?.title}</h1>
+                        <span>{iconArr[index]}</span>
+                        <h1 className={`${!open && "hidden"} "font-semibold my-1 text-xs text-[#]  text-xs"`}>{item?.title}</h1>
                     </span>
                   }>
                     {item?.content}
@@ -407,30 +407,30 @@ const Sidebar = ({ open }: SidebarProps) => {
 
 
 
-{faqArr.map((item, index) => {
-  const activeItem = location.pathname.includes(item?.route);
-  const iconArr = [
-    <img src="/finance.svg" alt="" />,
-    <img src="/self-service.svg" alt="" />
-  ];
-  return (
-    <>
-      <Accordion key={`faq_${index}`} heading={
-        <Link
-          to={item.route}
-          key={index}
-          className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
-            } flex items-center cursor-pointer text-base gap-4 px-4 `}
-        >
-          <span>{iconArr[index]}</span>
-          <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
-        </Link>
-      }>
-        <p className={` "py-5 text-[#]"`}>{item?.content}</p>
-      </Accordion>
-    </>
-  )
-})}
+        {faqArr.map((item, index) => {
+          const activeItem = location.pathname.includes(item?.route);
+          const iconArr = [
+            <img src="/finance.svg" alt="" />,
+            <img src="/self-service.svg" alt="" />
+          ];
+          return (
+            <>
+              <Accordion key={`faq_${index}`} heading={
+                <Link
+                  to={item.route}
+                  key={index}
+                  className={`${activeItem ? "text-[#716C81] bg-[#] rounded-[4px]" : "text-[#716C81]"
+                    } flex items-center cursor-pointer text-base gap-4 px-4 `}
+                >
+                  <span>{iconArr[index]}</span>
+                  <h1 className={`${!open && "hidden"} "font-semibold my-1 text-base text-[#]"`}>{item?.title}</h1>
+                </Link>
+              }>
+                <p className={` "py-5 text-[#]"`}>{item?.content}</p>
+              </Accordion>
+            </>
+          )
+        })}
 
       </div>
     </section>
