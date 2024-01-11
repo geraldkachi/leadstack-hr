@@ -38,7 +38,7 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
                         <div className="flex items-center justify-between gap-2 w-full mb-2">
                             <div className="flex items-center my-1 sm:gap-1">
                                 <h5 className=" text-sm md:text-sm font-bold tracking-tight text-[#0D1227] dark:text-[#ffffff] mr-1">{position}</h5>
-                                <Button className="!bg-[#1EAA7933] !text-[#1EAA79] !p-1 text-[10px]" title="Active" />
+                                <Button className="!bg-[#1EAA7933] !text-[#1EAA79] !p-1 text-sm" title="Active" />
                             </div>
                             <Dropdown menu={{ items }} trigger={['click']} placement="bottomRight">
                                 <a onClick={(e) => e.preventDefault()}>
@@ -47,7 +47,7 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
                             </Dropdown>
                         </div>
                         <div className="flex items-center whitespace-nowrap">
-                            <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] md:text-x">
+                            <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs md:text-x">
                                 <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/briefcase.svg" alt="" /> 0 - {years} Years</p>
                                 <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/graduate.svg" alt="" /> Html, Python, CSS</p>
                                 <p className="mb-1 font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2"><img src="/credit-card-hire.svg" alt="" /> 200k - 350k</p>
@@ -56,7 +56,7 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-[10px] md:text-x mt-2">
+                    <div className="flex items-center gap-2 text-xm md:text-x mt-2">
                         <p className="font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2">{applicants} Applicants</p>
                         <p className="font-normal text-[#FF3B30] flex items-center gap-1 md:gap-2"><img src="/time-circle.svg" alt="" /> Expiry Date: {formattedDate}</p>
                     </div>

@@ -47,12 +47,13 @@ const RunningJobs = () => {
         <div className="md:col-span-6 grid lg:grid-cols-2 gap-4 h-max">
           {dataCards.length === 0 ||
             dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())).length === 0 ?
-            <div className="col-span-8 h-max my-40">
+            <div className="col-span-8 h-max my-20 md:my40">
               <EmptyData title="Education History is Empty" subtitle="Education history will show here when you save them" />
             </div>
             :
             dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())
-              || item?.position?.toLowerCase().includes(search.toLowerCase())).map((item) => <CardHire key={item.position} {...item} />)}
+              || item?.position?.toLowerCase().includes(search.toLowerCase())
+            ).map((item) => <CardHire key={item.position} {...item} />)}
         </div>
         {/* <div className="col-span-1"></div> */}
         <div className="md:col-span-2 gap-8">

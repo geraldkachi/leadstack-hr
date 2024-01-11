@@ -45,7 +45,7 @@ const Sidebar = ({ open }: SidebarProps) => {
     {
       header: "Recruitment & Hiring",
       content: <>
-        <div className="flex flex-col items-start justify-start list-none opacity-100  bg-[#1D8EE6] transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-[150px] md:w-full z-20 shadow-md py-2">
+        <div className="flex flex-col items-start justify-start list-none opacity-100  bg-[#1D8EE6] transition-all dark:from-[#ffffff] dark:vai-[#292929] shadow-3xl rounded-md w-full z-20 shadow-md py-2">
           <Link to="/hiring/overview" className={`${location.pathname.includes("/hiring/overview") ? 'text-[#ffffff] ' : "text-[#FFFFFF99] "} cursor-pointer flex items-center gap-4 p-2 text-xs w-full`} onClick={() => setState(false)}>
             <span>•</span>
             <span>Overview</span>
@@ -181,7 +181,7 @@ const Sidebar = ({ open }: SidebarProps) => {
               ];
               return (
                 <>
-                  <Accordion key={`hire ${index}`} heading={
+                  <Accordion key={`hire ${index}`} activeClass={`${activeItem && 'bg-[#1D8EE6]'}`} heading={
                     <span
                       // to={item.route}
                       key={index}

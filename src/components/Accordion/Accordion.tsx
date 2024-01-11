@@ -31,7 +31,7 @@ function Accordion({
 
     return (
         <div
-            className={`relative bg-transparent  w-full mx-auto mb-1 rounded-xl  ${openAccordion ? activeClass : ""
+            className={`relative bg-transparent  w-full mx-auto mb-1 rounded-xl  ${openAccordion ? activeClass : "bg-[#1D8EE6]"
                 } ${otherClasses || ""}`}
                 onClick={toggleAccordion}
         >

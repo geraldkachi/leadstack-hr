@@ -1,4 +1,4 @@
-{/* <form className="flex items-center">   
+{/* <form className="flex items-center">
     <label className="sr-only">Search</label>
     <div className="relative w-full">
         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -18,9 +18,9 @@
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
         </svg>Search
     </button>
-</form> 
+</form>
 
-	className={`relative  flex items-center w-full rounded-[4px] overflow-hidden border border-[#DEDFE focus-within:border-[#DEDEC] disabled:bg-grey read-only:bg-grey 
+	className={`relative  flex items-center w-full rounded-[4px] overflow-hidden border border-[#DEDFE focus-within:border-[#DEDEC] disabled:bg-grey read-only:bg-grey
                 borderrrrr-${col()}
                 ${(disabled || readOnly) && 'bg-grey border-none'
 					}`}
@@ -66,7 +66,7 @@ export default function Input(
 	} = props;
 
 	const col = () => {
-		let color = `[#DEDEC]`;
+		let color = `[#DEe7]`;
 
 		if (inputType === 'success') {
 			color = '[#4BB543]';
@@ -116,13 +116,9 @@ export default function Input(
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
 					// className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
-					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} 
-					border-${col()} 
-					${inputType === 'default' && 'border-[#DEDEC]'}
-					${inputType === 'success' && 'border-[#4BB543]'}
-					${inputType === 'error' && 'border-[#FF0000]'}
-					${inputType === 'warning' && 'border-[#ff9966]'}
-					border w-full p-3 rounded-[4px] focus:outline-[#1D8EE6] placeholder:text-base placeholder:font-normal placeholder:text-[#B2B7C2] placeholder:leading-6 ${inputClassName}`}
+					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'}
+					border-${col()}
+					border w-full p-3 rounded-[4px] focus:outline-[#] focus:outline-none focus:bg-white dark:focus:text-white focus:border-[#1D8EE6] placeholder:text-base placeholder:font-normal placeholder:text-[#B2B7C2] placeholder:leading-6 ${inputClassName}`}
 				/>
 				{TrailingIcon && (
 					<span className="absolute inset-y-0 end-0 flex items-center pe-1 cursor-pointer">
@@ -130,14 +126,11 @@ export default function Input(
 					</span>
 				)}
 			</div>
-			{helptext && (
-				<small className={`text-xs my-2 text-${col()}
-				${inputType === 'default' && 'text-[#DEDEC]'}
-				${inputType === 'success' && 'text-[#4BB543]'}
-				${inputType === 'error' && 'text-[#FF0000]'}
-				${inputType === 'warning' && 'text-[#ff9966]'}
-				`}>{helptext}</small>
-			)}
+			{helptext && (<small className={`text-xs my-2 text-${col()}`}>{helptext}</small>)}
 		</div>
 	);
 }
+// ${inputType === 'default' && 'border-[#DEDEC]'}
+// ${inputType === 'success' && 'border-[#4BB543]'}
+// ${inputType === 'error' && 'border-[#FF0000]'}
+// ${inputType === 'warning' && 'border-[#ff9966]'}

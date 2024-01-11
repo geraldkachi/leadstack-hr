@@ -1,6 +1,6 @@
 import { Pagination } from "antd"
 import { dataCards } from "."
-import { Input } from "../../components"
+import { EmptyData, Input } from "../../components"
 import CardHire from "./CardHire"
 import JobCategories from "./JobCategories"
 import JobStyle from "./JobStyle"
@@ -28,10 +28,22 @@ const ScheduledPost = () => {
       </div>
 
       <div className="grid lg:grid-cols-6 gap-5">
-        <div className="md:col-span-4 grid  gap-4">
+        {/* <div className="md:col-span-4 grid  gap-4">
           {dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())
             || item?.position?.toLowerCase().includes(search.toLowerCase())
-          ).map((item) => <CardHire key={item.position} {...item} />)}        </div>
+          ).map((item) => <CardHire key={item.position} {...item} />)}
+        </div> */}
+        <div className="md:col-span-4 h-max">
+          {dataCards.length === 0 ||
+            dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())).length === 0 ?
+            <div className="col-span-8 h-max my-20 md:my40">
+              <EmptyData title="Education History is Empty" subtitle="Education history will show here when you save them" />
+            </div>
+            :
+            dataCards.filter((item) => item?.staff?.toLowerCase().includes(search.toLowerCase())
+              || item?.position?.toLowerCase().includes(search.toLowerCase())
+            ).map((item) => <CardHire key={item.position} {...item} />)}
+        </div>
         <div className="md:col-span-2 gap-8 lg:w-60 lg:ml-auto">
           <JobType />
           <JobStyle />
