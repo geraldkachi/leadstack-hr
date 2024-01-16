@@ -22,7 +22,7 @@ const Topnav = () => {
 
 
                 <div className="w-80  hidden md:block">
-                    <Input inputClassName="!w-full font-noto !py-2 dark:bg-[#242729]" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt="" />}
+                    <Input inputClassName="!w-full font-noto !py-2 dark:bg-[#242729] dark:border-[#242729]" LeadingIcon={() => <img src="/search.svg" className="pl-2" alt="" />}
                         type="search"
                         // inputType="success"
                         placeholder="Search employees, teams..." />

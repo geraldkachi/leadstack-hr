@@ -116,7 +116,7 @@ export default function Input(
 					{...props}
 					// className={`text-base p-2 flex-grow min-w-64 focus:outline-none focus:ring focus:border-blue-100`}
 					// className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'} border-${col()} border w-full p-3 rounded-[4px] focus:outline-[#3699FF] placeholder:text-base placeholder:font-normal placeholder:leading-6 ${inputClassName}`}
-					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-0 me-0'}
+					className={`${LeadingIcon && 'ps-10'} ${TrailingIcon && 'pe-5 me-0'}
 					border-${col()}
 					border w-full p-3 rounded-[4px] focus:outline-[#] focus:outline-none focus:bg-white dark:focus:text-white focus:border-[#1D8EE6] placeholder:text-base placeholder:font-normal placeholder:text-[#B2B7C2] placeholder:leading-6 ${inputClassName}`}
 				/>
@@ -126,7 +126,13 @@ export default function Input(
 					</span>
 				)}
 			</div>
-			{helptext && (<small className={`text-xs my-2 text-${col()}`}>{helptext}</small>)}
+			{helptext && (<small className={`text-xs my-2 text-
+				${col()}
+				${inputType === 'default' && 'text-[#DEDEC]'}
+				${inputType === 'success' && 'text-[#4BB543]'}
+				${inputType === 'error' && 'text-[#FF0000]'}
+				${inputType === 'warning' && 'text-[#ff9966]'}
+			`}>{helptext}</small>)}
 		</div>
 	);
 }

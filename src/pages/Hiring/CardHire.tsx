@@ -56,7 +56,7 @@ const CardHire = ({applicants, position, staff, years}: Props) => {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-2 text-xs md:text-x mt-2">
+                    <div className="flex items-center flex-wra gap-2 text-xs md:text-x mt-2">
                         <p className="font-normal text-[#AFB1B6] flex items-center gap-1 md:gap-2">{applicants} Applicants</p>
                         <p className="font-normal text-[#FF3B30] flex items-center gap-1 md:gap-2"><img src="/time-circle.svg" alt="" /> Expiry Date: {formattedDate}</p>
                     </div>

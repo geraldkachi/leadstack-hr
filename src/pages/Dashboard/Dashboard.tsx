@@ -30,6 +30,7 @@ const Dashboard = () => {
   const [modalSuccess, setModalSuccess] = useState(false)
   const [modalColor, setModalColor] = useState(false)
   const [state, setState] = useState(0)
+
   const pathList = [
     { route: 0, title: "Customize Experience", onclick: () => setState(0) },
     { route: 1, title: "Registration Info", onclick: () => setState(1) },
