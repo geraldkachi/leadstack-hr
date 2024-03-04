@@ -1,13 +1,13 @@
-import { Space } from 'antd';
+import { Drawer, DrawerProps, Space } from 'antd';
 import { useState } from 'react';
 import { Sidebar } from "..";
 import { useAuth } from "../../hooks";
-import Drawer from "./DrawerCom";
+// import Drawer from "./DrawerCom";
 
 
 const DrawerCom = () => {
     // const [openDraw, setOpenDraw] = useState(false);
-    // const [placement] = useState<DrawerProps['placement']>('left');
+    const [placement] = useState<DrawerProps['placement']>('left');
     const open = useAuth(state => state.open)
     const openDraw = useAuth(state => state.openDraw)
 
@@ -27,15 +27,15 @@ const DrawerCom = () => {
                     <img className="cursor-pointer md:hidden block rounded p-2" src="/nav-icon.svg" alt="" />
                 </span>
             </Space>
-            <Drawer
+            {/* <Drawer
                 position="left"
                 close={onClose}
                 open={openDraw}
                 key={"1"}
             >
                 <Sidebar {...{ open }} />
-            </Drawer>
-            {/* <Drawer
+            </Drawer> */}
+            <Drawer
                 title=""
                 placement={placement}
                 closable={false}
@@ -45,7 +45,7 @@ const DrawerCom = () => {
                 width={`${open ? 230 : '90'}`}
             >
                 <Sidebar {...{ open }} />
-            </Drawer> */}
+            </Drawer>
         </>
     )
 }
