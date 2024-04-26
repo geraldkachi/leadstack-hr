@@ -162,9 +162,9 @@ const LoginForm = () => {
 
           <Button
             type="submit"
-            disabled={!error && !passwordError}
+            // disabled={!error && !passwordError}
             className="!bg-[#1D8EE6] !text-white !px-8"
-            // onClick={() => navigate('/dashboard')}
+            onClick={() => navigate('/dashboard')}
             title="Continue"
           />
         </div>

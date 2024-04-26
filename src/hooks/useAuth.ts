@@ -27,7 +27,8 @@ type State = {
     token?: string | null
     email?: string | null
     phoneNumber?: string
-    setPhoneNumber?: (phoneNumber: string) => void
+    setPhoneNumber?: (phoneNumber: string) => string
+    themUpdate: (theme: string) => string
     isAuthenticated?: boolean
     activeTab: number
     activeFont: string
@@ -38,7 +39,7 @@ type State = {
     mode: string[]
 }
 // const useAuth = create<State>((set, get) => ({
-const useAuth = create<State>(() => ({
+const useAuth = create<State>((set) => ({
     token,
     open: true,
     openDraw: false,
@@ -46,7 +47,9 @@ const useAuth = create<State>(() => ({
     activeFont: 'font-noto',
     mode: modes,
     color: colors,
-    theme: null,
+    // theme: null,
+    theme: modes[0],
+    themUpdate: (state: string) => set({ theme: state}),
     createAccount: {
         organizationName: '',
         officialEmail: '',

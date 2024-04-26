@@ -8,6 +8,7 @@ import type { TableRowSelection } from 'antd/es/table/interface';
 import { Button, Input } from "../../components";
 import type { MenuProps } from 'antd';
 import EmployeesDetails from "./EmployeesDetails";
+import { useAuth } from "../../hooks";
 // import { ActionCheck, ActionDecline } from "../../assets";
 
 interface DataType {
@@ -19,6 +20,8 @@ interface DataType {
 
 const AllEmployees = () => {
     // const navigate = useNavigate();
+    const theme = useAuth(state => state.theme)
+
     const [modalDetails, setModalDetails] = useState<boolean>(false);
     const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([])
 
@@ -256,6 +259,7 @@ const AllEmployees = () => {
                 <Table
                     size="large"
                     {...{ locale }}
+                    style={{backgroundColor: theme === "light" ? '' : 'black' }}
                     // rowSelection={{
                     //   type: selectionType,
                     //   ...rowSelection,
@@ -400,6 +404,7 @@ const AllEmployees = () => {
 
             {/* Request Decline Successful */}
             <Modal
+                style={{ background: theme == 'light' ? '': 'black'}}
                 open={modalSuccessDeclineRequest}
                 onCancel={() => setModalSuccessDeclineRequests(false)}
                 footer={null}

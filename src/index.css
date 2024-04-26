@@ -175,3 +175,17 @@ div.rcp-interactive > .rcp-hue {
   filter: none;
   opacity: 0.5
 }
+
+
+/* .ant-table-tbody {
+  background-color: #000;
+} */
+
+.ant-table
+  .ant-table-container
+  .ant-table-content
+  table
+  thead.ant-table-thead
+  .ant-table-cell {
+  background-color: green;
+}
